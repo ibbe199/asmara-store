@@ -3,37 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Asmara.Store | جسر رقمي يربط المغترب بقلب الوطن</title>
-    <meta name="description" content="Asmara.Store المنصة الرقمية الأولى التي تدمج خدمات الطيران، العقارات، والصحافة الرسمية في واجهة ذكية واحدة.">
-    <!-- Google Fonts -->
+    <title>Asmara.Store | منصة الإعلانات الموثوقة في إريتريا</title>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
-    <!-- Font Awesome 6 -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Cairo', 'Inter', sans-serif; background: #f0f4f9; color: #1a2a3f; line-height: 1.5; }
+        body.lang-en { direction: ltr; text-align: left; }
+        body.lang-ti { direction: rtl; text-align: right; }
 
-        body {
-            font-family: 'Cairo', 'Inter', sans-serif;
-            background: #f3f6fc;
-            color: #1a2a3f;
-            line-height: 1.5;
-        }
-
-        body.lang-en {
-            direction: ltr;
-            text-align: left;
-        }
-        body.lang-ti {
-            direction: rtl;
-            text-align: right;
-        }
-
-        /* Amazon-style Navbar */
         .amazon-nav {
             background: #1e3a5f;
             color: white;
@@ -46,367 +25,61 @@
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
-        .nav-logo {
-            font-size: 1.8rem;
-            font-weight: 800;
-            background: linear-gradient(135deg, #ffffff 0%, #f5e7c8 100%);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-        .nav-links {
-            display: flex;
-            gap: 1.2rem;
-            flex-wrap: wrap;
-        }
-        .nav-links a {
-            color: #f0f4fa;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.9rem;
-            transition: 0.2s;
-            padding: 0.4rem 0;
-            border-bottom: 2px solid transparent;
-        }
-        .nav-links a:hover {
-            color: #c7a12b;
-            border-bottom-color: #c7a12b;
-        }
-        .lang-switch {
-            display: flex;
-            gap: 0.5rem;
-        }
-        .lang-btn {
-            background: #2c5a82;
-            border: none;
-            padding: 0.3rem 0.9rem;
-            border-radius: 20px;
-            font-family: inherit;
-            font-weight: 500;
-            font-size: 0.8rem;
-            cursor: pointer;
-            color: white;
-            transition: 0.2s;
-        }
-        .lang-btn.active {
-            background: #c7a12b;
-            color: #1e3a5f;
-        }
-        .lang-btn:hover {
-            background: #c7a12b;
-            color: #1a2a3f;
-        }
+        .nav-logo { font-size: 1.8rem; font-weight: 800; background: linear-gradient(135deg, #fff, #f5e7c8); -webkit-background-clip: text; background-clip: text; color: transparent; }
+        .nav-links { display: flex; gap: 1rem; flex-wrap: wrap; }
+        .nav-links a { color: #f0f4fa; text-decoration: none; font-weight: 600; font-size: 0.85rem; transition: 0.2s; border-bottom: 2px solid transparent; }
+        .nav-links a:hover { color: #c7a12b; border-bottom-color: #c7a12b; }
+        .lang-switch { display: flex; gap: 0.5rem; }
+        .lang-btn { background: #2c5a82; border: none; padding: 0.3rem 0.9rem; border-radius: 20px; font-family: inherit; font-weight: 500; font-size: 0.8rem; cursor: pointer; color: white; }
+        .lang-btn.active { background: #c7a12b; color: #1e3a5f; }
+        .container { max-width: 1400px; margin: 0 auto; padding: 1.5rem; }
 
-        .container {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 2rem 1.5rem;
-        }
+        /* Hero */
+        .hero { text-align: center; margin-bottom: 2rem; background: white; border-radius: 36px; padding: 2rem; box-shadow: 0 12px 30px rgba(0,0,0,0.05); }
+        .tagline { font-size: 1.3rem; color: #c7a12b; font-weight: 700; }
 
-        /* Hero Section */
-        .hero {
-            text-align: center;
-            margin-bottom: 2.5rem;
-            background: white;
-            border-radius: 36px;
-            padding: 2rem;
-            box-shadow: 0 12px 30px rgba(0,0,0,0.05);
-        }
-        .tagline {
-            font-size: 1.3rem;
-            color: #c7a12b;
-            font-weight: 700;
-            margin: 0.5rem 0;
-        }
-        .vision-text {
-            max-width: 800px;
-            margin: 1rem auto 0;
-            font-size: 1rem;
-            color: #2d3e5f;
-        }
+        /* Free Offer */
+        .free-offer { background: linear-gradient(135deg, #c7a12b, #e6b422); color: #1e3a5f; border-radius: 28px; padding: 1.2rem; margin: 1rem 0; text-align: center; }
+        .btn-free { background: #1e3a5f; color: white; padding: 0.6rem 1.5rem; border-radius: 60px; text-decoration: none; font-weight: 700; display: inline-block; }
 
-        /* Service Cards */
-        .services {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin: 2.5rem 0;
-        }
-        .card {
-            background: white;
-            border-radius: 24px;
-            padding: 1.8rem;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
-            transition: transform 0.2s, box-shadow 0.2s;
-            border: 1px solid #e6edf4;
-        }
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 30px -12px rgba(0,0,0,0.15);
-        }
-        .card-icon {
-            font-size: 2.8rem;
-            margin-bottom: 1rem;
-        }
-        .card h3 {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: #1e3a5f;
-            margin-bottom: 1rem;
-        }
-        .card ul {
-            list-style: none;
-            padding: 0;
-        }
-        .card li {
-            margin-bottom: 0.7rem;
-            padding-right: 1.5rem;
-            position: relative;
-            font-size: 0.95rem;
-        }
-        .card li::before {
-            content: "✓";
-            color: #c7a12b;
-            font-weight: bold;
-            position: absolute;
-            right: 0;
-        }
-        body.lang-en .card li::before {
-            right: auto;
-            left: 0;
-        }
-        body.lang-en .card li {
-            padding-right: 0;
-            padding-left: 1.5rem;
-        }
+        /* Dashboard Grid: Login + Ad Form + Gallery + Comments */
+        .dashboard-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 1.8rem; margin: 2rem 0; }
+        .card { background: white; border-radius: 28px; padding: 1.5rem; box-shadow: 0 6px 14px rgba(0,0,0,0.05); border: 1px solid #eef2f8; }
+        .card h3 { font-size: 1.4rem; color: #1e3a5f; margin-bottom: 1rem; border-right: 4px solid #c7a12b; padding-right: 0.8rem; }
+        body.lang-en .card h3 { border-right: none; border-left: 4px solid #c7a12b; padding-right: 0; padding-left: 0.8rem; }
+        input, select, textarea { width: 100%; padding: 0.7rem; margin: 0.5rem 0; border: 1px solid #ccc; border-radius: 16px; font-family: inherit; }
+        .btn { background: #1e3a5f; color: white; border: none; padding: 0.7rem 1.2rem; border-radius: 40px; font-weight: 600; cursor: pointer; width: 100%; transition: 0.2s; }
+        .btn:hover { background: #c7a12b; color: #1e3a5f; }
+        .image-preview { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.5rem; }
+        .image-preview img { width: 70px; height: 70px; object-fit: cover; border-radius: 12px; border: 1px solid #ddd; }
 
-        /* Official Institutions Section (NEW) */
-        .institutions {
-            background: white;
-            border-radius: 32px;
-            padding: 1.8rem;
-            margin: 2rem 0;
-            box-shadow: 0 6px 14px rgba(0,0,0,0.03);
-            border: 1px solid #eef2f8;
-        }
-        .institutions h2 {
-            font-size: 1.7rem;
-            font-weight: 700;
-            color: #1e3a5f;
-            margin-bottom: 1.5rem;
-            border-right: 5px solid #c7a12b;
-            padding-right: 1rem;
-        }
-        body.lang-en .institutions h2 {
-            border-right: none;
-            border-left: 5px solid #c7a12b;
-            padding-right: 0;
-            padding-left: 1rem;
-        }
-        .inst-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-        }
-        .inst-card {
-            background: #fafcff;
-            border-radius: 20px;
-            padding: 1.5rem;
-            transition: 0.2s;
-            border: 1px solid #eef2f8;
-        }
-        .inst-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-        }
-        .inst-icon {
-            font-size: 2.2rem;
-            margin-bottom: 0.8rem;
-        }
-        .inst-card h4 {
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: #1e3a5f;
-            margin-bottom: 0.5rem;
-        }
-        .inst-card p {
-            font-size: 0.85rem;
-            color: #4a627a;
-            margin-bottom: 1rem;
-            line-height: 1.4;
-        }
-        .inst-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: #1e3a5f;
-            color: white;
-            padding: 0.5rem 1.2rem;
-            border-radius: 40px;
-            text-decoration: none;
-            font-size: 0.85rem;
-            font-weight: 500;
-            transition: 0.2s;
-        }
-        .inst-link i {
-            color: #c7a12b;
-        }
-        .inst-link:hover {
-            background: #c7a12b;
-            color: #1e3a5f;
-        }
-        .inst-link:hover i {
-            color: #1e3a5f;
-        }
+        /* Gallery */
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1rem; margin-top: 1rem; }
+        .gallery-item { background: #fafcff; border-radius: 20px; padding: 0.8rem; border: 1px solid #eef2f8; }
+        .gallery-item img { width: 100%; height: 150px; object-fit: cover; border-radius: 16px; }
+        .gallery-item h4 { font-size: 1rem; margin: 0.5rem 0; }
+        .gallery-item p { font-size: 0.8rem; color: #4a627a; }
 
-        /* External Links Buttons */
-        .external-links {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 1rem;
-            margin: 2rem 0 1rem;
-        }
-        .btn-out {
-            background: #1e3a5f;
-            color: white;
-            padding: 0.7rem 1.4rem;
-            border-radius: 60px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.85rem;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            transition: 0.2s;
-            border: 1px solid #c7a12b;
-        }
-        .btn-out i {
-            color: #c7a12b;
-        }
-        .btn-out:hover {
-            background: #c7a12b;
-            color: #1e3a5f;
-        }
-        .btn-out:hover i {
-            color: #1e3a5f;
-        }
+        /* Comments & Reviews */
+        .review { border-bottom: 1px solid #eee; padding: 0.8rem 0; display: flex; gap: 0.8rem; align-items: flex-start; }
+        .stars { color: #c7a12b; margin: 0.2rem 0; }
+        .avatar { width: 40px; height: 40px; background: #c7a12b; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; }
 
-        /* Features Table */
-        .features, .brand, .audience {
-            border-radius: 32px;
-            padding: 1.8rem;
-            margin: 2rem 0;
-            background: white;
-            box-shadow: 0 6px 14px rgba(0,0,0,0.03);
-            border: 1px solid #eef2f8;
-        }
-        .features h2, .brand h2, .audience h2 {
-            font-size: 1.7rem;
-            font-weight: 700;
-            color: #1e3a5f;
-            margin-bottom: 1.2rem;
-            border-right: 5px solid #c7a12b;
-            padding-right: 1rem;
-        }
-        body.lang-en .features h2, body.lang-en .brand h2, body.lang-en .audience h2 {
-            border-right: none;
-            border-left: 5px solid #c7a12b;
-            padding-right: 0;
-            padding-left: 1rem;
-        }
-        .feature-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-            gap: 1rem;
-        }
-        .feature-item {
-            background: #fafcff;
-            padding: 0.9rem 1rem;
-            border-radius: 20px;
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            border-bottom: 1px solid #e2e8f0;
-        }
-        .brand {
-            background: #1e3a5f;
-            color: white;
-        }
-        .brand h2 {
-            color: white;
-        }
-        .color-palette {
-            display: flex;
-            gap: 1.5rem;
-            flex-wrap: wrap;
-            margin: 1rem 0;
-        }
-        .color {
-            padding: 0.5rem 1.3rem;
-            border-radius: 40px;
-            font-weight: 600;
-        }
-        .navy {
-            background: #1e3a5f;
-            color: white;
-            border: 1px solid #c7a12b;
-        }
-        .gold {
-            background: #c7a12b;
-            color: #1a2a3f;
-        }
-        .audience-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            list-style: none;
-        }
-        .audience-list li {
-            background: #f1f5f9;
-            padding: 0.5rem 1.4rem;
-            border-radius: 40px;
-            font-weight: 500;
-        }
-        .footer {
-            text-align: center;
-            margin-top: 2.5rem;
-            padding-top: 1.5rem;
-            border-top: 1px solid #cbdde9;
-            font-size: 0.85rem;
-        }
-        .verified {
-            font-weight: 700;
-            color: #c7a12b;
-            margin-top: 0.5rem;
-        }
-        @media (max-width: 750px) {
-            .amazon-nav {
-                flex-direction: column;
-                align-items: stretch;
-                text-align: center;
-            }
-            .nav-links {
-                justify-content: center;
-            }
-            .lang-switch {
-                justify-content: center;
-            }
-        }
+        .old-sections { margin-top: 2rem; }
+        .section-title { font-size: 1.6rem; font-weight: 700; color: #1e3a5f; margin: 1rem 0; border-right: 6px solid #c7a12b; padding-right: 1rem; }
+        .footer { text-align: center; margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #cbdde9; }
+        .verified { font-weight: 700; color: #c7a12b; }
+        @media (max-width: 700px) { .amazon-nav { flex-direction: column; text-align: center; } .nav-links { justify-content: center; } }
     </style>
 </head>
 <body class="lang-ar">
-    <!-- Amazon-style Navbar -->
     <div class="amazon-nav">
         <div class="nav-logo">Asmara.Store</div>
         <div class="nav-links">
-            <a href="#aviation" id="navAviation">✈️ الطيران</a>
-            <a href="#realestate" id="navRealEstate">🏠 عقارات</a>
-            <a href="#press" id="navPress">📰 الصحافة</a>
-            <a href="#institutions" id="navInstitutions">🏛️ مؤسسات</a>
-            <a href="#features" id="navFeatures">⚙️ مميزات</a>
+            <a href="#dashboard">📋 لوحة التحكم</a>
+            <a href="#gallery">🖼️ المعرض</a>
+            <a href="#reviews">⭐ التعليقات</a>
         </div>
         <div class="lang-switch">
             <button class="lang-btn" data-lang="ar">عربي</button>
@@ -417,318 +90,196 @@
 
     <div class="container">
         <div class="hero">
-            <div class="logo" style="font-size:2rem; font-weight:800;">🇪🇷 Asmara.Store</div>
+            <div style="font-size:2rem; font-weight:800;">🇪🇷 Asmara.Store</div>
             <div class="tagline" id="tagline">"جسر رقمي يربط المغترب بقلب الوطن"</div>
-            <div class="vision-text" id="visionText">
-                المنصة الرقمية الأولى من نوعها التي تدمج الخدمات اللوجستية، الاستثمارية، والمعرفية في واجهة ذكية. مستلهمة من أمازون لتجربة موثوقة.
+        </div>
+
+        <div class="free-offer">
+            <h3 id="freeTitle">🎁 الشهر الأول مجاناً!</h3>
+            <p id="freeDesc">سجل الآن واحصل على باقة "أساس أسمرة" مجاناً مدى الحياة. هدفنا: 1000 إعلان حقيقي في أول 30 يوم.</p>
+            <a href="#" class="btn-free" id="freeBtn">🚀 ابدأ الآن – مجاناً</a>
+        </div>
+
+        <!-- DASHBOARD SECTION -->
+        <div class="dashboard-grid" id="dashboard">
+            <!-- تسجيل الدخول / إنشاء حساب -->
+            <div class="card">
+                <h3 id="loginTitle">🔐 تسجيل الدخول / حساب جديد</h3>
+                <input type="text" id="username" placeholder="📧 البريد الإلكتروني أو الهاتف">
+                <input type="password" id="password" placeholder="🔒 كلمة المرور">
+                <button class="btn" id="loginBtn">دخول</button>
+                <button class="btn" id="signupBtn" style="background:#c7a12b; color:#1e3a5f; margin-top:8px;">إنشاء حساب جديد</button>
+                <p id="loginMsg" style="font-size:0.8rem; margin-top:8px; color:green;"></p>
+            </div>
+
+            <!-- إدخال إعلان جديد -->
+            <div class="card">
+                <h3 id="adTitle">📝 إضافة إعلان جديد</h3>
+                <select id="adType">
+                    <option value="عقار">🏠 عقار</option>
+                    <option value="سيارة">🚗 سيارة</option>
+                    <option value="خدمة">🛠️ خدمة (شحن/بناء)</option>
+                    <option value="منتج">📦 منتج</option>
+                </select>
+                <input type="text" id="adName" placeholder="اسم الإعلان (مثال: شقة 3 غرف)">
+                <input type="number" id="adPrice" placeholder="السعر (نقرة أو دولار)">
+                <textarea id="adDesc" rows="2" placeholder="وصف تفصيلي..."></textarea>
+                <select id="adCity">
+                    <option value="أسمرة">🇪🇷 أسمرة</option>
+                    <option value="مصوع">🇪🇷 مصوع</option>
+                    <option value="كرن">🇪🇷 كرن</option>
+                </select>
+                <input type="file" id="adImage" accept="image/*">
+                <div class="image-preview" id="imagePreview"></div>
+                <button class="btn" id="publishAdBtn">📢 نشر الإعلان</button>
+                <p id="adMsg" style="font-size:0.8rem; margin-top:8px; color:#c7a12b;"></p>
             </div>
         </div>
 
-        <!-- External Links Buttons -->
-        <div class="external-links">
-            <a href="https://www.ethiopianairlines.com" target="_blank" rel="noopener noreferrer" class="btn-out"><i class="fas fa-plane"></i> Ethiopian Airlines</a>
-            <a href="https://www.flydubai.com" target="_blank" rel="noopener noreferrer" class="btn-out"><i class="fas fa-plane-departure"></i> FlyDubai</a>
-            <a href="https://www.turkishairlines.com" target="_blank" rel="noopener noreferrer" class="btn-out"><i class="fas fa-globe"></i> Turkish Airlines</a>
-        </div>
-
-        <!-- Services Cards -->
-        <div class="services">
-            <div class="card" id="aviation">
-                <div class="card-icon">✈️</div>
-                <h3 id="aviationTitle">بوابة الطيران الدولي</h3>
-                <ul id="aviationList">
-                    <li>تحديثات لحظية لرحلات Ethiopian, Turkish, FlyDubai</li>
-                    <li>بيانات المسارات الدقيقة (DXB ➜ ASM)</li>
-                    <li>نظام التحقق من التوافر لحجز سلس</li>
-                </ul>
-            </div>
-            <div class="card" id="realestate">
-                <div class="card-icon">🏠</div>
-                <h3 id="realEstateTitle">السوق العقاري الموثق</h3>
-                <ul id="realEstateList">
-                    <li>أفضل الوحدات السكنية في أحياء أسمرة الراقية</li>
-                    <li>ضمان الوكيل Verified Agent لحماية المغترب</li>
-                    <li>صور حقيقية ومشاريع مستقبلية</li>
-                </ul>
-            </div>
-            <div class="card" id="press">
-                <div class="card-icon">📰</div>
-                <h3 id="pressTitle">المركز الصحفي والوثائق</h3>
-                <ul id="pressList">
-                    <li>أرشيف رقمي لصحيفة "إريتريا الحديثة"</li>
-                    <li>مكتبة وثائق PDF للقرارات الوزارية</li>
-                    <li>متابعة شفافة للتطورات الحكومية</li>
-                </ul>
+        <!-- معرض الصور (الإعلانات المنشورة) -->
+        <div class="card" id="gallery">
+            <h3 id="galleryTitle">🖼️ آخر الإعلانات المضافة</h3>
+            <div class="gallery-grid" id="galleryGrid">
+                <!-- سيتم عرض الإعلانات هنا ديناميكياً -->
             </div>
         </div>
 
-        <!-- NEW SECTION: Official Institutions (Ministry of Trade, Press, Asmara Library) -->
-        <div class="institutions" id="institutions">
-            <h2 id="instTitle">🏛️ المؤسسات الرسمية في إريتريا</h2>
-            <div class="inst-grid">
-                <!-- وزارة التجارة والصناعة -->
-                <div class="inst-card">
-                    <div class="inst-icon"><i class="fas fa-building"></i></div>
-                    <h4 id="instTradeTitle">وزارة التجارة والصناعة</h4>
-                    <p id="instTradeDesc">الجهة المسؤولة عن تنظيم الاستثمار والتجارة في إريتريا، مقرها أسمرة. تابع عبر COMESA للحصول على معلومات الاتصال الرسمية.</p>
-                    <a href="https://www.comesa.int/state-of-eritrea/" target="_blank" rel="noopener noreferrer" class="inst-link">
-                        <i class="fas fa-external-link-alt"></i> <span id="instTradeLink">صفحة الوزارة على COMESA</span>
-                    </a>
-                </div>
-                <!-- الصحافة الإريترية - وزارة المعلومات -->
-                <div class="inst-card">
-                    <div class="inst-icon"><i class="fas fa-newspaper"></i></div>
-                    <h4 id="instPressTitle">وزارة المعلومات الإريترية</h4>
-                    <p id="instPressDesc">المصدر الرسمي للأخبار والبيانات الحكومية في إريتريا. يشمل الموقع الرسمي Shabait والإصدارات الصحفية.</p>
-                    <a href="http://www.shabait.com" target="_blank" rel="noopener noreferrer" class="inst-link">
-                        <i class="fas fa-external-link-alt"></i> <span id="instPressLink">Shabait.com - الموقع الرسمي</span>
-                    </a>
-                </div>
-                <!-- مكتبة أسمرة -->
-                <div class="inst-card">
-                    <div class="inst-icon"><i class="fas fa-landmark"></i></div>
-                    <h4 id="instLibraryTitle">مكتبة أسمرة (Research & Documentation)</h4>
-                    <p id="instLibraryDesc">مركز التوثيق والبحث التاريخي في العاصمة أسمرة. مصدر رئيسي للوثائق والمخطوطات والدراسات حول إريتريا.</p>
-                    <a href="#" id="asmaraLibraryLink" class="inst-link">
-                        <i class="fas fa-book"></i> <span id="instLibraryLinkText">معلومات المكتبة</span>
-                    </a>
-                </div>
+        <!-- التعليقات والتقييمات -->
+        <div class="card" id="reviews">
+            <h3 id="reviewsTitle">⭐ آراء وتقييمات المستخدمين</h3>
+            <div id="commentsList">
+                <div class="review"><div class="avatar">ع</div><div><strong>علي حسن</strong><div class="stars">★★★★★</div><p>منصة رائعة، ساعدتني أجد شقة في أسمرة بسهولة.</p></div></div>
+                <div class="review"><div class="avatar">س</div><div><strong>سلمى إبراهيم</strong><div class="stars">★★★★☆</div><p>خدمة الشحن سريعة وموثوقة. أنصح بها المغتربين.</p></div></div>
+                <div class="review"><div class="avatar">م</div><div><strong>محمد علي</strong><div class="stars">★★★★★</div><p>التاجر Pro خيار ممتاز لزيادة المبيعات.</p></div></div>
             </div>
+            <textarea id="newComment" rows="2" placeholder="أضف تعليقك وتقييمك..."></textarea>
+            <select id="ratingStars"><option value="5">★★★★★</option><option value="4">★★★★☆</option><option value="3">★★★☆☆</option></select>
+            <button class="btn" id="addCommentBtn" style="margin-top:8px;">أضف تعليق</button>
         </div>
 
-        <!-- Features Section -->
-        <div class="features" id="features">
-            <h2 id="featuresTitle">🚀 المميزات التقنية</h2>
-            <div class="feature-grid">
-                <div class="feature-item"><span class="feature-name" id="feat1Name">تعدد اللغات</span> <span class="feature-desc" id="feat1Desc">العربية، English، ትግርኛ</span></div>
-                <div class="feature-item"><span class="feature-name" id="feat2Name">تصميم متجاوب</span> <span class="feature-desc" id="feat2Desc">موبايل، تابلت، كمبيوتر</span></div>
-                <div class="feature-item"><span class="feature-name" id="feat3Name">أداء سحابي</span> <span class="feature-desc" id="feat3Desc">Vercel سرعة فائقة</span></div>
-                <div class="feature-item"><span class="feature-name" id="feat4Name">أمان SSL</span> <span class="feature-desc" id="feat4Desc">تشفير كامل</span></div>
-            </div>
+        <!-- الأقسام السابقة (المؤسسات، مصادر الدخل، إلخ) -->
+        <div class="old-sections">
+            <div class="card"><h3 id="revenueTitle">💰 مصادر الدخل</h3><p id="revText">اشتراكات Pro، عمولة الوساطة، إعلانات مثبتة.</p></div>
+            <div class="card"><h3 id="institutionTitle">🏛️ المؤسسات الرسمية</h3><p><a href="https://www.comesa.int/state-of-eritrea/" target="_blank">وزارة التجارة - COMESA</a> | <a href="http://www.shabait.com" target="_blank">Shabait.com</a></p></div>
         </div>
 
-        <!-- Brand Identity -->
-        <div class="brand">
-            <h2 id="brandTitle">🎨 الهوية البصرية (أمازونية الطابع)</h2>
-            <div class="color-palette">
-                <div class="color navy" id="navyText">أزرق داكن – رسمية واستقرار</div>
-                <div class="color gold" id="goldText">ذهبي – قيمة مضافة وفرص</div>
-            </div>
-            <p id="fontText">✔️ خطوط Tajawal & Sans-Serif لتجربة قراءة سلسة تشبه أمازون</p>
-        </div>
-
-        <!-- Target Audience -->
-        <div class="audience">
-            <h2 id="audienceTitle">🎯 الجمهور المستهدف</h2>
-            <ul class="audience-list">
-                <li id="aud1">🇪🇷 المغتربون الإريتريون</li>
-                <li id="aud2">💼 المستثمرون الأجانب</li>
-                <li id="aud3">🧳 المسافرون والسياح</li>
-            </ul>
-        </div>
-
-        <!-- Footer -->
-        <div class="footer">
-            <p id="footerText">Asmara.Store — منظومة متكاملة لرقمنة الخدمات الأساسية بأسلوب عصري (Amazon-style UX).</p>
-            <div class="verified">Verified by Asmara Store Agent • 2026</div>
-        </div>
+        <div class="footer"><div class="verified">Verified by Asmara Store Agent • 2026</div></div>
     </div>
 
     <script>
-        // Multilingual content
+        // Multilingual
         const translations = {
-            ar: {
-                tagline: "🇪🇷 جسر رقمي يربط المغترب بقلب الوطن",
-                vision: "المنصة الرقمية الأولى من نوعها التي تدمج خدمات الطيران، العقارات، والصحافة الرسمية في واجهة ذكية. مستلهمة من أمازون لتجربة موثوقة وسريعة.",
-                aviationTitle: "بوابة الطيران الدولي",
-                aviationList: ["تحديثات لحظية لرحلات Ethiopian, Turkish, FlyDubai", "بيانات المسارات الدقيقة (DXB ➜ ASM)", "نظام التحقق من التوافر لحجز سلس"],
-                realEstateTitle: "السوق العقاري الموثق",
-                realEstateList: ["أفضل الوحدات السكنية في أحياء أسمرة الراقية", "ضمان الوكيل Verified Agent لحماية المغترب", "صور حقيقية ومشاريع مستقبلية"],
-                pressTitle: "المركز الصحفي والوثائق",
-                pressList: ["أرشيف رقمي لصحيفة 'إريتريا الحديثة'", "مكتبة وثائق PDF للقرارات الوزارية", "متابعة شفافة للتطورات الحكومية"],
-                featuresTitle: "🚀 المميزات التقنية",
-                feat1Name: "تعدد اللغات", feat1Desc: "العربية، English، ትግርኛ",
-                feat2Name: "تصميم متجاوب", feat2Desc: "موبايل، تابلت، كمبيوتر",
-                feat3Name: "أداء سحابي", feat3Desc: "Vercel سرعة فائقة",
-                feat4Name: "أمان SSL", feat4Desc: "تشفير كامل",
-                brandTitle: "🎨 الهوية البصرية (أمازونية الطابع)",
-                navyText: "أزرق داكن – رسمية واستقرار",
-                goldText: "ذهبي – قيمة مضافة وفرص",
-                fontText: "✔️ خطوط Tajawal & Sans-Serif لتجربة قراءة سلسة تشبه أمازون",
-                audienceTitle: "🎯 الجمهور المستهدف",
-                aud1: "🇪🇷 المغتربون الإريتريون",
-                aud2: "💼 المستثمرون الأجانب",
-                aud3: "🧳 المسافرون والسياح",
-                footerText: "Asmara.Store — منظومة متكاملة لرقمنة الخدمات الأساسية بأسلوب عصري (Amazon-style UX).",
-                navAviation: "✈️ الطيران", navRealEstate: "🏠 عقارات", navPress: "📰 الصحافة", navInstitutions: "🏛️ مؤسسات", navFeatures: "⚙️ مميزات",
-                instTitle: "🏛️ المؤسسات الرسمية في إريتريا",
-                instTradeTitle: "وزارة التجارة والصناعة",
-                instTradeDesc: "الجهة المسؤولة عن تنظيم الاستثمار والتجارة في إريتريا، مقرها أسمرة. تابع عبر COMESA للحصول على معلومات الاتصال الرسمية.",
-                instTradeLink: "صفحة الوزارة على COMESA",
-                instPressTitle: "وزارة المعلومات الإريترية",
-                instPressDesc: "المصدر الرسمي للأخبار والبيانات الحكومية في إريتريا. يشمل الموقع الرسمي Shabait والإصدارات الصحفية.",
-                instPressLink: "Shabait.com - الموقع الرسمي",
-                instLibraryTitle: "مكتبة أسمرة (Research & Documentation)",
-                instLibraryDesc: "مركز التوثيق والبحث التاريخي في العاصمة أسمرة. مصدر رئيسي للوثائق والمخطوطات والدراسات حول إريتريا.",
-                instLibraryLinkText: "معلومات المكتبة"
-            },
-            en: {
-                tagline: "🇪🇷 A digital bridge connecting the diaspora to the heart of the homeland",
-                vision: "The first platform integrating aviation, real estate & official press. Amazon-inspired for trusted experience.",
-                aviationTitle: "International Aviation Hub",
-                aviationList: ["Live updates Ethiopian, Turkish, FlyDubai", "Accurate routes (DXB ➜ ASM)", "Availability verification"],
-                realEstateTitle: "Verified Real Estate",
-                realEstateList: ["Prime units in Asmara", "Verified Agent protection", "Real images & projects"],
-                pressTitle: "Official Press Center",
-                pressList: ["'Eritrea Moderna' archive", "PDF legal documents", "Transparent government updates"],
-                featuresTitle: "🚀 Tech Features",
-                feat1Name: "Multilingual", feat1Desc: "Arabic, English, Tigrinya",
-                feat2Name: "Responsive", feat2Desc: "Mobile/Tablet/Desktop",
-                feat3Name: "Cloud Speed", feat3Desc: "Vercel edge",
-                feat4Name: "SSL Security", feat4Desc: "Encrypted",
-                brandTitle: "🎨 Amazon-style Identity",
-                navyText: "Navy Blue - Trust & Stability",
-                goldText: "Gold - Value & Opportunities",
-                fontText: "✔️ Tajawal & Sans-Serif fonts for smooth reading",
-                audienceTitle: "🎯 Target Audience",
-                aud1: "🇪🇷 Eritrean Diaspora",
-                aud2: "💼 Foreign Investors",
-                aud3: "🧳 Travelers & Tourists",
-                footerText: "Asmara.Store — Digital ecosystem with Amazon-grade UX.",
-                navAviation: "✈️ Aviation", navRealEstate: "🏠 Real Estate", navPress: "📰 Press", navInstitutions: "🏛️ Institutions", navFeatures: "⚙️ Features",
-                instTitle: "🏛️ Official Institutions of Eritrea",
-                instTradeTitle: "Ministry of Trade & Industry",
-                instTradeDesc: "The authority responsible for trade and investment regulation in Eritrea, headquartered in Asmara.",
-                instTradeLink: "COMESA Page",
-                instPressTitle: "Ministry of Information",
-                instPressDesc: "Official source for news and government announcements. Includes Shabait website and press releases.",
-                instPressLink: "Shabait.com - Official Site",
-                instLibraryTitle: "Asmara Library (Research & Documentation)",
-                instLibraryDesc: "Documentation and historical research center in Asmara. Key source for manuscripts and studies on Eritrea.",
-                instLibraryLinkText: "Library Info"
-            },
-            ti: {
-                tagline: "🇪🇷 ርሑቓት ምስ ልቢ ሃገር ዘእሰር ዲጂታል ድልወት",
-                vision: "ንኣየር ፈላሚ፣ ሪል እስቴትን ወግዓዊ ጋዜጣን ዘዋህህድ ቀዳማይ መድረኽ።",
-                aviationTitle: "ዓለምለኻዊ ኣየር ፈላሚ",
-                aviationList: ["ቅጽበታዊ ምውሃብ Ethiopian, Turkish, FlyDubai", "ትክክለኛ መስመራት", "ቅድመ ምርጥራጽ"],
-                realEstateTitle: "ዋስትና ዘለዎ ሪል እስቴት",
-                realEstateList: ["ኣብ ኣስመራ ላዕለዎት ቤታት", "ዋስትና ኤጀንት", "ሓቀኛ ምስልታት"],
-                pressTitle: "ወግዓዊ ጋዜጣዊ ማእከል",
-                pressList: ["ዲጂታል መዛግብቲ ኤርትራ ሞደርና", "PDF ሰነዳት", "ንጹህ ሓበሬታ"],
-                featuresTitle: "🚀 ቴክኒካዊ መምርዒታት",
-                feat1Name: "ብዙሕ ቋንቋ", feat1Desc: "ኣረብኛ፣ እንግሊዘኛ፣ ትግርኛ",
-                feat2Name: "ምላሽ ምሃብ ዲዛይን", feat2Desc: "ሞባይል/ታብሌት",
-                feat3Name: "ክላውድ ፍጥነት", feat3Desc: "Vercel",
-                feat4Name: "SSL ዋስትና", feat4Desc: "ምስጢር ኮድ",
-                brandTitle: "🎨 ኣማዞን ዓይነት ምልላይ",
-                navyText: "ጸሊም ሰማያዊ - ምትእምማን",
-                goldText: "ወርቃማ - ዕድላት",
-                fontText: "✔️ ታጃዋልን ሳንስ ሰሪፍን",
-                audienceTitle: "🎯 ዕላማ ተመልከቲ",
-                aud1: "ርሑቓት ኤርትራውያን",
-                aud2: "ወጻኤውያን ምዕባለታት",
-                aud3: "ገደፍቲን በዓላትን",
-                footerText: "ኣስመራ.ስቶር — ዘመናዊ ዲጂታል ስርዓት (Amazon-style).",
-                navAviation: "✈️ ኣየር ፈላሚ", navRealEstate: "🏠 ሪል እስቴት", navPress: "📰 ጋዜጣ", navInstitutions: "🏛️ ተቋማት", navFeatures: "⚙️ መምርዒታት",
-                instTitle: "🏛️ ወግዓዊ ተቋማት ኤርትራ",
-                instTradeTitle: "ሚኒስትሪ ንግድን ኢንዱስትሪን",
-                instTradeDesc: "ንምዕባለታት ንግድን ኢንቨስትመንትን ዝከኣል ባለስልጣን፣ ዋና ቤቱ ኣስመራ።",
-                instTradeLink: "COMESA ገጽ",
-                instPressTitle: "ሚኒስትሪ ሓበሬታ",
-                instPressDesc: "ወግዓዊ ምንጪ ዜናን መንግስታዊ መግለጺታትን። መርበብ ሓበሬታ Shabait ዘሎዎ።",
-                instPressLink: "Shabait.com - ወግዓዊ ገጽ",
-                instLibraryTitle: "ቤተ-መጻሕፍቲ ኣስመራ",
-                instLibraryDesc:�ማእከል ሰነዳትን ታሪካዊ መጽናዕትን ኣብ ኣስመራ።",
-                instLibraryLinkText: "ሓበሬታ ቤተ-መጻሕፍቲ"
-            }
+            ar: { tagline:"جسر رقمي يربط المغترب بقلب الوطن", freeTitle:"🎁 الشهر الأول مجاناً!", freeDesc:"سجل الآن واحصل على باقة أساس أسمرة مجاناً مدى الحياة.", loginTitle:"🔐 تسجيل الدخول / حساب جديد", adTitle:"📝 إضافة إعلان جديد", galleryTitle:"🖼️ آخر الإعلانات المضافة", reviewsTitle:"⭐ آراء وتقييمات المستخدمين", revenueTitle:"💰 مصادر الدخل", revText:"اشتراكات Pro، عمولة الوساطة، إعلانات مثبتة.", institutionTitle:"🏛️ المؤسسات الرسمية" },
+            en: { tagline:"Digital bridge connecting diaspora to homeland", freeTitle:"🎁 First Month Free!", freeDesc:"Sign up now and get Asmara Basic plan free forever.", loginTitle:"🔐 Login / New Account", adTitle:"📝 Add New Ad", galleryTitle:"🖼️ Latest Ads", reviewsTitle:"⭐ User Reviews", revenueTitle:"💰 Revenue Streams", revText:"Pro subs, Agent commission, Featured ads.", institutionTitle:"🏛️ Official Institutions" },
+            ti: { tagline:"ርሑቓት ምስ ሃገር ዘእሰር ዲጂታል ድልወት", freeTitle:"🎁 ቀዳማይ ወርሒ ናጻ!", freeDesc:"ሕጂ ተመዝገቡን ናጻ ፕላን ርኸቡ።", loginTitle:"🔐 ምዝገባ", adTitle:"📝 ማስታወቂያ", galleryTitle:"🖼️ ማስታወቂያታት", reviewsTitle:"⭐ ርእይቶታት", revenueTitle:"💰 ምንጭታት ገቢ", revText:"Pro ምዝገባ፣ ኮሚሽን፣ ላዕሊ ማስታወቂያ", institutionTitle:"🏛️ ተቋማት" }
         };
-
         let currentLang = "ar";
         function updateLanguage(lang) {
             currentLang = lang;
             const t = translations[lang];
             if(!t) return;
             document.getElementById("tagline").innerText = t.tagline;
-            document.getElementById("visionText").innerText = t.vision;
-            document.getElementById("aviationTitle").innerText = t.aviationTitle;
-            const avList = document.getElementById("aviationList").children;
-            t.aviationList.forEach((txt,i)=>{if(avList[i]) avList[i].innerText=txt;});
-            document.getElementById("realEstateTitle").innerText = t.realEstateTitle;
-            const reList = document.getElementById("realEstateList").children;
-            t.realEstateList.forEach((txt,i)=>{if(reList[i]) reList[i].innerText=txt;});
-            document.getElementById("pressTitle").innerText = t.pressTitle;
-            const prList = document.getElementById("pressList").children;
-            t.pressList.forEach((txt,i)=>{if(prList[i]) prList[i].innerText=txt;});
-            document.getElementById("featuresTitle").innerText = t.featuresTitle;
-            document.getElementById("feat1Name").innerText = t.feat1Name;
-            document.getElementById("feat1Desc").innerText = t.feat1Desc;
-            document.getElementById("feat2Name").innerText = t.feat2Name;
-            document.getElementById("feat2Desc").innerText = t.feat2Desc;
-            document.getElementById("feat3Name").innerText = t.feat3Name;
-            document.getElementById("feat3Desc").innerText = t.feat3Desc;
-            document.getElementById("feat4Name").innerText = t.feat4Name;
-            document.getElementById("feat4Desc").innerText = t.feat4Desc;
-            document.getElementById("brandTitle").innerText = t.brandTitle;
-            document.getElementById("navyText").innerText = t.navyText;
-            document.getElementById("goldText").innerText = t.goldText;
-            document.getElementById("fontText").innerHTML = t.fontText;
-            document.getElementById("audienceTitle").innerText = t.audienceTitle;
-            document.getElementById("aud1").innerText = t.aud1;
-            document.getElementById("aud2").innerText = t.aud2;
-            document.getElementById("aud3").innerText = t.aud3;
-            document.getElementById("footerText").innerText = t.footerText;
-            document.getElementById("navAviation").innerText = t.navAviation;
-            document.getElementById("navRealEstate").innerText = t.navRealEstate;
-            document.getElementById("navPress").innerText = t.navPress;
-            document.getElementById("navInstitutions").innerText = t.navInstitutions;
-            document.getElementById("navFeatures").innerText = t.navFeatures;
-            // Institutions section
-            document.getElementById("instTitle").innerHTML = t.instTitle;
-            document.getElementById("instTradeTitle").innerText = t.instTradeTitle;
-            document.getElementById("instTradeDesc").innerText = t.instTradeDesc;
-            document.getElementById("instTradeLink").innerText = t.instTradeLink;
-            document.getElementById("instPressTitle").innerText = t.instPressTitle;
-            document.getElementById("instPressDesc").innerText = t.instPressDesc;
-            document.getElementById("instPressLink").innerText = t.instPressLink;
-            document.getElementById("instLibraryTitle").innerText = t.instLibraryTitle;
-            document.getElementById("instLibraryDesc").innerText = t.instLibraryDesc;
-            document.getElementById("instLibraryLinkText").innerText = t.instLibraryLinkText;
+            document.getElementById("freeTitle").innerHTML = t.freeTitle;
+            document.getElementById("freeDesc").innerText = t.freeDesc;
+            document.getElementById("loginTitle").innerHTML = t.loginTitle;
+            document.getElementById("adTitle").innerHTML = t.adTitle;
+            document.getElementById("galleryTitle").innerHTML = t.galleryTitle;
+            document.getElementById("reviewsTitle").innerHTML = t.reviewsTitle;
+            document.getElementById("revenueTitle").innerHTML = t.revenueTitle;
+            document.getElementById("revText").innerText = t.revText;
+            document.getElementById("institutionTitle").innerHTML = t.institutionTitle;
             document.body.className = `lang-${lang}`;
-            document.body.dir = (lang === 'en') ? 'ltr' : 'rtl';
-            document.querySelectorAll('.lang-btn').forEach(btn=>{
-                if(btn.dataset.lang === lang) btn.classList.add('active');
-                else btn.classList.remove('active');
-            });
+            document.body.dir = lang === 'en' ? 'ltr' : 'rtl';
+            document.querySelectorAll('.lang-btn').forEach(btn=>{ if(btn.dataset.lang === lang) btn.classList.add('active'); else btn.classList.remove('active'); });
         }
-        document.querySelectorAll('.lang-btn').forEach(btn=>{
-            btn.addEventListener('click',()=>updateLanguage(btn.dataset.lang));
-        });
+        document.querySelectorAll('.lang-btn').forEach(btn=>{ btn.addEventListener('click',()=>updateLanguage(btn.dataset.lang)); });
         updateLanguage('ar');
 
-        // Smooth scroll for internal links
-        document.querySelectorAll('.nav-links a').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                const hash = this.getAttribute('href');
-                if(hash && hash !== '#') {
-                    e.preventDefault();
-                    const target = document.querySelector(hash);
-                    if(target) target.scrollIntoView({ behavior: 'smooth' });
-                }
-            });
-        });
-
-        // Asmara Library link (no official site found)
-        const libraryLink = document.getElementById('asmaraLibraryLink');
-        if(libraryLink) {
-            libraryLink.addEventListener('click', (e) => {
-                e.preventDefault();
-                const msg = currentLang === 'ar' ? '📚 معلومات مكتبة أسمرة: المكتبة الوطنية في العاصمة أسمرة. للاستفسار يمكن التواصل مع وزارة المعلومات الإريترية عبر Shabait.com' : 
-                           (currentLang === 'en' ? '📚 Asmara Library Info: The national library in Asmara. For inquiries, please contact the Ministry of Information via Shabait.com' :
-                            '📚 ሓበሬታ ቤተ-መጻሕፍቲ ኣስመራ፦ ብዛዕባ ሰነዳትን መጻሕፍቲን ንምርካብ ንሚኒስትሪ ሓበሬታ ብ Shabait.com ርኸቡ።');
-                alert(msg);
+        // Mock data for ads
+        let ads = [
+            { id:1, type:"عقار", name:"شقة فاخرة - تيرفولو", price:"$85,000", desc:"3 غرف، موقع ممتاز", city:"أسمرة", image:"https://placehold.co/300x200/1e3a5f/white?text=Asmara+Apartment" },
+            { id:2, type:"سيارة", name:"تويوتا لاندكروزر", price:"$32,000", desc:"موديل 2020", city:"أسمرة", image:"https://placehold.co/300x200/c7a12b/white?text=Land+Cruiser" },
+            { id:3, type:"خدمة", name:"شحن من دبي إلى أسمرة", price:"$299", desc:"شحن سريع وموثوق", city:"مصوع", image:"https://placehold.co/300x200/2c5a82/white?text=Shipping" }
+        ];
+        function renderGallery() {
+            const gallery = document.getElementById("galleryGrid");
+            gallery.innerHTML = "";
+            ads.forEach(ad => {
+                const div = document.createElement("div");
+                div.className = "gallery-item";
+                div.innerHTML = `<img src="${ad.image}" alt="${ad.name}"><h4>${ad.name}</h4><p>${ad.type} | ${ad.price}<br>📍 ${ad.city}</p>`;
+                gallery.appendChild(div);
             });
         }
+        renderGallery();
+
+        // Image preview
+        document.getElementById("adImage").addEventListener("change", function(e) {
+            const preview = document.getElementById("imagePreview");
+            preview.innerHTML = "";
+            const file = e.target.files[0];
+            if(file) {
+                const reader = new FileReader();
+                reader.onload = function(ev) {
+                    const img = document.createElement("img");
+                    img.src = ev.target.result;
+                    img.style.width = "70px"; img.style.height = "70px"; img.style.objectFit = "cover"; img.style.borderRadius = "12px";
+                    preview.appendChild(img);
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+
+        // Publish ad
+        document.getElementById("publishAdBtn").addEventListener("click", () => {
+            const type = document.getElementById("adType").value;
+            const name = document.getElementById("adName").value;
+            const price = document.getElementById("adPrice").value;
+            const desc = document.getElementById("adDesc").value;
+            const city = document.getElementById("adCity").value;
+            const fileInput = document.getElementById("adImage");
+            let imgUrl = "https://placehold.co/300x200/1e3a5f/white?text=New+Ad";
+            if(fileInput.files.length > 0) {
+                const reader = new FileReader();
+                reader.onload = function(e) { imgUrl = e.target.result; };
+                reader.readAsDataURL(fileInput.files[0]);
+            }
+            if(name && price) {
+                const newAd = { id: ads.length+1, type, name, price: `$${price}`, desc, city, image: imgUrl };
+                ads.unshift(newAd);
+                renderGallery();
+                document.getElementById("adMsg").innerText = currentLang === 'ar' ? "✅ تم نشر الإعلان بنجاح!" : (currentLang === 'en' ? "✅ Ad published!" : "✅ ማስታወቂያ ተሓቲሙ!");
+                document.getElementById("adName").value = "";
+                document.getElementById("adPrice").value = "";
+                document.getElementById("adDesc").value = "";
+                document.getElementById("adImage").value = "";
+                document.getElementById("imagePreview").innerHTML = "";
+            } else {
+                document.getElementById("adMsg").innerText = currentLang === 'ar' ? "❌ يرجى ملء الاسم والسعر" : "❌ Please fill name and price";
+            }
+        });
+
+        // Login simulation
+        document.getElementById("loginBtn").addEventListener("click", () => {
+            document.getElementById("loginMsg").innerText = currentLang === 'ar' ? "✅ تم تسجيل الدخول كـ 'مغترب' (وضع تجريبي)" : "✅ Logged in as 'Diaspora' (demo)";
+        });
+        document.getElementById("signupBtn").addEventListener("click", () => {
+            document.getElementById("loginMsg").innerText = currentLang === 'ar' ? "📝 تم إنشاء حساب تجريبي. يمكنك الآن إضافة إعلانات." : "📝 Demo account created. You can now post ads.";
+        });
+        document.getElementById("freeBtn").addEventListener("click", (e) => { e.preventDefault(); alert(currentLang === 'ar' ? "🚀 سيتم تفعيل التسجيل قريباً. سجّل اهتمامك الآن!" : "🚀 Registration coming soon!"); });
+
+        // Add comment
+        document.getElementById("addCommentBtn").addEventListener("click", () => {
+            const commentText = document.getElementById("newComment").value;
+            const rating = document.getElementById("ratingStars").value;
+            if(commentText.trim() === "") return;
+            const starsHtml = "★".repeat(parseInt(rating)) + "☆".repeat(5-parseInt(rating));
+            const newReview = document.createElement("div");
+            newReview.className = "review";
+            newReview.innerHTML = `<div class="avatar">ج</div><div><strong>${currentLang === 'ar' ? 'مستخدم جديد' : 'New User'}</strong><div class="stars">${starsHtml}</div><p>${commentText}</p></div>`;
+            document.getElementById("commentsList").prepend(newReview);
+            document.getElementById("newComment").value = "";
+        });
     </script>
 </body>
 </html>
