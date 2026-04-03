@@ -3,10 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Asmara.Store | المنصة الرقمية الأولى في إريتريا</title>
-    <meta name="description" content="Asmara.Store - منصة موثوقة للمغتربين والتجار في إريتريا. إعلانات، عقارات، شحن، وخدمات">
+    <title>Asmara.Store | منصة إريتريا المتكاملة - مراسلة وتقييمات</title>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -14,7 +12,6 @@
         body.lang-en { direction: ltr; text-align: left; }
         body.lang-ti { direction: rtl; text-align: right; }
 
-        /* Navbar */
         .amazon-nav {
             background: #1e3a5f;
             color: white;
@@ -30,89 +27,81 @@
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
         .nav-logo { font-size: 1.8rem; font-weight: 800; background: linear-gradient(135deg, #fff, #f5e7c8); -webkit-background-clip: text; background-clip: text; color: transparent; }
-        .nav-links { display: flex; gap: 1rem; flex-wrap: wrap; }
-        .nav-links a { color: #f0f4fa; text-decoration: none; font-weight: 600; font-size: 0.85rem; transition: 0.2s; border-bottom: 2px solid transparent; }
-        .nav-links a:hover { color: #c7a12b; border-bottom-color: #c7a12b; }
+        .nav-links { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+        .nav-links a { color: #f0f4fa; text-decoration: none; font-weight: 600; font-size: 0.75rem; transition: 0.2s; border-bottom: 2px solid transparent; cursor: pointer; }
+        .nav-links a:hover, .nav-links a.active { color: #c7a12b; border-bottom-color: #c7a12b; }
         .lang-switch { display: flex; gap: 0.5rem; }
         .lang-btn { background: #2c5a82; border: none; padding: 0.3rem 0.9rem; border-radius: 20px; font-family: inherit; font-weight: 500; font-size: 0.8rem; cursor: pointer; color: white; transition: 0.2s; }
         .lang-btn.active { background: #c7a12b; color: #1e3a5f; }
-        .lang-btn:hover { background: #c7a12b; color: #1e3a5f; }
         .container { max-width: 1400px; margin: 0 auto; padding: 1.5rem; }
 
-        /* Hero */
-        .hero { text-align: center; margin-bottom: 2rem; background: white; border-radius: 36px; padding: 2rem; box-shadow: 0 12px 30px rgba(0,0,0,0.05); }
-        .tagline { font-size: 1.3rem; color: #c7a12b; font-weight: 700; margin: 0.5rem 0; }
-        .vision-text { max-width: 800px; margin: 1rem auto 0; font-size: 1rem; color: #2d3e5f; }
+        .hero { text-align: center; margin-bottom: 1.5rem; background: white; border-radius: 36px; padding: 1.5rem; box-shadow: 0 12px 30px rgba(0,0,0,0.05); }
+        .tagline { font-size: 1.2rem; color: #c7a12b; font-weight: 700; }
 
-        /* Free Offer */
-        .free-offer { background: linear-gradient(135deg, #c7a12b, #e6b422); color: #1e3a5f; border-radius: 28px; padding: 1.2rem; margin: 1rem 0; text-align: center; }
-        .btn-free { background: #1e3a5f; color: white; padding: 0.6rem 1.5rem; border-radius: 60px; text-decoration: none; font-weight: 700; display: inline-block; transition: 0.2s; }
-        .btn-free:hover { background: #0f2a44; transform: scale(1.02); }
+        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 1rem; margin-bottom: 1.5rem; }
+        .stat-card { background: linear-gradient(135deg, #1e3a5f, #2c5282); color: white; border-radius: 24px; padding: 1rem; text-align: center; }
+        .stat-number { font-size: 1.8rem; font-weight: 800; }
+        .stat-label { font-size: 0.75rem; opacity: 0.9; }
 
-        /* Value Props */
-        .value-props { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.8rem; margin: 2rem 0; }
-        .prop-card { background: white; border-radius: 28px; padding: 1.5rem; border-top: 6px solid #c7a12b; box-shadow: 0 6px 14px rgba(0,0,0,0.05); }
-        .prop-card h3 { font-size: 1.4rem; color: #1e3a5f; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem; }
-        .prop-card ul { list-style: none; padding: 0; }
-        .prop-card li { margin-bottom: 0.6rem; padding-right: 1.5rem; position: relative; }
-        .prop-card li::before { content: "✓"; color: #c7a12b; font-weight: bold; position: absolute; right: 0; }
-        body.lang-en .prop-card li::before { right: auto; left: 0; }
-        body.lang-en .prop-card li { padding-right: 0; padding-left: 1.5rem; }
+        .tabs { display: flex; gap: 0.3rem; flex-wrap: wrap; margin-bottom: 1.5rem; border-bottom: 2px solid #e2e8f0; padding-bottom: 0.5rem; }
+        .tab-btn { background: transparent; border: none; padding: 0.5rem 0.8rem; font-size: 0.75rem; font-weight: 600; cursor: pointer; border-radius: 40px; transition: 0.2s; color: #4a627a; }
+        .tab-btn.active { background: #1e3a5f; color: white; }
+        .tab-pane { display: none; animation: fadeIn 0.3s; }
+        .tab-pane.active-pane { display: block; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
-        /* Plans */
-        .plans { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.8rem; margin: 1.5rem 0; }
-        .plan { background: white; border-radius: 28px; padding: 1.5rem; transition: 0.2s; border: 1px solid #e2e8f0; }
-        .plan:hover { transform: translateY(-5px); box-shadow: 0 20px 30px -12px rgba(0,0,0,0.15); }
-        .plan-name { font-size: 1.5rem; font-weight: 800; color: #1e3a5f; }
-        .plan-price { font-size: 1.8rem; font-weight: 800; color: #c7a12b; margin: 0.5rem 0; }
-        .btn-plan { background: #1e3a5f; color: white; padding: 0.5rem 1rem; border-radius: 40px; text-decoration: none; font-weight: 600; display: inline-block; transition: 0.2s; border: none; cursor: pointer; }
-        .btn-plan:hover { background: #c7a12b; color: #1e3a5f; }
-
-        /* Dashboard Grid */
-        .dashboard-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 1.8rem; margin: 2rem 0; }
-        .card { background: white; border-radius: 28px; padding: 1.5rem; box-shadow: 0 6px 14px rgba(0,0,0,0.05); border: 1px solid #eef2f8; }
-        .card h3 { font-size: 1.4rem; color: #1e3a5f; margin-bottom: 1rem; border-right: 4px solid #c7a12b; padding-right: 0.8rem; }
+        .card { background: white; border-radius: 28px; padding: 1.5rem; margin-bottom: 1.5rem; box-shadow: 0 6px 14px rgba(0,0,0,0.05); border: 1px solid #eef2f8; }
+        .card h3 { font-size: 1.3rem; color: #1e3a5f; margin-bottom: 1rem; border-right: 4px solid #c7a12b; padding-right: 0.8rem; }
         body.lang-en .card h3 { border-right: none; border-left: 4px solid #c7a12b; padding-right: 0; padding-left: 0.8rem; }
         input, select, textarea { width: 100%; padding: 0.7rem; margin: 0.5rem 0; border: 1px solid #ccc; border-radius: 16px; font-family: inherit; }
         .btn { background: #1e3a5f; color: white; border: none; padding: 0.7rem 1.2rem; border-radius: 40px; font-weight: 600; cursor: pointer; width: 100%; transition: 0.2s; }
         .btn:hover { background: #c7a12b; color: #1e3a5f; }
+        .btn-sm { width: auto; padding: 0.4rem 1rem; display: inline-block; }
+        .btn-gold { background: #c7a12b; color: #1e3a5f; }
+        .paypal-btn { background: #0070ba; color: white; display: flex; align-items: center; justify-content: center; gap: 8px; }
+
+        .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 1.5rem; }
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 1rem; margin-top: 1rem; }
+        .gallery-item { background: #fafcff; border-radius: 20px; padding: 0.8rem; border: 1px solid #eef2f8; transition: 0.2s; cursor: pointer; }
+        .gallery-item:hover { transform: translateY(-3px); box-shadow: 0 6px 12px rgba(0,0,0,0.1); }
+        .gallery-item img { width: 100%; height: 130px; object-fit: cover; border-radius: 16px; }
+        .gallery-item h4 { font-size: 0.9rem; margin: 0.5rem 0; }
+        .gallery-item p { font-size: 0.7rem; color: #4a627a; }
+        .badge { display: inline-block; background: #c7a12b; color: #1e3a5f; padding: 0.2rem 0.6rem; border-radius: 20px; font-size: 0.65rem; font-weight: bold; }
+        .rating-stars { color: #c7a12b; font-size: 0.8rem; margin: 0.2rem 0; }
         .image-preview { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.5rem; }
-        .image-preview img { width: 70px; height: 70px; object-fit: cover; border-radius: 12px; border: 1px solid #ddd; }
+        .image-preview img { width: 60px; height: 60px; object-fit: cover; border-radius: 12px; }
 
-        /* Gallery */
-        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1rem; margin-top: 1rem; }
-        .gallery-item { background: #fafcff; border-radius: 20px; padding: 0.8rem; border: 1px solid #eef2f8; }
-        .gallery-item img { width: 100%; height: 150px; object-fit: cover; border-radius: 16px; background: #eef2f8; }
-        .gallery-item h4 { font-size: 1rem; margin: 0.5rem 0; }
-        .gallery-item p { font-size: 0.8rem; color: #4a627a; }
+        /* Messaging */
+        .chat-list { max-height: 300px; overflow-y: auto; border: 1px solid #eef2f8; border-radius: 20px; padding: 0.5rem; }
+        .chat-message { padding: 0.8rem; border-bottom: 1px solid #eef2f8; display: flex; justify-content: space-between; align-items: flex-start; gap: 0.5rem; }
+        .chat-message:last-child { border-bottom: none; }
+        .message-sender { font-weight: 700; color: #1e3a5f; }
+        .message-text { margin-top: 0.2rem; font-size: 0.85rem; }
+        .message-time { font-size: 0.65rem; color: #aaa; }
+        .chat-input-area { display: flex; gap: 0.5rem; margin-top: 1rem; }
+        .chat-input-area input { flex: 1; margin: 0; }
 
-        /* Comments */
-        .review { border-bottom: 1px solid #eee; padding: 0.8rem 0; display: flex; gap: 0.8rem; align-items: flex-start; }
-        .stars { color: #c7a12b; margin: 0.2rem 0; }
-        .avatar { width: 40px; height: 40px; background: #c7a12b; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; flex-shrink: 0; }
-
-        /* Revenue & Institutions */
-        .revenue-banner { background: #1e2f3f; color: white; border-radius: 28px; padding: 1.5rem; margin: 1.5rem 0; }
-        .revenue-banner h3 { color: #c7a12b; margin-bottom: 0.8rem; }
-        .inst-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin: 1rem 0; }
-        .inst-card { background: #fafcff; border-radius: 20px; padding: 1rem; text-align: center; }
-        .inst-link { background: #1e3a5f; color: white; padding: 0.4rem 1rem; border-radius: 30px; text-decoration: none; font-size: 0.8rem; display: inline-block; margin-top: 0.6rem; }
-
-        .section-title { font-size: 1.6rem; font-weight: 700; color: #1e3a5f; margin: 1.5rem 0 1rem 0; border-right: 6px solid #c7a12b; padding-right: 1rem; }
-        body.lang-en .section-title { border-right: none; border-left: 6px solid #c7a12b; padding-right: 0; padding-left: 1rem; }
         .footer { text-align: center; margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid #cbdde9; font-size: 0.85rem; }
         .verified { font-weight: 700; color: #c7a12b; margin-top: 0.5rem; }
-        @media (max-width: 700px) { .amazon-nav { flex-direction: column; text-align: center; } .nav-links { justify-content: center; } }
+        @media (max-width: 700px) { .amazon-nav { flex-direction: column; text-align: center; } .nav-links { justify-content: center; } .tabs { justify-content: center; } }
     </style>
 </head>
 <body class="lang-ar">
     <div class="amazon-nav">
         <div class="nav-logo">Asmara.Store</div>
         <div class="nav-links">
-            <a href="#value" id="navValue">💎 القيمة</a>
-            <a href="#plans" id="navPlans">📦 الباقات</a>
-            <a href="#dashboard" id="navDashboard">📋 لوحة التحكم</a>
-            <a href="#institutions" id="navInstitutions">🏛️ مؤسسات</a>
+            <a class="nav-tab-link" data-tab="dashboard">📊 إحصائيات</a>
+            <a class="nav-tab-link" data-tab="institutions">🏛️ مؤسسات</a>
+            <a class="nav-tab-link" data-tab="flight">✈️ طيران</a>
+            <a class="nav-tab-link" data-tab="realestate">🏠 عقارات</a>
+            <a class="nav-tab-link" data-tab="electronics">📱 إلكترونيات</a>
+            <a class="nav-tab-link" data-tab="cars">🚗 سيارات</a>
+            <a class="nav-tab-link" data-tab="jobs">💼 وظائف</a>
+            <a class="nav-tab-link" data-tab="general">📋 عام</a>
+            <a class="nav-tab-link" data-tab="payment">💳 دفع</a>
+            <a class="nav-tab-link" data-tab="messaging">💬 مراسلة</a>
+            <a class="nav-tab-link" data-tab="ratings">⭐ تقييمات</a>
         </div>
         <div class="lang-switch">
             <button class="lang-btn" data-lang="ar">عربي</button>
@@ -122,399 +111,324 @@
     </div>
 
     <div class="container">
-        <!-- Hero -->
         <div class="hero">
             <div style="font-size:2rem; font-weight:800;">🇪🇷 Asmara.Store</div>
-            <div class="tagline" id="tagline">"جسر رقمي يربط المغترب بقلب الوطن"</div>
-            <div class="vision-text" id="visionText">المنصة الأولى التي تجمع المغتربين والتجار المحليين في إريتريا. إعلانات موثوقة، شحن، عقارات، وخدمات.</div>
+            <div class="tagline" id="tagline">"مراسلة، تقييمات، دفع آمن - منصة إريتريا المتكاملة"</div>
         </div>
 
-        <!-- Free Offer -->
-        <div class="free-offer">
-            <h3 id="freeTitle">🎁 الشهر الأول مجاناً!</h3>
-            <p id="freeDesc">سجل الآن واحصل على باقة "أساس أسمرة" مجاناً مدى الحياة (3 إعلانات نشطة). هدفنا: 1000 إعلان حقيقي في أول 30 يوم.</p>
-            <a href="#" class="btn-free" id="freeBtn">🚀 ابدأ الآن – مجاناً</a>
-        </div>
-
-        <!-- Value Propositions -->
-        <div class="value-props" id="value">
-            <div class="prop-card">
-                <h3><i class="fas fa-globe"></i> <span id="diasporaTitle">للمغترب</span></h3>
-                <ul id="diasporaList">
-                    <li>🔒 الأمان والثقة في كل معاملة</li>
-                    <li>📦 تتبع الطلبات والشحن لحظة بلحظة</li>
-                    <li>✅ الوصول لمقدمي خدمات موثوقين في أسمرة ومصوع</li>
-                </ul>
+        <!-- ========== DASHBOARD ========== -->
+        <div id="dashboardPane" class="tab-pane active-pane">
+            <div class="stats-grid">
+                <div class="stat-card"><div class="stat-number" id="statAds">0</div><div class="stat-label" id="statAdsLabel">إجمالي الإعلانات</div></div>
+                <div class="stat-card"><div class="stat-number" id="statViews">0</div><div class="stat-label" id="statViewsLabel">مشاهدة اليوم</div></div>
+                <div class="stat-card"><div class="stat-number" id="statUsers">0</div><div class="stat-label" id="statUsersLabel">مستخدمين نشطين</div></div>
+                <div class="stat-card"><div class="stat-number" id="statRevenue">$0</div><div class="stat-label" id="statRevenueLabel">إيرادات الشهر</div></div>
             </div>
-            <div class="prop-card">
-                <h3><i class="fas fa-store"></i> <span id="merchantTitle">للتاجر المحلي</span></h3>
-                <ul id="merchantList">
-                    <li>💵 الوصول لعملة صعبة عبر اشتراكات المغتربين</li>
-                    <li>📈 زيادة المبيعات عبر منصة منظمة بـ 3 لغات</li>
-                    <li>🏅 ظهور موثوق يزيد ثقة العملاء</li>
-                </ul>
+            <div class="card"><h3 id="statsTitle">📈 أداء إعلاناتك</h3><div id="adPerformanceList"></div></div>
+        </div>
+
+        <!-- ========== INSTITUTIONS ========== -->
+        <div id="institutionsPane" class="tab-pane">
+            <div class="grid-2">
+                <div class="card"><h3 id="instTradeTitle">🏛️ وزارة التجارة</h3><p id="instTradeDesc">تنظيم الاستثمار والتجارة</p><a href="https://www.comesa.int/state-of-eritrea/" target="_blank" class="btn-sm btn">🔗 COMESA</a></div>
+                <div class="card"><h3 id="instPressTitle">📰 وزارة المعلومات</h3><p id="instPressDesc">المصدر الرسمي للأخبار</p><a href="http://www.shabait.com" target="_blank" class="btn-sm btn">🔗 Shabait.com</a></div>
+                <div class="card"><h3 id="instLibraryTitle">📚 مكتبة أسمرة</h3><p id="instLibraryDesc">مركز التوثيق</p><button id="libraryInfoBtn" class="btn-sm btn">ℹ️ معلومات</button></div>
             </div>
         </div>
 
-        <!-- Pricing Plans -->
-        <div id="plans">
-            <h2 class="section-title" id="pricingTitle">🏷️ باقات الاشتراك (بعد الشهر المجاني)</h2>
-            <div class="plans">
-                <div class="plan">
-                    <div class="plan-name" id="planBasicName">أساس أسمرة</div>
-                    <div class="plan-price" id="planBasicPrice">مجاني <small id="basicPeriod">مدى الحياة</small></div>
-                    <ul class="plan-features" id="planBasicFeatures" style="list-style:none; margin:0.5rem 0;">
-                        <li>✓ 3 إعلانات نشطة</li>
-                        <li>✓ دعم بالعربية</li>
-                    </ul>
-                    <button class="btn-plan" id="btnBasic">اختر الباقة</button>
+        <!-- ========== FLIGHT ========== -->
+        <div id="flightPane" class="tab-pane">
+            <div class="grid-2">
+                <div class="card"><h3 id="flightSearchTitle">✈️ البحث عن رحلة</h3>
+                    <select id="flightFrom"><option value="DXB">دبي</option><option value="JED">جدة</option><option value="CAI">القاهرة</option><option value="ADD">أديس أبابا</option></select>
+                    <input type="date" id="flightDate" value="2026-05-15">
+                    <button class="btn" id="searchFlightBtn">🔍 بحث</button>
+                    <div id="flightResults" class="flight-result"></div>
                 </div>
-                <div class="plan">
-                    <div class="plan-name" id="planProName">تجاري Pro</div>
-                    <div class="plan-price" id="planProPrice">$29 <small id="proPeriod">/ شهرياً</small></div>
-                    <ul class="plan-features" id="planProFeatures" style="list-style:none; margin:0.5rem 0;">
-                        <li>✓ إعلانات غير محدودة</li>
-                        <li>✓ إحصائيات متقدمة</li>
-                        <li>✓ أولوية الدعم</li>
-                    </ul>
-                    <button class="btn-plan" id="btnPro">اشترك الآن</button>
-                </div>
-                <div class="plan">
-                    <div class="plan-name" id="planAgentName">وكيل معتمد</div>
-                    <div class="plan-price" id="planAgentPrice">$99 <small id="agentPeriod">/ شهرياً</small></div>
-                    <ul class="plan-features" id="planAgentFeatures" style="list-style:none; margin:0.5rem 0;">
-                        <li>✓ عمولة على كل صفقة</li>
-                        <li>✓ حساب موثق</li>
-                        <li>✓ إعلانات مثبتة مجانية</li>
-                    </ul>
-                    <button class="btn-plan" id="btnAgent">كن وكيلاً</button>
+                <div class="card"><h3 id="bookingInfoTitle">📋 معلومات الحجز</h3>
+                    <input type="text" id="passengerName" placeholder="الاسم الكامل">
+                    <input type="email" id="passengerEmail" placeholder="البريد">
+                    <button class="btn" id="confirmBookingBtn">✅ تأكيد</button>
+                    <p id="bookingMsg"></p>
                 </div>
             </div>
         </div>
 
-        <!-- Dashboard: Login + Add Ad -->
-        <div class="dashboard-grid" id="dashboard">
-            <div class="card">
-                <h3 id="loginTitle">🔐 تسجيل الدخول / حساب جديد</h3>
-                <input type="text" id="username" placeholder="📧 البريد الإلكتروني أو الهاتف">
-                <input type="password" id="password" placeholder="🔒 كلمة المرور">
-                <button class="btn" id="loginBtn">دخول</button>
-                <button class="btn" id="signupBtn" style="background:#c7a12b; color:#1e3a5f; margin-top:8px;">إنشاء حساب جديد</button>
-                <p id="loginMsg" style="font-size:0.8rem; margin-top:8px; color:green;"></p>
+        <!-- ========== REAL ESTATE ========== -->
+        <div id="realestatePane" class="tab-pane"><div class="grid-2"><div class="card"><h3>🏠 إضافة عقار</h3><select id="reType"><option>شقة</option><option>فيلا</option><option>أرض</option></select><input id="reName" placeholder="الوصف"><input id="rePrice" type="number" placeholder="السعر"><textarea id="reDesc" rows="2" placeholder="التفاصيل"></textarea><select id="reCity"><option>أسمرة</option><option>مصوع</option></select><input type="file" id="reImage" accept="image/*"><div class="image-preview" id="rePreview"></div><button class="btn" id="publishReBtn">نشر</button><p id="reMsg"></p></div><div class="card"><h3>🖼️ المعرض</h3><div id="realEstateGallery" class="gallery-grid"></div></div></div></div>
+
+        <!-- ========== ELECTRONICS ========== -->
+        <div id="electronicsPane" class="tab-pane"><div class="grid-2"><div class="card"><h3>📱 إضافة جهاز</h3><select id="elecType"><option>هاتف</option><option>لابتوب</option><option>جهاز لوحي</option></select><input id="elecName" placeholder="المنتج"><input id="elecPrice" type="number" placeholder="السعر"><textarea id="elecDesc" rows="2" placeholder="المواصفات"></textarea><select id="elecCity"><option>أسمرة</option><option>مصوع</option></select><input type="file" id="elecImage"><div class="image-preview" id="elecPreview"></div><button class="btn" id="publishElecBtn">نشر</button><p id="elecMsg"></p></div><div class="card"><h3>🖼️ المعرض</h3><div id="electronicsGallery" class="gallery-grid"></div></div></div></div>
+
+        <!-- ========== CARS ========== -->
+        <div id="carsPane" class="tab-pane"><div class="grid-2"><div class="card"><h3>🚗 إضافة سيارة</h3><select id="carType"><option>سيارة جديدة</option><option>سيارة مستعملة</option><option>دراجة نارية</option></select><input id="carName" placeholder="الماركة"><input id="carPrice" type="number" placeholder="السعر"><textarea id="carDesc" rows="2" placeholder="المميزات"></textarea><select id="carCity"><option>أسمرة</option><option>مصوع</option></select><input type="file" id="carImage"><div class="image-preview" id="carPreview"></div><button class="btn" id="publishCarBtn">نشر</button><p id="carMsg"></p></div><div class="card"><h3>🖼️ المعرض</h3><div id="carsGallery" class="gallery-grid"></div></div></div></div>
+
+        <!-- ========== JOBS ========== -->
+        <div id="jobsPane" class="tab-pane"><div class="grid-2"><div class="card"><h3>💼 إضافة وظيفة</h3><select id="jobType"><option>دوام كامل</option><option>دوام جزئي</option></select><input id="jobTitle" placeholder="المسمى"><input id="jobCompany" placeholder="الشركة"><input id="jobSalary" type="number" placeholder="الراتب"><textarea id="jobDesc" rows="2" placeholder="المتطلبات"></textarea><select id="jobCity"><option>أسمرة</option><option>مصوع</option></select><button class="btn" id="publishJobBtn">نشر</button><p id="jobMsg"></p></div><div class="card"><h3>🖼️ الوظائف</h3><div id="jobsGallery" class="gallery-grid"></div></div></div></div>
+
+        <!-- ========== GENERAL ADS ========== -->
+        <div id="generalPane" class="tab-pane"><div class="grid-2"><div class="card"><h3>📝 إعلان عام</h3><select id="adType"><option>خدمة</option><option>منتج</option></select><input id="adName" placeholder="العنوان"><input id="adPrice" type="number" placeholder="السعر"><textarea id="adDesc" rows="2" placeholder="الوصف"></textarea><select id="adCity"><option>أسمرة</option><option>مصوع</option></select><input type="file" id="adImage"><div class="image-preview" id="adPreview"></div><button class="btn" id="publishGeneralBtn">نشر</button><p id="generalMsg"></p></div><div class="card"><h3>🖼️ المعرض</h3><div id="generalGallery" class="gallery-grid"></div></div></div></div>
+
+        <!-- ========== PAYMENT ========== -->
+        <div id="paymentPane" class="tab-pane">
+            <div class="grid-2">
+                <div class="card"><h3 id="paymentTitle">💳 اشتراك Pro</h3><p id="paymentDesc">إعلانات غير محدودة + إحصائيات</p><div style="font-size:2rem; color:#c7a12b;">$29<small>/شهر</small></div><button id="paypalBtn" class="btn paypal-btn"><i class="fab fa-paypal"></i> <span id="paypalBtnText">PayPal</span></button><p id="paymentMsg"></p></div>
+                <div class="card"><h3 id="walletTitle">💰 محفظتي</h3><p>الرصيد: <strong id="balanceAmount">$0</strong></p><button id="addFundsBtn" class="btn btn-gold">إيداع $50</button></div>
             </div>
-            <div class="card">
-                <h3 id="adTitle">📝 إضافة إعلان جديد</h3>
-                <select id="adType">
-                    <option value="عقار">🏠 عقار</option>
-                    <option value="سيارة">🚗 سيارة</option>
-                    <option value="خدمة">🛠️ خدمة (شحن/بناء)</option>
-                    <option value="منتج">📦 منتج</option>
-                </select>
-                <input type="text" id="adName" placeholder="اسم الإعلان (مثال: شقة 3 غرف)">
-                <input type="number" id="adPrice" placeholder="السعر (دولار)">
-                <textarea id="adDesc" rows="2" placeholder="وصف تفصيلي..."></textarea>
-                <select id="adCity">
-                    <option value="أسمرة">🇪🇷 أسمرة</option>
-                    <option value="مصوع">🇪🇷 مصوع</option>
-                    <option value="كرن">🇪🇷 كرن</option>
-                </select>
-                <input type="file" id="adImage" accept="image/*">
-                <div class="image-preview" id="imagePreview"></div>
-                <button class="btn" id="publishAdBtn">📢 نشر الإعلان</button>
-                <p id="adMsg" style="font-size:0.8rem; margin-top:8px; color:#c7a12b;"></p>
-            </div>
+            <div class="card"><h3 id="transactionsTitle">📜 سجل المعاملات</h3><div id="transactionsList"></div></div>
         </div>
 
-        <!-- Gallery -->
-        <div class="card" id="gallery">
-            <h3 id="galleryTitle">🖼️ آخر الإعلانات المضافة</h3>
-            <div class="gallery-grid" id="galleryGrid"></div>
-        </div>
-
-        <!-- Comments & Reviews -->
-        <div class="card" id="reviews">
-            <h3 id="reviewsTitle">⭐ آراء وتقييمات المستخدمين</h3>
-            <div id="commentsList">
-                <div class="review"><div class="avatar">ع</div><div><strong>علي حسن</strong><div class="stars">★★★★★</div><p>منصة رائعة، ساعدتني أجد شقة في أسمرة بسهولة.</p></div></div>
-                <div class="review"><div class="avatar">س</div><div><strong>سلمى إبراهيم</strong><div class="stars">★★★★☆</div><p>خدمة الشحن سريعة وموثوقة. أنصح بها المغتربين.</p></div></div>
-                <div class="review"><div class="avatar">م</div><div><strong>محمد علي</strong><div class="stars">★★★★★</div><p>التاجر Pro خيار ممتاز لزيادة المبيعات.</p></div></div>
-            </div>
-            <textarea id="newComment" rows="2" placeholder="أضف تعليقك وتقييمك..."></textarea>
-            <select id="ratingStars" style="width:auto; margin:0.5rem 0;"><option value="5">★★★★★</option><option value="4">★★★★☆</option><option value="3">★★★☆☆</option></select>
-            <button class="btn" id="addCommentBtn" style="margin-top:8px;">أضف تعليق</button>
-        </div>
-
-        <!-- Revenue Streams -->
-        <div class="revenue-banner">
-            <h3 id="revenueTitle">💰 مصادر الدخل (Revenue Streams)</h3>
-            <div style="display: flex; flex-wrap: wrap; gap: 1rem; justify-content: space-between;">
-                <span>📦 اشتراكات Pro (عقارات، سيارات)</span>
-                <span>🤝 عمولة الوساطة (بناء، شحن)</span>
-                <span>⭐ إعلانات مثبتة Featured Ads</span>
-                <span>🎯 باقة أساس مجانية مدى الحياة</span>
+        <!-- ========== MESSAGING ========== -->
+        <div id="messagingPane" class="tab-pane">
+            <div class="grid-2">
+                <div class="card"><h3 id="msgContactsTitle">📋 المحادثات</h3><div id="contactsList" class="chat-list"></div></div>
+                <div class="card"><h3 id="msgChatTitle">💬 المراسلة</h3><div id="chatMessages" class="chat-list" style="height:250px;"></div><div class="chat-input-area"><input type="text" id="chatInput" placeholder="اكتب رسالتك..."><button id="sendMsgBtn" class="btn-sm btn">إرسال</button></div></div>
             </div>
         </div>
 
-        <!-- Institutions -->
-        <div id="institutions">
-            <h2 class="section-title" id="instTitle">🏛️ المؤسسات الرسمية في إريتريا</h2>
-            <div class="inst-grid">
-                <div class="inst-card">
-                    <i class="fas fa-building" style="font-size:2rem;"></i>
-                    <h4 id="instTradeTitle">وزارة التجارة والصناعة</h4>
-                    <p id="instTradeDesc">تنظيم الاستثمار والتجارة</p>
-                    <a href="https://www.comesa.int/state-of-eritrea/" target="_blank" class="inst-link" id="instTradeLink">صفحة COMESA</a>
-                </div>
-                <div class="inst-card">
-                    <i class="fas fa-newspaper" style="font-size:2rem;"></i>
-                    <h4 id="instPressTitle">وزارة المعلومات (الصحافة)</h4>
-                    <p id="instPressDesc">المصدر الرسمي للأخبار</p>
-                    <a href="http://www.shabait.com" target="_blank" class="inst-link" id="instPressLink">Shabait.com</a>
-                </div>
-                <div class="inst-card">
-                    <i class="fas fa-landmark" style="font-size:2rem;"></i>
-                    <h4 id="instLibraryTitle">مكتبة أسمرة</h4>
-                    <p id="instLibraryDesc">مركز التوثيق والبحث</p>
-                    <a href="#" id="asmaraLibraryLink" class="inst-link" style="cursor:pointer;">معلومات</a>
-                </div>
-            </div>
+        <!-- ========== RATINGS ========== -->
+        <div id="ratingsPane" class="tab-pane">
+            <div class="card"><h3 id="ratingsTitle">⭐ تقييم المستخدمين</h3><div id="ratingsList"></div><div style="margin-top:1rem;"><textarea id="newRatingComment" rows="2" placeholder="اكتب تقييمك..."></textarea><select id="ratingStars"><option value="5">★★★★★</option><option value="4">★★★★☆</option><option value="3">★★★☆☆</option></select><button id="addRatingBtn" class="btn">إضافة تقييم</button></div></div>
         </div>
 
-        <div class="footer">
-            <p id="footerText">Asmara.Store — منصة موثوقة للمغتربين والتجار، معتمدة على المعلنين.</p>
-            <div class="verified">Verified by Asmara Store Agent • 2026</div>
-        </div>
+        <div class="footer"><p id="footerText">Asmara.Store — مراسلة، تقييمات، دفع آمن</p><div class="verified">Verified by Asmara Store Agent • 2026</div></div>
     </div>
 
     <script>
-        // ========== TRANSLATIONS (FULL) ==========
-        const translations = {
-            ar: {
-                tagline: "جسر رقمي يربط المغترب بقلب الوطن",
-                visionText: "المنصة الأولى التي تجمع المغتربين والتجار المحليين في إريتريا. إعلانات موثوقة، شحن، عقارات، وخدمات.",
-                freeTitle: "🎁 الشهر الأول مجاناً!",
-                freeDesc: "سجل الآن واحصل على باقة 'أساس أسمرة' مجاناً مدى الحياة (3 إعلانات نشطة). هدفنا: 1000 إعلان حقيقي في أول 30 يوم.",
-                diasporaTitle: "للمغترب",
-                diasporaList: ["🔒 الأمان والثقة في كل معاملة","📦 تتبع الطلبات والشحن لحظة بلحظة","✅ الوصول لمقدمي خدمات موثوقين في أسمرة ومصوع"],
-                merchantTitle: "للتاجر المحلي",
-                merchantList: ["💵 الوصول لعملة صعبة عبر اشتراكات المغتربين","📈 زيادة المبيعات عبر منصة منظمة بـ 3 لغات","🏅 ظهور موثوق يزيد ثقة العملاء"],
-                pricingTitle: "🏷️ باقات الاشتراك (بعد الشهر المجاني)",
-                planBasicName: "أساس أسمرة", planBasicPrice: "مجاني", basicPeriod: "مدى الحياة",
-                planProName: "تجاري Pro", planProPrice: "$29", proPeriod: "/ شهرياً",
-                planAgentName: "وكيل معتمد", planAgentPrice: "$99", agentPeriod: "/ شهرياً",
-                loginTitle: "🔐 تسجيل الدخول / حساب جديد", adTitle: "📝 إضافة إعلان جديد",
-                galleryTitle: "🖼️ آخر الإعلانات المضافة", reviewsTitle: "⭐ آراء وتقييمات المستخدمين",
-                revenueTitle: "💰 مصادر الدخل (Revenue Streams)",
-                instTitle: "🏛️ المؤسسات الرسمية في إريتريا",
-                instTradeTitle: "وزارة التجارة والصناعة", instTradeDesc: "تنظيم الاستثمار والتجارة", instTradeLink: "صفحة COMESA",
-                instPressTitle: "وزارة المعلومات (الصحافة)", instPressDesc: "المصدر الرسمي للأخبار", instPressLink: "Shabait.com",
-                instLibraryTitle: "مكتبة أسمرة", instLibraryDesc: "مركز التوثيق والبحث", instLibraryLinkText: "معلومات",
-                footerText: "Asmara.Store — منصة موثوقة للمغتربين والتجار، معتمدة على المعلنين.",
-                navValue: "💎 القيمة", navPlans: "📦 الباقات", navDashboard: "📋 لوحة التحكم", navInstitutions: "🏛️ مؤسسات"
-            },
-            en: {
-                tagline: "A digital bridge connecting diaspora to homeland",
-                visionText: "The first platform bringing together Eritrean diaspora and local merchants. Trusted ads, shipping, real estate.",
-                freeTitle: "🎁 First Month Free!",
-                freeDesc: "Sign up now and get 'Asmara Basic' plan free forever (3 active ads). Goal: 1000 real ads in first 30 days.",
-                diasporaTitle: "For Diaspora",
-                diasporaList: ["🔒 Security & trust","📦 Real-time order tracking","✅ Access verified services in Asmara & Massawa"],
-                merchantTitle: "For Local Merchants",
-                merchantList: ["💵 Earn foreign currency","📈 Increase sales via 3-language platform","🏅 Build trust with diaspora"],
-                pricingTitle: "🏷️ Pricing Plans (After Free Month)",
-                planBasicName: "Asmara Basic", planBasicPrice: "Free", basicPeriod: "Forever",
-                planProName: "Merchant Pro", planProPrice: "$29", proPeriod: "/ month",
-                planAgentName: "Verified Agent", planAgentPrice: "$99", agentPeriod: "/ month",
-                loginTitle: "🔐 Login / New Account", adTitle: "📝 Add New Ad",
-                galleryTitle: "🖼️ Latest Ads", reviewsTitle: "⭐ User Reviews",
-                revenueTitle: "💰 Revenue Streams",
-                instTitle: "🏛️ Official Institutions of Eritrea",
-                instTradeTitle: "Ministry of Trade", instTradeDesc: "Investment & trade regulation", instTradeLink: "COMESA Page",
-                instPressTitle: "Ministry of Information", instPressDesc: "Official news source", instPressLink: "Shabait.com",
-                instLibraryTitle: "Asmara Library", instLibraryDesc: "Documentation & research", instLibraryLinkText: "Info",
-                footerText: "Asmara.Store — Trusted platform for diaspora & merchants.",
-                navValue: "💎 Value", navPlans: "📦 Plans", navDashboard: "📋 Dashboard", navInstitutions: "🏛️ Institutions"
-            },
-            ti: {
-                tagline: "ርሑቓት ምስ ሃገር ዘእሰር ዲጂታል ድልወት",
-                visionText: "ንርሑቓትን ንኸባብያውያን ነጋዶን ዘዋህህድ መድረኽ።",
-                freeTitle: "🎁 ቀዳማይ ወርሒ ናጻ!",
-                freeDesc: "ሕጂ ተመዝገቡን 'ኣስመራ መሰረታዊ' ናጻ ምሉእ ህይወት ርኸቡ።",
-                diasporaTitle: "ንርሑቓት",
-                diasporaList: ["🔒 ዋስትናን ምትእምማንን","📦 ስዓብ ትእዛዝ","✅ ኣብ ኣስመራን ምጽዋእን ኣገልገልቲ"],
-                merchantTitle: "ንኸባብያዊ ነጋዳይ",
-                merchantList: ["💵 ኩነታት ወጻኢ ገንዘብ","📈 ምስ 3 ቋንቋታት ሽያጭ","🏅 ምትእምማን ምስራሕ"],
-                pricingTitle: "🏷️ ዋጋ ውልቀ መደባት",
-                planBasicName: "ኣስመራ መሰረታዊ", planBasicPrice: "ናጻ", basicPeriod: "ንግሂ ህይወት",
-                planProName: "ነጋዳይ Pro", planProPrice: "$29", proPeriod: "/ ወርሒ",
-                planAgentName: "ኤጀንት", planAgentPrice: "$99", agentPeriod: "/ ወርሒ",
-                loginTitle: "🔐 ምዝገባ", adTitle: "📝 ማስታወቂያ",
-                galleryTitle: "🖼️ ማስታወቂያታት", reviewsTitle: "⭐ ርእይቶታት",
-                revenueTitle: "💰 ምንጭታት ገቢ",
-                instTitle: "🏛️ ወግዓዊ ተቋማት ኤርትራ",
-                instTradeTitle: "ሚኒስትሪ ንግድ", instTradeDesc: "ምዕባለታት ንግድ", instTradeLink: "COMESA ገጽ",
-                instPressTitle: "ሚኒስትሪ ሓበሬታ", instPressDesc: "ወግዓዊ ዜና", instPressLink: "Shabait.com",
-                instLibraryTitle: "ቤተ-መጻሕፍቲ ኣስመራ", instLibraryDesc: "ማእከል ሰነዳት", instLibraryLinkText: "ሓበሬታ",
-                footerText: "ኣስመራ.ስቶር — እሙን መድረኽ ንርሑቓትን ነጋዶን።",
-                navValue: "💎 ዋጋ", navPlans: "📦 መደባት", navDashboard: "📋 መደራደሪ", navInstitutions: "🏛️ ተቋማት"
-            }
-        };
+        // ========== DATA ==========
+        let realEstateAds = [{ id:1, type:"شقة", name:"شقة فاخرة - تيرفولو", price:"$85,000", city:"أسمرة", seller:"علي حسن", sellerRating:4.5, views:45, image:"https://placehold.co/300x200/1e3a5f/white?text=Apartment" }];
+        let electronicsAds = [{ id:1, type:"هاتف", name:"iPhone 14 Pro", price:"$899", city:"أسمرة", seller:"سامر تكنولوجي", sellerRating:4.2, views:120, image:"https://placehold.co/300x200/c7a12b/white?text=iPhone" }];
+        let carsAds = [{ id:1, type:"سيارة مستعملة", name:"تويوتا لاندكروزر", price:"$45,000", city:"أسمرة", seller:"معرض السلام", sellerRating:4.8, views:67, image:"https://placehold.co/300x200/2c5a82/white?text=Land+Cruiser" }];
+        let jobsAds = [{ id:1, type:"دوام كامل", name:"مهندس مدني", company:"شركة أسمرة", salary:"$1,200", city:"أسمرة", views:89, image:"https://placehold.co/300x200/1e3a5f/white?text=Job" }];
+        let generalAds = [{ id:1, type:"خدمة", name:"شحن من دبي", price:"$299", city:"أسمرة", seller:"شحن سريع", sellerRating:4.0, views:34, image:"https://placehold.co/300x200/2c5a82/white?text=Shipping" }];
+        
+        let messages = [{ id:1, from:"علي حسن", to:"مشتري", text:"مرحباً، هل الشقة لا تزال متاحة؟", time:"10:30" }];
+        let contacts = [{ name:"علي حسن", lastMessage:"مرحباً، هل الشقة لا تزال متاحة؟", unread:1 }];
+        let ratings = [{ user:"أحمد محمود", rating:5, comment:"منصة رائعة، تعامل ممتاز", date:"2026-04-01" }];
+        
+        let balance = 0;
+        let transactions = [];
+        let currentContact = "علي حسن";
 
+        function updateStats() {
+            let totalAds = realEstateAds.length + electronicsAds.length + carsAds.length + jobsAds.length + generalAds.length;
+            let totalViews = [...realEstateAds, ...electronicsAds, ...carsAds, ...jobsAds, ...generalAds].reduce((sum, ad) => sum + (ad.views || 0), 0);
+            document.getElementById("statAds").innerText = totalAds;
+            document.getElementById("statViews").innerText = totalViews + Math.floor(Math.random() * 50);
+            document.getElementById("statUsers").innerText = Math.floor(Math.random() * 80) + 20;
+            document.getElementById("statRevenue").innerText = `$${(balance + Math.floor(Math.random() * 500)).toFixed(0)}`;
+            let allAds = [...realEstateAds.slice(0,3), ...electronicsAds.slice(0,2), ...carsAds.slice(0,2)];
+            let perfHtml = "";
+            allAds.forEach(ad => { perfHtml += `<div style="display:flex; justify-content:space-between; padding:8px 0; border-bottom:1px solid #eee;"><span>${ad.name}</span><span>👁️ ${ad.views || 0} مشاهدة</span></div>`; });
+            document.getElementById("adPerformanceList").innerHTML = perfHtml || "<p>لا توجد إعلانات</p>";
+        }
+
+        function renderGalleries() {
+            function render(containerId, data, isJob=false) {
+                const container = document.getElementById(containerId);
+                if(!container) return;
+                container.innerHTML = "";
+                data.forEach(item => {
+                    const div = document.createElement("div"); div.className = "gallery-item";
+                    let ratingHtml = `<div class="rating-stars">${"★".repeat(Math.floor(item.sellerRating || 4))}${"☆".repeat(5-Math.floor(item.sellerRating || 4))}</div>`;
+                    if(isJob) div.innerHTML = `<img src="${item.image}"><h4>${item.name}</h4><p>${item.company} | ${item.salary}<br>📍 ${item.city}</p><span class="badge">${item.type}</span>`;
+                    else div.innerHTML = `<img src="${item.image}"><h4>${item.name}</h4><p>${item.price || item.salary}<br>📍 ${item.city}</p>${ratingHtml}<span class="badge">${item.type}</span>`;
+                    div.onclick = () => { if(item.seller) { currentContact = item.seller; loadChat(); switchTab('messaging'); } };
+                    container.appendChild(div);
+                });
+            }
+            render("realEstateGallery", realEstateAds);
+            render("electronicsGallery", electronicsAds);
+            render("carsGallery", carsAds);
+            render("jobsGallery", jobsAds, true);
+            render("generalGallery", generalAds);
+            updateStats();
+        }
+
+        function loadContacts() {
+            let contactsList = document.getElementById("contactsList");
+            if(!contactsList) return;
+            contactsList.innerHTML = "";
+            let uniqueSellers = new Set();
+            [...realEstateAds, ...electronicsAds, ...carsAds, ...generalAds].forEach(ad => { if(ad.seller) uniqueSellers.add(ad.seller); });
+            uniqueSellers.forEach(seller => {
+                let div = document.createElement("div");
+                div.className = "chat-message";
+                div.style.cursor = "pointer";
+                div.innerHTML = `<div><div class="message-sender">${seller}</div><div class="message-text">${messages.find(m=>m.from===seller)?.text || "مرحباً"}</div></div><div class="message-time">جديد</div>`;
+                div.onclick = () => { currentContact = seller; loadChat(); };
+                contactsList.appendChild(div);
+            });
+        }
+
+        function loadChat() {
+            let chatDiv = document.getElementById("chatMessages");
+            if(!chatDiv) return;
+            let chatMessages = messages.filter(m => m.from === currentContact || m.to === currentContact);
+            chatDiv.innerHTML = "";
+            chatMessages.forEach(msg => {
+                let div = document.createElement("div");
+                div.className = "chat-message";
+                div.innerHTML = `<div><div class="message-sender">${msg.from}</div><div class="message-text">${msg.text}</div><div class="message-time">${msg.time}</div></div>`;
+                chatDiv.appendChild(div);
+            });
+            chatDiv.scrollTop = chatDiv.scrollHeight;
+        }
+
+        function loadRatings() {
+            let ratingsDiv = document.getElementById("ratingsList");
+            if(!ratingsDiv) return;
+            ratingsDiv.innerHTML = "";
+            ratings.forEach(r => {
+                let div = document.createElement("div");
+                div.className = "chat-message";
+                div.innerHTML = `<div><div class="message-sender">${r.user}</div><div class="rating-stars">${"★".repeat(r.rating)}${"☆".repeat(5-r.rating)}</div><div class="message-text">${r.comment}</div><div class="message-time">${r.date}</div></div>`;
+                ratingsDiv.appendChild(div);
+            });
+        }
+
+        function publish(dataArray, fields, msgId, isJob=false) {
+            return () => {
+                const values = fields.map(f => document.getElementById(f.id)?.value);
+                if(!values[0] || (!isJob && !values[1])) { document.getElementById(msgId).innerText = "❌ املأ البيانات"; return; }
+                const newItem = { id: dataArray.length+1, views: 0, seller: "مستخدم جديد", sellerRating: 0 };
+                fields.forEach((f, i) => { newItem[f.key] = values[i]; });
+                if(!isJob) newItem.price = `$${values[1]}`;
+                else newItem.salary = `$${values[2]}`;
+                newItem.image = "https://placehold.co/300x200/1e3a5f/white?text=New";
+                dataArray.unshift(newItem);
+                renderGalleries();
+                document.getElementById(msgId).innerText = "✅ تم النشر!";
+                fields.forEach(f => { document.getElementById(f.id).value = ""; });
+            };
+        }
+
+        document.getElementById("publishReBtn")?.addEventListener("click", publish(realEstateAds, [{id:"reType",key:"type"},{id:"reName",key:"name"},{id:"rePrice",key:"price"},{id:"reDesc",key:"desc"},{id:"reCity",key:"city"}], "reMsg"));
+        document.getElementById("publishElecBtn")?.addEventListener("click", publish(electronicsAds, [{id:"elecType",key:"type"},{id:"elecName",key:"name"},{id:"elecPrice",key:"price"},{id:"elecDesc",key:"desc"},{id:"elecCity",key:"city"}], "elecMsg"));
+        document.getElementById("publishCarBtn")?.addEventListener("click", publish(carsAds, [{id:"carType",key:"type"},{id:"carName",key:"name"},{id:"carPrice",key:"price"},{id:"carDesc",key:"desc"},{id:"carCity",key:"city"}], "carMsg"));
+        document.getElementById("publishJobBtn")?.addEventListener("click", publish(jobsAds, [{id:"jobType",key:"type"},{id:"jobTitle",key:"name"},{id:"jobCompany",key:"company"},{id:"jobSalary",key:"salary"},{id:"jobDesc",key:"desc"},{id:"jobCity",key:"city"}], "jobMsg", true));
+        document.getElementById("publishGeneralBtn")?.addEventListener("click", publish(generalAds, [{id:"adType",key:"type"},{id:"adName",key:"name"},{id:"adPrice",key:"price"},{id:"adDesc",key:"desc"},{id:"adCity",key:"city"}], "generalMsg"));
+
+        function setupPreview(inputId, previewId) {
+            document.getElementById(inputId)?.addEventListener("change", function(e) {
+                const preview = document.getElementById(previewId); if(preview) preview.innerHTML = "";
+                const file = e.target.files[0];
+                if(file && preview) { const reader = new FileReader(); reader.onload = (ev) => { const img = document.createElement("img"); img.src = ev.target.result; preview.appendChild(img); }; reader.readAsDataURL(file); }
+            });
+        }
+        setupPreview("reImage", "rePreview"); setupPreview("elecImage", "elecPreview");
+        setupPreview("carImage", "carPreview"); setupPreview("adImage", "adPreview");
+
+        // Flight
+        const flightsData = { "DXB-ASM":[{airline:"FlyDubai",price:"$450"}], "JED-ASM":[{airline:"Ethiopian",price:"$380"}], "CAI-ASM":[{airline:"EgyptAir",price:"$490"}], "ADD-ASM":[{airline:"Ethiopian",price:"$210"}] };
+        document.getElementById("searchFlightBtn")?.addEventListener("click", () => {
+            const from = document.getElementById("flightFrom").value;
+            const date = document.getElementById("flightDate").value;
+            const flights = flightsData[`${from}-ASM`] || [];
+            if(flights.length===0) { document.getElementById("flightResults").innerHTML = "❌ لا توجد رحلات"; return; }
+            let html = `<strong>نتائج (${date}):</strong><br>`; flights.forEach(f => { html += `✈️ ${f.airline} | ${f.price}<br>`; });
+            document.getElementById("flightResults").innerHTML = html;
+        });
+        document.getElementById("confirmBookingBtn")?.addEventListener("click", () => {
+            const name = document.getElementById("passengerName")?.value;
+            if(!name) { document.getElementById("bookingMsg").innerText = "❌ أدخل الاسم"; return; }
+            document.getElementById("bookingMsg").innerText = `✅ تم تأكيد حجز ${name}`;
+        });
+        document.getElementById("libraryInfoBtn")?.addEventListener("click", () => { alert("📚 مكتبة أسمرة: مركز التوثيق الوطني"); });
+
+        // Messaging
+        document.getElementById("sendMsgBtn")?.addEventListener("click", () => {
+            const input = document.getElementById("chatInput");
+            if(!input.value.trim()) return;
+            messages.push({ from:"أنا", to:currentContact, text:input.value, time:new Date().toLocaleTimeString() });
+            loadChat();
+            input.value = "";
+        });
+
+        // Ratings
+        document.getElementById("addRatingBtn")?.addEventListener("click", () => {
+            const comment = document.getElementById("newRatingComment")?.value;
+            const rating = document.getElementById("ratingStars")?.value;
+            if(!comment) return;
+            ratings.unshift({ user:"مستخدم جديد", rating:parseInt(rating), comment:comment, date:new Date().toLocaleDateString() });
+            loadRatings();
+            document.getElementById("newRatingComment").value = "";
+        });
+
+        // Payment
+        document.getElementById("paypalBtn")?.addEventListener("click", () => {
+            document.getElementById("paymentMsg").innerText = "🟡 جاري التوجيه إلى PayPal...";
+            setTimeout(() => { balance += 29; transactions.unshift({ date:new Date().toLocaleDateString(), amount:"+$29", type:"اشتراك Pro" }); updateWallet(); document.getElementById("paymentMsg").innerHTML = "✅ تم الدفع بنجاح!"; }, 1500);
+        });
+        document.getElementById("addFundsBtn")?.addEventListener("click", () => { balance += 50; transactions.unshift({ date:new Date().toLocaleDateString(), amount:"+$50", type:"إيداع" }); updateWallet(); });
+        function updateWallet() { document.getElementById("balanceAmount").innerHTML = `$${balance}`; let html=""; transactions.slice(0,10).forEach(t=>{ html+=`<div style="padding:6px 0; border-bottom:1px solid #eee;">${t.date} - ${t.amount} - ${t.type}</div>`; }); document.getElementById("transactionsList").innerHTML = html || "<p>لا توجد معاملات</p>"; }
+
+        // ========== TRANSLATIONS & TAB ==========
+        const translations = {
+            ar: { tagline:"مراسلة، تقييمات، دفع آمن - منصة إريتريا المتكاملة", statAdsLabel:"الإعلانات", statViewsLabel:"المشاهدات", statUsersLabel:"المستخدمين", statRevenueLabel:"الإيرادات", statsTitle:"📈 أداء إعلاناتك",
+                instTradeTitle:"وزارة التجارة", instTradeDesc:"تنظيم الاستثمار", instPressTitle:"وزارة المعلومات", instPressDesc:"المصدر الرسمي", instLibraryTitle:"مكتبة أسمرة", instLibraryDesc:"مركز التوثيق",
+                flightSearchTitle:"✈️ البحث عن رحلة", bookingInfoTitle:"📋 معلومات الحجز", paymentTitle:"💳 اشتراك Pro", paymentDesc:"إعلانات غير محدودة", paypalBtnText:"PayPal", walletTitle:"💰 محفظتي", transactionsTitle:"📜 سجل المعاملات",
+                msgContactsTitle:"📋 المحادثات", msgChatTitle:"💬 المراسلة", ratingsTitle:"⭐ تقييم المستخدمين", footerText:"Asmara.Store — مراسلة، تقييمات، دفع آمن" },
+            en: { tagline:"Messaging, Ratings, Secure Payment - Eritrea's Integrated Platform", statAdsLabel:"Ads", statViewsLabel:"Views", statUsersLabel:"Users", statRevenueLabel:"Revenue", statsTitle:"📈 Your Ads Performance",
+                instTradeTitle:"Ministry of Trade", instTradeDesc:"Investment regulation", instPressTitle:"Ministry of Info", instPressDesc:"Official news", instLibraryTitle:"Asmara Library", instLibraryDesc:"Documentation",
+                flightSearchTitle:"✈️ Search Flights", bookingInfoTitle:"📋 Booking Info", paymentTitle:"💳 Pro Subscription", paymentDesc:"Unlimited ads", paypalBtnText:"PayPal", walletTitle:"💰 My Wallet", transactionsTitle:"📜 Transactions",
+                msgContactsTitle:"📋 Conversations", msgChatTitle:"💬 Messaging", ratingsTitle:"⭐ User Ratings", footerText:"Asmara.Store — Messaging, Ratings, Secure Payment" },
+            ti: { tagline:"መልእኽቲ፣ ውጤት፣ ደህንነቱ ዝተጠበቀ ክፍሊት", statAdsLabel:"ማስታወቂያ", statViewsLabel:"ርእይቶ", statUsersLabel:"ተጠቃሚታት", statRevenueLabel:"ገቢ", statsTitle:"📈 ውጤት",
+                instTradeTitle:"ሚኒስትሪ ንግድ", instTradeDesc:"ምዕባለታት", instPressTitle:"ሚኒስትሪ ሓበሬታ", instPressDesc:"ወግዓዊ ዜና", instLibraryTitle:"ቤተ-መጻሕፍቲ", instLibraryDesc:"ማእከል ሰነዳት",
+                flightSearchTitle:"✈️ ምድላይ በረራ", bookingInfoTitle:"📋 ሓበሬታ", paymentTitle:"💳 Pro ምዝገባ", paymentDesc:"ደረት ዘይብሉ", paypalBtnText:"PayPal", walletTitle:"💰 ቦርሳይ", transactionsTitle:"📜 መዝገብ",
+                msgContactsTitle:"📋 ምይይጥ", msgChatTitle:"💬 መልእኽቲ", ratingsTitle:"⭐ ውጤት ተጠቃሚታት", footerText:"ኣስመራ.ስቶር — መልእኽቲ፣ ውጤት፣ ክፍሊት" }
+        };
         let currentLang = "ar";
         function updateLanguage(lang) {
-            currentLang = lang;
-            const t = translations[lang];
-            if(!t) return;
+            currentLang = lang; const t = translations[lang]; if(!t) return;
             document.getElementById("tagline").innerText = t.tagline;
-            document.getElementById("visionText").innerText = t.visionText;
-            document.getElementById("freeTitle").innerHTML = t.freeTitle;
-            document.getElementById("freeDesc").innerText = t.freeDesc;
-            document.getElementById("diasporaTitle").innerText = t.diasporaTitle;
-            const diaList = document.getElementById("diasporaList").children;
-            t.diasporaList.forEach((txt,i)=>{if(diaList[i]) diaList[i].innerText=txt;});
-            document.getElementById("merchantTitle").innerText = t.merchantTitle;
-            const merList = document.getElementById("merchantList").children;
-            t.merchantList.forEach((txt,i)=>{if(merList[i]) merList[i].innerText=txt;});
-            document.getElementById("pricingTitle").innerHTML = t.pricingTitle;
-            document.getElementById("planBasicName").innerText = t.planBasicName;
-            document.getElementById("planBasicPrice").innerHTML = t.planBasicPrice;
-            document.getElementById("basicPeriod").innerText = t.basicPeriod;
-            document.getElementById("planProName").innerText = t.planProName;
-            document.getElementById("planProPrice").innerHTML = t.planProPrice;
-            document.getElementById("proPeriod").innerText = t.proPeriod;
-            document.getElementById("planAgentName").innerText = t.planAgentName;
-            document.getElementById("planAgentPrice").innerHTML = t.planAgentPrice;
-            document.getElementById("agentPeriod").innerText = t.agentPeriod;
-            document.getElementById("loginTitle").innerHTML = t.loginTitle;
-            document.getElementById("adTitle").innerHTML = t.adTitle;
-            document.getElementById("galleryTitle").innerHTML = t.galleryTitle;
-            document.getElementById("reviewsTitle").innerHTML = t.reviewsTitle;
-            document.getElementById("revenueTitle").innerHTML = t.revenueTitle;
-            document.getElementById("instTitle").innerHTML = t.instTitle;
-            document.getElementById("instTradeTitle").innerText = t.instTradeTitle;
+            document.getElementById("statAdsLabel").innerText = t.statAdsLabel;
+            document.getElementById("statViewsLabel").innerText = t.statViewsLabel;
+            document.getElementById("statUsersLabel").innerText = t.statUsersLabel;
+            document.getElementById("statRevenueLabel").innerText = t.statRevenueLabel;
+            document.getElementById("statsTitle").innerHTML = t.statsTitle;
+            document.getElementById("instTradeTitle").innerHTML = t.instTradeTitle;
             document.getElementById("instTradeDesc").innerText = t.instTradeDesc;
-            document.getElementById("instTradeLink").innerText = t.instTradeLink;
-            document.getElementById("instPressTitle").innerText = t.instPressTitle;
+            document.getElementById("instPressTitle").innerHTML = t.instPressTitle;
             document.getElementById("instPressDesc").innerText = t.instPressDesc;
-            document.getElementById("instPressLink").innerText = t.instPressLink;
-            document.getElementById("instLibraryTitle").innerText = t.instLibraryTitle;
+            document.getElementById("instLibraryTitle").innerHTML = t.instLibraryTitle;
             document.getElementById("instLibraryDesc").innerText = t.instLibraryDesc;
+            document.getElementById("flightSearchTitle").innerHTML = t.flightSearchTitle;
+            document.getElementById("bookingInfoTitle").innerHTML = t.bookingInfoTitle;
+            document.getElementById("paymentTitle").innerHTML = t.paymentTitle;
+            document.getElementById("paymentDesc").innerText = t.paymentDesc;
+            document.getElementById("paypalBtnText").innerText = t.paypalBtnText;
+            document.getElementById("walletTitle").innerHTML = t.walletTitle;
+            document.getElementById("transactionsTitle").innerHTML = t.transactionsTitle;
+            document.getElementById("msgContactsTitle").innerHTML = t.msgContactsTitle;
+            document.getElementById("msgChatTitle").innerHTML = t.msgChatTitle;
+            document.getElementById("ratingsTitle").innerHTML = t.ratingsTitle;
             document.getElementById("footerText").innerText = t.footerText;
-            document.getElementById("navValue").innerHTML = t.navValue;
-            document.getElementById("navPlans").innerHTML = t.navPlans;
-            document.getElementById("navDashboard").innerHTML = t.navDashboard;
-            document.getElementById("navInstitutions").innerHTML = t.navInstitutions;
             document.body.className = `lang-${lang}`;
             document.body.dir = (lang === 'en') ? 'ltr' : 'rtl';
             document.querySelectorAll('.lang-btn').forEach(btn=>{ if(btn.dataset.lang === lang) btn.classList.add('active'); else btn.classList.remove('active'); });
         }
-
         document.querySelectorAll('.lang-btn').forEach(btn=>{ btn.addEventListener('click',()=>updateLanguage(btn.dataset.lang)); });
         updateLanguage('ar');
 
-        // ========== MOCK DATA & FUNCTIONS ==========
-        let ads = [
-            { id:1, type:"عقار", name:"شقة فاخرة - تيرفولو", price:"$85,000", desc:"3 غرف، موقع ممتاز", city:"أسمرة", image:"https://placehold.co/300x200/1e3a5f/white?text=Asmara+Apartment" },
-            { id:2, type:"سيارة", name:"تويوتا لاندكروزر", price:"$32,000", desc:"موديل 2020", city:"أسمرة", image:"https://placehold.co/300x200/c7a12b/white?text=Land+Cruiser" },
-            { id:3, type:"خدمة", name:"شحن من دبي إلى أسمرة", price:"$299", desc:"شحن سريع", city:"مصوع", image:"https://placehold.co/300x200/2c5a82/white?text=Shipping" }
-        ];
-        function renderGallery() {
-            const gallery = document.getElementById("galleryGrid");
-            gallery.innerHTML = "";
-            ads.forEach(ad => {
-                const div = document.createElement("div");
-                div.className = "gallery-item";
-                div.innerHTML = `<img src="${ad.image}" alt="${ad.name}"><h4>${ad.name}</h4><p>${ad.type} | ${ad.price}<br>📍 ${ad.city}</p>`;
-                gallery.appendChild(div);
-            });
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-pane').forEach(pane => pane.classList.remove('active-pane'));
+            const pane = document.getElementById(`${tabId}Pane`);
+            if(pane) pane.classList.add('active-pane');
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            const tabBtn = document.querySelector(`.tab-btn[data-tab="${tabId}"]`);
+            if(tabBtn) tabBtn.classList.add('active');
+            document.querySelectorAll('.nav-tab-link').forEach(link => link.classList.remove('active'));
+            const navLink = document.querySelector(`.nav-tab-link[data-tab="${tabId}"]`);
+            if(navLink) navLink.classList.add('active');
+            if(tabId === 'dashboard') updateStats();
+            if(tabId === 'messaging') { loadContacts(); loadChat(); }
+            if(tabId === 'ratings') loadRatings();
         }
-        renderGallery();
+        document.querySelectorAll('.tab-btn').forEach(btn => btn.addEventListener('click', () => switchTab(btn.dataset.tab)));
+        document.querySelectorAll('.nav-tab-link').forEach(link => link.addEventListener('click', () => switchTab(link.dataset.tab)));
 
-        // Image preview
-        document.getElementById("adImage").addEventListener("change", function(e) {
-            const preview = document.getElementById("imagePreview");
-            preview.innerHTML = "";
-            const file = e.target.files[0];
-            if(file) {
-                const reader = new FileReader();
-                reader.onload = function(ev) {
-                    const img = document.createElement("img");
-                    img.src = ev.target.result;
-                    img.style.width = "70px"; img.style.height = "70px"; img.style.objectFit = "cover"; img.style.borderRadius = "12px";
-                    preview.appendChild(img);
-                };
-                reader.readAsDataURL(file);
-            }
-        });
-
-        // Publish ad
-        document.getElementById("publishAdBtn").addEventListener("click", () => {
-            const type = document.getElementById("adType").value;
-            const name = document.getElementById("adName").value;
-            const price = document.getElementById("adPrice").value;
-            const desc = document.getElementById("adDesc").value;
-            const city = document.getElementById("adCity").value;
-            const fileInput = document.getElementById("adImage");
-            let imgUrl = "https://placehold.co/300x200/1e3a5f/white?text=New+Ad";
-            if(fileInput.files.length > 0) {
-                const reader = new FileReader();
-                reader.onload = function(e) { imgUrl = e.target.result; };
-                reader.readAsDataURL(fileInput.files[0]);
-            }
-            if(name && price) {
-                const newAd = { id: ads.length+1, type, name, price: `$${price}`, desc, city, image: imgUrl };
-                ads.unshift(newAd);
-                renderGallery();
-                const msg = currentLang === 'ar' ? "✅ تم نشر الإعلان بنجاح!" : (currentLang === 'en' ? "✅ Ad published!" : "✅ ማስታወቂያ ተሓቲሙ!");
-                document.getElementById("adMsg").innerText = msg;
-                document.getElementById("adName").value = "";
-                document.getElementById("adPrice").value = "";
-                document.getElementById("adDesc").value = "";
-                document.getElementById("adImage").value = "";
-                document.getElementById("imagePreview").innerHTML = "";
-            } else {
-                const msg = currentLang === 'ar' ? "❌ يرجى ملء الاسم والسعر" : (currentLang === 'en' ? "❌ Please fill name and price" : "❌ ስምን ዋጋን መልእ");
-                document.getElementById("adMsg").innerText = msg;
-            }
-        });
-
-        // Login simulation
-        document.getElementById("loginBtn").addEventListener("click", () => {
-            const msg = currentLang === 'ar' ? "✅ تم تسجيل الدخول كـ 'مغترب' (وضع تجريبي)" : (currentLang === 'en' ? "✅ Logged in as 'Diaspora' (demo)" : "✅ እንቋዕ ተደሓኹም!");
-            document.getElementById("loginMsg").innerText = msg;
-        });
-        document.getElementById("signupBtn").addEventListener("click", () => {
-            const msg = currentLang === 'ar' ? "📝 تم إنشاء حساب تجريبي. يمكنك الآن إضافة إعلانات." : (currentLang === 'en' ? "📝 Demo account created. You can now post ads." : "📝 ሓዱሽ ሒሳብ ተፈጢሩ!");
-            document.getElementById("loginMsg").innerText = msg;
-        });
-        document.getElementById("freeBtn").addEventListener("click", (e) => { e.preventDefault(); alert(currentLang === 'ar' ? "🚀 سيتم تفعيل التسجيل قريباً. سجّل اهتمامك الآن!" : (currentLang === 'en' ? "🚀 Registration coming soon!" : "🚀 ቀረብ ክንጅምር ኢና!")); });
-        
-        // Plan buttons
-        document.querySelectorAll('.btn-plan').forEach(btn => {
-            btn.addEventListener('click', () => { alert(currentLang === 'ar' ? "سيتم تفعيل الاشتراك قريباً" : (currentLang === 'en' ? "Subscription coming soon" : "ምዝገባ ቀረብ")); });
-        });
-
-        // Add comment
-        document.getElementById("addCommentBtn").addEventListener("click", () => {
-            const commentText = document.getElementById("newComment").value;
-            const rating = document.getElementById("ratingStars").value;
-            if(commentText.trim() === "") return;
-            const starsHtml = "★".repeat(parseInt(rating)) + "☆".repeat(5-parseInt(rating));
-            const userName = currentLang === 'ar' ? 'مستخدم جديد' : (currentLang === 'en' ? 'New User' : 'ሓድሽ ተጠቃሚ');
-            const newReview = document.createElement("div");
-            newReview.className = "review";
-            newReview.innerHTML = `<div class="avatar">ج</div><div><strong>${userName}</strong><div class="stars">${starsHtml}</div><p>${commentText}</p></div>`;
-            document.getElementById("commentsList").prepend(newReview);
-            document.getElementById("newComment").value = "";
-        });
-
-        // Library info
-        document.getElementById("asmaraLibraryLink").addEventListener("click", (e) => {
-            e.preventDefault();
-            alert(currentLang === 'ar' ? "📚 مكتبة أسمرة: المركز الوطني للتوثيق في العاصمة. للاستفسار: وزارة المعلومات عبر Shabait.com" : 
-                  (currentLang === 'en' ? "📚 Asmara Library: National Documentation Center. Contact Ministry of Information via Shabait.com" : 
-                  "📚 ቤተ-መጻሕፍቲ ኣስመራ: ማእከል ሰነዳት"));
-        });
+        renderGalleries(); updateWallet(); loadRatings();
     </script>
 </body>
 </html>
