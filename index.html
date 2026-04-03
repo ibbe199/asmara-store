@@ -1,13 +1,126 @@
 <!DOCTYPE html>
 <html lang="ar">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Asmara Store | أسمرة ستور</title>
-  </head>
-  <body>
+    <!-- استدعاء المكتبات مباشرة لضمان العمل بدون أخطاء Build -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body>
     <div id="root"></div>
-    <!-- هذا السطر هو الذي كان يسبب الخطأ، تأكد أنه يشير للمسار الصحيح -->
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+
+    <script type="text/babel">
+        const { useState, useEffect } = React;
+
+        const App = () => {
+            const [lang, setLang] = useState('ar');
+
+            const t = {
+                ar: {
+                    search: "ابحث عن منزل، تذكرة طيران، أو مرجع تاريخي...",
+                    nav: ["الرئيسية", "الرحلات", "العقارات", "الصحافة"],
+                    head: "رحلات الطيران إلى أسمرة",
+                    book: "حجز الآن",
+                    status: "منضبطة",
+                    carrier: "ناقل أساسي"
+                },
+                en: {
+                    search: "Search for a house, flight, or historical reference...",
+                    nav: ["Home", "Flights", "Real Estate", "Press"],
+                    head: "Flights to Asmara",
+                    book: "Book Now",
+                    status: "On Schedule",
+                    carrier: "Main Carrier"
+                },
+                ti: {
+                    search: "ገዛ፡ ቲኬት ነፋሪት ወይ ታሪኻዊ መወከሲ ድለ...",
+                    nav: ["መበገሲ", "ጉዕዞታት", "ቤትታትን ወፈርን", "ጋዜጣታት"],
+                    head: "ናይ ነፋሪት ጉዕዞ ናብ ኣስማራ",
+                    book: "ሕጂ ባልዮ",
+                    status: "ከምቲ ዝተባህሎ",
+                    carrier: "ቀንዲ መጓዓዝያ"
+                }
+            }[lang];
+
+            const flights = [
+                { id: 1, name: "Turkish Airlines", route: "IST ➜ ASM", price: "750", main: false },
+                { id: 2, name: "Ethiopian Airlines", route: "ADD ➜ ASM", price: "290", main: true },
+                { id: 3, name: "FlyDubai", route: "DXB ➜ ASM", price: "410", main: false }
+            ];
+
+            return (
+                <div className="min-h-screen bg-slate-50" dir={lang === 'en' ? 'ltr' : 'rtl'}>
+                    {/* Header */}
+                    <header className="bg-[#131921] text-white p-3 flex items-center gap-4 sticky top-0 z-50">
+                        <div className="font-black italic text-xl px-2">asmara<span className="text-[#febd69]">.store</span></div>
+                        <div className="flex-1 flex bg-white rounded-md overflow-hidden h-10">
+                            <input type="text" className="flex-1 px-4 text-black text-sm outline-none font-bold placeholder-gray-400" placeholder={t.search} />
+                            <button className="bg-[#febd69] px-5 text-black hover:bg-[#f3a847]">
+                                <i data-lucide="search"></i>
+                            </button>
+                        </div>
+                        <button 
+                            onClick={() => setLang(lang === 'ar' ? 'en' : lang === 'en' ? 'ti' : 'ar')} 
+                            className="flex items-center gap-1 text-xs font-bold border border-gray-500 px-3 py-2 rounded hover:bg-gray-800 transition-all"
+                        >
+                            <i data-lucide="globe" className="w-4 h-4"></i> {lang.toUpperCase()}
+                        </button>
+                    </header>
+
+                    {/* Hero */}
+                    <section className="bg-[#1a365d] text-white py-16 px-6 text-center border-b-4 border-[#febd69]">
+                        <h1 className="text-4xl md:text-5xl font-black tracking-tighter mb-4">{t.head}</h1>
+                        <div className="flex justify-center gap-6 text-[10px] font-black uppercase tracking-widest opacity-70">
+                           {t.nav.map((item, i) => <span key={i} className="hover:text-[#febd69] cursor-pointer">{item}</span>)}
+                        </div>
+                    </section>
+
+                    {/* Content */}
+                    <main className="max-w-6xl mx-auto -mt-10 px-4 grid grid-cols-1 md:grid-cols-3 gap-6 pb-20">
+                        {flights.map((f) => (
+                            <div key={f.id} className="bg-white rounded-2xl shadow-xl border border-gray-100 p-6 hover:scale-105 transition-transform group">
+                                <div className="flex justify-between items-start mb-4">
+                                    <div className="bg-blue-50 p-2 rounded-lg text-blue-600">
+                                        <i data-lucide="plane" className={lang === 'en' ? "" : "rotate-180"}></i>
+                                    </div>
+                                    {f.main && <span className="text-[9px] font-black text-blue-600 bg-blue-50 px-2 py-1 rounded uppercase tracking-tighter">{t.carrier}</span>}
+                                </div>
+                                <h3 className="text-xl font-black text-slate-800">{f.name}</h3>
+                                <p className="text-xs font-bold text-gray-400 mb-4 tracking-wide">{f.route}</p>
+                                <div className="flex items-center justify-between mb-6">
+                                    <div className="flex items-center gap-1 text-[#2d8b49] text-[11px] font-black">
+                                        <i data-lucide="shield-check" className="w-4 h-4"></i> {t.status}
+                                    </div>
+                                    <div className="text-2xl font-black text-[#B12704] tracking-tighter">${f.price}</div>
+                                </div>
+                                <button className="w-full bg-[#1a365d] text-white py-3 rounded-xl font-black text-xs flex items-center justify-center gap-2 hover:bg-[#febd69] hover:text-black transition-colors shadow-md">
+                                    {t.book} <i data-lucide="arrow-up-right" className="w-4 h-4"></i>
+                                </button>
+                            </div>
+                        ))}
+                    </main>
+
+                    <footer className="py-10 text-center text-[10px] font-bold text-gray-400 tracking-[0.2em] uppercase border-t">
+                        Verified by Asmara Store Agent • 2026
+                    </footer>
+                </div>
+            );
+        };
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<App />);
+
+        // تحديث الأيقونات بعد رندر الصفحة
+        setTimeout(() => lucide.createIcons(), 100);
+    </script>
+</body>
 </html>
