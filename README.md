@@ -1,20 +1,36 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# 🇪🇷 Asmara Store | أسمرة ستور
+**بوابتك الرقمية الشاملة لخدمات الطيران، العقارات، والصحافة في إريتريا.**
 
-# Run and deploy your AI Studio app
+---
 
-This contains everything you need to run your app locally.
+## 🌟 نظرة عامة (Overview)
+**Asmara Store** هو منصة حديثة مصممة لخدمة الجالية الإريترية في الخارج والداخل. يوفر الموقع واجهة مستخدم ذكية مستوحاة من أسلوب "أمازون" لعرض المعلومات بشكل مباشر وسريع، مع دعم كامل لثلاث لغات: **العربية، الإنجليزية، والتقرنية**.
 
-View your app in AI Studio: https://ai.studio/apps/2f34ba83-3177-4648-9e08-53ef6f65d0e6
+---
 
-## Run Locally
+## 🚀 المميزات الرئيسية (Key Features)
+*   ✈️ **رحلات الطيران:** عرض مباشر لأهم الخطوط الجوية العاملة في مطار أسمرة (Ethiopian, Turkish, FlyDubai).
+*   🏠 **العقارات:** منصة لعرض الفرص العقارية الموثقة في أحياء أسمرة (تيرفولو، جيزا برهانو، وغيرها).
+*   📰 **الصحافة والوثائق:** مكتبة رقمية لتحميل أحدث أعداد جريدة "إريتريا الحديثة" ووثائق وزارة التجارة بصيغة PDF.
+*   🌍 **متعدد اللغات:** دعم سلس للغات (Arabic, English, Tigrinya).
+*   ⚡ **أداء عالٍ:** مبني باستخدام React + Vite لضمان سرعة التصفح.
 
-**Prerequisites:**  Node.js
+---
 
+## 🛠️ التقنيات المستخدمة (Tech Stack)
+*   **Frontend:** [React.js](https://reactjs.org/) + [Vite](https://vitejs.dev/)
+*   **Styling:** [Tailwind CSS](https://tailwindcss.com/)
+*   **Icons:** [Lucide React](https://lucide.dev/)
+*   **Deployment:** [Vercel](https://vercel.com/)
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+---
+
+## 📂 هيكلة المشروع (Project Structure)
+```text
+asmara-store/
+├── src/
+│   ├── App.tsx        # الكود البرمجي الرئيسي للموقع
+│   └── main.tsx       # نقطة الانطلاق (Entry Point)
+├── index.html         # الصفحة الرئيسية للمتصفح
+├── package.json       # إعدادات المكتبات والسكربتات
+└── README.md          # ملف التعريف بالمشروع
