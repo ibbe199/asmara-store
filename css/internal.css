@@ -2,3 +2,8 @@
   margin-top: 10px;
   color: #c62828;
 }
+
+.login-card {
+  max-width: 500px;
+  margin: 0 auto 20px;
+}
