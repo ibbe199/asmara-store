@@ -1,0 +1,9 @@
+# إنشاء الملفات
+touch images/.gitkeep
+touch images/ads/.gitkeep
+touch images/users/avatars/.gitkeep
+touch reports/daily/.gitkeep
+touch reports/weekly/.gitkeep
+touch reports/monthly/.gitkeep
+touch logs/.gitkeep
+touch uploads/.gitkeep
