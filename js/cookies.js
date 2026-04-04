@@ -1,15 +1,25 @@
-function setCookie(name, value, days = 365) {
-  const expires = new Date(Date.now() + days * 86400000).toUTCString();
-  document.cookie = `${name}=${encodeURIComponent(value)}; expires=${expires}; path=/`;
+// ========================================
+// Asmara.Store - Cookies Management
+// ========================================
+
+function setCookie(name, value, days) {
+    const date = new Date();
+    date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+    document.cookie = `${name}=${value};expires=${date.toUTCString()};path=/`;
 }
 
 function getCookie(name) {
-  const cookies = document.cookie.split("; ");
-  for (let i = 0; i < cookies.length; i++) {
-    const parts = cookies[i].split("=");
-    const key = parts.shift();
-    const value = parts.join("=");
-    if (key === name) return decodeURIComponent(value);
-  }
-  return "";
+    const value = `; ${document.cookie}`;
+    const parts = value.split(`; ${name}=`);
+    if (parts.length === 2) return parts.pop().split(';').shift();
+    return null;
+}
+
+function checkCookieConsent() {
+    return getCookie('cookieConsent') === 'true';
+}
+
+function acceptCookies() {
+    setCookie('cookieConsent', 'true', CONFIG.cookieExpiryDays);
+    document.getElementById('cookieBanner').style.display = 'none';
 }
