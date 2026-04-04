@@ -1,1458 +1,390 @@
-/* ========================================================================
-   
-   █████╗ ███████╗███╗   ███╗ █████╗ ██████╗  █████╗     ███████╗████████╗ ██████╗ ██████╗ ███████╗
-  ██╔══██╗██╔════╝████╗ ████║██╔══██╗██╔══██╗██╔══██╗    ██╔════╝╚══██╔══╝██╔═══██╗██╔══██╗██╔════╝
-  ███████║███████╗██╔████╔██║███████║██████╔╝███████║    ███████╗   ██║   ██║   ██║██████╔╝█████╗  
-  ██╔══██║╚════██║██║╚██╔╝██║██╔══██║██╔══██╗██╔══██║    ╚════██║   ██║   ██║   ██║██╔══██╗██╔══╝  
-  ██║  ██║███████║██║ ╚═╝ ██║██║  ██║██║  ██║██║  ██║    ███████║   ██║   ╚██████╔╝██║  ██║███████╗
-  ╚═╝  ╚═╝╚══════╝╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝    ╚══════╝   ╚═╝    ╚═════╝ ╚═╝  ╚═╝╚══════╝
-  
-  ============================================================================
-  
-   Project:     Asmara.Store
-   Version:     2.0.0
-   Author:      Asmara.Store Team
-   Created:     2026-04-04
-   Modified:    2026-04-04
-   Description: Main Stylesheet for Asmara.Store Platform
-                منصة إريتريا المتكاملة - ملف الأنماط الرئيسي
-   
-   ============================================================================
-   TABLE OF CONTENTS:
-   ============================================================================
-   
-   1.  CSS VARIABLES (Custom Properties)
-   2.  RESET & BASE STYLES
-   3.  TYPOGRAPHY
-   4.  LAYOUT & CONTAINERS
-   5.  NAVIGATION (Navbar)
-   6.  LANGUAGE SWITCHER
-   7.  HERO SECTION
-   8.  STATISTICS CARDS
-   9.  TABS SYSTEM
-   10. CARDS COMPONENTS
-   11. FORMS & INPUTS
-   12. BUTTONS
-   13. GRID SYSTEMS
-   14. GALLERY & ADS DISPLAY
-   15. BADGES & TAGS
-   16. RATING STARS
-   17. IMAGE PREVIEW
-   18. CHAT & MESSAGING
-   19. VIOLATIONS & REPORTS
-   20. FLIGHT RESULTS
-   21. AGENT PANEL
-   22. FOOTER
-   23. SCROLLBAR
-   24. RESPONSIVE DESIGN
-   25. PRINT STYLES
-   26. UTILITIES
-   27. ANIMATIONS
-   28. DARK MODE (Optional)
-   
-   ======================================================================== */
+/* ========================================
+   Asmara.Store - Main Stylesheet
+   ======================================== */
 
-/* ========================================================================
-   1. CSS VARIABLES (Custom Properties)
-   ======================================================================== */
-
+/* ===== المتغيرات ===== */
 :root {
-    /* ===== الألوان الأساسية ===== */
-    --primary-dark: #1e3a5f;
-    --primary: #2c5282;
-    --primary-light: #3a6b92;
-    --primary-soft: #e8f0f8;
-    
+    --primary: #1e3a5f;
+    --primary-light: #2c5282;
     --secondary: #c7a12b;
-    --secondary-dark: #a0801a;
-    --secondary-light: #e6b422;
-    --secondary-soft: #fef8e7;
-    
-    /* ===== الألوان الوظيفية ===== */
-    --success: #28a745;
-    --success-dark: #1e7e34;
-    --success-light: #d4edda;
-    
     --danger: #dc3545;
-    --danger-dark: #b02a37;
-    --danger-light: #f8d7da;
-    
+    --success: #28a745;
     --warning: #ffc107;
-    --warning-dark: #e6a800;
-    --warning-light: #fff3cd;
-    
-    --info: #17a2b8;
-    --info-dark: #117a8b;
-    --info-light: #d1ecf1;
-    
-    /* ===== الألوان المحايدة ===== */
     --white: #ffffff;
-    --black: #000000;
-    --gray-100: #f8f9fa;
-    --gray-200: #e9ecef;
-    --gray-300: #dee2e6;
-    --gray-400: #ced4da;
-    --gray-500: #adb5bd;
-    --gray-600: #6c757d;
-    --gray-700: #495057;
-    --gray-800: #343a40;
-    --gray-900: #212529;
-    
-    --bg-light: #f0f4f9;
-    --bg-dark: #1a2a3f;
-    
+    --gray-bg: #f0f4f9;
     --text-dark: #1a2a3f;
-    --text-gray: #4a627a;
-    --text-light: #8ba0b5;
-    
-    /* ===== الظلال ===== */
-    --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.05);
-    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
-    --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.08);
-    --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.1);
-    --shadow-xl: 0 12px 24px rgba(0, 0, 0, 0.12);
-    --shadow-2xl: 0 24px 48px rgba(0, 0, 0, 0.15);
-    
-    --shadow-primary: 0 4px 12px rgba(30, 58, 95, 0.2);
-    --shadow-secondary: 0 4px 12px rgba(199, 161, 43, 0.2);
-    
-    /* ===== الحواف المستديرة ===== */
-    --radius-xs: 4px;
-    --radius-sm: 8px;
-    --radius-md: 12px;
-    --radius-lg: 16px;
-    --radius-xl: 20px;
-    --radius-2xl: 24px;
-    --radius-3xl: 32px;
-    --radius-full: 9999px;
-    
-    /* ===== الانتقالات ===== */
-    --transition-fast: 0.15s ease;
-    --transition: 0.25s ease;
-    --transition-slow: 0.35s ease;
-    --transition-bounce: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-    
-    /* ===== المسافات ===== */
-    --spacing-xs: 0.25rem;
-    --spacing-sm: 0.5rem;
-    --spacing-md: 0.75rem;
-    --spacing-lg: 1rem;
-    --spacing-xl: 1.5rem;
-    --spacing-2xl: 2rem;
-    --spacing-3xl: 3rem;
-    --spacing-4xl: 4rem;
-    
-    /* ===== الخطوط ===== */
-    --font-arabic: 'Cairo', 'Tajawal', 'Almarai', sans-serif;
-    --font-english: 'Inter', 'Poppins', 'Segoe UI', sans-serif;
-    --font-tigrinya: 'Noto Sans Ethiopic', 'Abyssinica SIL', sans-serif;
-    
-    /* ===== العرض ===== */
-    --container-width: 1400px;
-    --sidebar-width: 280px;
-    --header-height: 70px;
-    
-    /* ===== z-index ===== */
-    --z-dropdown: 100;
-    --z-sticky: 200;
-    --z-header: 300;
-    --z-modal: 400;
-    --z-popup: 500;
-    --z-tooltip: 600;
+    --shadow: 0 4px 12px rgba(0,0,0,0.1);
+    --radius: 12px;
 }
 
-/* ========================================================================
-   2. RESET & BASE STYLES
-   ======================================================================== */
-
-*,
-*::before,
-*::after {
+/* ===== الأساسيات ===== */
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-html {
-    font-size: 16px;
-    scroll-behavior: smooth;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
-
 body {
-    font-family: var(--font-arabic);
-    background: var(--bg-light);
+    font-family: 'Cairo', 'Inter', sans-serif;
+    background: var(--gray-bg);
     color: var(--text-dark);
-    line-height: 1.5;
     direction: rtl;
-    min-height: 100vh;
-    overflow-x: hidden;
 }
 
-/* اتجاه الصفحة حسب اللغة */
 body.lang-en {
     direction: ltr;
-    text-align: left;
-    font-family: var(--font-english);
 }
 
-body.lang-ti {
-    direction: rtl;
-    text-align: right;
-    font-family: var(--font-tigrinya);
-}
-
-/* ===== الروابط ===== */
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-/* ===== القوائم ===== */
-ul, ol {
-    list-style: none;
-}
-
-/* ===== الصور ===== */
-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-}
-
-/* ===== الجداول ===== */
-table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-/* ========================================================================
-   3. TYPOGRAPHY
-   ======================================================================== */
-
-h1, .h1 {
-    font-size: 2.5rem;
-    font-weight: 800;
-    line-height: 1.2;
-    margin-bottom: var(--spacing-lg);
-}
-
-h2, .h2 {
-    font-size: 2rem;
-    font-weight: 700;
-    line-height: 1.25;
-    margin-bottom: var(--spacing-md);
-}
-
-h3, .h3 {
-    font-size: 1.5rem;
-    font-weight: 700;
-    line-height: 1.3;
-    margin-bottom: var(--spacing-md);
-}
-
-h4, .h4 {
-    font-size: 1.25rem;
-    font-weight: 600;
-    line-height: 1.35;
-    margin-bottom: var(--spacing-sm);
-}
-
-h5, .h5 {
-    font-size: 1.125rem;
-    font-weight: 600;
-    line-height: 1.4;
-}
-
-h6, .h6 {
-    font-size: 1rem;
-    font-weight: 600;
-    line-height: 1.45;
-}
-
-p {
-    margin-bottom: var(--spacing-md);
-}
-
-/* ===== نصوص مساعدة ===== */
-.text-xs { font-size: 0.75rem; }
-.text-sm { font-size: 0.875rem; }
-.text-base { font-size: 1rem; }
-.text-lg { font-size: 1.125rem; }
-.text-xl { font-size: 1.25rem; }
-.text-2xl { font-size: 1.5rem; }
-.text-3xl { font-size: 2rem; }
-
-.text-bold { font-weight: 700; }
-.text-semibold { font-weight: 600; }
-.text-medium { font-weight: 500; }
-.text-normal { font-weight: 400; }
-
-.text-primary { color: var(--primary); }
-.text-secondary { color: var(--secondary); }
-.text-success { color: var(--success); }
-.text-danger { color: var(--danger); }
-.text-warning { color: var(--warning); }
-.text-white { color: var(--white); }
-.text-gray { color: var(--text-gray); }
-
-/* ========================================================================
-   4. LAYOUT & CONTAINERS
-   ======================================================================== */
-
-.container {
-    max-width: var(--container-width);
-    margin: 0 auto;
-    padding: var(--spacing-xl);
-}
-
-.container-fluid {
-    width: 100%;
-    padding: var(--spacing-xl);
-}
-
-.section {
-    margin-bottom: var(--spacing-3xl);
-}
-
-.section-title {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--primary);
-    margin-bottom: var(--spacing-xl);
-    border-right: 4px solid var(--secondary);
-    padding-right: var(--spacing-lg);
-}
-
-body.lang-en .section-title {
-    border-right: none;
-    border-left: 4px solid var(--secondary);
-    padding-right: 0;
-    padding-left: var(--spacing-lg);
-}
-
-/* ========================================================================
-   5. NAVIGATION (Navbar)
-   ======================================================================== */
-
+/* ===== شريط التنقل ===== */
 .navbar {
-    background: var(--primary-dark);
-    color: var(--white);
-    padding: var(--spacing-md) var(--spacing-xl);
+    background: var(--primary);
+    padding: 0.75rem 1.5rem;
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
     justify-content: space-between;
-    gap: var(--spacing-lg);
+    align-items: center;
     position: sticky;
     top: 0;
-    z-index: var(--z-header);
-    box-shadow: var(--shadow-lg);
+    z-index: 1000;
 }
 
-.navbar-brand {
-    flex-shrink: 0;
-}
-
-.navbar-brand svg {
-    display: block;
-}
-
-.navbar-nav {
+.nav-links {
     display: flex;
-    gap: var(--spacing-xs);
+    gap: 0.5rem;
     flex-wrap: wrap;
-    flex: 1;
-    justify-content: center;
 }
 
 .nav-link {
-    color: rgba(255, 255, 255, 0.9);
+    color: white;
     text-decoration: none;
-    font-weight: 600;
+    padding: 0.5rem 0.8rem;
     font-size: 0.75rem;
-    transition: var(--transition);
-    border-bottom: 2px solid transparent;
-    cursor: pointer;
-    padding: var(--spacing-sm) var(--spacing-md);
-    border-radius: var(--radius-full);
+    font-weight: 600;
+    border-radius: 20px;
 }
 
-.nav-link:hover {
-    color: var(--secondary);
-    background: rgba(255, 255, 255, 0.1);
-}
-
+.nav-link:hover,
 .nav-link.active {
-    color: var(--secondary);
-    border-bottom-color: var(--secondary);
-    background: rgba(199, 161, 43, 0.15);
-}
-
-/* ===== شارة الوكيل ===== */
-.agent-badge {
     background: var(--secondary);
-    color: var(--primary-dark);
-    padding: 0.2rem 0.6rem;
-    border-radius: var(--radius-full);
-    font-size: 0.65rem;
-    font-weight: bold;
-    margin-right: var(--spacing-sm);
+    color: var(--primary);
 }
 
-/* ========================================================================
-   6. LANGUAGE SWITCHER
-   ======================================================================== */
-
-.lang-switcher {
+/* ===== أزرار اللغة ===== */
+.lang-switch {
     display: flex;
-    gap: var(--spacing-sm);
-    flex-shrink: 0;
+    gap: 0.5rem;
 }
 
 .lang-btn {
-    background: rgba(255, 255, 255, 0.15);
+    background: rgba(255,255,255,0.2);
     border: none;
-    padding: var(--spacing-sm) var(--spacing-lg);
-    border-radius: var(--radius-full);
-    font-family: inherit;
-    font-weight: 600;
-    font-size: 0.75rem;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    color: white;
     cursor: pointer;
-    color: var(--white);
-    transition: var(--transition);
 }
 
 .lang-btn.active {
     background: var(--secondary);
-    color: var(--primary-dark);
+    color: var(--primary);
 }
 
-.lang-btn:hover:not(.active) {
-    background: rgba(199, 161, 43, 0.7);
-    color: var(--primary-dark);
+/* ===== الحاوية ===== */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1.5rem;
 }
 
-/* ========================================================================
-   7. HERO SECTION
-   ======================================================================== */
-
+/* ===== الهيرو ===== */
 .hero {
     text-align: center;
-    margin-bottom: var(--spacing-xl);
-    background: var(--white);
-    border-radius: var(--radius-3xl);
-    padding: var(--spacing-3xl);
-    box-shadow: var(--shadow-md);
-    border: 1px solid rgba(199, 161, 43, 0.1);
+    background: white;
+    border-radius: 28px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    box-shadow: var(--shadow);
 }
 
-.hero-logo {
-    font-size: 2.5rem;
-    font-weight: 800;
-    margin-bottom: var(--spacing-lg);
-}
-
-.hero-title {
-    font-size: 2rem;
-    font-weight: 800;
-    color: var(--primary);
-    margin-bottom: var(--spacing-md);
-}
-
-.hero-tagline {
-    font-size: 1.125rem;
+.tagline {
     color: var(--secondary);
-    font-weight: 600;
-    letter-spacing: 0.5px;
+    font-weight: 700;
 }
 
-.hero-description {
-    max-width: 800px;
-    margin: var(--spacing-lg) auto 0;
-    color: var(--text-gray);
-}
-
-/* ========================================================================
-   8. STATISTICS CARDS
-   ======================================================================== */
-
+/* ===== الإحصائيات ===== */
 .stats-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-    gap: var(--spacing-lg);
-    margin-bottom: var(--spacing-xl);
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.5rem;
 }
 
 .stat-card {
-    background: linear-gradient(135deg, var(--primary-dark), var(--primary));
-    color: var(--white);
-    border-radius: var(--radius-lg);
-    padding: var(--spacing-lg);
+    background: linear-gradient(135deg, var(--primary), var(--primary-light));
+    color: white;
+    border-radius: 16px;
+    padding: 1rem;
     text-align: center;
-    transition: var(--transition);
-    box-shadow: var(--shadow-sm);
-}
-
-.stat-card:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-lg);
 }
 
 .stat-number {
-    font-size: 2rem;
+    font-size: 1.8rem;
     font-weight: 800;
-    line-height: 1.2;
 }
 
 .stat-label {
-    font-size: 0.75rem;
-    opacity: 0.85;
-    margin-top: var(--spacing-xs);
+    font-size: 0.7rem;
+    opacity: 0.9;
 }
 
-/* ========================================================================
-   9. TABS SYSTEM
-   ======================================================================== */
-
+/* ===== التبويبات ===== */
 .tabs {
     display: flex;
-    gap: var(--spacing-xs);
+    gap: 0.3rem;
     flex-wrap: wrap;
-    margin-bottom: var(--spacing-xl);
-    border-bottom: 2px solid var(--gray-200);
-    padding-bottom: var(--spacing-md);
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 0.5rem;
 }
 
 .tab-btn {
     background: transparent;
     border: none;
-    padding: var(--spacing-sm) var(--spacing-lg);
-    font-size: 0.875rem;
+    padding: 0.5rem 1rem;
+    font-size: 0.75rem;
     font-weight: 600;
     cursor: pointer;
-    border-radius: var(--radius-full);
-    transition: var(--transition);
-    color: var(--text-gray);
+    border-radius: 40px;
+    color: #4a627a;
 }
 
 .tab-btn.active {
     background: var(--primary);
-    color: var(--white);
-    box-shadow: var(--shadow-sm);
-}
-
-.tab-btn:hover:not(.active) {
-    background: var(--gray-200);
-    color: var(--primary);
+    color: white;
 }
 
 .tab-pane {
     display: none;
-    animation: fadeIn 0.35s ease-out;
 }
 
 .tab-pane.active-pane {
     display: block;
 }
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* ========================================================================
-   10. CARDS COMPONENTS
-   ======================================================================== */
-
+/* ===== البطاقات ===== */
 .card {
-    background: var(--white);
-    border-radius: var(--radius-xl);
-    padding: var(--spacing-xl);
-    margin-bottom: var(--spacing-xl);
-    box-shadow: var(--shadow-sm);
-    border: 1px solid var(--gray-200);
-    transition: var(--transition);
+    background: white;
+    border-radius: 24px;
+    padding: 1.25rem;
+    margin-bottom: 1.25rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    border: 1px solid #eef2f8;
 }
 
-.card:hover {
-    box-shadow: var(--shadow-md);
-}
-
-.card-header {
-    margin-bottom: var(--spacing-lg);
-    padding-bottom: var(--spacing-md);
-    border-bottom: 1px solid var(--gray-200);
-}
-
-.card-title {
-    font-size: 1.25rem;
-    font-weight: 700;
+.card h3 {
+    font-size: 1.15rem;
     color: var(--primary);
-    margin: 0;
+    margin-bottom: 1rem;
     border-right: 4px solid var(--secondary);
-    padding-right: var(--spacing-md);
+    padding-right: 0.8rem;
 }
 
-body.lang-en .card-title {
-    border-right: none;
-    border-left: 4px solid var(--secondary);
-    padding-right: 0;
-    padding-left: var(--spacing-md);
-}
-
-.card-body {
-    flex: 1;
-}
-
-.card-footer {
-    margin-top: var(--spacing-lg);
-    padding-top: var(--spacing-md);
-    border-top: 1px solid var(--gray-200);
-}
-
-/* ========================================================================
-   11. FORMS & INPUTS
-   ======================================================================== */
-
-.form-group {
-    margin-bottom: var(--spacing-lg);
-}
-
-.form-label {
-    display: block;
-    margin-bottom: var(--spacing-sm);
-    font-weight: 600;
-    font-size: 0.875rem;
-    color: var(--text-dark);
-}
-
-.form-control {
+/* ===== النماذج ===== */
+input, select, textarea {
     width: 100%;
-    padding: var(--spacing-md);
-    border: 1.5px solid var(--gray-300);
-    border-radius: var(--radius-md);
+    padding: 0.7rem;
+    margin: 0.5rem 0;
+    border: 1px solid #ccc;
+    border-radius: 12px;
     font-family: inherit;
-    font-size: 0.875rem;
-    transition: var(--transition);
-    background: var(--white);
 }
 
-.form-control:focus {
-    outline: none;
-    border-color: var(--secondary);
-    box-shadow: 0 0 0 3px rgba(199, 161, 43, 0.2);
-}
-
-.form-control:hover:not(:focus) {
-    border-color: var(--secondary-light);
-}
-
-textarea.form-control {
-    resize: vertical;
-    min-height: 80px;
-}
-
-select.form-control {
-    cursor: pointer;
-}
-
-/* ========================================================================
-   12. BUTTONS
-   ======================================================================== */
-
+/* ===== الأزرار ===== */
 .btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: var(--spacing-sm);
     background: var(--primary);
-    color: var(--white);
+    color: white;
     border: none;
-    padding: var(--spacing-md) var(--spacing-xl);
-    border-radius: var(--radius-full);
+    padding: 0.7rem 1.2rem;
+    border-radius: 40px;
     font-weight: 600;
-    font-size: 0.875rem;
     cursor: pointer;
-    transition: var(--transition);
-    text-decoration: none;
+    width: 100%;
+    transition: 0.2s;
 }
 
 .btn:hover {
     background: var(--secondary);
-    color: var(--primary-dark);
-    transform: translateY(-2px);
-}
-
-.btn:active {
-    transform: translateY(0);
-}
-
-.btn-block {
-    display: flex;
-    width: 100%;
+    color: var(--primary);
 }
 
 .btn-sm {
-    padding: var(--spacing-sm) var(--spacing-lg);
-    font-size: 0.75rem;
+    width: auto;
+    padding: 0.4rem 1rem;
 }
 
-.btn-lg {
-    padding: var(--spacing-lg) var(--spacing-2xl);
-    font-size: 1rem;
-}
-
-/* ===== ألوان الأزرار ===== */
-.btn-primary {
-    background: var(--primary);
-}
-.btn-primary:hover {
-    background: var(--primary-dark);
-}
-
-.btn-secondary {
-    background: var(--secondary);
-    color: var(--primary-dark);
-}
-.btn-secondary:hover {
-    background: var(--secondary-dark);
-    color: var(--white);
-}
-
-.btn-success {
-    background: var(--success);
-}
-.btn-success:hover {
-    background: var(--success-dark);
-}
-
-.btn-danger {
-    background: var(--danger);
-}
-.btn-danger:hover {
-    background: var(--danger-dark);
-}
-
-.btn-warning {
-    background: var(--warning);
-    color: var(--primary-dark);
-}
-.btn-warning:hover {
-    background: var(--warning-dark);
-}
-
-.btn-outline {
-    background: transparent;
-    border: 2px solid var(--primary);
-    color: var(--primary);
-}
-.btn-outline:hover {
-    background: var(--primary);
-    color: var(--white);
-}
-
-/* ===== أزرار معطلة ===== */
-.btn:disabled,
-.btn.disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
-    transform: none;
-}
-
-/* ========================================================================
-   13. GRID SYSTEMS
-   ======================================================================== */
-
-.grid {
-    display: grid;
-    gap: var(--spacing-xl);
-}
-
+/* ===== الشبكات ===== */
 .grid-2 {
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.2rem;
 }
 
-.grid-3 {
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-}
-
-.grid-4 {
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-}
-
-/* ========================================================================
-   14. GALLERY & ADS DISPLAY
-   ======================================================================== */
-
+/* ===== المعرض ===== */
 .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-    gap: var(--spacing-lg);
-    margin-top: var(--spacing-lg);
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
 }
 
 .gallery-item {
-    background: var(--white);
-    border-radius: var(--radius-lg);
-    padding: var(--spacing-md);
-    border: 1px solid var(--gray-200);
-    transition: var(--transition);
+    background: #fafcff;
+    border-radius: 16px;
+    padding: 0.6rem;
+    border: 1px solid #eef2f8;
     cursor: pointer;
     position: relative;
-    overflow: hidden;
 }
 
-.gallery-item:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-lg);
-}
-
-.gallery-item-image {
+.gallery-item img {
     width: 100%;
-    height: 120px;
+    height: 100px;
     object-fit: cover;
-    border-radius: var(--radius-md);
-    background: var(--gray-200);
+    border-radius: 12px;
 }
 
-.gallery-item-title {
-    font-size: 0.875rem;
-    font-weight: 700;
-    margin: var(--spacing-md) 0 var(--spacing-xs);
-    color: var(--primary);
+.gallery-item h4 {
+    font-size: 0.8rem;
+    margin: 0.4rem 0;
 }
-
-.gallery-item-info {
-    font-size: 0.7rem;
-    color: var(--text-gray);
-}
-
-/* ===== زر الإبلاغ على الإعلان ===== */
-.report-flag {
-    position: absolute;
-    top: var(--spacing-sm);
-    right: var(--spacing-sm);
-    background: var(--danger);
-    color: var(--white);
-    border-radius: 50%;
-    width: 28px;
-    height: 28px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.75rem;
-    cursor: pointer;
-    transition: var(--transition);
-    z-index: var(--z-tooltip);
-    opacity: 0.8;
-}
-
-.report-flag:hover {
-    transform: scale(1.1);
-    opacity: 1;
-}
-
-/* ========================================================================
-   15. BADGES & TAGS
-   ======================================================================== */
 
 .badge {
     display: inline-block;
     background: var(--secondary);
-    color: var(--primary-dark);
-    padding: 0.2rem 0.6rem;
-    border-radius: var(--radius-full);
-    font-size: 0.6rem;
-    font-weight: 700;
-    margin-top: var(--spacing-xs);
+    color: var(--primary);
+    padding: 0.15rem 0.4rem;
+    border-radius: 16px;
+    font-size: 0.55rem;
 }
 
-.badge-pending {
-    background: var(--warning);
-    color: var(--primary-dark);
-}
-
-.badge-approved {
-    background: var(--success);
-    color: var(--white);
-}
-
-.badge-rejected {
+/* ===== الإبلاغ ===== */
+.report-flag {
+    position: absolute;
+    top: 8px;
+    right: 8px;
     background: var(--danger);
-    color: var(--white);
-}
-
-.badge-featured {
-    background: linear-gradient(135deg, var(--secondary), var(--secondary-light));
-    color: var(--primary-dark);
-}
-
-/* ========================================================================
-   16. RATING STARS
-   ======================================================================== */
-
-.rating-stars {
-    color: var(--secondary);
-    font-size: 0.75rem;
-    margin: var(--spacing-xs) 0;
-    letter-spacing: 2px;
-}
-
-.rating-stars-empty {
-    color: var(--gray-400);
-}
-
-/* ========================================================================
-   17. IMAGE PREVIEW
-   ======================================================================== */
-
-.image-preview {
+    color: white;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
     display: flex;
-    gap: var(--spacing-sm);
-    flex-wrap: wrap;
-    margin-top: var(--spacing-md);
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7rem;
+    cursor: pointer;
 }
 
-.image-preview img {
-    width: 60px;
-    height: 60px;
-    object-fit: cover;
-    border-radius: var(--radius-sm);
-    border: 1px solid var(--gray-300);
+/* ===== المخالفات ===== */
+.violation-item,
+.report-item {
+    padding: 0.7rem;
+    margin: 0.5rem 0;
+    border-radius: 12px;
 }
 
-/* ========================================================================
-   18. CHAT & MESSAGING
-   ======================================================================== */
-
-.chat-container {
-    display: flex;
-    flex-direction: column;
-    height: 400px;
+.violation-item {
+    background: #fff3cd;
+    border-right: 4px solid var(--warning);
 }
 
-.chat-messages {
-    flex: 1;
+.report-item {
+    background: #f8d7da;
+    border-right: 4px solid var(--danger);
+}
+
+/* ===== المراسلة ===== */
+.chat-list {
+    max-height: 250px;
     overflow-y: auto;
-    padding: var(--spacing-md);
-    background: var(--gray-100);
-    border-radius: var(--radius-lg);
+    border: 1px solid #eef2f8;
+    border-radius: 12px;
+    padding: 0.5rem;
 }
 
 .chat-message {
-    padding: var(--spacing-md);
-    margin-bottom: var(--spacing-md);
-    background: var(--white);
-    border-radius: var(--radius-lg);
-    box-shadow: var(--shadow-xs);
-}
-
-.chat-message-sender {
-    font-weight: 700;
-    color: var(--primary);
-    margin-bottom: var(--spacing-xs);
-}
-
-.chat-message-text {
-    font-size: 0.875rem;
-    color: var(--text-dark);
-}
-
-.chat-message-time {
-    font-size: 0.65rem;
-    color: var(--text-light);
-    margin-top: var(--spacing-xs);
+    padding: 0.5rem;
+    border-bottom: 1px solid #eef2f8;
 }
 
 .chat-input-area {
     display: flex;
-    gap: var(--spacing-md);
-    margin-top: var(--spacing-md);
+    gap: 0.5rem;
+    margin-top: 0.5rem;
 }
 
-.chat-input {
+.chat-input-area input {
+    margin: 0;
     flex: 1;
-    padding: var(--spacing-md);
-    border: 1.5px solid var(--gray-300);
-    border-radius: var(--radius-full);
-    font-family: inherit;
 }
 
-.contacts-list {
-    max-height: 300px;
-    overflow-y: auto;
-}
-
-.contact-item {
-    padding: var(--spacing-md);
-    border-bottom: 1px solid var(--gray-200);
-    cursor: pointer;
-    transition: var(--transition);
-}
-
-.contact-item:hover {
-    background: var(--gray-100);
-}
-
-.contact-name {
-    font-weight: 700;
-    color: var(--primary);
-}
-
-.contact-last-message {
-    font-size: 0.75rem;
-    color: var(--text-gray);
-}
-
-/* ========================================================================
-   19. VIOLATIONS & REPORTS
-   ======================================================================== */
-
-.violation-item {
-    background: var(--warning-light);
-    border-right: 4px solid var(--warning);
-    padding: var(--spacing-md);
-    margin: var(--spacing-md) 0;
-    border-radius: var(--radius-md);
-    font-size: 0.875rem;
-}
-
-.report-item {
-    background: var(--danger-light);
-    border-right: 4px solid var(--danger);
-    padding: var(--spacing-md);
-    margin: var(--spacing-md) 0;
-    border-radius: var(--radius-md);
-    font-size: 0.875rem;
-}
-
-/* ========================================================================
-   20. FLIGHT RESULTS
-   ======================================================================== */
-
+/* ===== الطيران ===== */
 .flight-result {
-    background: var(--gray-100);
-    border-radius: var(--radius-md);
-    padding: var(--spacing-lg);
-    margin-top: var(--spacing-lg);
+    background: #eef2f8;
+    border-radius: 12px;
+    padding: 0.8rem;
+    margin-top: 0.8rem;
 }
 
-.flight-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: var(--spacing-md);
-    border-bottom: 1px solid var(--gray-300);
-}
-
-.flight-airline {
-    font-weight: 700;
-    color: var(--primary);
-}
-
-.flight-price {
-    font-weight: 700;
-    color: var(--secondary);
-}
-
-/* ========================================================================
-   21. AGENT PANEL
-   ======================================================================== */
-
-.agent-log {
-    max-height: 400px;
-    overflow-y: auto;
-}
-
-.agent-log-item {
-    padding: var(--spacing-sm);
-    border-bottom: 1px solid var(--gray-200);
-    font-size: 0.75rem;
-}
-
-.blocked-words-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--spacing-sm);
-    margin-bottom: var(--spacing-lg);
-}
-
-.blocked-word {
-    background: var(--danger);
-    color: var(--white);
-    padding: var(--spacing-xs) var(--spacing-md);
-    border-radius: var(--radius-full);
-    font-size: 0.7rem;
-}
-
-/* ========================================================================
-   22. FOOTER
-   ======================================================================== */
-
+/* ===== التذييل ===== */
 .footer {
     text-align: center;
-    margin-top: var(--spacing-3xl);
-    padding-top: var(--spacing-xl);
-    border-top: 1px solid var(--gray-300);
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #cbdde9;
     font-size: 0.75rem;
-    color: var(--text-gray);
 }
 
-.footer-verified {
+.verified {
     font-weight: 700;
     color: var(--secondary);
-    margin-top: var(--spacing-sm);
+    margin-top: 0.5rem;
 }
 
-/* ========================================================================
-   23. SCROLLBAR
-   ======================================================================== */
-
-::-webkit-scrollbar {
-    width: 8px;
-    height: 8px;
-}
-
-::-webkit-scrollbar-track {
-    background: var(--gray-200);
-    border-radius: var(--radius-full);
-}
-
-::-webkit-scrollbar-thumb {
-    background: var(--primary-light);
-    border-radius: var(--radius-full);
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: var(--primary);
-}
-
-/* ========================================================================
-   24. RESPONSIVE DESIGN
-   ======================================================================== */
-
-/* ===== شاشات كبيرة (Desktop) ===== */
-@media (max-width: 1200px) {
-    .container {
-        max-width: 95%;
-    }
-    
-    .grid-4 {
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    }
-}
-
-/* ===== شاشات متوسطة (Tablet Landscape) ===== */
-@media (max-width: 992px) {
-    :root {
-        --container-width: 100%;
-    }
-    
-    .navbar-nav {
-        gap: var(--spacing-xs);
-    }
-    
-    .nav-link {
-        font-size: 0.7rem;
-        padding: var(--spacing-xs) var(--spacing-sm);
-    }
-    
-    .stats-grid {
-        gap: var(--spacing-md);
-    }
-    
-    .stat-number {
-        font-size: 1.5rem;
-    }
-    
-    .grid-3, .grid-4 {
-        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    }
-}
-
-/* ===== شاشات صغيرة (Tablet Portrait) ===== */
+/* ===== التجاوب ===== */
 @media (max-width: 768px) {
     .navbar {
         flex-direction: column;
         text-align: center;
-        padding: var(--spacing-md);
     }
     
-    .navbar-nav {
+    .nav-links {
         justify-content: center;
-    }
-    
-    .lang-switcher {
-        justify-content: center;
-    }
-    
-    .container {
-        padding: var(--spacing-lg);
-    }
-    
-    .hero {
-        padding: var(--spacing-xl);
-    }
-    
-    .hero-title {
-        font-size: 1.5rem;
-    }
-    
-    .hero-tagline {
-        font-size: 1rem;
     }
     
     .stats-grid {
         grid-template-columns: repeat(2, 1fr);
-        gap: var(--spacing-md);
     }
     
-    .tabs {
-        justify-content: center;
-    }
-    
-    .tab-btn {
-        padding: var(--spacing-xs) var(--spacing-md);
-        font-size: 0.7rem;
-    }
-    
-    .grid-2, .grid-3, .grid-4 {
+    .grid-2 {
         grid-template-columns: 1fr;
     }
     
-    .gallery-grid {
-        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-    }
-}
-
-/* ===== شاشات صغيرة جداً (Mobile) ===== */
-@media (max-width: 480px) {
-    .stats-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: var(--spacing-sm);
-    }
-    
-    .stat-card {
-        padding: var(--spacing-md);
-    }
-    
-    .stat-number {
-        font-size: 1.2rem;
-    }
-    
-    .stat-label {
-        font-size: 0.6rem;
-    }
-    
-    .card {
-        padding: var(--spacing-lg);
-    }
-    
-    .card-title {
-        font-size: 1rem;
-    }
-    
-    .gallery-grid {
-        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-    }
-    
-    .gallery-item-image {
-        height: 90px;
-    }
-    
-    .btn {
-        padding: var(--spacing-sm) var(--spacing-lg);
-        font-size: 0.75rem;
-    }
-    
-    .chat-message-text {
-        font-size: 0.75rem;
-    }
-}
-
-/* ========================================================================
-   25. PRINT STYLES
-   ======================================================================== */
-
-@media print {
-    .navbar,
-    .lang-switcher,
-    .tabs,
-    .btn,
-    .report-flag,
-    .chat-input-area {
-        display: none;
-    }
-    
-    body {
-        background: white;
-        color: black;
-    }
-    
-    .card {
-        box-shadow: none;
-        border: 1px solid #ccc;
-        break-inside: avoid;
-    }
-    
     .container {
-        padding: 0;
-        max-width: 100%;
-    }
-    
-    a {
-        text-decoration: underline;
-        color: black;
+        padding: 1rem;
     }
 }
 
-/* ========================================================================
-   26. UTILITIES
-   ======================================================================== */
-
-/* ===== المسافات ===== */
-.m-0 { margin: 0; }
-.mt-0 { margin-top: 0; }
-.mb-0 { margin-bottom: 0; }
-.ml-0 { margin-left: 0; }
-.mr-0 { margin-right: 0; }
-
-.mt-1 { margin-top: var(--spacing-xs); }
-.mt-2 { margin-top: var(--spacing-sm); }
-.mt-3 { margin-top: var(--spacing-md); }
-.mt-4 { margin-top: var(--spacing-lg); }
-.mt-5 { margin-top: var(--spacing-xl); }
-
-.mb-1 { margin-bottom: var(--spacing-xs); }
-.mb-2 { margin-bottom: var(--spacing-sm); }
-.mb-3 { margin-bottom: var(--spacing-md); }
-.mb-4 { margin-bottom: var(--spacing-lg); }
-.mb-5 { margin-bottom: var(--spacing-xl); }
-
-.p-0 { padding: 0; }
-.p-1 { padding: var(--spacing-xs); }
-.p-2 { padding: var(--spacing-sm); }
-.p-3 { padding: var(--spacing-md); }
-.p-4 { padding: var(--spacing-lg); }
-.p-5 { padding: var(--spacing-xl); }
-
-/* ===== المحاذاة ===== */
-.text-center { text-align: center; }
-.text-right { text-align: right; }
-.text-left { text-align: left; }
-
-.d-flex { display: flex; }
-.d-block { display: block; }
-.d-none { display: none; }
-
-.flex-column { flex-direction: column; }
-.justify-center { justify-content: center; }
-.justify-between { justify-content: space-between; }
-.align-center { align-items: center; }
-.gap-1 { gap: var(--spacing-xs); }
-.gap-2 { gap: var(--spacing-sm); }
-.gap-3 { gap: var(--spacing-md); }
-.gap-4 { gap: var(--spacing-lg); }
-
-/* ===== العرض ===== */
-.w-100 { width: 100%; }
-.w-50 { width: 50%; }
-.w-25 { width: 25%; }
-
-/* ===== مؤشرات ===== */
-.cursor-pointer { cursor: pointer; }
-.cursor-default { cursor: default; }
-
-/* ===== الرؤية ===== */
-.hidden { display: none; }
-.visible { display: block; }
-.invisible { visibility: hidden; }
-
-/* ===== الموضع ===== */
-.relative { position: relative; }
-.absolute { position: absolute; }
-.fixed { position: fixed; }
-.sticky { position: sticky; }
-
-/* ===== الحواف ===== */
-.rounded-sm { border-radius: var(--radius-sm); }
-.rounded-md { border-radius: var(--radius-md); }
-.rounded-lg { border-radius: var(--radius-lg); }
-.rounded-full { border-radius: var(--radius-full); }
-
-/* ===== الظلال ===== */
-.shadow-sm { box-shadow: var(--shadow-sm); }
-.shadow-md { box-shadow: var(--shadow-md); }
-.shadow-lg { box-shadow: var(--shadow-lg); }
-
-/* ========================================================================
-   27. ANIMATIONS
-   ======================================================================== */
-
-@keyframes spin {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
+/* ===== شريط التمرير ===== */
+::-webkit-scrollbar {
+    width: 8px;
 }
 
-@keyframes pulse {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.5; }
+::-webkit-scrollbar-track {
+    background: #eef2f8;
+    border-radius: 10px;
 }
 
-@keyframes slideIn {
-    from {
-        transform: translateX(-20px);
-        opacity: 0;
-    }
-    to {
-        transform: translateX(0);
-        opacity: 1;
-    }
+::-webkit-scrollbar-thumb {
+    background: var(--primary-light);
+    border-radius: 10px;
 }
-
-@keyframes slideUp {
-    from {
-        transform: translateY(20px);
-        opacity: 0;
-    }
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-
-.animate-spin {
-    animation: spin 1s linear infinite;
-}
-
-.animate-pulse {
-    animation: pulse 2s ease-in-out infinite;
-}
-
-.animate-slide-in {
-    animation: slideIn 0.3s ease-out;
-}
-
-.animate-slide-up {
-    animation: slideUp 0.3s ease-out;
-}
-
-/* ========================================================================
-   28. DARK MODE (اختياري - للمستقبل)
-   ======================================================================== */
-
-@media (prefers-color-scheme: dark) {
-    /* يمكن تفعيل الوضع الداكن لاحقاً */
-}
-
-/* ========================================================================
-   نهاية الملف - End of File
-   ======================================================================== */
