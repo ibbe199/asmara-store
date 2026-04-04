@@ -1,15 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="300" height="200" viewBox="0 0 300 200">
-    <defs>
-        <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" style="stop-color:#1e3a5f;stop-opacity:1" />
-            <stop offset="100%" style="stop-color:#2c5282;stop-opacity:1" />
-        </linearGradient>
-    </defs>
-    <rect width="300" height="200" rx="12" fill="url(#bgGrad)"/>
-    <!-- أيقونة الصورة -->
-    <circle cx="150" cy="80" r="30" fill="#c7a12b" opacity="0.8"/>
-    <path d="M120 80 L135 80 M165 80 L180 80 M150 65 L150 95" stroke="white" stroke-width="3" stroke-linecap="round"/>
-    <rect x="100" y="130" width="100" height="8" rx="4" fill="#c7a12b" opacity="0.6"/>
-    <rect x="110" y="148" width="80" height="6" rx="3" fill="white" opacity="0.4"/>
-    <text x="150" y="175" text-anchor="middle" font-family="'Cairo', Arial, sans-serif" font-size="12" fill="white" opacity="0.7">لا توجد صورة</text>
-</svg>
+data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMjAwIiB2aWV3Qm94PSIwIDAgMzAwIDIwMCI+PHJlY3Qgd2lkdGg9IjMwMCIgaGVpZ2h0PSIyMDAiIHJ4PSIxMiIgZmlsbD0iIzFlM2E1ZiIvPjxjaXJjbGUgY3g9IjE1MCIgY3k9IjgwIiByPSIzMCIgZmlsbD0iI2M3YTEyYiIgb3BhY2l0eT0iMC44Ii8+PHBhdGggZD0iTTEyMCA4MEwxMzUgODBNMTY1IDgwTDE4MCA4ME0xNTAgNjVMMTUwIDk1IiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjMiLz48cmVjdCB4PSIxMDAiIHk9IjEzMCIgd2lkdGg9IjEwMCIgaGVpZ2h0PSI4IiByeD0iNCIgZmlsbD0iI2M3YTEyYiIgb3BhY2l0eT0iMC42Ii8+PHRleHQgeD0iMTUwIiB5PSIxNzUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJDYWlybyIgZm9udC1zaXplPSIxMiIgZmlsbD0id2hpdGUiPoy5mCAgyYUg2Yqo2KfYqNmKPC90ZXh0Pjwvc3ZnPg==
