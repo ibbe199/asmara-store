@@ -1,8 +1,8 @@
 // ========================================
-// Asmara.Store - Data Models (محدث)
+// Asmara.Store - Data Models (بالصور الحقيقية)
 // ========================================
 
-// ===== بيانات العقارات (مضافة) =====
+// ===== بيانات العقارات (بصور حقيقية) =====
 const realEstateData = [
     { 
         id: 1, 
@@ -13,7 +13,7 @@ const realEstateData = [
         bedrooms: 3,
         bathrooms: 2,
         area: "150m²",
-        image: "https://placehold.co/300x200/1e3a5f/white?text=شقة+فاخرة"
+        image: "https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg?w=400&h=250&fit=crop"
     },
     { 
         id: 2, 
@@ -24,7 +24,7 @@ const realEstateData = [
         bedrooms: 5,
         bathrooms: 4,
         area: "400m²",
-        image: "https://placehold.co/300x200/2c5282/white?text=فيلا"
+        image: "https://images.pexels.com/photos/2587054/pexels-photo-2587054.jpeg?w=400&h=250&fit=crop"
     },
     { 
         id: 3, 
@@ -35,7 +35,7 @@ const realEstateData = [
         bedrooms: 2,
         bathrooms: 1,
         area: "95m²",
-        image: "https://placehold.co/300x200/3a6b92/white?text=شقة+وسط"
+        image: "https://images.pexels.com/photos/280229/pexels-photo-280229.jpeg?w=400&h=250&fit=crop"
     },
     { 
         id: 4, 
@@ -44,7 +44,7 @@ const realEstateData = [
         city: "مصوع", 
         type: "أرض",
         area: "600m²",
-        image: "https://placehold.co/300x200/1e3a5f/white?text=أرض"
+        image: "https://images.pexels.com/photos/259588/pexels-photo-259588.jpeg?w=400&h=250&fit=crop"
     },
     { 
         id: 5, 
@@ -53,7 +53,7 @@ const realEstateData = [
         city: "أسمرة", 
         type: "مكتب",
         area: "120m²",
-        image: "https://placehold.co/300x200/2c5282/white?text=مكتب"
+        image: "https://images.pexels.com/photos/289777/pexels-photo-289777.jpeg?w=400&h=250&fit=crop"
     },
     { 
         id: 6, 
@@ -64,85 +64,49 @@ const realEstateData = [
         bedrooms: 2,
         bathrooms: 1,
         area: "100m²",
-        image: "https://placehold.co/300x200/3a6b92/white?text=شقة+كرن"
+        image: "https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg?w=400&h=250&fit=crop"
     }
 ];
 
-// ===== بيانات الإلكترونيات (مضافة) =====
+// ===== بيانات الإلكترونيات (بصور حقيقية) =====
 const electronicsData = [
-    { id: 1, name: "iPhone 14 Pro", price: "$899", city: "أسمرة", condition: "جديد", image: "https://placehold.co/300x200/c7a12b/white?text=iPhone+14" },
-    { id: 2, name: "MacBook Air M2", price: "$1,299", city: "أسمرة", condition: "جديد", image: "https://placehold.co/300x200/1e3a5f/white?text=MacBook" },
-    { id: 3, name: "Samsung Galaxy S23", price: "$699", city: "أسمرة", condition: "جديد", image: "https://placehold.co/300x200/2c5282/white?text=Galaxy+S23" },
-    { id: 4, name: "iPad Pro 11", price: "$799", city: "مصوع", condition: "مستعمل", image: "https://placehold.co/300x200/c7a12b/white?text=iPad+Pro" },
-    { id: 5, name: "Sony Headphones WH-1000XM5", price: "$349", city: "أسمرة", condition: "جديد", image: "https://placehold.co/300x200/1e3a5f/white?text=Sony" },
-    { id: 6, name: "Dell XPS 15", price: "$1,599", city: "أسمرة", condition: "جديد", image: "https://placehold.co/300x200/2c5282/white?text=Dell+XPS" }
+    { id: 1, name: "iPhone 14 Pro", price: "$899", city: "أسمرة", condition: "جديد", image: "https://images.pexels.com/photos/788946/pexels-photo-788946.jpeg?w=400&h=250&fit=crop" },
+    { id: 2, name: "MacBook Air M2", price: "$1,299", city: "أسمرة", condition: "جديد", image: "https://images.pexels.com/photos/18105/pexels-photo.jpg?w=400&h=250&fit=crop" },
+    { id: 3, name: "Samsung Galaxy S23", price: "$699", city: "أسمرة", condition: "جديد", image: "https://images.pexels.com/photos/47261/pexels-photo-47261.jpeg?w=400&h=250&fit=crop" },
+    { id: 4, name: "iPad Pro 11", price: "$799", city: "مصوع", condition: "مستعمل", image: "https://images.pexels.com/photos/1334597/pexels-photo-1334597.jpeg?w=400&h=250&fit=crop" },
+    { id: 5, name: "Sony Headphones", price: "$349", city: "أسمرة", condition: "جديد", image: "https://images.pexels.com/photos/1648377/pexels-photo-1648377.jpeg?w=400&h=250&fit=crop" },
+    { id: 6, name: "Dell XPS 15", price: "$1,599", city: "أسمرة", condition: "جديد", image: "https://images.pexels.com/photos/39284/macbook-apple-imac-computer-39284.jpeg?w=400&h=250&fit=crop" }
 ];
 
-// ===== بيانات السيارات (مضافة) =====
+// ===== بيانات السيارات (بصور حقيقية) =====
 const carsData = [
-    { id: 1, name: "Toyota Corolla 2020", price: "$9,000", city: "مصوع", year: 2020, mileage: "85,000 كم", image: "https://placehold.co/300x200/2c5a82/white?text=Toyota+Corolla" },
-    { id: 2, name: "Hyundai Tucson 2022", price: "$18,000", city: "أسمرة", year: 2022, mileage: "45,000 كم", image: "https://placehold.co/300x200/1e3a5f/white?text=Hyundai+Tucson" },
-    { id: 3, name: "Kia Sportage 2021", price: "$16,000", city: "أسمرة", year: 2021, mileage: "60,000 كم", image: "https://placehold.co/300x200/2c5282/white?text=Kia+Sportage" },
-    { id: 4, name: "Nissan Patrol 2019", price: "$35,000", city: "أسمرة", year: 2019, mileage: "95,000 كم", image: "https://placehold.co/300x200/3a5a40/white?text=Nissan+Patrol" },
-    { id: 5, name: "Toyota Hilux 2021", price: "$28,000", city: "مصوع", year: 2021, mileage: "50,000 كم", image: "https://placehold.co/300x200/2c5a82/white?text=Toyota+Hilux" },
-    { id: 6, name: "Honda Civic 2019", price: "$12,000", city: "أسمرة", year: 2019, mileage: "75,000 كم", image: "https://placehold.co/300x200/1e3a5f/white?text=Honda+Civic" }
+    { id: 1, name: "Toyota Corolla 2020", price: "$9,000", city: "مصوع", year: 2020, mileage: "85,000 كم", image: "https://images.pexels.com/photos/113102/pexels-photo-113102.jpeg?w=400&h=250&fit=crop" },
+    { id: 2, name: "Hyundai Tucson 2022", price: "$18,000", city: "أسمرة", year: 2022, mileage: "45,000 كم", image: "https://images.pexels.com/photos/1413412/pexels-photo-1413412.jpeg?w=400&h=250&fit=crop" },
+    { id: 3, name: "Kia Sportage 2021", price: "$16,000", city: "أسمرة", year: 2021, mileage: "60,000 كم", image: "https://images.pexels.com/photos/2761842/pexels-photo-2761842.jpeg?w=400&h=250&fit=crop" },
+    { id: 4, name: "Nissan Patrol 2019", price: "$35,000", city: "أسمرة", year: 2019, mileage: "95,000 كم", image: "https://images.pexels.com/photos/115465/pexels-photo-115465.jpeg?w=400&h=250&fit=crop" },
+    { id: 5, name: "Toyota Hilux 2021", price: "$28,000", city: "مصوع", year: 2021, mileage: "50,000 كم", image: "https://images.pexels.com/photos/163931/pexels-photo-163931.jpeg?w=400&h=250&fit=crop" },
+    { id: 6, name: "Honda Civic 2019", price: "$12,000", city: "أسمرة", year: 2019, mileage: "75,000 كم", image: "https://images.pexels.com/photos/157091/pexels-photo-157091.jpeg?w=400&h=250&fit=crop" }
 ];
 
-// ===== بيانات الوظائف (مضافة) =====
+// ===== بيانات الوظائف (بصور حقيقية) =====
 const jobsData = [
-    { id: 1, name: "محاسب", salary: "$500", city: "أسمرة", company: "شركة أسمرة", type: "دوام كامل", image: "https://placehold.co/300x200/6d597b/white?text=محاسب" },
-    { id: 2, name: "مهندس مدني", salary: "$800", city: "أسمرة", company: "مقاولات الإخوة", type: "دوام كامل", image: "https://placehold.co/300x200/4a627a/white?text=مهندس" },
-    { id: 3, name: "مبرمج ويب", salary: "$1,200", city: "عن بعد", company: "شركة تقنية", type: "عن بعد", image: "https://placehold.co/300x200/6d597b/white?text=مبرمج" },
-    { id: 4, name: "مسوق إلكتروني", salary: "$700", city: "أسمرة", company: "وكالة تسويق", type: "دوام جزئي", image: "https://placehold.co/300x200/4a627a/white?text=مسوق" },
-    { id: 5, name: "سائق توصيل", salary: "$400", city: "مصوع", company: "شركة توصيل", type: "دوام كامل", image: "https://placehold.co/300x200/6d597b/white?text=سائق" },
-    { id: 6, name: "مبيعات", salary: "$600", city: "أسمرة", company: "شركة تجارية", type: "دوام كامل", image: "https://placehold.co/300x200/4a627a/white?text=مبيعات" }
+    { id: 1, name: "محاسب", salary: "$500", city: "أسمرة", company: "شركة أسمرة", type: "دوام كامل", image: "https://images.pexels.com/photos/3183197/pexels-photo-3183197.jpeg?w=400&h=250&fit=crop" },
+    { id: 2, name: "مهندس مدني", salary: "$800", city: "أسمرة", company: "مقاولات الإخوة", type: "دوام كامل", image: "https://images.pexels.com/photos/416405/pexels-photo-416405.jpeg?w=400&h=250&fit=crop" },
+    { id: 3, name: "مبرمج ويب", salary: "$1,200", city: "عن بعد", company: "شركة تقنية", type: "عن بعد", image: "https://images.pexels.com/photos/1181263/pexels-photo-1181263.jpeg?w=400&h=250&fit=crop" },
+    { id: 4, name: "مسوق إلكتروني", salary: "$700", city: "أسمرة", company: "وكالة تسويق", type: "دوام جزئي", image: "https://images.pexels.com/photos/267350/pexels-photo-267350.jpeg?w=400&h=250&fit=crop" },
+    { id: 5, name: "سائق توصيل", salary: "$400", city: "مصوع", company: "شركة توصيل", type: "دوام كامل", image: "https://images.pexels.com/photos/279949/pexels-photo-279949.jpeg?w=400&h=250&fit=crop" },
+    { id: 6, name: "مبيعات", salary: "$600", city: "أسمرة", company: "شركة تجارية", type: "دوام كامل", image: "https://images.pexels.com/photos/3768131/pexels-photo-3768131.jpeg?w=400&h=250&fit=crop" }
 ];
 
-// ===== بيانات المقالات (مضافة) =====
-const BLOG_POSTS = [
-    {
-        id: 1,
-        title: "كيف تختار رحلة مناسبة إلى أسمرة",
-        summary: "نصائح سريعة للمغترب الإريتري عند مقارنة أسعار الرحلات واختيار الوقت المناسب.",
-        content: "محتوى المقال الكامل هنا...",
-        date: "2026-04-01",
-        link: "blog.html?id=1"
-    },
-    {
-        id: 2,
-        title: "الاستثمار العقاري في أسمرة",
-        summary: "نظرة مبسطة على الفرص العقارية الأكثر طلبًا داخل العاصمة.",
-        content: "محتوى المقال الكامل هنا...",
-        date: "2026-03-28",
-        link: "blog.html?id=2"
-    },
-    {
-        id: 3,
-        title: "لماذا منصة متعددة اللغات مهمة؟",
-        summary: "اللغة تبني الثقة، خاصة عندما تخاطب جمهورًا في الداخل والمهجر.",
-        content: "محتوى المقال الكامل هنا...",
-        date: "2026-03-25",
-        link: "blog.html?id=3"
-    },
-    {
-        id: 4,
-        title: "أفضل مناطق الاستثمار في أسمرة",
-        summary: "تعرف على المناطق الواعدة للاستثمار العقاري في العاصمة.",
-        content: "محتوى المقال الكامل هنا...",
-        date: "2026-03-20",
-        link: "blog.html?id=4"
-    },
-    {
-        id: 5,
-        title: "نصائح لبدء مشروع تجاري في إريتريا",
-        summary: "دليل مبسط للراغبين في تأسيس أعمالهم.",
-        content: "محتوى المقال الكامل هنا...",
-        date: "2026-03-15",
-        link: "blog.html?id=5"
-    }
-];
+// ===== صور إضافية للمنصة =====
+const platformImages = {
+    logo: "https://images.pexels.com/photos/3183197/pexels-photo-3183197.jpeg?w=200&h=80&fit=crop",
+    hero: "https://images.pexels.com/photos/2587054/pexels-photo-2587054.jpeg?w=1200&h=400&fit=crop",
+    asmara: "https://images.pexels.com/photos/2587054/pexels-photo-2587054.jpeg?w=800&h=400&fit=crop",
+    massawa: "https://images.pexels.com/photos/259588/pexels-photo-259588.jpeg?w=800&h=400&fit=crop"
+};
 
-// دالة عرض المعارض (محدثة)
+// دالة عرض المعارض
 function renderGallery(containerId, data) {
     const container = document.getElementById(containerId);
     if (!container) return;
@@ -159,7 +123,7 @@ function renderGallery(containerId, data) {
         else if (item.company) details = `${item.company} | ${item.type}`;
         
         div.innerHTML = `
-            <img src="${item.image}" alt="${item.name}" loading="lazy">
+            <img src="${item.image}" alt="${item.name}" loading="lazy" onerror="this.src='https://placehold.co/400x250/1e3a5f/white?text=صورة'">
             <h4>${item.name}</h4>
             <p>${item.price || item.salary} | 📍 ${item.city}</p>
             ${details ? `<small style="font-size:0.7rem; color:#666">${details}</small>` : ''}
