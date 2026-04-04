@@ -79,6 +79,115 @@
         .violation-item { background: #fff3cd; border-right: 4px solid #ffc107; padding: 0.6rem; margin: 0.4rem 0; border-radius: 12px; font-size: 0.8rem; }  
         .report-item { background: #f8d7da; border-right: 4px solid #dc3545; padding: 0.6rem; margin: 0.4rem 0; border-radius: 12px; font-size: 0.8rem; }  
 
+        /* ===== أنماط المدونة ===== */  
+        .blog-grid {  
+            display: grid;  
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));  
+            gap: 1.5rem;  
+            margin-top: 1rem;  
+        }  
+        .blog-card {  
+            background: white;  
+            border-radius: 20px;  
+            overflow: hidden;  
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);  
+            transition: transform 0.3s, box-shadow 0.3s;  
+            cursor: pointer;  
+        }  
+        .blog-card:hover {  
+            transform: translateY(-5px);  
+            box-shadow: 0 12px 24px rgba(0,0,0,0.12);  
+        }  
+        .blog-image {  
+            width: 100%;  
+            height: 180px;  
+            object-fit: cover;  
+            background: linear-gradient(135deg, #1e3a5f, #2c5282);  
+        }  
+        .blog-content {  
+            padding: 1.2rem;  
+        }  
+        .blog-title {  
+            font-size: 1.1rem;  
+            font-weight: 700;  
+            color: #1e3a5f;  
+            margin-bottom: 0.5rem;  
+        }  
+        .blog-summary {  
+            font-size: 0.85rem;  
+            color: #4a627a;  
+            margin-bottom: 1rem;  
+            line-height: 1.5;  
+        }  
+        .blog-meta {  
+            display: flex;  
+            justify-content: space-between;  
+            align-items: center;  
+            font-size: 0.7rem;  
+            color: #8ba0b5;  
+            border-top: 1px solid #eef2f8;  
+            padding-top: 0.8rem;  
+        }  
+        .blog-read-more {  
+            color: #c7a12b;  
+            text-decoration: none;  
+            font-weight: 600;  
+        }  
+        .blog-read-more:hover {  
+            text-decoration: underline;  
+        }  
+        .modal {  
+            display: none;  
+            position: fixed;  
+            top: 0;  
+            left: 0;  
+            width: 100%;  
+            height: 100%;  
+            background: rgba(0,0,0,0.8);  
+            z-index: 2000;  
+            justify-content: center;  
+            align-items: center;  
+        }  
+        .modal-content {  
+            background: white;  
+            border-radius: 28px;  
+            max-width: 600px;  
+            width: 90%;  
+            max-height: 80vh;  
+            overflow-y: auto;  
+            padding: 1.5rem;  
+            position: relative;  
+        }  
+        .modal-close {  
+            position: absolute;  
+            top: 1rem;  
+            left: 1rem;  
+            background: #dc3545;  
+            color: white;  
+            border: none;  
+            width: 32px;  
+            height: 32px;  
+            border-radius: 50%;  
+            cursor: pointer;  
+            font-size: 1.2rem;  
+        }  
+        .modal-title {  
+            font-size: 1.5rem;  
+            color: #1e3a5f;  
+            margin-bottom: 1rem;  
+            padding-left: 2rem;  
+        }  
+        .modal-date {  
+            font-size: 0.8rem;  
+            color: #8ba0b5;  
+            margin-bottom: 1rem;  
+        }  
+        .modal-body {  
+            font-size: 0.95rem;  
+            line-height: 1.6;  
+            color: #2d3e5f;  
+        }  
+
         .footer { text-align: center; margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid #cbdde9; font-size: 0.75rem; }  
         .verified { font-weight: 700; color: #c7a12b; margin-top: 0.5rem; }  
         @media (max-width: 700px) { .amazon-nav { flex-direction: column; text-align: center; } .nav-links { justify-content: center; } .tabs { justify-content: center; } }  
@@ -98,6 +207,7 @@
             <a class="nav-tab-link" data-tab="cars">🚗 سيارات</a>  
             <a class="nav-tab-link" data-tab="jobs">💼 وظائف</a>  
             <a class="nav-tab-link" data-tab="general">📋 عام</a>  
+            <a class="nav-tab-link" data-tab="blog">📰 مدونة</a>  
             <a class="nav-tab-link" data-tab="payment">💳 دفع</a>  
             <a class="nav-tab-link" data-tab="messaging">💬 مراسلة</a>  
             <a class="nav-tab-link" data-tab="ratings">⭐ تقييمات</a>  
@@ -189,6 +299,14 @@
         <!-- ========== GENERAL ADS ========== -->  
         <div id="generalPane" class="tab-pane"><div class="grid-2"><div class="card"><h3>📝 إعلان عام</h3><select id="adType"><option>خدمة</option><option>منتج</option></select><input id="adName" placeholder="العنوان"><input id="adPrice" type="number" placeholder="السعر"><textarea id="adDesc" rows="2" placeholder="الوصف"></textarea><select id="adCity"><option>أسمرة</option><option>مصوع</option></select><input type="file" id="adImage"><div class="image-preview" id="adPreview"></div><button class="btn" id="publishGeneralBtn">نشر</button><p id="generalMsg"></p></div><div class="card"><h3>🖼️ المعرض</h3><div id="generalGallery" class="gallery-grid"></div></div></div></div>  
 
+        <!-- ========== BLOG SECTION ========== -->  
+        <div id="blogPane" class="tab-pane">  
+            <div class="card">  
+                <h2 id="blogTitle">📰 المدونة - آخر المقالات</h2>  
+                <div id="blogGrid" class="blog-grid"></div>  
+            </div>  
+        </div>  
+
         <!-- ========== PAYMENT ========== -->  
         <div id="paymentPane" class="tab-pane"><div class="grid-2"><div class="card"><h3>💳 اشتراك Pro</h3><p>إعلانات غير محدودة</p><div style="font-size:1.8rem; color:#c7a12b;">$29<small>/شهر</small></div><button id="paypalBtn" class="btn"><i class="fab fa-paypal"></i> PayPal</button><p id="paymentMsg"></p></div><div class="card"><h3>💰 محفظتي</h3><p>الرصيد: <strong id="balanceAmount">$0</strong></p><button id="addFundsBtn" class="btn btn-warning">إيداع $50</button></div></div><div class="card"><h3>📜 سجل المعاملات</h3><div id="transactionsList"></div></div></div>  
 
@@ -201,8 +319,116 @@
         <div class="footer"><p id="footerText">Asmara.Store — منصة تحترم قيم المجتمع الإريتري</p><div class="verified">Verified by Asmara Store Agent • 2026</div></div>  
     </div>  
 
+    <!-- ===== نافذة منبثقة لعرض المقال كاملاً ===== -->  
+    <div id="blogModal" class="modal">  
+        <div class="modal-content">  
+            <button class="modal-close" onclick="closeModal()">✕</button>  
+            <h2 id="modalTitle" class="modal-title"></h2>  
+            <div id="modalDate" class="modal-date"></div>  
+            <div id="modalBody" class="modal-body"></div>  
+        </div>  
+    </div>  
+
     <script>  
-        // ========== قائمة الكلمات الممنوعة (جنس + عادات وتقاليد) ==========  
+        // ========== بيانات المدونة ==========  
+        const blogPosts = [  
+            {   
+                id: 1,  
+                title: "كيف تختار رحلة مناسبة إلى أسمرة",  
+                summary: "نصائح سريعة للمغترب الإريتري عند مقارنة أسعار الرحلات واختيار الوقت المناسب.",  
+                content: "السفر إلى أسمرة يتطلب التخطيط المسبق. إليك بعض النصائح المفيدة:\n\n1. قارن أسعار شركات الطيران المختلفة (FlyDubai, Ethiopian, EgyptAir).\n2. احجز قبل شهر على الأقل للحصول على أفضل الأسعار.\n3. تأكد من صلاحية جواز سفرك لمدة 6 أشهر على الأقل.\n4. تعرف على متطلبات التأشيرة قبل السفر.\n5. اختر وقت السفر بين أكتوبر وأبريل لتجنب الأمطار الموسمية.",  
+                date: "2026-04-01",  
+                image: "https://placehold.co/400x200/1e3a5f/white?text=رحلة+إلى+أسمرة",  
+                author: "فريق Asmara.Store"  
+            },  
+            {   
+                id: 2,  
+                title: "الاستثمار العقاري في أسمرة",  
+                summary: "نظرة مبسطة على الفرص العقارية الأكثر طلبًا داخل العاصمة.",  
+                content: "أسمرة تشهد نمواً في القطاع العقاري. المناطق الأكثر طلباً:\n\n• تيرفولو: منطقة سكنية راقية\n• إدغا أريتي: فيلات فاخرة\n• وسط المدينة: شقق تجارية وسكنية\n• أسمرة الجديدة: أسعار مناسبة\n\nننصح بالتعامل مع وكلاء معتمدين والتحقق من الملكية قبل الشراء.",  
+                date: "2026-03-28",  
+                image: "https://placehold.co/400x200/2c5282/white?text=عقارات+أسمرة",  
+                author: "فريق Asmara.Store"  
+            },  
+            {   
+                id: 3,  
+                title: "لماذا منصة متعددة اللغات مهمة؟",  
+                summary: "اللغة تبني الثقة، خاصة عندما تخاطب جمهورًا في الداخل والمهجر.",  
+                content: "المنصة متعددة اللغات تتيح للمغتربين الإريتريين في جميع أنحاء العالم التواصل بسهولة. العربية للمحليين، والتيجرينية للتواصل العميق، والإنجليزية للجمهور الدولي. هذا التنوع يعزز الثقة ويزيد من فرص النجاح.",  
+                date: "2026-03-25",  
+                image: "https://placehold.co/400x200/c7a12b/white?text=لغات+متعددة",  
+                author: "فريق Asmara.Store"  
+            },  
+            {   
+                id: 4,  
+                title: "أفضل مناطق الاستثمار في أسمرة",  
+                summary: "تعرف على المناطق الواعدة للاستثمار العقاري في العاصمة.",  
+                content: "تعتبر مناطق تيرفولو وإدغا أريتي ووسط المدينة من أفضل المناطق للاستثمار العقاري. تتميز هذه المناطق بالقرب من الخدمات والأسواق والمدارس، مما يجعلها مرغوبة للسكن والاستثمار.",  
+                date: "2026-03-20",  
+                image: "https://placehold.co/400x200/1e3a5f/white?text=مناطق+أسمرة",  
+                author: "فريق Asmara.Store"  
+            },  
+            {   
+                id: 5,  
+                title: "نصائح لبدء مشروع تجاري في إريتريا",  
+                summary: "دليل مبسط للراغبين في تأسيس أعمالهم.",  
+                content: "لبدء مشروع تجاري في إريتريا، اتبع الخطوات التالية:\n\n1. سجل نشاطك التجاري في وزارة التجارة.\n2. احصل على التراخيص اللازمة.\n3. افتح حساباً بنكياً.\n4. سجل في الضرائب.\n5. ابدأ بالتسويق عبر منصتنا للوصول إلى أكبر شريحة من العملاء.",  
+                date: "2026-03-15",  
+                image: "https://placehold.co/400x200/2c5282/white?text=مشاريع+تجارية",  
+                author: "فريق Asmara.Store"  
+            }  
+        ];  
+
+        // ===== عرض المدونة =====  
+        function renderBlog() {  
+            const container = document.getElementById('blogGrid');  
+            if (!container) return;  
+              
+            container.innerHTML = '';  
+            blogPosts.forEach(post => {  
+                const card = document.createElement('div');  
+                card.className = 'blog-card';  
+                card.onclick = () => showBlogPost(post.id);  
+                card.innerHTML = `  
+                    <img src="${post.image}" alt="${post.title}" class="blog-image">  
+                    <div class="blog-content">  
+                        <h3 class="blog-title">${post.title}</h3>  
+                        <p class="blog-summary">${post.summary.substring(0, 80)}${post.summary.length > 80 ? '...' : ''}</p>  
+                        <div class="blog-meta">  
+                            <span>📅 ${post.date}</span>  
+                            <span>✍️ ${post.author}</span>  
+                            <span class="blog-read-more">اقرأ المزيد ←</span>  
+                        </div>  
+                    </div>  
+                `;  
+                container.appendChild(card);  
+            });  
+        }  
+
+        // ===== عرض المقال كاملاً في نافذة منبثقة =====  
+        function showBlogPost(postId) {  
+            const post = blogPosts.find(p => p.id === postId);  
+            if (!post) return;  
+              
+            document.getElementById('modalTitle').innerText = post.title;  
+            document.getElementById('modalDate').innerHTML = `📅 ${post.date} | ✍️ ${post.author}`;  
+            document.getElementById('modalBody').innerHTML = post.content.replace(/\n/g, '<br>');  
+            document.getElementById('blogModal').style.display = 'flex';  
+        }  
+
+        function closeModal() {  
+            document.getElementById('blogModal').style.display = 'none';  
+        }  
+
+        // إغلاق النافذة عند النقر خارجها  
+        window.onclick = function(event) {  
+            const modal = document.getElementById('blogModal');  
+            if (event.target === modal) {  
+                modal.style.display = 'none';  
+            }  
+        }  
+
+        // ========== قائمة الكلمات الممنوعة ==========  
         let blockedWords = [  
             "سكس", "جنس", "عاري", "عارية", "نيك", "زنا", "شذوذ", "porn", "sex", "naked", "xxx",  
             "مسيء", "شتيمة", "سب", "لعنة", "قبيلة", "عنصرية", "عرق", "طائفي", "شتم", "تحريض",  
@@ -313,7 +539,6 @@
                     let targetArray = getCategoryArray(report.category);  
                     let adIndex = targetArray?.findIndex(a => a.id == report.adId);  
                     if(adIndex !== -1 && adIndex !== undefined) targetArray.splice(adIndex, 1);  
-                    rejectedAds.unshift({ ...targetArray?.[adIndex], status: "rejected", rejectionReason: report.reason });  
                 }  
                 renderAll();  
             }  
@@ -567,15 +792,17 @@
         });  
 
         let translations = {  
-            ar: { tagline:"منصة تحترم عاداتنا وتقاليدنا - بروح القانون الإريتري", footerText:"Asmara.Store — منصة تحترم قيم المجتمع الإريتري" },  
-            en: { tagline:"A platform that respects our customs and traditions - In the spirit of Eritrean law", footerText:"Asmara.Store — A platform that respects Eritrean community values" },  
-            ti: { tagline:"ልማዳትና ባህልና ዘከብር መድረኽ - ብመንፈስ ሕጊ ኤርትራ", footerText:"ኣስመራ.ስቶር — ኩነታት ማሕበረሰብ ኤርትራ ዘከብር መድረኽ" }  
+            ar: { tagline:"منصة تحترم عاداتنا وتقاليدنا - بروح القانون الإريتري", footerText:"Asmara.Store — منصة تحترم قيم المجتمع الإريتري", blogTitle:"📰 المدونة - آخر المقالات" },  
+            en: { tagline:"A platform that respects our customs and traditions - In the spirit of Eritrean law", footerText:"Asmara.Store — A platform that respects Eritrean community values", blogTitle:"📰 Blog - Latest Articles" },  
+            ti: { tagline:"ልማዳትና ባህልና ዘከብር መድረኽ - ብመንፈስ ሕጊ ኤርትራ", footerText:"ኣስመራ.ስቶር — ኩነታት ማሕበረሰብ ኤርትራ ዘከብር መድረኽ", blogTitle:"📰 ብሎግ - ሓደሽቲ ዜናታት" }  
         };  
         let currentLang = "ar";  
         function updateLanguage(lang) {  
             currentLang = lang; let t = translations[lang]; if(!t) return;  
             document.getElementById("tagline").innerText = t.tagline;  
             document.getElementById("footerText").innerText = t.footerText;  
+            const blogTitle = document.getElementById("blogTitle");  
+            if(blogTitle) blogTitle.innerText = t.blogTitle;  
             document.body.className = `lang-${lang}`;  
             document.body.dir = (lang === 'en') ? 'ltr' : 'rtl';  
             document.querySelectorAll('.lang-btn').forEach(btn=>{ if(btn.dataset.lang === lang) btn.classList.add('active'); else btn.classList.remove('active'); });  
@@ -596,6 +823,7 @@
             if(tabId === 'messaging') { loadContacts(); loadChat(); }  
             if(tabId === 'ratings') loadRatings();  
             if(tabId === 'agent' || tabId === 'reports') renderAll();  
+            if(tabId === 'blog') renderBlog();  
         }  
         document.querySelectorAll('.tab-btn').forEach(btn => btn.addEventListener('click', () => switchTab(btn.dataset.tab)));  
         document.querySelectorAll('.nav-tab-link').forEach(link => link.addEventListener('click', () => switchTab(link.dataset.tab)));  
@@ -605,8 +833,10 @@
         window.reportAd = reportAd;  
         window.resolveReport = resolveReport;  
         window.promptReport = promptReport;  
+        window.showBlogPost = showBlogPost;  
+        window.closeModal = closeModal;  
 
-        renderAll(); updateWallet(); loadRatings();  
+        renderAll(); updateWallet(); loadRatings(); renderBlog();  
     </script>  
 </body>  
-</html>
+    </html>
