@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Asmara.Store | منصة إريتريا المتكاملة - مراسلة وتقييمات</title>
+    <title>Asmara.Store | منصة محترمة - حماية العادات والتقاليد</title>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
@@ -27,71 +27,71 @@
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
         .nav-logo { font-size: 1.8rem; font-weight: 800; background: linear-gradient(135deg, #fff, #f5e7c8); -webkit-background-clip: text; background-clip: text; color: transparent; }
-        .nav-links { display: flex; gap: 0.5rem; flex-wrap: wrap; }
-        .nav-links a { color: #f0f4fa; text-decoration: none; font-weight: 600; font-size: 0.75rem; transition: 0.2s; border-bottom: 2px solid transparent; cursor: pointer; }
+        .nav-links { display: flex; gap: 0.4rem; flex-wrap: wrap; }
+        .nav-links a { color: #f0f4fa; text-decoration: none; font-weight: 600; font-size: 0.7rem; transition: 0.2s; border-bottom: 2px solid transparent; cursor: pointer; }
         .nav-links a:hover, .nav-links a.active { color: #c7a12b; border-bottom-color: #c7a12b; }
+        .agent-badge { background: #c7a12b; color: #1e3a5f; padding: 0.2rem 0.6rem; border-radius: 20px; font-size: 0.65rem; font-weight: bold; }
+        .report-badge { background: #dc3545; color: white; padding: 0.2rem 0.6rem; border-radius: 20px; font-size: 0.65rem; margin-left: 0.5rem; }
         .lang-switch { display: flex; gap: 0.5rem; }
         .lang-btn { background: #2c5a82; border: none; padding: 0.3rem 0.9rem; border-radius: 20px; font-family: inherit; font-weight: 500; font-size: 0.8rem; cursor: pointer; color: white; transition: 0.2s; }
         .lang-btn.active { background: #c7a12b; color: #1e3a5f; }
         .container { max-width: 1400px; margin: 0 auto; padding: 1.5rem; }
 
         .hero { text-align: center; margin-bottom: 1.5rem; background: white; border-radius: 36px; padding: 1.5rem; box-shadow: 0 12px 30px rgba(0,0,0,0.05); }
-        .tagline { font-size: 1.2rem; color: #c7a12b; font-weight: 700; }
+        .tagline { font-size: 1rem; color: #c7a12b; font-weight: 700; }
 
-        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 1rem; margin-bottom: 1.5rem; }
-        .stat-card { background: linear-gradient(135deg, #1e3a5f, #2c5282); color: white; border-radius: 24px; padding: 1rem; text-align: center; }
-        .stat-number { font-size: 1.8rem; font-weight: 800; }
-        .stat-label { font-size: 0.75rem; opacity: 0.9; }
+        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 0.8rem; margin-bottom: 1.5rem; }
+        .stat-card { background: linear-gradient(135deg, #1e3a5f, #2c5282); color: white; border-radius: 20px; padding: 0.8rem; text-align: center; }
+        .stat-number { font-size: 1.5rem; font-weight: 800; }
+        .stat-label { font-size: 0.65rem; opacity: 0.9; }
 
-        .tabs { display: flex; gap: 0.3rem; flex-wrap: wrap; margin-bottom: 1.5rem; border-bottom: 2px solid #e2e8f0; padding-bottom: 0.5rem; }
-        .tab-btn { background: transparent; border: none; padding: 0.5rem 0.8rem; font-size: 0.75rem; font-weight: 600; cursor: pointer; border-radius: 40px; transition: 0.2s; color: #4a627a; }
+        .tabs { display: flex; gap: 0.2rem; flex-wrap: wrap; margin-bottom: 1.5rem; border-bottom: 2px solid #e2e8f0; padding-bottom: 0.5rem; }
+        .tab-btn { background: transparent; border: none; padding: 0.4rem 0.7rem; font-size: 0.7rem; font-weight: 600; cursor: pointer; border-radius: 40px; transition: 0.2s; color: #4a627a; }
         .tab-btn.active { background: #1e3a5f; color: white; }
         .tab-pane { display: none; animation: fadeIn 0.3s; }
         .tab-pane.active-pane { display: block; }
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
-        .card { background: white; border-radius: 28px; padding: 1.5rem; margin-bottom: 1.5rem; box-shadow: 0 6px 14px rgba(0,0,0,0.05); border: 1px solid #eef2f8; }
-        .card h3 { font-size: 1.3rem; color: #1e3a5f; margin-bottom: 1rem; border-right: 4px solid #c7a12b; padding-right: 0.8rem; }
+        .card { background: white; border-radius: 24px; padding: 1.2rem; margin-bottom: 1.2rem; box-shadow: 0 6px 14px rgba(0,0,0,0.05); border: 1px solid #eef2f8; }
+        .card h3 { font-size: 1.1rem; color: #1e3a5f; margin-bottom: 0.8rem; border-right: 4px solid #c7a12b; padding-right: 0.8rem; }
         body.lang-en .card h3 { border-right: none; border-left: 4px solid #c7a12b; padding-right: 0; padding-left: 0.8rem; }
-        input, select, textarea { width: 100%; padding: 0.7rem; margin: 0.5rem 0; border: 1px solid #ccc; border-radius: 16px; font-family: inherit; }
-        .btn { background: #1e3a5f; color: white; border: none; padding: 0.7rem 1.2rem; border-radius: 40px; font-weight: 600; cursor: pointer; width: 100%; transition: 0.2s; }
+        input, select, textarea { width: 100%; padding: 0.6rem; margin: 0.4rem 0; border: 1px solid #ccc; border-radius: 16px; font-family: inherit; font-size: 0.85rem; }
+        .btn { background: #1e3a5f; color: white; border: none; padding: 0.6rem 1rem; border-radius: 40px; font-weight: 600; cursor: pointer; width: 100%; transition: 0.2s; font-size: 0.85rem; }
         .btn:hover { background: #c7a12b; color: #1e3a5f; }
-        .btn-sm { width: auto; padding: 0.4rem 1rem; display: inline-block; }
-        .btn-gold { background: #c7a12b; color: #1e3a5f; }
-        .paypal-btn { background: #0070ba; color: white; display: flex; align-items: center; justify-content: center; gap: 8px; }
+        .btn-sm { width: auto; padding: 0.3rem 0.8rem; display: inline-block; font-size: 0.75rem; }
+        .btn-danger { background: #dc3545; color: white; }
+        .btn-danger:hover { background: #bb2d3b; }
+        .btn-success { background: #28a745; color: white; }
+        .btn-warning { background: #ffc107; color: #1e3a5f; }
 
-        .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 1.5rem; }
-        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 1rem; margin-top: 1rem; }
-        .gallery-item { background: #fafcff; border-radius: 20px; padding: 0.8rem; border: 1px solid #eef2f8; transition: 0.2s; cursor: pointer; }
+        .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.2rem; }
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 0.8rem; margin-top: 0.8rem; }
+        .gallery-item { background: #fafcff; border-radius: 18px; padding: 0.6rem; border: 1px solid #eef2f8; transition: 0.2s; cursor: pointer; position: relative; }
         .gallery-item:hover { transform: translateY(-3px); box-shadow: 0 6px 12px rgba(0,0,0,0.1); }
-        .gallery-item img { width: 100%; height: 130px; object-fit: cover; border-radius: 16px; }
-        .gallery-item h4 { font-size: 0.9rem; margin: 0.5rem 0; }
-        .gallery-item p { font-size: 0.7rem; color: #4a627a; }
-        .badge { display: inline-block; background: #c7a12b; color: #1e3a5f; padding: 0.2rem 0.6rem; border-radius: 20px; font-size: 0.65rem; font-weight: bold; }
-        .rating-stars { color: #c7a12b; font-size: 0.8rem; margin: 0.2rem 0; }
-        .image-preview { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.5rem; }
-        .image-preview img { width: 60px; height: 60px; object-fit: cover; border-radius: 12px; }
+        .gallery-item img { width: 100%; height: 100px; object-fit: cover; border-radius: 14px; }
+        .gallery-item h4 { font-size: 0.8rem; margin: 0.4rem 0; }
+        .gallery-item p { font-size: 0.65rem; color: #4a627a; }
+        .badge { display: inline-block; background: #c7a12b; color: #1e3a5f; padding: 0.15rem 0.4rem; border-radius: 16px; font-size: 0.55rem; font-weight: bold; }
+        .report-flag { position: absolute; top: 5px; right: 5px; background: #dc3545; color: white; border-radius: 50%; width: 22px; height: 22px; display: flex; align-items: center; justify-content: center; font-size: 0.7rem; cursor: pointer; }
+        .rating-stars { color: #c7a12b; font-size: 0.65rem; }
 
-        /* Messaging */
-        .chat-list { max-height: 300px; overflow-y: auto; border: 1px solid #eef2f8; border-radius: 20px; padding: 0.5rem; }
-        .chat-message { padding: 0.8rem; border-bottom: 1px solid #eef2f8; display: flex; justify-content: space-between; align-items: flex-start; gap: 0.5rem; }
-        .chat-message:last-child { border-bottom: none; }
-        .message-sender { font-weight: 700; color: #1e3a5f; }
-        .message-text { margin-top: 0.2rem; font-size: 0.85rem; }
-        .message-time { font-size: 0.65rem; color: #aaa; }
-        .chat-input-area { display: flex; gap: 0.5rem; margin-top: 1rem; }
-        .chat-input-area input { flex: 1; margin: 0; }
+        .chat-list { max-height: 200px; overflow-y: auto; border: 1px solid #eef2f8; border-radius: 16px; padding: 0.4rem; }
+        .chat-message { padding: 0.5rem; border-bottom: 1px solid #eef2f8; font-size: 0.8rem; }
+        .violation-item { background: #fff3cd; border-right: 4px solid #ffc107; padding: 0.6rem; margin: 0.4rem 0; border-radius: 12px; font-size: 0.8rem; }
+        .report-item { background: #f8d7da; border-right: 4px solid #dc3545; padding: 0.6rem; margin: 0.4rem 0; border-radius: 12px; font-size: 0.8rem; }
 
-        .footer { text-align: center; margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid #cbdde9; font-size: 0.85rem; }
+        .footer { text-align: center; margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid #cbdde9; font-size: 0.75rem; }
         .verified { font-weight: 700; color: #c7a12b; margin-top: 0.5rem; }
         @media (max-width: 700px) { .amazon-nav { flex-direction: column; text-align: center; } .nav-links { justify-content: center; } .tabs { justify-content: center; } }
     </style>
 </head>
 <body class="lang-ar">
     <div class="amazon-nav">
-        <div class="nav-logo">Asmara.Store</div>
+        <div class="nav-logo">Asmara.Store <span class="agent-badge">🔒 وكيل معتمد</span></div>
         <div class="nav-links">
             <a class="nav-tab-link" data-tab="dashboard">📊 إحصائيات</a>
+            <a class="nav-tab-link" data-tab="agent">🛡️ الوكيل</a>
+            <a class="nav-tab-link" data-tab="reports">🚨 البلاغات</a>
             <a class="nav-tab-link" data-tab="institutions">🏛️ مؤسسات</a>
             <a class="nav-tab-link" data-tab="flight">✈️ طيران</a>
             <a class="nav-tab-link" data-tab="realestate">🏠 عقارات</a>
@@ -112,56 +112,77 @@
 
     <div class="container">
         <div class="hero">
-            <div style="font-size:2rem; font-weight:800;">🇪🇷 Asmara.Store</div>
-            <div class="tagline" id="tagline">"مراسلة، تقييمات، دفع آمن - منصة إريتريا المتكاملة"</div>
+            <div style="font-size:1.8rem; font-weight:800;">🇪🇷 Asmara.Store</div>
+            <div class="tagline" id="tagline">"منصة تحترم عاداتنا وتقاليدنا - بروح القانون الإريتري"</div>
         </div>
 
         <!-- ========== DASHBOARD ========== -->
         <div id="dashboardPane" class="tab-pane active-pane">
             <div class="stats-grid">
-                <div class="stat-card"><div class="stat-number" id="statAds">0</div><div class="stat-label" id="statAdsLabel">إجمالي الإعلانات</div></div>
-                <div class="stat-card"><div class="stat-number" id="statViews">0</div><div class="stat-label" id="statViewsLabel">مشاهدة اليوم</div></div>
-                <div class="stat-card"><div class="stat-number" id="statUsers">0</div><div class="stat-label" id="statUsersLabel">مستخدمين نشطين</div></div>
-                <div class="stat-card"><div class="stat-number" id="statRevenue">$0</div><div class="stat-label" id="statRevenueLabel">إيرادات الشهر</div></div>
+                <div class="stat-card"><div class="stat-number" id="statAds">0</div><div class="stat-label">إجمالي الإعلانات</div></div>
+                <div class="stat-card"><div class="stat-number" id="statPending">0</div><div class="stat-label">قيد المراجعة</div></div>
+                <div class="stat-card"><div class="stat-number" id="statApproved">0</div><div class="stat-label">مقبولة</div></div>
+                <div class="stat-card"><div class="stat-number" id="statRejected">0</div><div class="stat-label">مرفوضة</div></div>
+                <div class="stat-card"><div class="stat-number" id="statViolations">0</div><div class="stat-label">مخالفات</div></div>
+                <div class="stat-card"><div class="stat-number" id="statReports">0</div><div class="stat-label">بلاغات</div></div>
             </div>
-            <div class="card"><h3 id="statsTitle">📈 أداء إعلاناتك</h3><div id="adPerformanceList"></div></div>
+            <div class="card"><h3>📈 أداء الإعلانات</h3><div id="adPerformanceList"></div></div>
+        </div>
+
+        <!-- ========== AGENT PANEL ========== -->
+        <div id="agentPane" class="tab-pane">
+            <div class="grid-2">
+                <div class="card"><h3>⏳ إعلانات تنتظر المراجعة</h3><div id="pendingAdsList"></div></div>
+                <div class="card"><h3>🚫 الإعلانات المخالفة</h3><div id="violationsList"></div></div>
+            </div>
+            <div class="card"><h3>📋 سجل مراجعة الوكيل</h3><div id="agentLogList"></div></div>
+            <div class="card"><h3>⚙️ إعدادات الوكيل - الكلمات الممنوعة</h3>
+                <div id="blockedWordsList" style="margin-bottom:0.8rem; display:flex; flex-wrap:wrap; gap:0.3rem;"></div>
+                <div class="chat-input-area" style="display:flex; gap:0.5rem;"><input type="text" id="newBlockedWord" placeholder="كلمة ممنوعة جديدة" style="margin:0;"><button id="addBlockedWordBtn" class="btn-sm btn">إضافة</button></div>
+            </div>
+        </div>
+
+        <!-- ========== REPORTS PANEL ========== -->
+        <div id="reportsPane" class="tab-pane">
+            <div class="card"><h3>🚨 بلاغات المستخدمين (مخالفات مجتمعية)</h3><div id="reportsList"></div></div>
+            <div class="card"><h3>📋 سجل معالجة البلاغات</h3><div id="reportsLogList"></div></div>
         </div>
 
         <!-- ========== INSTITUTIONS ========== -->
         <div id="institutionsPane" class="tab-pane">
             <div class="grid-2">
-                <div class="card"><h3 id="instTradeTitle">🏛️ وزارة التجارة</h3><p id="instTradeDesc">تنظيم الاستثمار والتجارة</p><a href="https://www.comesa.int/state-of-eritrea/" target="_blank" class="btn-sm btn">🔗 COMESA</a></div>
-                <div class="card"><h3 id="instPressTitle">📰 وزارة المعلومات</h3><p id="instPressDesc">المصدر الرسمي للأخبار</p><a href="http://www.shabait.com" target="_blank" class="btn-sm btn">🔗 Shabait.com</a></div>
-                <div class="card"><h3 id="instLibraryTitle">📚 مكتبة أسمرة</h3><p id="instLibraryDesc">مركز التوثيق</p><button id="libraryInfoBtn" class="btn-sm btn">ℹ️ معلومات</button></div>
+                <div class="card"><h3>🏛️ وزارة التجارة</h3><p>تنظيم الاستثمار</p><a href="https://www.comesa.int/state-of-eritrea/" target="_blank" class="btn-sm btn">COMESA</a></div>
+                <div class="card"><h3>📰 وزارة المعلومات</h3><p>المصدر الرسمي</p><a href="http://www.shabait.com" target="_blank" class="btn-sm btn">Shabait.com</a></div>
+                <div class="card"><h3>📚 مكتبة أسمرة</h3><p>مركز التوثيق</p><button id="libraryInfoBtn" class="btn-sm btn">معلومات</button></div>
             </div>
         </div>
 
         <!-- ========== FLIGHT ========== -->
         <div id="flightPane" class="tab-pane">
             <div class="grid-2">
-                <div class="card"><h3 id="flightSearchTitle">✈️ البحث عن رحلة</h3>
+                <div class="card"><h3>✈️ البحث عن رحلة</h3>
                     <select id="flightFrom"><option value="DXB">دبي</option><option value="JED">جدة</option><option value="CAI">القاهرة</option><option value="ADD">أديس أبابا</option></select>
                     <input type="date" id="flightDate" value="2026-05-15">
                     <button class="btn" id="searchFlightBtn">🔍 بحث</button>
-                    <div id="flightResults" class="flight-result"></div>
+                    <div id="flightResults" style="background:#eef2f8; border-radius:16px; padding:0.8rem; margin-top:0.8rem;"></div>
                 </div>
-                <div class="card"><h3 id="bookingInfoTitle">📋 معلومات الحجز</h3>
+                <div class="card"><h3>📋 معلومات الحجز</h3>
                     <input type="text" id="passengerName" placeholder="الاسم الكامل">
                     <input type="email" id="passengerEmail" placeholder="البريد">
                     <button class="btn" id="confirmBookingBtn">✅ تأكيد</button>
-                    <p id="bookingMsg"></p>
+                    <p id="bookingMsg" style="margin-top:0.5rem; font-size:0.8rem;"></p>
                 </div>
             </div>
         </div>
 
         <!-- ========== REAL ESTATE ========== -->
-        <div id="realestatePane" class="tab-pane"><div class="grid-2"><div class="card"><h3>🏠 إضافة عقار</h3><select id="reType"><option>شقة</option><option>فيلا</option><option>أرض</option></select><input id="reName" placeholder="الوصف"><input id="rePrice" type="number" placeholder="السعر"><textarea id="reDesc" rows="2" placeholder="التفاصيل"></textarea><select id="reCity"><option>أسمرة</option><option>مصوع</option></select><input type="file" id="reImage" accept="image/*"><div class="image-preview" id="rePreview"></div><button class="btn" id="publishReBtn">نشر</button><p id="reMsg"></p></div><div class="card"><h3>🖼️ المعرض</h3><div id="realEstateGallery" class="gallery-grid"></div></div></div></div>
+        <div id="realestatePane" class="tab-pane"><div class="grid-2"><div class="card"><h3>🏠 إضافة عقار</h3><select id="reType"><option>شقة</option><option>فيلا</option><option>أرض</option></select><input id="reName" placeholder="الوصف"><input id="rePrice" type="number" placeholder="السعر"><textarea id="reDesc" rows="2" placeholder="التفاصيل"></textarea><select id="reCity"><option>أسمرة</option><option>مصوع</option></select><input type="file" id="reImage" accept="image/*"><div class="image-preview" id="rePreview"></div><button class="btn" id="publishReBtn">نشر</button><p id="reMsg" style="font-size:0.75rem; margin-top:0.3rem;"></p></div><div class="card"><h3>🖼️ المعرض</h3><div id="realEstateGallery" class="gallery-grid"></div></div></div></div>
 
         <!-- ========== ELECTRONICS ========== -->
-        <div id="electronicsPane" class="tab-pane"><div class="grid-2"><div class="card"><h3>📱 إضافة جهاز</h3><select id="elecType"><option>هاتف</option><option>لابتوب</option><option>جهاز لوحي</option></select><input id="elecName" placeholder="المنتج"><input id="elecPrice" type="number" placeholder="السعر"><textarea id="elecDesc" rows="2" placeholder="المواصفات"></textarea><select id="elecCity"><option>أسمرة</option><option>مصوع</option></select><input type="file" id="elecImage"><div class="image-preview" id="elecPreview"></div><button class="btn" id="publishElecBtn">نشر</button><p id="elecMsg"></p></div><div class="card"><h3>🖼️ المعرض</h3><div id="electronicsGallery" class="gallery-grid"></div></div></div></div>
+        <div id="electronicsPane" class="tab-pane"><div class="grid-2"><div class="card"><h3>📱 إضافة جهاز</h3><select id="elecType"><option>هاتف</option><option>لابتوب</option></select><input id="elecName" placeholder="المنتج"><input id="elecPrice" type="number" placeholder="السعر"><textarea id="elecDesc" rows="2" placeholder="المواصفات"></textarea><select id="elecCity"><option>أسمرة</option><option>مصوع</option></select><input type="file" id="elecImage"><div class="image-preview" id="elecPreview"></div><button class="btn" id="publishElecBtn">نشر</button><p id="elecMsg"></p></div><div class="card"><h3>🖼️ المعرض</h3><div id="electronicsGallery" class="gallery-grid"></div></div></div></div>
 
         <!-- ========== CARS ========== -->
-        <div id="carsPane" class="tab-pane"><div class="grid-2"><div class="card"><h3>🚗 إضافة سيارة</h3><select id="carType"><option>سيارة جديدة</option><option>سيارة مستعملة</option><option>دراجة نارية</option></select><input id="carName" placeholder="الماركة"><input id="carPrice" type="number" placeholder="السعر"><textarea id="carDesc" rows="2" placeholder="المميزات"></textarea><select id="carCity"><option>أسمرة</option><option>مصوع</option></select><input type="file" id="carImage"><div class="image-preview" id="carPreview"></div><button class="btn" id="publishCarBtn">نشر</button><p id="carMsg"></p></div><div class="card"><h3>🖼️ المعرض</h3><div id="carsGallery" class="gallery-grid"></div></div></div></div>
+        <div id="carsPane" class="tab-pane"><div class="grid-2"><div class="card"><h3>🚗 إضافة سيارة</h3><select id="carType"><option>سيارة جديدة</option><option>سيارة مستعملة</option></select><input id="carName" placeholder="الماركة"><input id="carPrice" type="number" placeholder="السعر"><textarea id="carDesc" rows="2" placeholder="المميزات"></textarea><select id="carCity"><option>أسمرة</option><option>مصوع</option></select><input type="file" id="carImage"><div class="image-preview" id="carPreview"></div><button class="btn" id="publishCarBtn">نشر</button><p id="carMsg"></p></div><div class="card"><h3>🖼️ المعرض</h3><div id="carsGallery" class="gallery-grid"></div></div></div></div>
 
         <!-- ========== JOBS ========== -->
         <div id="jobsPane" class="tab-pane"><div class="grid-2"><div class="card"><h3>💼 إضافة وظيفة</h3><select id="jobType"><option>دوام كامل</option><option>دوام جزئي</option></select><input id="jobTitle" placeholder="المسمى"><input id="jobCompany" placeholder="الشركة"><input id="jobSalary" type="number" placeholder="الراتب"><textarea id="jobDesc" rows="2" placeholder="المتطلبات"></textarea><select id="jobCity"><option>أسمرة</option><option>مصوع</option></select><button class="btn" id="publishJobBtn">نشر</button><p id="jobMsg"></p></div><div class="card"><h3>🖼️ الوظائف</h3><div id="jobsGallery" class="gallery-grid"></div></div></div></div>
@@ -170,81 +191,361 @@
         <div id="generalPane" class="tab-pane"><div class="grid-2"><div class="card"><h3>📝 إعلان عام</h3><select id="adType"><option>خدمة</option><option>منتج</option></select><input id="adName" placeholder="العنوان"><input id="adPrice" type="number" placeholder="السعر"><textarea id="adDesc" rows="2" placeholder="الوصف"></textarea><select id="adCity"><option>أسمرة</option><option>مصوع</option></select><input type="file" id="adImage"><div class="image-preview" id="adPreview"></div><button class="btn" id="publishGeneralBtn">نشر</button><p id="generalMsg"></p></div><div class="card"><h3>🖼️ المعرض</h3><div id="generalGallery" class="gallery-grid"></div></div></div></div>
 
         <!-- ========== PAYMENT ========== -->
-        <div id="paymentPane" class="tab-pane">
-            <div class="grid-2">
-                <div class="card"><h3 id="paymentTitle">💳 اشتراك Pro</h3><p id="paymentDesc">إعلانات غير محدودة + إحصائيات</p><div style="font-size:2rem; color:#c7a12b;">$29<small>/شهر</small></div><button id="paypalBtn" class="btn paypal-btn"><i class="fab fa-paypal"></i> <span id="paypalBtnText">PayPal</span></button><p id="paymentMsg"></p></div>
-                <div class="card"><h3 id="walletTitle">💰 محفظتي</h3><p>الرصيد: <strong id="balanceAmount">$0</strong></p><button id="addFundsBtn" class="btn btn-gold">إيداع $50</button></div>
-            </div>
-            <div class="card"><h3 id="transactionsTitle">📜 سجل المعاملات</h3><div id="transactionsList"></div></div>
-        </div>
+        <div id="paymentPane" class="tab-pane"><div class="grid-2"><div class="card"><h3>💳 اشتراك Pro</h3><p>إعلانات غير محدودة</p><div style="font-size:1.8rem; color:#c7a12b;">$29<small>/شهر</small></div><button id="paypalBtn" class="btn"><i class="fab fa-paypal"></i> PayPal</button><p id="paymentMsg"></p></div><div class="card"><h3>💰 محفظتي</h3><p>الرصيد: <strong id="balanceAmount">$0</strong></p><button id="addFundsBtn" class="btn btn-warning">إيداع $50</button></div></div><div class="card"><h3>📜 سجل المعاملات</h3><div id="transactionsList"></div></div></div>
 
         <!-- ========== MESSAGING ========== -->
-        <div id="messagingPane" class="tab-pane">
-            <div class="grid-2">
-                <div class="card"><h3 id="msgContactsTitle">📋 المحادثات</h3><div id="contactsList" class="chat-list"></div></div>
-                <div class="card"><h3 id="msgChatTitle">💬 المراسلة</h3><div id="chatMessages" class="chat-list" style="height:250px;"></div><div class="chat-input-area"><input type="text" id="chatInput" placeholder="اكتب رسالتك..."><button id="sendMsgBtn" class="btn-sm btn">إرسال</button></div></div>
-            </div>
-        </div>
+        <div id="messagingPane" class="tab-pane"><div class="grid-2"><div class="card"><h3>📋 المحادثات</h3><div id="contactsList" class="chat-list"></div></div><div class="card"><h3>💬 المراسلة</h3><div id="chatMessages" class="chat-list" style="height:200px;"></div><div class="chat-input-area" style="display:flex; gap:0.5rem; margin-top:0.5rem;"><input type="text" id="chatInput" placeholder="اكتب رسالتك..." style="margin:0;"><button id="sendMsgBtn" class="btn-sm btn">إرسال</button></div></div></div></div>
 
         <!-- ========== RATINGS ========== -->
-        <div id="ratingsPane" class="tab-pane">
-            <div class="card"><h3 id="ratingsTitle">⭐ تقييم المستخدمين</h3><div id="ratingsList"></div><div style="margin-top:1rem;"><textarea id="newRatingComment" rows="2" placeholder="اكتب تقييمك..."></textarea><select id="ratingStars"><option value="5">★★★★★</option><option value="4">★★★★☆</option><option value="3">★★★☆☆</option></select><button id="addRatingBtn" class="btn">إضافة تقييم</button></div></div>
-        </div>
+        <div id="ratingsPane" class="tab-pane"><div class="card"><h3>⭐ تقييم المستخدمين</h3><div id="ratingsList"></div><div style="margin-top:0.8rem;"><textarea id="newRatingComment" rows="2" placeholder="اكتب تقييمك..."></textarea><select id="ratingStars"><option value="5">★★★★★</option><option value="4">★★★★☆</option></select><button id="addRatingBtn" class="btn">إضافة تقييم</button></div></div></div>
 
-        <div class="footer"><p id="footerText">Asmara.Store — مراسلة، تقييمات، دفع آمن</p><div class="verified">Verified by Asmara Store Agent • 2026</div></div>
+        <div class="footer"><p id="footerText">Asmara.Store — منصة تحترم قيم المجتمع الإريتري</p><div class="verified">Verified by Asmara Store Agent • 2026</div></div>
     </div>
 
     <script>
-        // ========== DATA ==========
-        let realEstateAds = [{ id:1, type:"شقة", name:"شقة فاخرة - تيرفولو", price:"$85,000", city:"أسمرة", seller:"علي حسن", sellerRating:4.5, views:45, image:"https://placehold.co/300x200/1e3a5f/white?text=Apartment" }];
-        let electronicsAds = [{ id:1, type:"هاتف", name:"iPhone 14 Pro", price:"$899", city:"أسمرة", seller:"سامر تكنولوجي", sellerRating:4.2, views:120, image:"https://placehold.co/300x200/c7a12b/white?text=iPhone" }];
-        let carsAds = [{ id:1, type:"سيارة مستعملة", name:"تويوتا لاندكروزر", price:"$45,000", city:"أسمرة", seller:"معرض السلام", sellerRating:4.8, views:67, image:"https://placehold.co/300x200/2c5a82/white?text=Land+Cruiser" }];
-        let jobsAds = [{ id:1, type:"دوام كامل", name:"مهندس مدني", company:"شركة أسمرة", salary:"$1,200", city:"أسمرة", views:89, image:"https://placehold.co/300x200/1e3a5f/white?text=Job" }];
-        let generalAds = [{ id:1, type:"خدمة", name:"شحن من دبي", price:"$299", city:"أسمرة", seller:"شحن سريع", sellerRating:4.0, views:34, image:"https://placehold.co/300x200/2c5a82/white?text=Shipping" }];
+        // ========== قائمة الكلمات الممنوعة (جنس + عادات وتقاليد) ==========
+        let blockedWords = [
+            // كلمات جنسية صريحة
+            "سكس", "جنس", "عاري", "عارية", "نيك", "زنا", "شذوذ", "porn", "sex", "naked", "xxx",
+            // مخالفة العادات والتقاليد
+            "مسيء", "شتيمة", "سب", "لعنة", "قبيلة", "عنصرية", "عرق", "طائفي", "شتم", "تحريض",
+            "إهانة", "دين", "كفر", "رسول", "مسجد", "كنيسة", "عيب", "فاحشة", "فجور", "رذيلة",
+            "خمر", "خنزير", "حرام", "عادات", "تقاليد", "إريتري", "ثقافة"
+        ];
+        
+        // قائمة أسباب المخالفة المجتمعية
+        const violationTypes = {
+            sexual: "محتوى جنسي غير لائق",
+            traditions: "مخالفة للعادات والتقاليد المجتمعية",
+            offensive: "لغة مسيئة أو شتائم",
+            religious: "مساس بالدين أو المعتقدات",
+            racist: "تحريض طائفي أو عنصري"
+        };
+        
+        // ========== فحص المخالفات المجتمعية المتقدم ==========
+        function checkCommunityViolations(text) {
+            let violations = [];
+            let lowerText = text.toLowerCase();
+            
+            // فحص الكلمات الممنوعة
+            blockedWords.forEach(word => {
+                if(lowerText.includes(word.toLowerCase())) {
+                    if(word.includes("سكس") || word.includes("جنس") || word.includes("عاري") || word.includes("porn") || word.includes("sex")) {
+                        violations.push({ type: "sexual", word: word, message: violationTypes.sexual });
+                    } else if(word.includes("دين") || word.includes("كفر") || word.includes("رسول") || word.includes("مسجد") || word.includes("كنيسة")) {
+                        violations.push({ type: "religious", word: word, message: violationTypes.religious });
+                    } else if(word.includes("قبيلة") || word.includes("عنصرية") || word.includes("عرق") || word.includes("طائفي")) {
+                        violations.push({ type: "racist", word: word, message: violationTypes.racist });
+                    } else if(word.includes("شتيمة") || word.includes("سب") || word.includes("لعنة") || word.includes("إهانة")) {
+                        violations.push({ type: "offensive", word: word, message: violationTypes.offensive });
+                    } else {
+                        violations.push({ type: "traditions", word: word, message: violationTypes.traditions });
+                    }
+                }
+            });
+            
+            // فحص أنماط إضافية
+            if(/(\d{1,2})\s*(سنة|عام)/.test(text) && text.includes("زواج")) violations.push({ type: "traditions", word: "زواج مبكر", message: "مخالفة للعادات" });
+            if(/(ملابس|لباس|فساتين)\s*(عاري|شفاف|قصير)/i.test(text)) violations.push({ type: "sexual", word: "ملابس غير لائقة", message: violationTypes.sexual });
+            
+            return violations;
+        }
+        
+        // ========== البيانات ==========
+        let pendingAds = [];
+        let rejectedAds = [];
+        let violationsLog = [];
+        let agentLog = [];
+        let reportsList = []; // بلاغات المستخدمين
+        let reportsLog = [];
+        
+        let realEstateAds = [];
+        let electronicsAds = [];
+        let carsAds = [];
+        let jobsAds = [];
+        let generalAds = [];
         
         let messages = [{ id:1, from:"علي حسن", to:"مشتري", text:"مرحباً، هل الشقة لا تزال متاحة؟", time:"10:30" }];
-        let contacts = [{ name:"علي حسن", lastMessage:"مرحباً، هل الشقة لا تزال متاحة؟", unread:1 }];
-        let ratings = [{ user:"أحمد محمود", rating:5, comment:"منصة رائعة، تعامل ممتاز", date:"2026-04-01" }];
+        let ratings = [{ user:"أحمد محمود", rating:5, comment:"منصة محترمة ومحافظة على العادات", date:"2026-04-01" }];
         
         let balance = 0;
         let transactions = [];
         let currentContact = "علي حسن";
 
-        function updateStats() {
-            let totalAds = realEstateAds.length + electronicsAds.length + carsAds.length + jobsAds.length + generalAds.length;
-            let totalViews = [...realEstateAds, ...electronicsAds, ...carsAds, ...jobsAds, ...generalAds].reduce((sum, ad) => sum + (ad.views || 0), 0);
-            document.getElementById("statAds").innerText = totalAds;
-            document.getElementById("statViews").innerText = totalViews + Math.floor(Math.random() * 50);
-            document.getElementById("statUsers").innerText = Math.floor(Math.random() * 80) + 20;
-            document.getElementById("statRevenue").innerText = `$${(balance + Math.floor(Math.random() * 500)).toFixed(0)}`;
-            let allAds = [...realEstateAds.slice(0,3), ...electronicsAds.slice(0,2), ...carsAds.slice(0,2)];
-            let perfHtml = "";
-            allAds.forEach(ad => { perfHtml += `<div style="display:flex; justify-content:space-between; padding:8px 0; border-bottom:1px solid #eee;"><span>${ad.name}</span><span>👁️ ${ad.views || 0} مشاهدة</span></div>`; });
-            document.getElementById("adPerformanceList").innerHTML = perfHtml || "<p>لا توجد إعلانات</p>";
+        // ========== إرسال إعلان للمراجعة ==========
+        function submitForApproval(category, data, imageUrl) {
+            let allText = `${data.name} ${data.desc || ''} ${data.price || ''}`;
+            let violations = checkCommunityViolations(allText);
+            
+            let newAd = {
+                id: Date.now(),
+                category: category,
+                ...data,
+                image: imageUrl || "https://placehold.co/300x200/1e3a5f/white?text=قيد+المراجعة",
+                status: violations.length > 0 ? "rejected" : "pending",
+                violations: violations,
+                submittedAt: new Date().toLocaleString(),
+                seller: "مستخدم جديد",
+                reports: 0
+            };
+            
+            if(violations.length > 0) {
+                newAd.status = "rejected";
+                rejectedAds.unshift(newAd);
+                violationsLog.unshift({ ad: data.name, violations: violations.map(v=>v.word).join(", "), type: violations[0]?.type, date: new Date().toLocaleString() });
+                agentLog.unshift({ action: "رفض تلقائي (مخالفة مجتمعية)", ad: data.name, reason: violations.map(v=>v.message).join(", "), date: new Date().toLocaleString() });
+                return { success: false, violations: violations, message: "تم رفض الإعلان بسبب مخالفة مجتمعية" };
+            } else {
+                pendingAds.unshift(newAd);
+                agentLog.unshift({ action: "قيد المراجعة", ad: data.name, date: new Date().toLocaleString() });
+                return { success: true, message: "تم إرسال الإعلان للمراجعة" };
+            }
         }
-
-        function renderGalleries() {
-            function render(containerId, data, isJob=false) {
-                const container = document.getElementById(containerId);
+        
+        // ========== الإبلاغ عن إعلان ==========
+        function reportAd(adId, reason, category) {
+            let targetArray = getCategoryArray(category);
+            let ad = targetArray?.find(a => a.id == adId);
+            if(ad) {
+                if(!ad.reports) ad.reports = 0;
+                ad.reports++;
+                reportsList.unshift({
+                    adId: adId,
+                    adName: ad.name,
+                    category: category,
+                    reason: reason,
+                    reporter: "مستخدم",
+                    date: new Date().toLocaleString(),
+                    status: "pending"
+                });
+                reportsLog.unshift({ action: "بلاغ جديد", ad: ad.name, reason: reason, date: new Date().toLocaleString() });
+                
+                // إذا وصل عدد البلاغات إلى 3، يتم حظر الإعلان تلقائياً
+                if(ad.reports >= 3) {
+                    let index = targetArray.findIndex(a => a.id == adId);
+                    if(index !== -1) {
+                        targetArray.splice(index, 1);
+                        rejectedAds.unshift({ ...ad, status: "rejected", rejectionReason: "تعدد البلاغات" });
+                        agentLog.unshift({ action: "حظر تلقائي", ad: ad.name, reason: "تعدد البلاغات (" + ad.reports + ")", date: new Date().toLocaleString() });
+                    }
+                }
+                renderAll();
+                return true;
+            }
+            return false;
+        }
+        
+        // ========== معالجة البلاغ من الوكيل ==========
+        function resolveReport(reportIndex, action) {
+            if(reportsList[reportIndex]) {
+                let report = reportsList[reportIndex];
+                report.status = action === "accept" ? "تم الحذف" : "تم الرفض";
+                reportsLog.unshift({ action: action === "accept" ? "تم حذف الإعلان المخالف" : "تم رفض البلاغ", ad: report.adName, date: new Date().toLocaleString() });
+                
+                if(action === "accept") {
+                    let targetArray = getCategoryArray(report.category);
+                    let adIndex = targetArray?.findIndex(a => a.id == report.adId);
+                    if(adIndex !== -1 && adIndex !== undefined) {
+                        let removedAd = targetArray[adIndex];
+                        targetArray.splice(adIndex, 1);
+                        rejectedAds.unshift({ ...removedAd, status: "rejected", rejectionReason: report.reason });
+                    }
+                }
+                renderAll();
+            }
+        }
+        
+        function getCategoryArray(category) {
+            let map = { "عقارات": realEstateAds, "إلكترونيات": electronicsAds, "سيارات": carsAds, "وظائف": jobsAds, "عام": generalAds };
+            return map[category] || generalAds;
+        }
+        
+        function approveAd(adId) {
+            let index = pendingAds.findIndex(ad => ad.id == adId);
+            if(index !== -1) {
+                let ad = pendingAds[index];
+                ad.status = "approved";
+                let targetArray = getCategoryArray(ad.category);
+                if(targetArray) targetArray.unshift(ad);
+                pendingAds.splice(index, 1);
+                agentLog.unshift({ action: "موافقة", ad: ad.name, date: new Date().toLocaleString() });
+                renderAll();
+            }
+        }
+        
+        function rejectAd(adId, reason) {
+            let index = pendingAds.findIndex(ad => ad.id == adId);
+            if(index !== -1) {
+                let ad = pendingAds[index];
+                ad.status = "rejected";
+                ad.rejectionReason = reason;
+                rejectedAds.unshift(ad);
+                pendingAds.splice(index, 1);
+                agentLog.unshift({ action: "رفض", ad: ad.name, reason: reason, date: new Date().toLocaleString() });
+                renderAll();
+            }
+        }
+        
+        // ========== العرض ==========
+        function renderAll() {
+            let totalPending = pendingAds.length;
+            let totalRejected = rejectedAds.length;
+            let totalApproved = realEstateAds.length + electronicsAds.length + carsAds.length + jobsAds.length + generalAds.length;
+            let totalViolations = violationsLog.length;
+            let totalReports = reportsList.length;
+            
+            document.getElementById("statAds").innerText = totalPending + totalApproved + totalRejected;
+            document.getElementById("statPending").innerText = totalPending;
+            document.getElementById("statApproved").innerText = totalApproved;
+            document.getElementById("statRejected").innerText = totalRejected;
+            document.getElementById("statViolations").innerText = totalViolations;
+            document.getElementById("statReports").innerText = totalReports;
+            
+            // قائمة الانتظار
+            let pendingHtml = "";
+            pendingAds.forEach(ad => {
+                pendingHtml += `<div style="border:1px solid #eee; border-radius:14px; padding:0.6rem; margin-bottom:0.6rem; font-size:0.8rem;">
+                    <strong>${ad.name}</strong> - ${ad.category}<br>
+                    <small>💰 ${ad.price || "غير محدد"} | 📍 ${ad.city || "أسمرة"}</small>
+                    <div style="margin-top:0.4rem;">
+                        <button onclick="approveAd(${ad.id})" class="btn-sm btn-success" style="background:#28a745; color:white;">✅ قبول</button>
+                        <button onclick="rejectAd(${ad.id}, 'مخالفة مجتمعية')" class="btn-sm btn-danger" style="background:#dc3545; color:white;">❌ رفض</button>
+                    </div>
+                </div>`;
+            });
+            document.getElementById("pendingAdsList").innerHTML = pendingHtml || "<p style='font-size:0.8rem;'>لا توجد إعلانات تنتظر المراجعة</p>";
+            
+            // المخالفات
+            let violationsHtml = "";
+            violationsLog.slice(0,10).forEach(v => {
+                let typeClass = v.type === "sexual" ? "🔞" : (v.type === "religious" ? "☪️" : "⚠️");
+                violationsHtml += `<div class="violation-item">${typeClass} <strong>${v.ad}</strong> - ${v.violations}<br><small>${v.date}</small></div>`;
+            });
+            document.getElementById("violationsList").innerHTML = violationsHtml || "<p style='font-size:0.8rem;'>لا توجد مخالفات</p>";
+            
+            // سجل الوكيل
+            let logHtml = "";
+            agentLog.slice(0,15).forEach(log => {
+                logHtml += `<div style="padding:0.4rem; border-bottom:1px solid #eee; font-size:0.75rem;">🛡️ ${log.action}: ${log.ad} ${log.reason ? `- ${log.reason}` : ""}<br><small>${log.date}</small></div>`;
+            });
+            document.getElementById("agentLogList").innerHTML = logHtml || "<p>لا توجد سجلات</p>";
+            
+            // البلاغات
+            let reportsHtml = "";
+            reportsList.forEach((report, idx) => {
+                reportsHtml += `<div class="report-item">
+                    <strong>🚨 ${report.adName}</strong> - ${report.category}<br>
+                    سبب البلاغ: ${report.reason}<br>
+                    <small>${report.date}</small>
+                    <div style="margin-top:0.4rem;">
+                        <button onclick="resolveReport(${idx}, 'accept')" class="btn-sm btn-danger" style="background:#dc3545;">🗑️ حذف الإعلان</button>
+                        <button onclick="resolveReport(${idx}, 'reject')" class="btn-sm btn-success" style="background:#28a745;">✅ تجاهل البلاغ</button>
+                    </div>
+                </div>`;
+            });
+            document.getElementById("reportsList").innerHTML = reportsHtml || "<p style='font-size:0.8rem;'>لا توجد بلاغات</p>";
+            
+            // سجل معالجة البلاغات
+            let reportsLogHtml = "";
+            reportsLog.slice(0,10).forEach(log => {
+                reportsLogHtml += `<div style="padding:0.3rem; border-bottom:1px solid #eee; font-size:0.7rem;">📋 ${log.action}: ${log.ad}<br><small>${log.date}</small></div>`;
+            });
+            document.getElementById("reportsLogList").innerHTML = reportsLogHtml || "<p>لا توجد سجلات</p>";
+            
+            // الكلمات الممنوعة
+            let wordsHtml = "";
+            blockedWords.forEach(word => {
+                wordsHtml += `<span style="display:inline-block; background:#dc3545; color:white; padding:0.15rem 0.5rem; border-radius:16px; font-size:0.65rem;">${word} ✖</span>`;
+            });
+            document.getElementById("blockedWordsList").innerHTML = wordsHtml;
+            
+            // المعارض
+            function renderGallery(containerId, data) {
+                let container = document.getElementById(containerId);
                 if(!container) return;
                 container.innerHTML = "";
                 data.forEach(item => {
-                    const div = document.createElement("div"); div.className = "gallery-item";
-                    let ratingHtml = `<div class="rating-stars">${"★".repeat(Math.floor(item.sellerRating || 4))}${"☆".repeat(5-Math.floor(item.sellerRating || 4))}</div>`;
-                    if(isJob) div.innerHTML = `<img src="${item.image}"><h4>${item.name}</h4><p>${item.company} | ${item.salary}<br>📍 ${item.city}</p><span class="badge">${item.type}</span>`;
-                    else div.innerHTML = `<img src="${item.image}"><h4>${item.name}</h4><p>${item.price || item.salary}<br>📍 ${item.city}</p>${ratingHtml}<span class="badge">${item.type}</span>`;
+                    let div = document.createElement("div"); div.className = "gallery-item";
+                    let reportFlag = `<div class="report-flag" onclick="event.stopPropagation(); promptReport('${item.id}', '${item.category}')" title="الإبلاغ عن مخالفة">🚨</div>`;
+                    div.innerHTML = reportFlag + `<img src="${item.image}"><h4>${item.name}</h4><p>${item.price || ""}<br>📍 ${item.city || ""}</p><span class="badge">${item.type || item.category}</span>`;
                     div.onclick = () => { if(item.seller) { currentContact = item.seller; loadChat(); switchTab('messaging'); } };
                     container.appendChild(div);
                 });
             }
-            render("realEstateGallery", realEstateAds);
-            render("electronicsGallery", electronicsAds);
-            render("carsGallery", carsAds);
-            render("jobsGallery", jobsAds, true);
-            render("generalGallery", generalAds);
-            updateStats();
+            renderGallery("realEstateGallery", realEstateAds);
+            renderGallery("electronicsGallery", electronicsAds);
+            renderGallery("carsGallery", carsAds);
+            renderGallery("jobsGallery", jobsAds);
+            renderGallery("generalGallery", generalAds);
+            
+            // الأداء
+            let allAds = [...realEstateAds.slice(0,3), ...electronicsAds.slice(0,2), ...carsAds.slice(0,2)];
+            let perfHtml = "";
+            allAds.forEach(ad => { perfHtml += `<div style="display:flex; justify-content:space-between; padding:5px 0; font-size:0.8rem;"><span>${ad.name}</span><span>👁️ ${ad.views || 0}</span></div>`; });
+            document.getElementById("adPerformanceList").innerHTML = perfHtml || "<p>لا توجد إعلانات معتمدة</p>";
         }
-
+        
+        function promptReport(adId, category) {
+            let reason = prompt("سبب البلاغ (محتوى جنسي، مخالفة عادات، لغة مسيئة، إلخ):");
+            if(reason && reason.trim()) {
+                reportAd(adId, reason, category);
+                alert("تم إرسال البلاغ إلى الوكيل للمراجعة");
+            }
+        }
+        
+        // ========== إنشاء الناشرين ==========
+        function createPublishHandler(category, fields, msgId) {
+            return () => {
+                let values = fields.map(f => document.getElementById(f.id)?.value || "");
+                if(!values[0]) { document.getElementById(msgId).innerText = "❌ املأ البيانات"; return; }
+                let data = {};
+                fields.forEach((f, i) => { data[f.key] = values[i]; });
+                data.city = data.city || "أسمرة";
+                let result = submitForApproval(category, data, null);
+                if(result.success) {
+                    document.getElementById(msgId).innerHTML = "✅ " + result.message;
+                } else {
+                    document.getElementById(msgId).innerHTML = "❌ " + result.message + ": " + result.violations.map(v=>v.word).join(", ");
+                }
+                fields.forEach(f => { let el = document.getElementById(f.id); if(el) el.value = ""; });
+                renderAll();
+            };
+        }
+        
+        document.getElementById("publishReBtn")?.addEventListener("click", createPublishHandler("عقارات", [{id:"reType",key:"type"},{id:"reName",key:"name"},{id:"rePrice",key:"price"},{id:"reDesc",key:"desc"},{id:"reCity",key:"city"}], "reMsg"));
+        document.getElementById("publishElecBtn")?.addEventListener("click", createPublishHandler("إلكترونيات", [{id:"elecType",key:"type"},{id:"elecName",key:"name"},{id:"elecPrice",key:"price"},{id:"elecDesc",key:"desc"},{id:"elecCity",key:"city"}], "elecMsg"));
+        document.getElementById("publishCarBtn")?.addEventListener("click", createPublishHandler("سيارات", [{id:"carType",key:"type"},{id:"carName",key:"name"},{id:"carPrice",key:"price"},{id:"carDesc",key:"desc"},{id:"carCity",key:"city"}], "carMsg"));
+        document.getElementById("publishJobBtn")?.addEventListener("click", createPublishHandler("وظائف", [{id:"jobType",key:"type"},{id:"jobTitle",key:"name"},{id:"jobCompany",key:"company"},{id:"jobSalary",key:"salary"},{id:"jobDesc",key:"desc"},{id:"jobCity",key:"city"}], "jobMsg"));
+        document.getElementById("publishGeneralBtn")?.addEventListener("click", createPublishHandler("عام", [{id:"adType",key:"type"},{id:"adName",key:"name"},{id:"adPrice",key:"price"},{id:"adDesc",key:"desc"},{id:"adCity",key:"city"}], "generalMsg"));
+        
+        function setupPreview(inputId, previewId) {
+            document.getElementById(inputId)?.addEventListener("change", function(e) {
+                let preview = document.getElementById(previewId); if(preview) preview.innerHTML = "";
+                let file = e.target.files[0];
+                if(file && preview) { let reader = new FileReader(); reader.onload = (ev) => { let img = document.createElement("img"); img.src = ev.target.result; img.style.width = "50px"; img.style.height = "50px"; img.style.objectFit = "cover"; img.style.borderRadius = "10px"; preview.appendChild(img); }; reader.readAsDataURL(file); }
+            });
+        }
+        setupPreview("reImage", "rePreview"); setupPreview("elecImage", "elecPreview");
+        setupPreview("carImage", "carPreview"); setupPreview("adImage", "adPreview");
+        
+        // ========== رحلات الطيران ==========
+        let flightsData = { "DXB-ASM":[{airline:"FlyDubai",price:"$450"}], "JED-ASM":[{airline:"Ethiopian",price:"$380"}], "CAI-ASM":[{airline:"EgyptAir",price:"$490"}], "ADD-ASM":[{airline:"Ethiopian",price:"$210"}] };
+        document.getElementById("searchFlightBtn")?.addEventListener("click", () => {
+            let from = document.getElementById("flightFrom").value;
+            let date = document.getElementById("flightDate").value;
+            let flights = flightsData[`${from}-ASM`] || [];
+            if(flights.length===0) { document.getElementById("flightResults").innerHTML = "❌ لا توجد رحلات"; return; }
+            let html = `<strong>نتائج (${date}):</strong><br>`; flights.forEach(f => { html += `✈️ ${f.airline} | ${f.price}<br>`; });
+            document.getElementById("flightResults").innerHTML = html;
+        });
+        document.getElementById("confirmBookingBtn")?.addEventListener("click", () => {
+            let name = document.getElementById("passengerName")?.value;
+            if(!name) { document.getElementById("bookingMsg").innerText = "❌ أدخل الاسم"; return; }
+            document.getElementById("bookingMsg").innerText = `✅ تم تأكيد حجز ${name}`;
+        });
+        document.getElementById("libraryInfoBtn")?.addEventListener("click", () => { alert("📚 مكتبة أسمرة: مركز التوثيق الوطني"); });
+        
+        // ========== مراسلة ==========
         function loadContacts() {
             let contactsList = document.getElementById("contactsList");
             if(!contactsList) return;
@@ -252,157 +553,79 @@
             let uniqueSellers = new Set();
             [...realEstateAds, ...electronicsAds, ...carsAds, ...generalAds].forEach(ad => { if(ad.seller) uniqueSellers.add(ad.seller); });
             uniqueSellers.forEach(seller => {
-                let div = document.createElement("div");
-                div.className = "chat-message";
-                div.style.cursor = "pointer";
-                div.innerHTML = `<div><div class="message-sender">${seller}</div><div class="message-text">${messages.find(m=>m.from===seller)?.text || "مرحباً"}</div></div><div class="message-time">جديد</div>`;
+                let div = document.createElement("div"); div.className = "chat-message"; div.style.cursor = "pointer";
+                div.innerHTML = `<div><strong>${seller}</strong><div style="font-size:0.7rem;">${messages.find(m=>m.from===seller)?.text || "مرحباً"}</div></div>`;
                 div.onclick = () => { currentContact = seller; loadChat(); };
                 contactsList.appendChild(div);
             });
         }
-
         function loadChat() {
             let chatDiv = document.getElementById("chatMessages");
             if(!chatDiv) return;
             let chatMessages = messages.filter(m => m.from === currentContact || m.to === currentContact);
             chatDiv.innerHTML = "";
             chatMessages.forEach(msg => {
-                let div = document.createElement("div");
-                div.className = "chat-message";
-                div.innerHTML = `<div><div class="message-sender">${msg.from}</div><div class="message-text">${msg.text}</div><div class="message-time">${msg.time}</div></div>`;
+                let div = document.createElement("div"); div.className = "chat-message";
+                div.innerHTML = `<div><strong>${msg.from}</strong><div>${msg.text}</div><div style="font-size:0.6rem;">${msg.time}</div></div>`;
                 chatDiv.appendChild(div);
             });
             chatDiv.scrollTop = chatDiv.scrollHeight;
         }
-
-        function loadRatings() {
-            let ratingsDiv = document.getElementById("ratingsList");
-            if(!ratingsDiv) return;
-            ratingsDiv.innerHTML = "";
-            ratings.forEach(r => {
-                let div = document.createElement("div");
-                div.className = "chat-message";
-                div.innerHTML = `<div><div class="message-sender">${r.user}</div><div class="rating-stars">${"★".repeat(r.rating)}${"☆".repeat(5-r.rating)}</div><div class="message-text">${r.comment}</div><div class="message-time">${r.date}</div></div>`;
-                ratingsDiv.appendChild(div);
-            });
-        }
-
-        function publish(dataArray, fields, msgId, isJob=false) {
-            return () => {
-                const values = fields.map(f => document.getElementById(f.id)?.value);
-                if(!values[0] || (!isJob && !values[1])) { document.getElementById(msgId).innerText = "❌ املأ البيانات"; return; }
-                const newItem = { id: dataArray.length+1, views: 0, seller: "مستخدم جديد", sellerRating: 0 };
-                fields.forEach((f, i) => { newItem[f.key] = values[i]; });
-                if(!isJob) newItem.price = `$${values[1]}`;
-                else newItem.salary = `$${values[2]}`;
-                newItem.image = "https://placehold.co/300x200/1e3a5f/white?text=New";
-                dataArray.unshift(newItem);
-                renderGalleries();
-                document.getElementById(msgId).innerText = "✅ تم النشر!";
-                fields.forEach(f => { document.getElementById(f.id).value = ""; });
-            };
-        }
-
-        document.getElementById("publishReBtn")?.addEventListener("click", publish(realEstateAds, [{id:"reType",key:"type"},{id:"reName",key:"name"},{id:"rePrice",key:"price"},{id:"reDesc",key:"desc"},{id:"reCity",key:"city"}], "reMsg"));
-        document.getElementById("publishElecBtn")?.addEventListener("click", publish(electronicsAds, [{id:"elecType",key:"type"},{id:"elecName",key:"name"},{id:"elecPrice",key:"price"},{id:"elecDesc",key:"desc"},{id:"elecCity",key:"city"}], "elecMsg"));
-        document.getElementById("publishCarBtn")?.addEventListener("click", publish(carsAds, [{id:"carType",key:"type"},{id:"carName",key:"name"},{id:"carPrice",key:"price"},{id:"carDesc",key:"desc"},{id:"carCity",key:"city"}], "carMsg"));
-        document.getElementById("publishJobBtn")?.addEventListener("click", publish(jobsAds, [{id:"jobType",key:"type"},{id:"jobTitle",key:"name"},{id:"jobCompany",key:"company"},{id:"jobSalary",key:"salary"},{id:"jobDesc",key:"desc"},{id:"jobCity",key:"city"}], "jobMsg", true));
-        document.getElementById("publishGeneralBtn")?.addEventListener("click", publish(generalAds, [{id:"adType",key:"type"},{id:"adName",key:"name"},{id:"adPrice",key:"price"},{id:"adDesc",key:"desc"},{id:"adCity",key:"city"}], "generalMsg"));
-
-        function setupPreview(inputId, previewId) {
-            document.getElementById(inputId)?.addEventListener("change", function(e) {
-                const preview = document.getElementById(previewId); if(preview) preview.innerHTML = "";
-                const file = e.target.files[0];
-                if(file && preview) { const reader = new FileReader(); reader.onload = (ev) => { const img = document.createElement("img"); img.src = ev.target.result; preview.appendChild(img); }; reader.readAsDataURL(file); }
-            });
-        }
-        setupPreview("reImage", "rePreview"); setupPreview("elecImage", "elecPreview");
-        setupPreview("carImage", "carPreview"); setupPreview("adImage", "adPreview");
-
-        // Flight
-        const flightsData = { "DXB-ASM":[{airline:"FlyDubai",price:"$450"}], "JED-ASM":[{airline:"Ethiopian",price:"$380"}], "CAI-ASM":[{airline:"EgyptAir",price:"$490"}], "ADD-ASM":[{airline:"Ethiopian",price:"$210"}] };
-        document.getElementById("searchFlightBtn")?.addEventListener("click", () => {
-            const from = document.getElementById("flightFrom").value;
-            const date = document.getElementById("flightDate").value;
-            const flights = flightsData[`${from}-ASM`] || [];
-            if(flights.length===0) { document.getElementById("flightResults").innerHTML = "❌ لا توجد رحلات"; return; }
-            let html = `<strong>نتائج (${date}):</strong><br>`; flights.forEach(f => { html += `✈️ ${f.airline} | ${f.price}<br>`; });
-            document.getElementById("flightResults").innerHTML = html;
-        });
-        document.getElementById("confirmBookingBtn")?.addEventListener("click", () => {
-            const name = document.getElementById("passengerName")?.value;
-            if(!name) { document.getElementById("bookingMsg").innerText = "❌ أدخل الاسم"; return; }
-            document.getElementById("bookingMsg").innerText = `✅ تم تأكيد حجز ${name}`;
-        });
-        document.getElementById("libraryInfoBtn")?.addEventListener("click", () => { alert("📚 مكتبة أسمرة: مركز التوثيق الوطني"); });
-
-        // Messaging
         document.getElementById("sendMsgBtn")?.addEventListener("click", () => {
-            const input = document.getElementById("chatInput");
+            let input = document.getElementById("chatInput");
             if(!input.value.trim()) return;
             messages.push({ from:"أنا", to:currentContact, text:input.value, time:new Date().toLocaleTimeString() });
             loadChat();
             input.value = "";
         });
-
-        // Ratings
+        
+        // ========== تقييمات ==========
+        function loadRatings() {
+            let ratingsDiv = document.getElementById("ratingsList");
+            if(!ratingsDiv) return;
+            ratingsDiv.innerHTML = "";
+            ratings.forEach(r => {
+                let div = document.createElement("div"); div.className = "chat-message";
+                div.innerHTML = `<div><strong>${r.user}</strong><div class="rating-stars">${"★".repeat(r.rating)}${"☆".repeat(5-r.rating)}</div><div style="font-size:0.75rem;">${r.comment}</div><div style="font-size:0.6rem;">${r.date}</div></div>`;
+                ratingsDiv.appendChild(div);
+            });
+        }
         document.getElementById("addRatingBtn")?.addEventListener("click", () => {
-            const comment = document.getElementById("newRatingComment")?.value;
-            const rating = document.getElementById("ratingStars")?.value;
+            let comment = document.getElementById("newRatingComment")?.value;
+            let rating = document.getElementById("ratingStars")?.value;
             if(!comment) return;
             ratings.unshift({ user:"مستخدم جديد", rating:parseInt(rating), comment:comment, date:new Date().toLocaleDateString() });
             loadRatings();
             document.getElementById("newRatingComment").value = "";
         });
-
-        // Payment
+        
+        // ========== دفع ==========
         document.getElementById("paypalBtn")?.addEventListener("click", () => {
-            document.getElementById("paymentMsg").innerText = "🟡 جاري التوجيه إلى PayPal...";
+            document.getElementById("paymentMsg").innerText = "🟡 جاري التوجيه...";
             setTimeout(() => { balance += 29; transactions.unshift({ date:new Date().toLocaleDateString(), amount:"+$29", type:"اشتراك Pro" }); updateWallet(); document.getElementById("paymentMsg").innerHTML = "✅ تم الدفع بنجاح!"; }, 1500);
         });
         document.getElementById("addFundsBtn")?.addEventListener("click", () => { balance += 50; transactions.unshift({ date:new Date().toLocaleDateString(), amount:"+$50", type:"إيداع" }); updateWallet(); });
-        function updateWallet() { document.getElementById("balanceAmount").innerHTML = `$${balance}`; let html=""; transactions.slice(0,10).forEach(t=>{ html+=`<div style="padding:6px 0; border-bottom:1px solid #eee;">${t.date} - ${t.amount} - ${t.type}</div>`; }); document.getElementById("transactionsList").innerHTML = html || "<p>لا توجد معاملات</p>"; }
-
-        // ========== TRANSLATIONS & TAB ==========
-        const translations = {
-            ar: { tagline:"مراسلة، تقييمات، دفع آمن - منصة إريتريا المتكاملة", statAdsLabel:"الإعلانات", statViewsLabel:"المشاهدات", statUsersLabel:"المستخدمين", statRevenueLabel:"الإيرادات", statsTitle:"📈 أداء إعلاناتك",
-                instTradeTitle:"وزارة التجارة", instTradeDesc:"تنظيم الاستثمار", instPressTitle:"وزارة المعلومات", instPressDesc:"المصدر الرسمي", instLibraryTitle:"مكتبة أسمرة", instLibraryDesc:"مركز التوثيق",
-                flightSearchTitle:"✈️ البحث عن رحلة", bookingInfoTitle:"📋 معلومات الحجز", paymentTitle:"💳 اشتراك Pro", paymentDesc:"إعلانات غير محدودة", paypalBtnText:"PayPal", walletTitle:"💰 محفظتي", transactionsTitle:"📜 سجل المعاملات",
-                msgContactsTitle:"📋 المحادثات", msgChatTitle:"💬 المراسلة", ratingsTitle:"⭐ تقييم المستخدمين", footerText:"Asmara.Store — مراسلة، تقييمات، دفع آمن" },
-            en: { tagline:"Messaging, Ratings, Secure Payment - Eritrea's Integrated Platform", statAdsLabel:"Ads", statViewsLabel:"Views", statUsersLabel:"Users", statRevenueLabel:"Revenue", statsTitle:"📈 Your Ads Performance",
-                instTradeTitle:"Ministry of Trade", instTradeDesc:"Investment regulation", instPressTitle:"Ministry of Info", instPressDesc:"Official news", instLibraryTitle:"Asmara Library", instLibraryDesc:"Documentation",
-                flightSearchTitle:"✈️ Search Flights", bookingInfoTitle:"📋 Booking Info", paymentTitle:"💳 Pro Subscription", paymentDesc:"Unlimited ads", paypalBtnText:"PayPal", walletTitle:"💰 My Wallet", transactionsTitle:"📜 Transactions",
-                msgContactsTitle:"📋 Conversations", msgChatTitle:"💬 Messaging", ratingsTitle:"⭐ User Ratings", footerText:"Asmara.Store — Messaging, Ratings, Secure Payment" },
-            ti: { tagline:"መልእኽቲ፣ ውጤት፣ ደህንነቱ ዝተጠበቀ ክፍሊት", statAdsLabel:"ማስታወቂያ", statViewsLabel:"ርእይቶ", statUsersLabel:"ተጠቃሚታት", statRevenueLabel:"ገቢ", statsTitle:"📈 ውጤት",
-                instTradeTitle:"ሚኒስትሪ ንግድ", instTradeDesc:"ምዕባለታት", instPressTitle:"ሚኒስትሪ ሓበሬታ", instPressDesc:"ወግዓዊ ዜና", instLibraryTitle:"ቤተ-መጻሕፍቲ", instLibraryDesc:"ማእከል ሰነዳት",
-                flightSearchTitle:"✈️ ምድላይ በረራ", bookingInfoTitle:"📋 ሓበሬታ", paymentTitle:"💳 Pro ምዝገባ", paymentDesc:"ደረት ዘይብሉ", paypalBtnText:"PayPal", walletTitle:"💰 ቦርሳይ", transactionsTitle:"📜 መዝገብ",
-                msgContactsTitle:"📋 ምይይጥ", msgChatTitle:"💬 መልእኽቲ", ratingsTitle:"⭐ ውጤት ተጠቃሚታት", footerText:"ኣስመራ.ስቶር — መልእኽቲ፣ ውጤት፣ ክፍሊት" }
+        function updateWallet() { document.getElementById("balanceAmount").innerHTML = `$${balance}`; let html=""; transactions.slice(0,10).forEach(t=>{ html+=`<div style="padding:5px 0; border-bottom:1px solid #eee; font-size:0.75rem;">${t.date} - ${t.amount} - ${t.type}</div>`; }); document.getElementById("transactionsList").innerHTML = html || "<p>لا توجد معاملات</p>"; }
+        
+        document.getElementById("addBlockedWordBtn")?.addEventListener("click", () => {
+            let newWord = document.getElementById("newBlockedWord")?.value;
+            if(newWord && !blockedWords.includes(newWord)) {
+                blockedWords.push(newWord);
+                renderAll();
+                document.getElementById("newBlockedWord").value = "";
+            }
+        });
+        
+        // ========== ترجمة وتبويب ==========
+        let translations = {
+            ar: { tagline:"منصة تحترم عاداتنا وتقاليدنا - بروح القانون الإريتري", footerText:"Asmara.Store — منصة تحترم قيم المجتمع الإريتري" },
+            en: { tagline:"A platform that respects our customs and traditions - In the spirit of Eritrean law", footerText:"Asmara.Store — A platform that respects Eritrean community values" },
+            ti: { tagline:"ልማዳትና ባህልና ዘከብር መድረኽ - ብመንፈስ ሕጊ ኤርትራ", footerText:"ኣስመራ.ስቶር — ኩነታት ማሕበረሰብ ኤርትራ ዘከብር መድረኽ" }
         };
         let currentLang = "ar";
         function updateLanguage(lang) {
-            currentLang = lang; const t = translations[lang]; if(!t) return;
+            currentLang = lang; let t = translations[lang]; if(!t) return;
             document.getElementById("tagline").innerText = t.tagline;
-            document.getElementById("statAdsLabel").innerText = t.statAdsLabel;
-            document.getElementById("statViewsLabel").innerText = t.statViewsLabel;
-            document.getElementById("statUsersLabel").innerText = t.statUsersLabel;
-            document.getElementById("statRevenueLabel").innerText = t.statRevenueLabel;
-            document.getElementById("statsTitle").innerHTML = t.statsTitle;
-            document.getElementById("instTradeTitle").innerHTML = t.instTradeTitle;
-            document.getElementById("instTradeDesc").innerText = t.instTradeDesc;
-            document.getElementById("instPressTitle").innerHTML = t.instPressTitle;
-            document.getElementById("instPressDesc").innerText = t.instPressDesc;
-            document.getElementById("instLibraryTitle").innerHTML = t.instLibraryTitle;
-            document.getElementById("instLibraryDesc").innerText = t.instLibraryDesc;
-            document.getElementById("flightSearchTitle").innerHTML = t.flightSearchTitle;
-            document.getElementById("bookingInfoTitle").innerHTML = t.bookingInfoTitle;
-            document.getElementById("paymentTitle").innerHTML = t.paymentTitle;
-            document.getElementById("paymentDesc").innerText = t.paymentDesc;
-            document.getElementById("paypalBtnText").innerText = t.paypalBtnText;
-            document.getElementById("walletTitle").innerHTML = t.walletTitle;
-            document.getElementById("transactionsTitle").innerHTML = t.transactionsTitle;
-            document.getElementById("msgContactsTitle").innerHTML = t.msgContactsTitle;
-            document.getElementById("msgChatTitle").innerHTML = t.msgChatTitle;
-            document.getElementById("ratingsTitle").innerHTML = t.ratingsTitle;
             document.getElementById("footerText").innerText = t.footerText;
             document.body.className = `lang-${lang}`;
             document.body.dir = (lang === 'en') ? 'ltr' : 'rtl';
@@ -410,25 +633,31 @@
         }
         document.querySelectorAll('.lang-btn').forEach(btn=>{ btn.addEventListener('click',()=>updateLanguage(btn.dataset.lang)); });
         updateLanguage('ar');
-
+        
         function switchTab(tabId) {
             document.querySelectorAll('.tab-pane').forEach(pane => pane.classList.remove('active-pane'));
-            const pane = document.getElementById(`${tabId}Pane`);
+            let pane = document.getElementById(`${tabId}Pane`);
             if(pane) pane.classList.add('active-pane');
             document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
-            const tabBtn = document.querySelector(`.tab-btn[data-tab="${tabId}"]`);
+            let tabBtn = document.querySelector(`.tab-btn[data-tab="${tabId}"]`);
             if(tabBtn) tabBtn.classList.add('active');
             document.querySelectorAll('.nav-tab-link').forEach(link => link.classList.remove('active'));
-            const navLink = document.querySelector(`.nav-tab-link[data-tab="${tabId}"]`);
+            let navLink = document.querySelector(`.nav-tab-link[data-tab="${tabId}"]`);
             if(navLink) navLink.classList.add('active');
-            if(tabId === 'dashboard') updateStats();
             if(tabId === 'messaging') { loadContacts(); loadChat(); }
             if(tabId === 'ratings') loadRatings();
+            if(tabId === 'agent' || tabId === 'reports') renderAll();
         }
         document.querySelectorAll('.tab-btn').forEach(btn => btn.addEventListener('click', () => switchTab(btn.dataset.tab)));
         document.querySelectorAll('.nav-tab-link').forEach(link => link.addEventListener('click', () => switchTab(link.dataset.tab)));
-
-        renderGalleries(); updateWallet(); loadRatings();
+        
+        window.approveAd = approveAd;
+        window.rejectAd = rejectAd;
+        window.reportAd = reportAd;
+        window.resolveReport = resolveReport;
+        window.promptReport = promptReport;
+        
+        renderAll(); updateWallet(); loadRatings();
     </script>
 </body>
 </html>
