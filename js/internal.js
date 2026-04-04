@@ -6,18 +6,21 @@ document.addEventListener("DOMContentLoaded", () => {
     btn.addEventListener("click", () => applyLanguage(btn.dataset.lang));
   });
 
-  document.getElementById("internalLoginBtn").addEventListener("click", () => {
-    const password = document.getElementById("internalPassword").value;
-    const msg = document.getElementById("internalLoginMsg");
+  const internalLoginBtn = document.getElementById("internalLoginBtn");
+  if (internalLoginBtn) {
+    internalLoginBtn.addEventListener("click", () => {
+      const password = document.getElementById("internalPassword").value;
+      const msg = document.getElementById("internalLoginMsg");
 
-    if (password === APP_CONFIG.internalPassword) {
-      document.getElementById("internalPanel").style.display = "block";
-      msg.textContent = "";
-      renderInternal();
-    } else {
-      msg.textContent = "كلمة المرور غير صحيحة";
-    }
-  });
+      if (password === APP_CONFIG.internalPassword) {
+        document.getElementById("internalPanel").style.display = "block";
+        msg.textContent = "";
+        renderInternal();
+      } else {
+        msg.textContent = "كلمة المرور غير صحيحة";
+      }
+    });
+  }
 });
 
 function renderInternal() {
