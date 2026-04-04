@@ -10,6 +10,15 @@ document.addEventListener("DOMContentLoaded", () => {
   renderGallery("carsGallery", carsAds);
   renderGallery("jobsGallery", jobsAds);
 
+  const waLink = `https://wa.me/${APP_CONFIG.whatsappNumber}`;
+  const aboutWhatsapp = document.getElementById("aboutWhatsapp");
+  const privacyWhatsapp = document.getElementById("privacyWhatsapp");
+  const floatingWhatsapp = document.getElementById("floatingWhatsapp");
+
+  if (aboutWhatsapp) aboutWhatsapp.href = waLink;
+  if (privacyWhatsapp) privacyWhatsapp.href = waLink;
+  if (floatingWhatsapp) floatingWhatsapp.href = waLink;
+
   document.querySelectorAll(".lang-btn").forEach(btn => {
     btn.addEventListener("click", () => applyLanguage(btn.dataset.lang));
   });
@@ -47,15 +56,26 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   if (getCookie("cookiesAccepted")) {
-    document.getElementById("cookieBanner").style.display = "none";
+    const cookieBanner = document.getElementById("cookieBanner");
+    if (cookieBanner) cookieBanner.style.display = "none";
   }
 
-  const waLink = `https://wa.me/${APP_CONFIG.whatsappNumber}`;
-  const aboutWhatsapp = document.getElementById("aboutWhatsapp");
-  const privacyWhatsapp = document.getElementById("privacyWhatsapp");
-  const floatingWhatsapp = document.getElementById("floatingWhatsapp");
+  const homeFlightsPreview = document.getElementById("homeFlightsPreview");
+  if (homeFlightsPreview) {
+    homeFlightsPreview.innerHTML = `
+      <div>DXB → ASM | FlyDubai | $450</div>
+      <div>JED → ASM | Ethiopian | $380</div>
+    `;
+  }
 
-  if (aboutWhatsapp) aboutWhatsapp.href = waLink;
-  if (privacyWhatsapp) privacyWhatsapp.href = waLink;
-  if (floatingWhatsapp) floatingWhatsapp.href = waLink;
+  const homeBlogPreview = document.getElementById("homeBlogPreview");
+  if (homeBlogPreview) {
+    homeBlogPreview.innerHTML = blogPosts.slice(0, 3).map(post => `
+      <div>
+        <strong>${post.title}</strong><br>
+        <small>${post.excerpt}</small><br>
+        <a href="blog.html">قراءة المزيد</a>
+      </div>
+    `).join("");
+  }
 });
