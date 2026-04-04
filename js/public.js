@@ -1,5 +1,6 @@
 // ========================================
-// Asmara.Store - Public Main Script (نسخة مستقرة)
+// Asmara.Store - Public Main Script
+// نسخة مستقرة وكاملة
 // ========================================
 
 let currentLang = 'ar';
@@ -22,63 +23,31 @@ const FLIGHTS_DATA = {
     ]
 };
 
-// ===== الترجمات الأساسية (مضمنة للطوارئ) =====
-const FALLBACK_TRANSLATIONS = {
-    ar: {
-        tagline: "منصة تحترم عاداتنا وتقاليدنا - بروح القانون الإريتري",
-        homeIntro: "منصة موثوقة للطيران والعقارات والخدمات والمحتوى الرسمي.",
-        homeFlightsTitle: "✈️ أحدث الرحلات",
-        homeBlogTitle: "📰 آخر المقالات",
-        flightTitle: "✈️ البحث عن رحلة",
-        realestateTitle: "🏠 العقارات",
-        electronicsTitle: "📱 الإلكترونيات",
-        carsTitle: "🚗 السيارات",
-        jobsTitle: "💼 الوظائف",
-        aboutTitle: "🇪🇷 من نحن",
-        aboutText: "Asmara.Store منصة رقمية تربط الإريتريين بخدمات موثوقة داخل الوطن وخارجه.",
-        privacyTitle: "🔒 سياسة الخصوصية",
-        privacyText: "نحترم خصوصيتك ونحمي بياناتك، ولا نبيع البيانات لأي طرف ثالث.",
-        cookieText: "نستخدم ملفات تعريف الارتباط لتحسين تجربتك.",
-        cookieAccept: "موافق",
-        searchBtn: "🔍 بحث"
-    },
-    en: {
-        tagline: "A platform that respects our customs and traditions",
-        homeIntro: "A trusted platform for flights, real estate, services, and official content.",
-        homeFlightsTitle: "✈️ Latest Flights",
-        homeBlogTitle: "📰 Latest Articles",
-        flightTitle: "✈️ Search Flights",
-        realestateTitle: "🏠 Real Estate",
-        electronicsTitle: "📱 Electronics",
-        carsTitle: "🚗 Cars",
-        jobsTitle: "💼 Jobs",
-        aboutTitle: "🇪🇷 About Us",
-        aboutText: "Asmara.Store is a digital platform connecting Eritreans with trusted services.",
-        privacyTitle: "🔒 Privacy Policy",
-        privacyText: "We respect your privacy and protect your data.",
-        cookieText: "We use cookies to improve your experience.",
-        cookieAccept: "Accept",
-        searchBtn: "🔍 Search"
-    },
-    ti: {
-        tagline: "ልማዳትና ባህልና ዘከብር መድረኽ",
-        homeIntro: "ንበረራ፣ ንብረት፣ ኣገልግሎታትን እሙን መድረኽ።",
-        homeFlightsTitle: "✈️ ሓደሽቲ በረራታት",
-        homeBlogTitle: "📰 ሓደሽቲ ዜናታት",
-        flightTitle: "✈️ ምድላይ በረራ",
-        realestateTitle: "🏠 ንብረት",
-        electronicsTitle: "📱 ኤሌክትሮኒክስ",
-        carsTitle: "🚗 ማኪናታት",
-        jobsTitle: "💼 ስራሕታት",
-        aboutTitle: "🇪🇷 ብዛዕባና",
-        aboutText: "ኣስመራ.ስቶር ንኤርትራውያን እሙን ኣገልግሎታት ዘእሰር መድረኽ እዩ።",
-        privacyTitle: "🔒 ሕጊ ምስጢር",
-        privacyText: "ምስጢርካ ንከብር ኢና።",
-        cookieText: "ተሞክሮኻ ንምምሕያሽ ኩኪታት ንጥቀም።",
-        cookieAccept: "ተቐበልኩ",
-        searchBtn: "🔍 ድለይ"
-    }
+// ===== صور احتياطية =====
+const FALLBACK_IMAGES = {
+    realestate: "https://placehold.co/400x250/1e3a5f/white?text=عقار",
+    electronics: "https://placehold.co/400x250/2c5282/white?text=جهاز",
+    cars: "https://placehold.co/400x250/3a5a40/white?text=سيارة",
+    jobs: "https://placehold.co/400x250/6d597b/white?text=وظيفة"
 };
+
+// ===== دالة التحقق من تحميل الصور =====
+function ensureImageLoad(imgElement, fallbackUrl) {
+    if (!imgElement.complete || imgElement.naturalWidth === 0) {
+        imgElement.src = fallbackUrl;
+    }
+}
+
+// ===== دالة تحديث الصور بعد التحميل =====
+function fixAllImages() {
+    document.querySelectorAll('.gallery-item img').forEach(img => {
+        img.addEventListener('error', function() {
+            const category = this.closest('.gallery-item')?.dataset.category;
+            const fallbackUrl = FALLBACK_IMAGES[category] || FALLBACK_IMAGES.realestate;
+            this.src = fallbackUrl;
+        });
+    });
+}
 
 // ===== دالة البحث عن الرحلات =====
 function searchFlights() {
@@ -115,7 +84,7 @@ function searchFlights() {
     resultsDiv.innerHTML = html;
 }
 
-// ===== دالة عرض الرحلات في الرئيسية =====
+// ===== دالة عرض الرحلات في الصفحة الرئيسية =====
 function renderHomeFlights() {
     const container = document.getElementById('homeFlightsPreview');
     if (!container) return;
@@ -125,9 +94,14 @@ function renderHomeFlights() {
         const [from, to] = key.split('-');
         flights.forEach(flight => {
             html += `
-                <div style="display:flex; justify-content:space-between; padding:8px; background:#f8f9fa; border-radius:8px;">
-                    <div><strong>${from} → ${to}</strong><br><small>${flight.airline}</small></div>
-                    <div><strong style="color:#c7a12b">${flight.price}</strong></div>
+                <div style="display:flex; justify-content:space-between; align-items:center; padding:8px; background:#f8f9fa; border-radius:8px;">
+                    <div>
+                        <strong>${from} → ${to}</strong><br>
+                        <small>${flight.airline}</small>
+                    </div>
+                    <div>
+                        <strong style="color:#c7a12b">${flight.price}</strong>
+                    </div>
                 </div>
             `;
         });
@@ -136,13 +110,13 @@ function renderHomeFlights() {
     container.innerHTML = html;
 }
 
-// ===== دالة عرض المقالات في الرئيسية =====
+// ===== دالة عرض المقالات في الصفحة الرئيسية =====
 function renderHomeBlog() {
     const container = document.getElementById('homeBlogPreview');
     if (!container) return;
     
     const posts = [
-        { title: "كيف تختار رحلة مناسبة إلى أسمرة", summary: "نصائح سريعة للمغترب الإريتري عند مقارنة أسعار الرحلات." },
+        { title: "كيف تختار رحلة مناسبة إلى أسمرة", summary: "نصائح سريعة للمغترب الإريتري عند مقارنة أسعار الرحلات واختيار الوقت المناسب." },
         { title: "الاستثمار العقاري في أسمرة", summary: "نظرة مبسطة على الفرص العقارية الأكثر طلبًا داخل العاصمة." },
         { title: "لماذا منصة متعددة اللغات مهمة؟", summary: "اللغة تبني الثقة، خاصة عندما تخاطب جمهورًا في الداخل والمهجر." }
     ];
@@ -160,10 +134,55 @@ function renderHomeBlog() {
     container.innerHTML = html;
 }
 
+// ===== دالة تبديل التبويبات =====
+function switchTab(tabId) {
+    document.querySelectorAll('.tab-pane').forEach(pane => {
+        pane.classList.remove('active-pane');
+    });
+    
+    const activePane = document.getElementById(`${tabId}Pane`);
+    if (activePane) {
+        activePane.classList.add('active-pane');
+    } else {
+        const homePane = document.getElementById('homePane');
+        if (homePane) homePane.classList.add('active-pane');
+        tabId = 'home';
+    }
+    
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.classList.remove('active');
+        if (link.dataset.tab === tabId) {
+            link.classList.add('active');
+        }
+    });
+    
+    // حفظ التبويب النشط
+    localStorage.setItem('activeTab', tabId);
+}
+
 // ===== دالة تحديث اللغة =====
 function updateLanguage(lang) {
     currentLang = lang;
-    const t = FALLBACK_TRANSLATIONS[lang] || FALLBACK_TRANSLATIONS.ar;
+    const t = TRANSLATIONS?.[lang] || {
+        tagline: "منصة تحترم عاداتنا وتقاليدنا",
+        homeIntro: "منصة موثوقة للخدمات",
+        homeFlightsTitle: "✈️ أحدث الرحلات",
+        homeBlogTitle: "📰 آخر المقالات",
+        flightTitle: "✈️ البحث عن رحلة",
+        realestateTitle: "🏠 العقارات",
+        electronicsTitle: "📱 الإلكترونيات",
+        carsTitle: "🚗 السيارات",
+        jobsTitle: "💼 الوظائف",
+        aboutTitle: "🇪🇷 من نحن",
+        aboutText: "Asmara.Store منصة رقمية تربط الإريتريين بخدمات موثوقة.",
+        privacyTitle: "🔒 سياسة الخصوصية",
+        privacyText: "نحترم خصوصيتك ونحمي بياناتك.",
+        cookieText: "نستخدم ملفات تعريف الارتباط لتحسين تجربتك.",
+        cookieAccept: "موافق",
+        searchBtn: "🔍 بحث",
+        whatsappText: "📱 واتساب",
+        agentText: "🛡️ الوكيل"
+    };
     
     // تحديث النصوص
     const elements = {
@@ -180,8 +199,7 @@ function updateLanguage(lang) {
         aboutText: t.aboutText,
         privacyTitle: t.privacyTitle,
         privacyText: t.privacyText,
-        cookieText: t.cookieText,
-        cookieAcceptBtn: t.cookieAccept
+        cookieText: t.cookieText
     };
     
     for (const [id, text] of Object.entries(elements)) {
@@ -189,8 +207,17 @@ function updateLanguage(lang) {
         if (el) el.innerText = text;
     }
     
+    const acceptBtn = document.getElementById('cookieAcceptBtn');
+    if (acceptBtn) acceptBtn.innerText = t.cookieAccept;
+    
     const searchBtn = document.getElementById('searchFlightBtn');
     if (searchBtn) searchBtn.innerHTML = t.searchBtn;
+    
+    const aboutWhatsapp = document.getElementById('aboutWhatsapp');
+    if (aboutWhatsapp) aboutWhatsapp.innerHTML = t.whatsappText;
+    
+    const privacyWhatsapp = document.getElementById('privacyWhatsapp');
+    if (privacyWhatsapp) privacyWhatsapp.innerHTML = t.whatsappText;
     
     // تحديث اتجاه الصفحة
     document.body.className = `lang-${lang}`;
@@ -198,36 +225,72 @@ function updateLanguage(lang) {
     
     // تحديث أزرار اللغة
     document.querySelectorAll('.lang-btn').forEach(btn => {
-        if (btn.dataset.lang === lang) btn.classList.add('active');
-        else btn.classList.remove('active');
+        if (btn.dataset.lang === lang) {
+            btn.classList.add('active');
+        } else {
+            btn.classList.remove('active');
+        }
     });
     
-    // إعادة عرض المحتوى
+    // حفظ اللغة
+    localStorage.setItem('preferredLang', lang);
+    if (typeof setCookie === 'function') setCookie('lang', lang, 30);
+    
+    // إعادة عرض المحتوى الديناميكي
     renderHomeFlights();
     renderHomeBlog();
 }
 
-// ===== دالة تبديل التبويبات =====
-function switchTab(tabId) {
-    document.querySelectorAll('.tab-pane').forEach(pane => {
-        pane.classList.remove('active-pane');
-    });
+// ===== تهيئة الروابط =====
+function initLinks() {
+    const whatsappUrl = "https://wa.me/29170000000";
     
-    const activePane = document.getElementById(`${tabId}Pane`);
-    if (activePane) activePane.classList.add('active-pane');
-    else document.getElementById('homePane')?.classList.add('active-pane');
+    const whatsappFloat = document.getElementById('floatingWhatsapp');
+    if (whatsappFloat) {
+        whatsappFloat.href = whatsappUrl;
+        whatsappFloat.innerHTML = "📱";
+    }
     
-    document.querySelectorAll('.nav-link').forEach(link => {
-        link.classList.remove('active');
-        if (link.dataset.tab === tabId) link.classList.add('active');
+    const agentLink = document.getElementById('floatingAgent');
+    if (agentLink) {
+        agentLink.innerHTML = "🛡️";
+    }
+    
+    const aboutWhatsapp = document.getElementById('aboutWhatsapp');
+    if (aboutWhatsapp) aboutWhatsapp.href = whatsappUrl;
+    
+    const privacyWhatsapp = document.getElementById('privacyWhatsapp');
+    if (privacyWhatsapp) privacyWhatsapp.href = whatsappUrl;
+}
+
+// ===== دالة عرض المعارض =====
+function renderGallery(containerId, data) {
+    const container = document.getElementById(containerId);
+    if (!container) return;
+    
+    container.innerHTML = "";
+    data.forEach(item => {
+        const div = document.createElement("div");
+        div.className = "gallery-item";
+        div.dataset.category = containerId.replace('Gallery', '').toLowerCase();
+        div.innerHTML = `
+            <img src="${item.image}" alt="${item.name}" loading="lazy" onerror="this.src='${FALLBACK_IMAGES[div.dataset.category] || FALLBACK_IMAGES.realestate}'">
+            <h4>${item.name}</h4>
+            <p>${item.price || item.salary} | 📍 ${item.city}</p>
+        `;
+        container.appendChild(div);
     });
 }
 
 // ===== تهيئة الصفحة =====
 document.addEventListener('DOMContentLoaded', function() {
+    console.log('✅ Asmara.Store is loading...');
+    
     // تعيين التاريخ الافتراضي
     const dateInput = document.getElementById('flightDate');
-    if (dateInput) dateInput.value = new Date().toISOString().split('T')[0];
+    if (dateInput) {
+        dateInput.value = new Date().toISOString().split('T')[0];
+    }
     
     // ربط أزرار اللغة
     document.querySelectorAll('.lang-btn').forEach(btn => {
@@ -244,23 +307,63 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // ربط زر البحث
     const searchBtn = document.getElementById('searchFlightBtn');
-    if (searchBtn) searchBtn.addEventListener('click', searchFlights);
+    if (searchBtn) {
+        searchBtn.addEventListener('click', searchFlights);
+    }
     
     // ربط قبول الكوكيز
     const acceptBtn = document.getElementById('cookieAcceptBtn');
-    if (acceptBtn) acceptBtn.addEventListener('click', function() {
-        document.getElementById('cookieBanner').style.display = 'none';
-    });
-    
-    // عرض المعارض إذا كانت البيانات موجودة
-    if (typeof realEstateData !== 'undefined' && realEstateData.length) {
-        renderGallery('realEstateGallery', realEstateData, 'realestate');
-        renderGallery('electronicsGallery', electronicsData, 'electronics');
-        renderGallery('carsGallery', carsData, 'cars');
-        renderGallery('jobsGallery', jobsData, 'jobs');
+    if (acceptBtn && typeof acceptCookies === 'function') {
+        acceptBtn.addEventListener('click', acceptCookies);
+    } else if (acceptBtn) {
+        acceptBtn.addEventListener('click', function() {
+            const banner = document.getElementById('cookieBanner');
+            if (banner) banner.style.display = 'none';
+        });
     }
     
-    // التهيئة
-    updateLanguage('ar');
-    switchTab('home');
+    // عرض المعارض
+    if (typeof realEstateData !== 'undefined') {
+        if (typeof renderGallery === 'function') {
+            renderGallery('realEstateGallery', realEstateData);
+            renderGallery('electronicsGallery', electronicsData);
+            renderGallery('carsGallery', carsData);
+            renderGallery('jobsGallery', jobsData);
+        }
+        console.log('✅ Galleries rendered');
+    }
+    
+    // عرض تنبيه الكوكيز
+    const banner = document.getElementById('cookieBanner');
+    if (banner) {
+        const consent = localStorage.getItem('cookieConsent');
+        if (!consent) {
+            banner.style.display = 'flex';
+        } else {
+            banner.style.display = 'none';
+        }
+    }
+    
+    // تهيئة الروابط
+    initLinks();
+    
+    // استعادة اللغة المحفوظة
+    const savedLang = localStorage.getItem('preferredLang') || 'ar';
+    
+    // استعادة التبويب المحفوظ
+    const savedTab = localStorage.getItem('activeTab');
+    
+    // التهيئة النهائية
+    updateLanguage(savedLang);
+    
+    if (savedTab && savedTab !== 'home') {
+        switchTab(savedTab);
+    } else {
+        switchTab('home');
+    }
+    
+    // إصلاح الصور بعد التحميل
+    setTimeout(fixAllImages, 500);
+    
+    console.log('✅ Asmara.Store is ready!');
 });
