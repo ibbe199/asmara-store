@@ -1,6 +1,9 @@
-#flightResults {
-  margin-top: 12px;
-  background: #eef3f8;
-  padding: 12px;
-  border-radius: 12px;
+.hero-card h2 {
+  margin-bottom: 10px;
+}
+
+#homeFlightsPreview div,
+#homeBlogPreview div {
+  padding: 10px 0;
+  border-bottom: 1px solid #e9eef4;
 }
