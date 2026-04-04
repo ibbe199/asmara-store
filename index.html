@@ -1,130 +1,206 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Asmara.Store</title>
-  <link rel="stylesheet" href="css/main.css" />
-  <link rel="stylesheet" href="css/public.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="description" content="Asmara.Store - المنصة الرقمية الأولى في إريتريا. عقارات، سيارات، إلكترونيات، وظائف، وحجز طيران" />
+    <meta name="keywords" content="Asmara, Eritrea, أسمرة, إريتريا, عقارات, سيارات, وظائف, طيران, إلكترونيات" />
+    <meta name="author" content="Asmara.Store" />
+    <meta name="robots" content="index, follow" />
+    
+    <title>Asmara.Store | منصة إريتريا المتكاملة</title>
+    
+    <!-- ===== روابط خارجية (External Links) ===== -->
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&display=swap" rel="stylesheet" />
+    
+    <!-- Font Awesome 6 (الأيقونات) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    
+    <!-- ===== الروابط الداخلية (Internal Links - CSS) ===== -->
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/public.css" />
+    
+    <!-- Favicon (أيقونة المتصفح) -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231e3a5f'/%3E%3Cpolygon points='32,12 38,28 54,28 42,38 48,54 32,44 16,54 22,38 10,28 26,28' fill='%23c7a12b'/%3E%3Ctext x='32' y='58' font-family='Arial' font-size='10' font-weight='bold' fill='white' text-anchor='middle'%3EA.S%3C/text%3E%3C/svg%3E" />
 </head>
 <body class="lang-ar">
-  <header class="site-header">
-    <div class="logo-wrap">
-      <h1 class="logo">Asmara.Store</h1>
-      <p id="tagline" class="tagline"></p>
+    <!-- ===== شريط التنقل (Header & Navigation) ===== -->
+    <header class="site-header">
+        <div class="logo-wrap">
+            <h1 class="logo">
+                <svg width="180" height="45" viewBox="0 0 200 50" style="display:inline-block; vertical-align:middle">
+                    <polygon points="20,8 24,20 36,20 27,28 31,40 20,32 9,40 13,28 4,20 16,20" fill="#c7a12b"/>
+                    <text x="48" y="28" font-family="'Cairo', 'Inter', Arial" font-size="16" font-weight="800" fill="white">Asmara.Store</text>
+                </svg>
+            </h1>
+            <p id="tagline" class="tagline"></p>
+        </div>
+
+        <!-- ===== أزرار تبديل اللغة ===== -->
+        <div class="lang-switch">
+            <button class="lang-btn" data-lang="ar">عربي</button>
+            <button class="lang-btn" data-lang="en">EN</button>
+            <button class="lang-btn" data-lang="ti">ትግርኛ</button>
+        </div>
+
+        <!-- ===== قائمة التنقل الرئيسية ===== -->
+        <nav class="main-nav">
+            <a href="#" class="nav-link active" data-tab="home" id="navHome">الرئيسية</a>
+            <a href="#" class="nav-link" data-tab="flight" id="navFlight">الطيران</a>
+            <a href="#" class="nav-link" data-tab="realestate" id="navRealEstate">العقارات</a>
+            <a href="#" class="nav-link" data-tab="electronics" id="navElectronics">الإلكترونيات</a>
+            <a href="#" class="nav-link" data-tab="cars" id="navCars">السيارات</a>
+            <a href="#" class="nav-link" data-tab="jobs" id="navJobs">الوظائف</a>
+            <a href="blog.html" id="navBlog">البلوق</a>
+            <a href="#" class="nav-link" data-tab="about" id="navAbout">من نحن</a>
+            <a href="#" class="nav-link" data-tab="privacy" id="navPrivacy">الخصوصية</a>
+        </nav>
+    </header>
+
+    <!-- ===== المحتوى الرئيسي ===== -->
+    <main class="container">
+        <!-- ===== الصفحة الرئيسية ===== -->
+        <section id="homePane" class="tab-pane active-pane">
+            <div class="card hero-card">
+                <h2>🇪🇷 Asmara.Store</h2>
+                <p id="homeIntro"></p>
+            </div>
+
+            <div class="grid-2">
+                <div class="card">
+                    <h3 id="homeFlightsTitle">✈️ أحدث الرحلات</h3>
+                    <div id="homeFlightsPreview"></div>
+                </div>
+                <div class="card">
+                    <h3 id="homeBlogTitle">📰 آخر المقالات</h3>
+                    <div id="homeBlogPreview"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== قسم الطيران ===== -->
+        <section id="flightPane" class="tab-pane">
+            <div class="card">
+                <h2 id="flightTitle">✈️ البحث عن رحلة</h2>
+                <select id="flightFrom">
+                    <option value="DXB">دبي (DXB)</option>
+                    <option value="JED">جدة (JED)</option>
+                    <option value="CAI">القاهرة (CAI)</option>
+                    <option value="ADD">أديس أبابا (ADD)</option>
+                </select>
+                <input type="date" id="flightDate" />
+                <button class="btn" id="searchFlightBtn">🔍 بحث</button>
+                <div id="flightResults" class="results-box"></div>
+            </div>
+        </section>
+
+        <!-- ===== قسم العقارات ===== -->
+        <section id="realestatePane" class="tab-pane">
+            <div class="card">
+                <h2 id="realestateTitle">🏠 العقارات</h2>
+                <div id="realEstateGallery" class="gallery-grid"></div>
+            </div>
+        </section>
+
+        <!-- ===== قسم الإلكترونيات ===== -->
+        <section id="electronicsPane" class="tab-pane">
+            <div class="card">
+                <h2 id="electronicsTitle">📱 الإلكترونيات</h2>
+                <div id="electronicsGallery" class="gallery-grid"></div>
+            </div>
+        </section>
+
+        <!-- ===== قسم السيارات ===== -->
+        <section id="carsPane" class="tab-pane">
+            <div class="card">
+                <h2 id="carsTitle">🚗 السيارات</h2>
+                <div id="carsGallery" class="gallery-grid"></div>
+            </div>
+        </section>
+
+        <!-- ===== قسم الوظائف ===== -->
+        <section id="jobsPane" class="tab-pane">
+            <div class="card">
+                <h2 id="jobsTitle">💼 الوظائف</h2>
+                <div id="jobsGallery" class="gallery-grid"></div>
+            </div>
+        </section>
+
+        <!-- ===== قسم من نحن ===== -->
+        <section id="aboutPane" class="tab-pane">
+            <div class="card">
+                <h2 id="aboutTitle"></h2>
+                <p id="aboutText"></p>
+                <a id="aboutWhatsapp" class="btn-link" target="_blank" rel="noopener noreferrer"></a>
+            </div>
+        </section>
+
+        <!-- ===== قسم سياسة الخصوصية ===== -->
+        <section id="privacyPane" class="tab-pane">
+            <div class="card">
+                <h2 id="privacyTitle"></h2>
+                <p id="privacyText"></p>
+                <a id="privacyWhatsapp" class="btn-link" target="_blank" rel="noopener noreferrer"></a>
+            </div>
+        </section>
+    </main>
+
+    <!-- ===== أزرار عائمة ===== -->
+    <!-- زر الواتساب -->
+    <a id="floatingWhatsapp" class="floating-btn whatsapp-btn" target="_blank" rel="noopener noreferrer"></a>
+    
+    <!-- زر الوكيل (لوحة التحكم الداخلية) -->
+    <a id="floatingAgent" class="floating-btn agent-btn" href="internal.html"></a>
+
+    <!-- ===== تنبيه ملفات تعريف الارتباط (Cookie Banner) ===== -->
+    <div id="cookieBanner" class="cookie-banner">
+        <span id="cookieText"></span>
+        <button id="cookieAcceptBtn"></button>
     </div>
 
-    <div class="lang-switch">
-      <button class="lang-btn" data-lang="ar">عربي</button>
-      <button class="lang-btn" data-lang="en">EN</button>
-      <button class="lang-btn" data-lang="ti">ትግርኛ</button>
-    </div>
-
-    <nav class="main-nav">
-      <a href="#" class="nav-link active" data-tab="home" id="navHome">الرئيسية</a>
-      <a href="#" class="nav-link" data-tab="flight" id="navFlight">الطيران</a>
-      <a href="#" class="nav-link" data-tab="realestate" id="navRealEstate">العقارات</a>
-      <a href="#" class="nav-link" data-tab="electronics" id="navElectronics">الإلكترونيات</a>
-      <a href="#" class="nav-link" data-tab="cars" id="navCars">السيارات</a>
-      <a href="#" class="nav-link" data-tab="jobs" id="navJobs">الوظائف</a>
-      <a href="blog.html" id="navBlog">البلوق</a>
-      <a href="#" class="nav-link" data-tab="about" id="navAbout">من نحن</a>
-      <a href="#" class="nav-link" data-tab="privacy" id="navPrivacy">الخصوصية</a>
-    </nav>
-  </header>
-
-  <main class="container">
-    <section id="homePane" class="tab-pane active-pane">
-      <div class="card hero-card">
-        <h2>🇪🇷 Asmara.Store</h2>
-        <p id="homeIntro"></p>
-      </div>
-
-      <div class="grid-2">
-        <div class="card">
-          <h3 id="homeFlightsTitle">أحدث الرحلات</h3>
-          <div id="homeFlightsPreview"></div>
-        </div>
-        <div class="card">
-          <h3 id="homeBlogTitle">آخر المقالات</h3>
-          <div id="homeBlogPreview"></div>
-        </div>
-      </div>
-    </section>
-
-    <section id="flightPane" class="tab-pane">
-      <div class="card">
-        <h2 id="flightTitle">البحث عن رحلة</h2>
-        <select id="flightFrom">
-          <option value="DXB">دبي</option>
-          <option value="JED">جدة</option>
-          <option value="CAI">القاهرة</option>
-          <option value="ADD">أديس أبابا</option>
-        </select>
-        <input type="date" id="flightDate" />
-        <button class="btn" id="searchFlightBtn">بحث</button>
-        <div id="flightResults" class="results-box"></div>
-      </div>
-    </section>
-
-    <section id="realestatePane" class="tab-pane">
-      <div class="card">
-        <h2 id="realestateTitle">العقارات</h2>
-        <div id="realEstateGallery" class="gallery-grid"></div>
-      </div>
-    </section>
-
-    <section id="electronicsPane" class="tab-pane">
-      <div class="card">
-        <h2 id="electronicsTitle">الإلكترونيات</h2>
-        <div id="electronicsGallery" class="gallery-grid"></div>
-      </div>
-    </section>
-
-    <section id="carsPane" class="tab-pane">
-      <div class="card">
-        <h2 id="carsTitle">السيارات</h2>
-        <div id="carsGallery" class="gallery-grid"></div>
-      </div>
-    </section>
-
-    <section id="jobsPane" class="tab-pane">
-      <div class="card">
-        <h2 id="jobsTitle">الوظائف</h2>
-        <div id="jobsGallery" class="gallery-grid"></div>
-      </div>
-    </section>
-
-    <section id="aboutPane" class="tab-pane">
-      <div class="card">
-        <h2 id="aboutTitle"></h2>
-        <p id="aboutText"></p>
-        <a id="aboutWhatsapp" class="btn-link" target="_blank"></a>
-      </div>
-    </section>
-
-    <section id="privacyPane" class="tab-pane">
-      <div class="card">
-        <h2 id="privacyTitle"></h2>
-        <p id="privacyText"></p>
-        <a id="privacyWhatsapp" class="btn-link" target="_blank"></a>
-      </div>
-    </section>
-  </main>
-
-  <a id="floatingWhatsapp" class="floating-btn whatsapp-btn" target="_blank"></a>
-  <a id="floatingAgent" class="floating-btn agent-btn" href="internal.html"></a>
-
-  <div id="cookieBanner" class="cookie-banner">
-    <span id="cookieText"></span>
-    <button id="cookieAcceptBtn"></button>
-  </div>
-
-  <script src="js/config.js"></script>
-  <script src="js/cookies.js"></script>
-  <script src="js/translations.js"></script>
-  <script src="js/data.js"></script>
-  <script src="js/utils.js"></script>
-  <script src="js/public.js"></script>
+    <!-- ===== الروابط الداخلية (Internal Links - JavaScript) ===== -->
+    <!-- ترتيب الملفات مهم جداً -->
+    <script src="js/config.js"></script>
+    <script src="js/cookies.js"></script>
+    <script src="js/translations.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/public.js"></script>
+    
+    <!-- ===== سكربت إضافي للتأكد من تحميل كل شيء ===== -->
+    <script>
+        (function() {
+            // التحقق من تحميل جميع الملفات
+            console.log('🚀 Asmara.Store is initializing...');
+            
+            // التأكد من وجود الدوال الأساسية بعد تحميل الصفحة
+            document.addEventListener('DOMContentLoaded', function() {
+                console.log('✅ DOM fully loaded');
+                
+                // التحقق من الدوال المطلوبة
+                const requiredFunctions = ['updateLanguage', 'switchTab', 'renderGallery', 'searchFlights', 'renderHomeFlights', 'renderHomeBlog'];
+                const missingFunctions = requiredFunctions.filter(fn => typeof window[fn] !== 'function');
+                
+                if (missingFunctions.length > 0) {
+                    console.warn('⚠️ Missing functions:', missingFunctions);
+                } else {
+                    console.log('✅ All functions loaded correctly');
+                }
+                
+                // إخفاء أي عناصر لا تظهر بشكل صحيح
+                const banner = document.getElementById('cookieBanner');
+                if (banner && banner.style.display === '') {
+                    // سيتم التعامل معه في public.js
+                }
+            });
+            
+            // معالجة أي أخطاء في JavaScript
+            window.addEventListener('error', function(e) {
+                console.error('❌ JavaScript Error:', e.message);
+            });
+        })();
+    </script>
 </body>
 </html>
