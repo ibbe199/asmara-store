@@ -12,7 +12,6 @@
         body.lang-en { direction: ltr; text-align: left; }  
         body.lang-ti { direction: rtl; text-align: right; }  
         
-        /* ===== شريط التنقل ===== */  
         .amazon-nav {  
             background: #1e3a5f;  
             color: white;  
@@ -59,41 +58,36 @@
 
         .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.2rem; }  
         .gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1rem; margin-top: 0.8rem; }  
-        .gallery-item { background: white; border-radius: 18px; padding: 0.8rem; border: 1px solid #eef2f8; transition: 0.3s; cursor: pointer; position: relative; overflow: hidden; }  
+        .gallery-item { background: white; border-radius: 18px; padding: 0.8rem; border: 1px solid #eef2f8; transition: 0.3s; cursor: pointer; overflow: hidden; }  
         .gallery-item:hover { transform: translateY(-5px); box-shadow: 0 12px 24px rgba(0,0,0,0.12); }  
-        .gallery-item img { width: 100%; height: 160px; object-fit: cover; border-radius: 14px; transition: 0.3s; }  
+        .gallery-item img { width: 100%; height: 160px; object-fit: cover; border-radius: 14px; transition: 0.3s; background: #eef2f8; }  
         .gallery-item:hover img { transform: scale(1.02); }  
         .gallery-item h4 { font-size: 0.9rem; margin: 0.6rem 0 0.3rem; color: #1e3a5f; }  
         .gallery-item p { font-size: 0.7rem; color: #4a627a; }  
         .badge { display: inline-block; background: #c7a12b; color: #1e3a5f; padding: 0.2rem 0.5rem; border-radius: 20px; font-size: 0.6rem; font-weight: bold; }  
-        .price { color: #c7a12b; font-weight: bold; font-size: 0.8rem; }  
 
-        /* ===== أنماط الطيران ===== */  
+        /* أنماط الطيران */  
         .flight-card { background: linear-gradient(135deg, #1e3a5f, #2c5282); color: white; border-radius: 20px; padding: 1rem; margin-bottom: 1rem; transition: 0.3s; }  
         .flight-card:hover { transform: translateX(-5px); background: #c7a12b; color: #1e3a5f; }  
-        .flight-route { font-size: 1.2rem; font-weight: bold; margin-bottom: 0.5rem; }  
+        .flight-route { font-size: 1.1rem; font-weight: bold; margin-bottom: 0.5rem; }  
         .flight-details { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; }  
         .flight-airline { display: flex; align-items: center; gap: 0.5rem; }  
-        .flight-airline img { width: 30px; height: 30px; object-fit: contain; }  
-        .flight-time { font-size: 0.8rem; opacity: 0.9; }  
-        .flight-price { font-size: 1.1rem; font-weight: bold; }  
+        .flight-time { font-size: 0.75rem; opacity: 0.9; }  
+        .flight-price { font-size: 1rem; font-weight: bold; }  
 
-        /* ===== أنماط المدونة ===== */  
         .blog-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.5rem; margin-top: 1rem; }  
         .blog-card { background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.08); transition: 0.3s; cursor: pointer; }  
         .blog-card:hover { transform: translateY(-5px); box-shadow: 0 12px 24px rgba(0,0,0,0.12); }  
-        .blog-image { width: 100%; height: 180px; object-fit: cover; }  
+        .blog-image { width: 100%; height: 180px; object-fit: cover; background: linear-gradient(135deg, #1e3a5f, #2c5282); display: flex; align-items: center; justify-content: center; font-size: 3rem; }  
         .blog-content { padding: 1.2rem; }  
         .blog-title { font-size: 1rem; font-weight: 700; color: #1e3a5f; margin-bottom: 0.5rem; }  
         .blog-summary { font-size: 0.8rem; color: #4a627a; margin-bottom: 1rem; }  
         .blog-meta { display: flex; justify-content: space-between; font-size: 0.7rem; color: #8ba0b5; border-top: 1px solid #eef2f8; padding-top: 0.8rem; }  
 
-        /* ===== نافذة منبثقة ===== */  
         .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 2000; justify-content: center; align-items: center; }  
         .modal-content { background: white; border-radius: 28px; max-width: 600px; width: 90%; max-height: 80vh; overflow-y: auto; padding: 1.5rem; position: relative; }  
         .modal-close { position: absolute; top: 1rem; left: 1rem; background: #dc3545; color: white; border: none; width: 32px; height: 32px; border-radius: 50%; cursor: pointer; }  
 
-        /* ===== الفوتر ===== */  
         .footer { background: #1e3a5f; color: white; margin-top: 2rem; padding: 2rem 1.5rem 1.5rem; border-radius: 28px 28px 0 0; }  
         .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-bottom: 2rem; }  
         .footer-section h4 { color: #c7a12b; margin-bottom: 1rem; font-size: 1rem; }  
@@ -104,12 +98,6 @@
         .social-links a:hover { background: #c7a12b; transform: translateY(-3px); }  
         .footer-bottom { text-align: center; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.7rem; }  
 
-        /* ===== أيقونات موحدة ===== */  
-        .icon-md { width: 24px; height: 24px; margin-left: 5px; vertical-align: middle; }  
-        .icon-lg { width: 32px; height: 32px; margin-left: 8px; vertical-align: middle; }  
-        .section-icon { font-size: 1.8rem; margin-left: 0.5rem; vertical-align: middle; }  
-
-        /* ===== لوحة الوكيل ===== */  
         .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 0.8rem; margin-bottom: 1.5rem; }  
         .stat-card { background: linear-gradient(135deg, #1e3a5f, #2c5282); color: white; border-radius: 20px; padding: 0.8rem; text-align: center; }  
         .stat-number { font-size: 1.5rem; font-weight: 800; }  
@@ -161,36 +149,24 @@
     </div>  
 
     <div class="container">  
-        <!-- ========== الصفحة الرئيسية (تشمل جميع الأقسام) ========== -->  
+        <!-- الصفحة الرئيسية -->  
         <div id="homePane" class="tab-pane active-pane">  
             <div class="hero">  
                 <div style="font-size:1.8rem; font-weight:800;">🇪🇷 Asmara.Store</div>  
                 <div class="tagline" id="tagline">"منصة تحترم عاداتنا وتقاليدنا - بروح القانون الإريتري"</div>  
             </div>  
-
-            <!-- قسم العقارات في الرئيسية -->  
-            <div class="card"><h3><i class="fas fa-home section-icon"></i> 🏠 أحدث العقارات</h3><div id="homeRealEstate" class="gallery-grid"></div></div>  
-
-            <!-- قسم الإلكترونيات في الرئيسية -->  
-            <div class="card"><h3><i class="fas fa-mobile-alt section-icon"></i> 📱 أحدث الإلكترونيات</h3><div id="homeElectronics" class="gallery-grid"></div></div>  
-
-            <!-- قسم السيارات في الرئيسية -->  
-            <div class="card"><h3><i class="fas fa-car section-icon"></i> 🚗 أحدث السيارات</h3><div id="homeCars" class="gallery-grid"></div></div>  
-
-            <!-- قسم الوظائف في الرئيسية -->  
-            <div class="card"><h3><i class="fas fa-briefcase section-icon"></i> 💼 أحدث الوظائف</h3><div id="homeJobs" class="gallery-grid"></div></div>  
-
-            <!-- قسم الخدمات في الرئيسية -->  
-            <div class="card"><h3><i class="fas fa-concierge-bell section-icon"></i> 📋 الخدمات المميزة</h3><div id="homeServices" class="gallery-grid"></div></div>  
-
-            <!-- قسم المدونة في الرئيسية -->  
-            <div class="card"><h3><i class="fas fa-newspaper section-icon"></i> 📰 آخر المقالات</h3><div id="homeBlogPreview"></div></div>  
+            <div class="card"><h3>🏠 أحدث العقارات</h3><div id="homeRealEstate" class="gallery-grid"></div></div>  
+            <div class="card"><h3>📱 أحدث الإلكترونيات</h3><div id="homeElectronics" class="gallery-grid"></div></div>  
+            <div class="card"><h3>🚗 أحدث السيارات</h3><div id="homeCars" class="gallery-grid"></div></div>  
+            <div class="card"><h3>💼 أحدث الوظائف</h3><div id="homeJobs" class="gallery-grid"></div></div>  
+            <div class="card"><h3>📋 الخدمات المميزة</h3><div id="homeServices" class="gallery-grid"></div></div>  
+            <div class="card"><h3>📰 آخر المقالات</h3><div id="homeBlogPreview"></div></div>  
         </div>  
 
-        <!-- ========== قسم الطيران (بجميع الخطوط) ========== -->  
+        <!-- قسم الطيران -->  
         <div id="flightPane" class="tab-pane">  
             <div class="card">  
-                <h3><i class="fas fa-plane section-icon"></i> ✈️ رحلات إلى أسمرة (ASM)</h3>  
+                <h3>✈️ رحلات إلى أسمرة (ASM)</h3>  
                 <div id="allFlightsList"></div>  
             </div>  
             <div class="card">  
@@ -218,30 +194,70 @@
             </div>  
         </div>  
 
-        <!-- ========== باقي الأقسام ========== -->  
+        <!-- باقي الأقسام -->  
         <div id="realestatePane" class="tab-pane"><div class="grid-2"><div class="card"><h3>🏠 إضافة عقار</h3><select id="reType"><option>شقة</option><option>فيلا</option><option>أرض</option></select><input id="reName" placeholder="الوصف"><input id="rePrice" type="number" placeholder="السعر"><textarea id="reDesc" rows="2" placeholder="التفاصيل"></textarea><select id="reCity"><option>أسمرة</option><option>مصوع</option></select><input type="file" id="reImage" accept="image/*"><div class="image-preview" id="rePreview"></div><button class="btn" id="publishReBtn">نشر</button><p id="reMsg"></p></div><div class="card"><h3>🖼️ معرض العقارات</h3><div id="realEstateGallery" class="gallery-grid"></div></div></div></div>  
-
         <div id="electronicsPane" class="tab-pane"><div class="grid-2"><div class="card"><h3>📱 إضافة جهاز</h3><select id="elecType"><option>هاتف</option><option>لابتوب</option></select><input id="elecName" placeholder="المنتج"><input id="elecPrice" type="number" placeholder="السعر"><textarea id="elecDesc" rows="2" placeholder="المواصفات"></textarea><select id="elecCity"><option>أسمرة</option><option>مصوع</option></select><input type="file" id="elecImage"><div class="image-preview" id="elecPreview"></div><button class="btn" id="publishElecBtn">نشر</button><p id="elecMsg"></p></div><div class="card"><h3>🖼️ معرض الإلكترونيات</h3><div id="electronicsGallery" class="gallery-grid"></div></div></div></div>  
-
         <div id="carsPane" class="tab-pane"><div class="grid-2"><div class="card"><h3>🚗 إضافة سيارة</h3><select id="carType"><option>سيارة جديدة</option><option>سيارة مستعملة</option></select><input id="carName" placeholder="الماركة"><input id="carPrice" type="number" placeholder="السعر"><textarea id="carDesc" rows="2" placeholder="المميزات"></textarea><select id="carCity"><option>أسمرة</option><option>مصوع</option></select><input type="file" id="carImage"><div class="image-preview" id="carPreview"></div><button class="btn" id="publishCarBtn">نشر</button><p id="carMsg"></p></div><div class="card"><h3>🖼️ معرض السيارات</h3><div id="carsGallery" class="gallery-grid"></div></div></div></div>  
-
         <div id="jobsPane" class="tab-pane"><div class="grid-2"><div class="card"><h3>💼 إضافة وظيفة</h3><select id="jobType"><option>دوام كامل</option><option>دوام جزئي</option></select><input id="jobTitle" placeholder="المسمى"><input id="jobCompany" placeholder="الشركة"><input id="jobSalary" type="number" placeholder="الراتب"><textarea id="jobDesc" rows="2" placeholder="المتطلبات"></textarea><select id="jobCity"><option>أسمرة</option><option>مصوع</option></select><button class="btn" id="publishJobBtn">نشر</button><p id="jobMsg"></p></div><div class="card"><h3>🖼️ فرص العمل</h3><div id="jobsGallery" class="gallery-grid"></div></div></div></div>  
-
         <div id="generalPane" class="tab-pane"><div class="grid-2"><div class="card"><h3>📝 إعلان عام</h3><select id="adType"><option>خدمة</option><option>منتج</option></select><input id="adName" placeholder="العنوان"><input id="adPrice" type="number" placeholder="السعر"><textarea id="adDesc" rows="2" placeholder="الوصف"></textarea><select id="adCity"><option>أسمرة</option><option>مصوع</option></select><input type="file" id="adImage"><div class="image-preview" id="adPreview"></div><button class="btn" id="publishGeneralBtn">نشر</button><p id="generalMsg"></p></div><div class="card"><h3>🖼️ الخدمات</h3><div id="generalGallery" class="gallery-grid"></div></div></div></div>  
-
         <div id="blogPane" class="tab-pane"><div class="card"><h2 id="blogTitle">📰 المدونة - مقالات إرشادية</h2><div id="blogGrid" class="blog-grid"></div></div></div>  
         <div id="paymentPane" class="tab-pane"><div class="grid-2"><div class="card"><h3>💳 اشتراك Pro</h3><p>إعلانات غير محدودة</p><div style="font-size:1.8rem; color:#c7a12b;">$29<small>/شهر</small></div><button id="paypalBtn" class="btn"><i class="fab fa-paypal"></i> PayPal</button><p id="paymentMsg"></p></div><div class="card"><h3>💰 محفظتي</h3><p>الرصيد: <strong id="balanceAmount">$0</strong></p><button id="addFundsBtn" class="btn btn-warning">إيداع $50</button></div></div><div class="card"><h3>📜 سجل المعاملات</h3><div id="transactionsList"></div></div></div>  
         <div id="messagingPane" class="tab-pane"><div class="grid-2"><div class="card"><h3>📋 المحادثات</h3><div id="contactsList" class="chat-list"></div></div><div class="card"><h3>💬 المراسلة</h3><div id="chatMessages" class="chat-list" style="height:200px;"></div><div class="chat-input-area" style="display:flex; gap:0.5rem; margin-top:0.5rem;"><input type="text" id="chatInput" placeholder="اكتب رسالتك..."><button id="sendMsgBtn" class="btn-sm btn">إرسال</button></div></div></div></div>  
         <div id="ratingsPane" class="tab-pane"><div class="card"><h3>⭐ تقييم المستخدمين</h3><div id="ratingsList"></div><div style="margin-top:0.8rem;"><textarea id="newRatingComment" rows="2" placeholder="اكتب تقييمك..."></textarea><select id="ratingStars"><option value="5">★★★★★</option><option value="4">★★★★☆</option></select><button id="addRatingBtn" class="btn">إضافة تقييم</button></div></div></div>  
 
-        <!-- أقسام الوكيل المخفية -->  
+        <!-- ========== أقسام الوكيل المخفية ========== -->  
         <div id="dashboardPane" class="tab-pane"><div class="stats-grid"><div class="stat-card"><div class="stat-number" id="statAds">0</div><div class="stat-label">إجمالي الإعلانات</div></div><div class="stat-card"><div class="stat-number" id="statPending">0</div><div class="stat-label">قيد المراجعة</div></div><div class="stat-card"><div class="stat-number" id="statApproved">0</div><div class="stat-label">مقبولة</div></div><div class="stat-card"><div class="stat-number" id="statRejected">0</div><div class="stat-label">مرفوضة</div></div></div><div class="card"><h3>📈 أداء الإعلانات</h3><div id="adPerformanceList"></div></div></div>  
         <div id="agentPane" class="tab-pane"><div class="grid-2"><div class="card"><h3>⏳ إعلانات تنتظر المراجعة</h3><div id="pendingAdsList"></div></div><div class="card"><h3>🚫 الإعلانات المخالفة</h3><div id="violationsList"></div></div></div><div class="card"><h3>📋 سجل مراجعة الوكيل</h3><div id="agentLogList"></div></div><div class="card"><h3>⚙️ إعدادات الكلمات الممنوعة</h3><div id="blockedWordsList" style="display:flex; flex-wrap:wrap; gap:0.3rem;"></div><div style="display:flex; gap:0.5rem;"><input type="text" id="newBlockedWord" placeholder="كلمة ممنوعة جديدة"><button id="addBlockedWordBtn" class="btn-sm btn">إضافة</button></div></div></div>  
         <div id="reportsPane" class="tab-pane"><div class="card"><h3>🚨 بلاغات المستخدمين</h3><div id="reportsList"></div></div><div class="card"><h3>📋 سجل معالجة البلاغات</h3><div id="reportsLogList"></div></div></div>  
-        <div id="institutionsPane" class="tab-pane"><div class="grid-2"><div class="card"><h3>🏛️ وزارة التجارة</h3><a href="https://www.comesa.int/state-of-eritrea/" target="_blank" class="btn-sm btn">COMESA</a></div><div class="card"><h3>📰 وزارة المعلومات</h3><a href="http://www.shabait.com" target="_blank" class="btn-sm btn">Shabait.com</a></div><div class="card"><h3>📚 مكتبة أسمرة</h3><button id="libraryInfoBtn" class="btn-sm btn">معلومات</button></div></div></div>  
+
+        <!-- ========== قسم المؤسسات (محدث) ========== -->  
+        <div id="institutionsPane" class="tab-pane">  
+            <div class="grid-2">  
+                <!-- وزارة التجارة والصناعة الإريترية -->  
+                <div class="card">  
+                    <h3>🏛️ وزارة التجارة والصناعة - إريتريا</h3>  
+                    <p>الجهة المسؤولة عن تنظيم الاستثمار والتجارة في إريتريا</p>  
+                    <div style="background: #eef2f8; padding: 0.8rem; border-radius: 16px; margin: 0.5rem 0; font-size: 0.75rem;">  
+                        <strong>📬 العنوان:</strong> P.O. Box 1844, ASMARA, State of Eritrea<br>  
+                        <strong>📞 الهاتف:</strong> +291 1 117103<br>  
+                        <strong>📠 الفاكس:</strong> +291 1 124175 / +291 1 120586<br>  
+                        <strong>✉️ البريد:</strong> ericomesa2@gmail.com<br>  
+                        <strong>👤 الاتصال:</strong> السيد عبد الرحمن إبراهيم - رئيس مكتب أفريقيا  
+                    </div>  
+                    <a href="https://www.comesa.int/state-of-eritrea/" target="_blank" class="btn-sm btn" style="display:inline-block;">🔗 صفحة COMESA الرسمية</a>  
+                </div>  
+
+                <!-- وزارة المعلومات (شبابت) -->  
+                <div class="card">  
+                    <h3>📰 وزارة المعلومات الإريترية - شبابت</h3>  
+                    <p>المصدر الرسمي للأخبار والبيانات الحكومية في إريتريا</p>  
+                    <a href="http://www.shabait.com" target="_blank" class="btn-sm btn" style="display:inline-block;">🔗 Shabait.com - الموقع الرسمي</a>  
+                </div>  
+
+                <!-- الجريدة الإريترية (Hadas Eritrea) -->  
+                <div class="card">  
+                    <h3>📰 الجريدة الإريترية - Hadas Eritrea</h3>  
+                    <p>صحيفة حكومية إريترية رسمية - تصدر ثلاث مرات أسبوعياً</p>  
+                    <div style="background: #eef2f8; padding: 0.8rem; border-radius: 16px; margin: 0.5rem 0; font-size: 0.75rem;">  
+                        <strong>📌 النوع:</strong> صحيفة رسمية حكومية<br>  
+                        <strong>📅 التكرار:</strong> 3 أيام في الأسبوع<br>  
+                        <strong>🌐 اللغة:</strong> العربية، التقرينية، الإنجليزية<br>  
+                        <strong>📢 المالك:</strong> وزارة المعلومات الإريترية  
+                    </div>  
+                    <a href="#" class="btn-sm btn" style="display:inline-block; background:#c7a12b; color:#1e3a5f;" onclick="alert('📰 الجريدة الإريترية (Hadas Eritrea)\n\nهي صحيفة رسمية حكومية إريترية تصدر عن وزارة المعلومات.\nتصدر ثلاث مرات أسبوعياً باللغات العربية والتقرينية والإنجليزية.\n\nيمكن الوصول إليها عبر الموقع الرسمي لوزارة المعلومات:\nhttp://www.shabait.com')">ℹ️ معلومات الجريدة</a>  
+                </div>  
+
+                <!-- مكتبة أسمرة -->  
+                <div class="card">  
+                    <h3>📚 مكتبة أسمرة</h3>  
+                    <p>مركز التوثيق والبحث التاريخي في العاصمة أسمرة</p>  
+                    <button id="libraryInfoBtn" class="btn-sm btn" style="display:inline-block;">ℹ️ معلومات المكتبة</button>  
+                </div>  
+            </div>  
+        </div>  
     </div>  
 
-    <!-- ===== الفوتر ===== -->  
+    <!-- الفوتر -->  
     <footer class="footer">  
         <div class="footer-grid">  
             <div class="footer-section"><h4>🇪🇷 من نحن</h4><p style="font-size:0.8rem; line-height:1.6;">Asmara.Store منصة رقمية تربط الإريتريين بخدمات موثوقة داخل الوطن وخارجه.</p></div>  
@@ -256,38 +272,16 @@
     <div id="policyModal" class="modal"><div class="modal-content"><button class="modal-close" onclick="closePolicyModal()">✕</button><h2 id="policyModalTitle"></h2><div id="policyModalBody"></div></div></div>  
 
     <script>  
-        // ===== الصور الحقيقية =====  
-        const realEstateImages = [  
-            "https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg?w=300&h=200&fit=crop",  
-            "https://images.pexels.com/photos/2587054/pexels-photo-2587054.jpeg?w=300&h=200&fit=crop",  
-            "https://images.pexels.com/photos/280229/pexels-photo-280229.jpeg?w=300&h=200&fit=crop",  
-            "https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg?w=300&h=200&fit=crop"  
-        ];  
-        const electronicsImages = [  
-            "https://images.pexels.com/photos/788946/pexels-photo-788946.jpeg?w=300&h=200&fit=crop",  
-            "https://images.pexels.com/photos/18105/pexels-photo.jpg?w=300&h=200&fit=crop",  
-            "https://images.pexels.com/photos/47261/pexels-photo-47261.jpeg?w=300&h=200&fit=crop",  
-            "https://images.pexels.com/photos/1334597/pexels-photo-1334597.jpeg?w=300&h=200&fit=crop"  
-        ];  
-        const carsImages = [  
-            "https://images.pexels.com/photos/113102/pexels-photo-113102.jpeg?w=300&h=200&fit=crop",  
-            "https://images.pexels.com/photos/1413412/pexels-photo-1413412.jpeg?w=300&h=200&fit=crop",  
-            "https://images.pexels.com/photos/2761842/pexels-photo-2761842.jpeg?w=300&h=200&fit=crop",  
-            "https://images.pexels.com/photos/115465/pexels-photo-115465.jpeg?w=300&h=200&fit=crop"  
-        ];  
-        const jobsImages = [  
-            "https://images.pexels.com/photos/3183197/pexels-photo-3183197.jpeg?w=300&h=200&fit=crop",  
-            "https://images.pexels.com/photos/416405/pexels-photo-416405.jpeg?w=300&h=200&fit=crop",  
-            "https://images.pexels.com/photos/1181263/pexels-photo-1181263.jpeg?w=300&h=200&fit=crop",  
-            "https://images.pexels.com/photos/267350/pexels-photo-267350.jpeg?w=300&h=200&fit=crop"  
-        ];  
-        const generalImages = [  
-            "https://images.pexels.com/photos/279949/pexels-photo-279949.jpeg?w=300&h=200&fit=crop",  
-            "https://images.pexels.com/photos/289777/pexels-photo-289777.jpeg?w=300&h=200&fit=crop",  
-            "https://images.pexels.com/photos/259588/pexels-photo-259588.jpeg?w=300&h=200&fit=crop"  
-        ];  
+        // ===== صور افتراضية احتياطية =====  
+        const FALLBACK_IMAGE = "https://placehold.co/300x200/1e3a5f/white?text=صورة";  
 
         // ===== بيانات الإعلانات =====  
+        const realEstateImages = ["https://placehold.co/300x200/1e3a5f/white?text=شقة+فاخرة","https://placehold.co/300x200/2c5282/white?text=فيلا","https://placehold.co/300x200/3a6b92/white?text=شقة+وسط+المدينة","https://placehold.co/300x200/1e3a5f/white?text=منزل+مصوع"];  
+        const electronicsImages = ["https://placehold.co/300x200/c7a12b/white?text=iPhone+14+Pro","https://placehold.co/300x200/1e3a5f/white?text=MacBook+Air","https://placehold.co/300x200/2c5282/white?text=Galaxy+S23","https://placehold.co/300x200/c7a12b/white?text=iPad+Pro"];  
+        const carsImages = ["https://placehold.co/300x200/2c5a82/white?text=Toyota+Corolla","https://placehold.co/300x200/1e3a5f/white?text=Hyundai+Tucson","https://placehold.co/300x200/3a5a40/white?text=Kia+Sportage","https://placehold.co/300x200/2c5282/white?text=Nissan+Patrol"];  
+        const jobsImages = ["https://placehold.co/300x200/6d597b/white?text=محاسب","https://placehold.co/300x200/4a627a/white?text=مهندس+مدني","https://placehold.co/300x200/6d597b/white?text=مبرمج+ويب","https://placehold.co/300x200/4a627a/white?text=مسوق+الكتروني"];  
+        const generalImages = ["https://placehold.co/300x200/2c5a82/white?text=شحن","https://placehold.co/300x200/1e3a5f/white?text=مكتب+للإيجار","https://placehold.co/300x200/2c5282/white?text=أرض+للبيع"];  
+
         let realEstateAds = [  
             { id:1, name:"شقة فاخرة - تيرفولو", price:"$85,000", city:"أسمرة", type:"شقة", image: realEstateImages[0] },  
             { id:2, name:"فيلا - إدغا أريتي", price:"$250,000", city:"أسمرة", type:"فيلا", image: realEstateImages[1] },  
@@ -313,18 +307,14 @@
             { id:2, name:"مكتب للايجار", price:"$500/شهر", city:"أسمرة", type:"عقار تجاري", image: generalImages[1] }  
         ];  
 
-        // ===== بيانات الرحلات الكاملة =====  
+        // بيانات الرحلات  
         const allFlights = [  
-            { from: "DXB", fromName: "دبي", to: "ASM", toName: "أسمرة", airline: "FlyDubai", flightNo: "FZ 849", price: "$450", time: "08:00", duration: "3h 30m", image: "https://cdn.jsdelivr.net/npm/simple-icons@v7/icons/flydubai.svg" },  
-            { from: "DXB", fromName: "دبي", to: "ASM", toName: "أسمرة", airline: "Ethiopian", flightNo: "ET 601", price: "$520", time: "14:20", duration: "4h 00m", image: "https://cdn.jsdelivr.net/npm/simple-icons@v7/icons/ethiopianairlines.svg" },  
-            { from: "JED", fromName: "جدة", to: "ASM", toName: "أسمرة", airline: "Ethiopian", flightNo: "ET 603", price: "$380", time: "09:15", duration: "2h 45m", image: "https://cdn.jsdelivr.net/npm/simple-icons@v7/icons/ethiopianairlines.svg" },  
-            { from: "CAI", fromName: "القاهرة", to: "ASM", toName: "أسمرة", airline: "EgyptAir", flightNo: "MS 851", price: "$490", time: "10:00", duration: "3h 15m", image: "https://cdn.jsdelivr.net/npm/simple-icons@v7/icons/egyptair.svg" },  
-            { from: "ADD", fromName: "أديس أبابا", to: "ASM", toName: "أسمرة", airline: "Ethiopian", flightNo: "ET 312", price: "$210", time: "07:30", duration: "1h 30m", image: "https://cdn.jsdelivr.net/npm/simple-icons@v7/icons/ethiopianairlines.svg" },  
-            { from: "ADD", fromName: "أديس أبابا", to: "ASM", toName: "أسمرة", airline: "Eritrean Airlines", flightNo: "ER 101", price: "$195", time: "13:45", duration: "1h 30m", image: "https://cdn.jsdelivr.net/npm/simple-icons@v7/icons/airlines.svg" },  
-            { from: "FCO", fromName: "روما", to: "ASM", toName: "أسمرة", airline: "Turkish Airlines", flightNo: "TK 1863", price: "$650", time: "22:00", duration: "6h 00m", image: "https://cdn.jsdelivr.net/npm/simple-icons@v7/icons/turkishairlines.svg" },  
-            { from: "LHR", fromName: "لندن", to: "ASM", toName: "أسمرة", airline: "Turkish Airlines", flightNo: "TK 1984", price: "$720", time: "20:30", duration: "7h 15m", image: "https://cdn.jsdelivr.net/npm/simple-icons@v7/icons/turkishairlines.svg" },  
-            { from: "CDG", fromName: "باريس", to: "ASM", toName: "أسمرة", airline: "Air France", flightNo: "AF 938", price: "$690", time: "21:00", duration: "6h 30m", image: "https://cdn.jsdelivr.net/npm/simple-icons@v7/icons/airfrance.svg" },  
-            { from: "FRA", fromName: "فرانكفورت", to: "ASM", toName: "أسمرة", airline: "Lufthansa", flightNo: "LH 574", price: "$680", time: "19:45", duration: "6h 15m", image: "https://cdn.jsdelivr.net/npm/simple-icons@v7/icons/lufthansa.svg" }  
+            { from: "DXB", fromName: "دبي", to: "ASM", toName: "أسمرة", airline: "FlyDubai", flightNo: "FZ 849", price: "$450", time: "08:00", duration: "3h 30m" },  
+            { from: "DXB", fromName: "دبي", to: "ASM", toName: "أسمرة", airline: "Ethiopian", flightNo: "ET 601", price: "$520", time: "14:20", duration: "4h 00m" },  
+            { from: "JED", fromName: "جدة", to: "ASM", toName: "أسمرة", airline: "Ethiopian", flightNo: "ET 603", price: "$380", time: "09:15", duration: "2h 45m" },  
+            { from: "CAI", fromName: "القاهرة", to: "ASM", toName: "أسمرة", airline: "EgyptAir", flightNo: "MS 851", price: "$490", time: "10:00", duration: "3h 15m" },  
+            { from: "ADD", fromName: "أديس أبابا", to: "ASM", toName: "أسمرة", airline: "Ethiopian", flightNo: "ET 312", price: "$210", time: "07:30", duration: "1h 30m" },  
+            { from: "ADD", fromName: "أديس أبابا", to: "ASM", toName: "أسمرة", airline: "Eritrean Airlines", flightNo: "ER 101", price: "$195", time: "13:45", duration: "1h 30m" }  
         ];  
 
         function renderAllFlights() {  
@@ -334,28 +324,18 @@
             allFlights.forEach(flight => {  
                 const card = document.createElement('div');  
                 card.className = 'flight-card';  
-                card.innerHTML = `  
-                    <div class="flight-route">✈️ ${flight.fromName} (${flight.from}) → ${flight.toName} (${flight.to})</div>  
-                    <div class="flight-details">  
-                        <div class="flight-airline">  
-                            <span>${flight.airline}</span>  
-                            <small>${flight.flightNo}</small>  
-                        </div>  
-                        <div class="flight-time">🕐 ${flight.time} | ${flight.duration}</div>  
-                        <div class="flight-price">${flight.price}</div>  
-                    </div>  
-                `;  
+                card.innerHTML = `<div class="flight-route">✈️ ${flight.fromName} (${flight.from}) → ${flight.toName} (${flight.to})</div><div class="flight-details"><div class="flight-airline">${flight.airline} <small>${flight.flightNo}</small></div><div class="flight-time">🕐 ${flight.time} | ${flight.duration}</div><div class="flight-price">${flight.price}</div></div>`;  
                 container.appendChild(card);  
             });  
         }  
 
-        // ===== مقالات المدونة =====  
+        // مقالات المدونة  
         const blogPosts = [  
-            { id:1, title:"📘 دليل شراء عقار في أسمرة", summary:"خطوات مهمة ونصائح قانونية.", content:"<h3>خطوات شراء عقار في أسمرة</h3><ul><li>التأكد من ملكية العقار</li><li>التعامل مع وكيل معتمد</li><li>توقيع عقد رسمي</li></ul>", date:"2026-04-01", image:"https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg?w=400&h=200&fit=crop" },  
-            { id:2, title:"✈️ نصائح لحجز رحلة", summary:"أفضل الأوقات وشركات الطيران.", content:"<h3>نصائح لحجز رحلة</h3><ul><li>احجز قبل 6-8 أسابيع</li><li>قارن الأسعار</li><li>سافر في منتصف الأسبوع</li></ul>", date:"2026-03-28", image:"https://images.pexels.com/photos/358319/pexels-photo-358319.jpeg?w=400&h=200&fit=crop" }  
+            { id:1, title:"📘 دليل شراء عقار في أسمرة", summary:"خطوات مهمة ونصائح قانونية.", content:"محتوى المقال...", date:"2026-04-01" },  
+            { id:2, title:"✈️ نصائح لحجز أرخص رحلة", summary:"أفضل الأوقات وشركات الطيران.", content:"محتوى المقال...", date:"2026-03-28" },  
+            { id:3, title:"💼 كيفية البحث عن وظيفة", summary:"أفضل الطرق للعثور على فرص عمل.", content:"محتوى المقال...", date:"2026-03-25" }  
         ];  
 
-        // ===== دوال العرض =====  
         function renderGallery(containerId, data) {  
             const container = document.getElementById(containerId);  
             if(!container) return;  
@@ -363,7 +343,7 @@
             data.slice(0,4).forEach(item => {  
                 const div = document.createElement("div");  
                 div.className = "gallery-item";  
-                div.innerHTML = `<img src="${item.image}" loading="lazy"><h4>${item.name}</h4><p>${item.price || item.salary} | 📍 ${item.city}</p><span class="badge">${item.type}</span>`;  
+                div.innerHTML = `<img src="${item.image}" loading="lazy" onerror="this.src='${FALLBACK_IMAGE}'"><h4>${item.name}</h4><p>${item.price || item.salary} | 📍 ${item.city}</p><span class="badge">${item.type}</span>`;  
                 container.appendChild(div);  
             });  
         }  
@@ -376,28 +356,14 @@
             renderGallery('homeServices', generalAds);  
             const blogContainer = document.getElementById('homeBlogPreview');  
             if(blogContainer) {  
-                blogContainer.innerHTML = blogPosts.map(post => `  
-                    <div style="margin-bottom:1rem; padding-bottom:1rem; border-bottom:1px solid #eee; cursor:pointer" onclick="showBlogPost(${post.id})">  
-                        <h4 style="color:#1e3a5f">${post.title}</h4>  
-                        <p style="font-size:0.8rem; color:#666">${post.summary}</p>  
-                    </div>  
-                `).join('');  
+                blogContainer.innerHTML = blogPosts.map(post => `<div style="margin-bottom:1rem; padding-bottom:1rem; border-bottom:1px solid #eee; cursor:pointer" onclick="showBlogPost(${post.id})"><h4 style="color:#1e3a5f">${post.title}</h4><p style="font-size:0.8rem; color:#666">${post.summary}</p></div>`).join('');  
             }  
         }  
 
         function renderBlog() {  
             const container = document.getElementById('blogGrid');  
             if(!container) return;  
-            container.innerHTML = blogPosts.map(post => `  
-                <div class="blog-card" onclick="showBlogPost(${post.id})">  
-                    <img src="${post.image}" class="blog-image" loading="lazy">  
-                    <div class="blog-content">  
-                        <h3 class="blog-title">${post.title}</h3>  
-                        <p class="blog-summary">${post.summary}</p>  
-                        <div class="blog-meta"><span>📅 ${post.date}</span><span class="blog-read-more">اقرأ المزيد ←</span></div>  
-                    </div>  
-                </div>  
-            `).join('');  
+            container.innerHTML = blogPosts.map(post => `<div class="blog-card" onclick="showBlogPost(${post.id})"><div class="blog-image">📰</div><div class="blog-content"><h3 class="blog-title">${post.title}</h3><p class="blog-summary">${post.summary}</p><div class="blog-meta"><span>📅 ${post.date}</span><span class="blog-read-more">اقرأ المزيد ←</span></div></div></div>`).join('');  
         }  
 
         function showBlogPost(id) {  
@@ -409,17 +375,16 @@
             }  
         }  
 
-        // ===== دوال الطيران =====  
         function searchFlights() {  
             const from = document.getElementById("flightFrom").value;  
             const date = document.getElementById("flightDate").value;  
             const flights = allFlights.filter(f => f.from === from);  
             const resultsDiv = document.getElementById("flightResults");  
-            if(flights.length === 0) { resultsDiv.innerHTML = "❌ لا توجد رحلات"; return; }  
-            resultsDiv.innerHTML = `<strong>نتائج البحث (${date}):</strong><br>` + flights.map(f => `<div style="padding:8px; border-bottom:1px solid #ddd;">✈️ ${f.airline} | ${f.price} | 🕐 ${f.time}</div>`).join('');  
+            if(flights.length === 0) { resultsDiv.innerHTML = "❌ لا توجد رحلات متاحة لهذا المسار"; return; }  
+            resultsDiv.innerHTML = `<strong>نتائج البحث (${date}):</strong><br><br>` + flights.map(f => `<div style="padding:10px; border-bottom:1px solid #ddd;">✈️ <strong>${f.airline}</strong> (${f.flightNo}) | ${f.price} | 🕐 ${f.time} | ⏱️ ${f.duration}</div>`).join('');  
         }  
 
-        // ===== دوال النظام =====  
+        // دوال النظام  
         function setCookie(name, value, days) { const d = new Date(); d.setTime(d.getTime() + days*86400000); document.cookie = `${name}=${value};expires=${d.toUTCString()};path=/`; }  
         function getCookie(name) { const v = `; ${document.cookie}`.split(`; ${name}=`); return v.length===2 ? v.pop().split(';').shift() : null; }  
         let currentUser = null;  
@@ -433,11 +398,28 @@
         function closePolicyModal() { document.getElementById('policyModal').style.display = 'none'; }  
 
         let isAgentMode = false;  
-        function showAgentPanel() { if(!isAgentMode) { isAgentMode = true; const tabs = document.querySelector('.tabs'); ['dashboard','agent','reports','institutions'].forEach(tab => { if(!document.querySelector(`.tab-btn[data-tab="${tab}"]`)) { const btn = document.createElement('button'); btn.className = 'tab-btn'; btn.setAttribute('data-tab', tab); btn.innerText = { dashboard:"📊 إحصائيات", agent:"🛡️ الوكيل", reports:"🚨 بلاغات", institutions:"🏛️ مؤسسات" }[tab]; btn.onclick = () => switchTab(tab); tabs.appendChild(btn); } }); alert("🛡️ مرحباً أيها الوكيل"); } }  
+        function showAgentPanel() {  
+            if(!isAgentMode) {  
+                isAgentMode = true;  
+                const tabs = document.querySelector('.tabs');  
+                ['dashboard','agent','reports','institutions'].forEach(tab => {  
+                    if(!document.querySelector(`.tab-btn[data-tab="${tab}"]`)) {  
+                        const btn = document.createElement('button');  
+                        btn.className = 'tab-btn';  
+                        btn.setAttribute('data-tab', tab);  
+                        const names = { dashboard:"📊 إحصائيات", agent:"🛡️ الوكيل", reports:"🚨 بلاغات", institutions:"🏛️ مؤسسات" };  
+                        btn.innerText = names[tab];  
+                        btn.onclick = () => switchTab(tab);  
+                        tabs.appendChild(btn);  
+                    }  
+                });  
+                alert("🛡️ مرحباً أيها الوكيل المعتمد");  
+            }  
+        }  
 
         let messages = [{ id:1, from:"علي حسن", text:"مرحباً", time:"10:30" }];  
         let ratings = [{ user:"أحمد", rating:5, comment:"ممتاز", date:"2026-04-01" }];  
-        let balance = 0, transactions = [];  
+        let balance = 0, transactions = [], currentContact = "علي حسن";  
         function loadChat() { const c = document.getElementById('chatMessages'); if(c) c.innerHTML = messages.map(m => `<div class="chat-message"><strong>${m.from}</strong><div>${m.text}</div><small>${m.time}</small></div>`).join(''); }  
         function loadRatings() { const r = document.getElementById('ratingsList'); if(r) r.innerHTML = ratings.map(r => `<div class="chat-message"><strong>${r.user}</strong><div class="rating-stars">${"★".repeat(r.rating)}${"☆".repeat(5-r.rating)}</div><div>${r.comment}</div><small>${r.date}</small></div>`).join(''); }  
         function updateWallet() { document.getElementById('balanceAmount').innerHTML = `$${balance}`; document.getElementById('transactionsList').innerHTML = transactions.map(t => `<div style="padding:5px 0;">${t.date} - ${t.amount} - ${t.type}</div>`).join('') || "<p>لا توجد معاملات</p>"; }  
@@ -479,7 +461,7 @@
             document.getElementById("addRatingBtn").onclick = () => { const c = document.getElementById("newRatingComment")?.value, r = document.getElementById("ratingStars")?.value; if(c) { ratings.unshift({ user:"مستخدم جديد", rating:parseInt(r), comment:c, date:new Date().toLocaleDateString() }); loadRatings(); document.getElementById("newRatingComment").value = ""; } };  
             document.getElementById("paypalBtn").onclick = () => { setTimeout(() => { balance += 29; transactions.unshift({ date:new Date().toLocaleDateString(), amount:"+$29", type:"اشتراك Pro" }); updateWallet(); alert("✅ تم الدفع!"); }, 500); };  
             document.getElementById("addFundsBtn").onclick = () => { balance += 50; transactions.unshift({ date:new Date().toLocaleDateString(), amount:"+$50", type:"إيداع" }); updateWallet(); };  
-            document.getElementById("libraryInfoBtn").onclick = () => alert("📚 مكتبة أسمرة");  
+            document.getElementById("libraryInfoBtn").onclick = () => alert("📚 مكتبة أسمرة: مركز التوثيق الوطني");  
             document.getElementById("privacyPolicyLink").onclick = (e) => { e.preventDefault(); showPolicy('privacy'); };  
             document.getElementById("securityPolicyLink").onclick = (e) => { e.preventDefault(); showPolicy('security'); };  
             document.getElementById("termsLink").onclick = (e) => { e.preventDefault(); showPolicy('terms'); };  
