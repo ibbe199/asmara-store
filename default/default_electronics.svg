@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="200" viewBox="0 0 300 200">
+    <rect width="300" height="200" rx="12" fill="#2c5282"/>
+    <rect x="100" y="55" width="100" height="70" rx="6" fill="#1e3a5f"/>
+    <rect x="110" y="65" width="80" height="50" rx="3" fill="#c7a12b" opacity="0.7"/>
+    <rect x="135" y="120" width="30" height="15" rx="2" fill="white" opacity="0.5"/>
+    <text x="150" y="165" text-anchor="middle" font-family="'Cairo', Arial, sans-serif" font-size="12" fill="white">📱 جهاز إلكتروني</text>
+</svg>
