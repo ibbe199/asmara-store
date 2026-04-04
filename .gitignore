@@ -1,8 +1,165 @@
+# ============================================
+# Asmara.Store - .gitignore
+# المنصة الرقمية المتكاملة لإريتريا
+# ============================================
+
+# -------------------------------
+# Node.js / JavaScript
+# -------------------------------
 node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# -------------------------------
+# Build / Distribution
+# -------------------------------
 build/
 dist/
+out/
+.next/
+.nuxt/
+.vuepress/dist/
+.vercel/output/
+
+# -------------------------------
+# Coverage / Testing
+# -------------------------------
 coverage/
-.DS_Store
-*.log
-.env*
+.nyc_output/
+*.lcov
+jest.config.js
+*.test.js
+*.spec.js
+
+# -------------------------------
+# Environment Variables
+# -------------------------------
+.env
+.env.*
 !.env.example
+.env.local
+.env.production
+.env.development
+
+# -------------------------------
+# IDE / Editor Files
+# -------------------------------
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+.editorconfig
+.eslintrc*
+.prettierrc*
+.stylelintrc*
+
+# -------------------------------
+# OS Generated Files
+# -------------------------------
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+*.tmp
+*.temp
+
+# -------------------------------
+# Project Specific
+# -------------------------------
+# Logs
+logs/
+*.log
+*.log.*
+
+# Cache
+.cache/
+.parcel-cache/
+.temp/
+
+# Uploaded Images (Local)
+uploads/
+images/temp/
+images/cache/
+assets/images/uploads/
+
+# Database (if any)
+*.db
+*.sqlite
+*.sqlite3
+
+# Backup files
+*.bak
+*.backup
+*.old
+
+# SSL Certificates (local)
+*.pem
+*.key
+*.crt
+
+# -------------------------------
+# Authentication & Security
+# -------------------------------
+*.p12
+*.pfx
+.secrets/
+secrets.json
+credentials.json
+
+# -------------------------------
+# Temporary & User Data
+# -------------------------------
+*.log
+*.pid
+*.seed
+*.pid.lock
+.port
+*.tar.gz
+*.rar
+*.7z
+
+# -------------------------------
+# Documentation (optional)
+# -------------------------------
+# (تعليق: يتم استثناء README.md فقط)
+# docs/_build/
+# docs/api/
+
+# -------------------------------
+# Social Media / Images (local)
+# -------------------------------
+*.psd
+*.ai
+*.sketch
+*.xd
+
+# -------------------------------
+# Docker (if used)
+# -------------------------------
+*.dockerignore
+Dockerfile.dev
+
+# -------------------------------
+# GitHub specific
+# -------------------------------
+.github/FUNDING.yml
+.github/ISSUE_TEMPLATE/
+
+# -------------------------------
+# Note: Keep these files in repo
+# -------------------------------
+# !.env.example
+# !.gitkeep
+# !.github/
+# !README.md
+# !index.html
