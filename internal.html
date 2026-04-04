@@ -9,17 +9,26 @@
 </head>
 <body class="lang-ar">
   <header class="site-header">
-    <div class="logo">Internal Panel</div>
+    <div class="logo-wrap">
+      <h1 class="logo">Asmara.Store Internal</h1>
+      <p class="tagline" id="internalTagline"></p>
+    </div>
+
     <div class="lang-switch">
       <button class="lang-btn" data-lang="ar">عربي</button>
       <button class="lang-btn" data-lang="en">EN</button>
       <button class="lang-btn" data-lang="ti">ትግርኛ</button>
     </div>
+
+    <nav class="main-nav">
+      <a href="index.html" id="internalBackHome">الرئيسية</a>
+      <a href="blog.html" id="internalBlogLink">البلوق</a>
+    </nav>
   </header>
 
   <main class="container">
-    <section class="card">
-      <h2>دخول داخلي</h2>
+    <section class="card login-card">
+      <h2 id="internalLoginTitle">دخول داخلي</h2>
       <input type="password" id="internalPassword" placeholder="كلمة المرور" />
       <button id="internalLoginBtn" class="btn">دخول</button>
       <p id="internalLoginMsg"></p>
@@ -27,24 +36,24 @@
 
     <section id="internalPanel" style="display:none;">
       <div class="stats-grid">
-        <div class="stat-card"><span id="statPending">0</span><small>قيد المراجعة</small></div>
-        <div class="stat-card"><span id="statApproved">0</span><small>مقبولة</small></div>
-        <div class="stat-card"><span id="statRejected">0</span><small>مرفوضة</small></div>
-        <div class="stat-card"><span id="statReports">0</span><small>بلاغات</small></div>
+        <div class="stat-card"><span id="statPending">0</span><small id="statPendingLabel">قيد المراجعة</small></div>
+        <div class="stat-card"><span id="statApproved">0</span><small id="statApprovedLabel">مقبولة</small></div>
+        <div class="stat-card"><span id="statRejected">0</span><small id="statRejectedLabel">مرفوضة</small></div>
+        <div class="stat-card"><span id="statReports">0</span><small id="statReportsLabel">بلاغات</small></div>
       </div>
 
       <section class="card">
-        <h2>الإعلانات المنتظرة</h2>
+        <h2 id="pendingAdsTitle">الإعلانات المنتظرة</h2>
         <div id="pendingAdsList"></div>
       </section>
 
       <section class="card">
-        <h2>البلاغات</h2>
+        <h2 id="reportsTitle">البلاغات</h2>
         <div id="reportsList"></div>
       </section>
 
       <section class="card">
-        <h2>سجل المراجعة</h2>
+        <h2 id="agentLogTitle">سجل المراجعة</h2>
         <div id="agentLogList"></div>
       </section>
     </section>
