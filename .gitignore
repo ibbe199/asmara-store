@@ -1,6 +1,7 @@
 # ============================================
 # Asmara.Store - .gitignore
 # المنصة الرقمية المتكاملة لإريتريا
+# الإصدار: 2.0
 # ============================================
 
 # -------------------------------
@@ -23,6 +24,7 @@ out/
 .next/
 .nuxt/
 .vuepress/dist/
+.vercel/
 .vercel/output/
 
 # -------------------------------
@@ -92,7 +94,7 @@ images/temp/
 images/cache/
 assets/images/uploads/
 
-# Database (if any)
+# Database
 *.db
 *.sqlite
 *.sqlite3
@@ -129,11 +131,38 @@ credentials.json
 *.7z
 
 # -------------------------------
+# Vercel Specific
+# -------------------------------
+.vercel
+.vercel/output
+.vercel/project.json
+
+# -------------------------------
+# User uploaded images (keep structure)
+# -------------------------------
+images/ads/**/*.jpg
+images/ads/**/*.png
+images/ads/**/*.jpeg
+images/ads/**/*.webp
+images/users/avatars/*.jpg
+images/users/avatars/*.png
+!images/ads/.gitkeep
+!images/users/avatars/.gitkeep
+
+# -------------------------------
+# Reports & Logs (keep structure)
+# -------------------------------
+reports/**/*.xlsx
+reports/**/*.csv
+reports/**/*.pdf
+!reports/.gitkeep
+!logs/.gitkeep
+
+# -------------------------------
 # Documentation (optional)
 # -------------------------------
-# (تعليق: يتم استثناء README.md فقط)
-# docs/_build/
-# docs/api/
+docs/_build/
+docs/api/
 
 # -------------------------------
 # Social Media / Images (local)
@@ -154,6 +183,24 @@ Dockerfile.dev
 # -------------------------------
 .github/FUNDING.yml
 .github/ISSUE_TEMPLATE/
+
+# -------------------------------
+# Archive / Old files
+# -------------------------------
+*.zip
+*.rar
+*.7z
+archive/
+old/
+deprecated/
+
+# -------------------------------
+# Local development
+# -------------------------------
+*.local
+localhost.*
+*.local.css
+*.local.js
 
 # -------------------------------
 # Note: Keep these files in repo
