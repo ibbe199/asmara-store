@@ -1,69 +1,51 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Asmara.Store Internal</title>
-  <link rel="stylesheet" href="css/main.css" />
-  <link rel="stylesheet" href="css/internal.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asmara.Store - لوحة الوكيل</title>
+    <link rel="stylesheet" href="css/main.css">
+    <style>
+        .agent-container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 1rem;
+        }
+        .pending-list {
+            background: white;
+            border-radius: 16px;
+            padding: 1.5rem;
+        }
+        .pending-item {
+            border-bottom: 1px solid #eee;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .btn-accept { background: #28a745; color: white; border: none; padding: 0.3rem 1rem; border-radius: 20px; cursor: pointer; }
+        .btn-reject { background: #dc3545; color: white; border: none; padding: 0.3rem 1rem; border-radius: 20px; cursor: pointer; }
+    </style>
 </head>
-<body class="lang-ar">
-  <header class="site-header">
-    <div class="logo-wrap">
-      <h1 class="logo">Asmara.Store Internal</h1>
-      <p class="tagline" id="internalTagline"></p>
+<body>
+    <div class="agent-container">
+        <h1 style="color: var(--primary)">🛡️ لوحة الوكيل</h1>
+        <div class="pending-list">
+            <h3>⏳ إعلانات تنتظر المراجعة</h3>
+            <div id="pendingAdsList">لا توجد إعلانات حالياً</div>
+        </div>
     </div>
-
-    <div class="lang-switch">
-      <button class="lang-btn" data-lang="ar">عربي</button>
-      <button class="lang-btn" data-lang="en">EN</button>
-      <button class="lang-btn" data-lang="ti">ትግርኛ</button>
-    </div>
-
-    <nav class="main-nav">
-      <a href="index.html" id="internalBackHome">الرئيسية</a>
-      <a href="blog.html" id="internalBlogLink">البلوق</a>
-    </nav>
-  </header>
-
-  <main class="container">
-    <section class="card login-card">
-      <h2 id="internalLoginTitle">دخول داخلي</h2>
-      <input type="password" id="internalPassword" placeholder="كلمة المرور" />
-      <button id="internalLoginBtn" class="btn">دخول</button>
-      <p id="internalLoginMsg"></p>
-    </section>
-
-    <section id="internalPanel" style="display:none;">
-      <div class="stats-grid">
-        <div class="stat-card"><span id="statPending">0</span><small id="statPendingLabel">قيد المراجعة</small></div>
-        <div class="stat-card"><span id="statApproved">0</span><small id="statApprovedLabel">مقبولة</small></div>
-        <div class="stat-card"><span id="statRejected">0</span><small id="statRejectedLabel">مرفوضة</small></div>
-        <div class="stat-card"><span id="statReports">0</span><small id="statReportsLabel">بلاغات</small></div>
-      </div>
-
-      <section class="card">
-        <h2 id="pendingAdsTitle">الإعلانات المنتظرة</h2>
-        <div id="pendingAdsList"></div>
-      </section>
-
-      <section class="card">
-        <h2 id="reportsTitle">البلاغات</h2>
-        <div id="reportsList"></div>
-      </section>
-
-      <section class="card">
-        <h2 id="agentLogTitle">سجل المراجعة</h2>
-        <div id="agentLogList"></div>
-      </section>
-    </section>
-  </main>
-
-  <script src="js/config.js"></script>
-  <script src="js/cookies.js"></script>
-  <script src="js/translations.js"></script>
-  <script src="js/data.js"></script>
-  <script src="js/utils.js"></script>
-  <script src="js/internal.js"></script>
+    <script>
+        document.getElementById('pendingAdsList').innerHTML = `
+            <div class="pending-item">
+                <div><strong>شقة للبيع في أسمرة</strong><br><small>عقارات - $85,000</small></div>
+                <div><button class="btn-accept">قبول</button> <button class="btn-reject">رفض</button></div>
+            </div>
+            <div class="pending-item">
+                <div><strong>iPhone 14 Pro</strong><br><small>إلكترونيات - $899</small></div>
+                <div><button class="btn-accept">قبول</button> <button class="btn-reject">رفض</button></div>
+            </div>
+        `;
+    </script>
 </body>
 </html>
