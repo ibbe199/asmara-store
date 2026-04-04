@@ -1,48 +1,43 @@
-const flightsData = {
-  "DXB-ASM": [{ airline: "FlyDubai", price: "$450" }],
-  "JED-ASM": [{ airline: "Ethiopian", price: "$380" }],
-  "CAI-ASM": [{ airline: "EgyptAir", price: "$490" }],
-  "ADD-ASM": [{ airline: "Ethiopian", price: "$210" }]
-};
+// ========================================
+// Asmara.Store - Data Models
+// ========================================
 
-let realEstateAds = [
-  { id: 1, name: "شقة في أسمرة", price: "$80,000", city: "أسمرة", image: "https://placehold.co/300x200", category: "عقارات" }
+// بيانات العقارات
+const realEstateData = [
+    { id: 1, name: "شقة في أسمرة", price: "$80,000", city: "أسمرة", image: "https://placehold.co/300x200/1e3a5f/white?text=شقة" },
+    { id: 2, name: "فيلا - إدغا أريتي", price: "$250,000", city: "أسمرة", image: "https://placehold.co/300x200/2c5282/white?text=فيلا" }
 ];
 
-let electronicsAds = [
-  { id: 2, name: "iPhone 14", price: "$700", city: "أسمرة", image: "https://placehold.co/300x200", category: "إلكترونيات" }
+// بيانات الإلكترونيات
+const electronicsData = [
+    { id: 1, name: "iPhone 14", price: "$700", city: "أسمرة", image: "https://placehold.co/300x200/c7a12b/white?text=iPhone" },
+    { id: 2, name: "MacBook Air", price: "$1,200", city: "أسمرة", image: "https://placehold.co/300x200/1e3a5f/white?text=MacBook" }
 ];
 
-let carsAds = [
-  { id: 3, name: "Toyota Corolla", price: "$9,000", city: "مصوع", image: "https://placehold.co/300x200", category: "سيارات" }
+// بيانات السيارات
+const carsData = [
+    { id: 1, name: "Toyota Corolla", price: "$9,000", city: "مصوع", image: "https://placehold.co/300x200/2c5a82/white?text=Toyota" }
 ];
 
-let jobsAds = [
-  { id: 4, name: "محاسب", price: "$500", city: "أسمرة", image: "https://placehold.co/300x200", category: "وظائف" }
+// بيانات الوظائف
+const jobsData = [
+    { id: 1, name: "محاسب", salary: "$500", city: "أسمرة", company: "شركة أسمرة", image: "https://placehold.co/300x200/6d597b/white?text=محاسب" }
 ];
 
-let blogPosts = [
-  {
-    id: 1,
-    title: "كيف تختار رحلة مناسبة إلى أسمرة",
-    excerpt: "نصائح سريعة للمغترب الإريتري عند مقارنة أسعار الرحلات واختيار الوقت المناسب.",
-    link: "#"
-  },
-  {
-    id: 2,
-    title: "الاستثمار العقاري في أسمرة",
-    excerpt: "نظرة مبسطة على الفرص العقارية الأكثر طلبًا داخل العاصمة.",
-    link: "#"
-  },
-  {
-    id: 3,
-    title: "لماذا منصة متعددة اللغات مهمة؟",
-    excerpt: "اللغة تبني الثقة، خاصة عندما تخاطب جمهورًا في الداخل والمهجر.",
-    link: "#"
-  }
-];
-
-let pendingAds = [];
-let rejectedAds = [];
-let reportsList = [];
-let agentLog = [];
+// دالة عرض المعارض
+function renderGallery(containerId, data) {
+    const container = document.getElementById(containerId);
+    if (!container) return;
+    
+    container.innerHTML = "";
+    data.forEach(item => {
+        const div = document.createElement("div");
+        div.className = "gallery-item";
+        div.innerHTML = `
+            <img src="${item.image}" alt="${item.name}">
+            <h4>${item.name}</h4>
+            <p>${item.price || item.salary} | 📍 ${item.city}</p>
+        `;
+        container.appendChild(div);
+    });
+}
