@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Asmara.Store Blog</title>
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/blog.css" />
+</head>
+<body class="lang-ar">
+  <header class="site-header">
+    <div class="logo-wrap">
+      <h1 class="logo">Asmara.Store Blog</h1>
+      <p id="blogTagline" class="tagline"></p>
+    </div>
+
+    <div class="lang-switch">
+      <button class="lang-btn" data-lang="ar">عربي</button>
+      <button class="lang-btn" data-lang="en">EN</button>
+      <button class="lang-btn" data-lang="ti">ትግርኛ</button>
+    </div>
+
+    <nav class="main-nav">
+      <a href="index.html" id="backHomeLink">الرئيسية</a>
+      <a href="internal.html" id="internalLink">الداخلية</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h2 id="blogPageTitle">البلوق</h2>
+      <p id="blogPageIntro"></p>
+    </section>
+
+    <section id="blogList" class="blog-grid"></section>
+  </main>
+
+  <script src="js/config.js"></script>
+  <script src="js/cookies.js"></script>
+  <script src="js/translations.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/blog.js"></script>
+</body>
+</html>
