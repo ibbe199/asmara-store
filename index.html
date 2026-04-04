@@ -9,8 +9,10 @@
 </head>
 <body class="lang-ar">
   <header class="site-header">
-    <div class="logo">ER Asmara.Store</div>
-    <div class="tagline" id="tagline"></div>
+    <div class="logo-wrap">
+      <h1 class="logo">Asmara.Store</h1>
+      <p id="tagline" class="tagline"></p>
+    </div>
 
     <div class="lang-switch">
       <button class="lang-btn" data-lang="ar">عربي</button>
@@ -19,22 +21,34 @@
     </div>
 
     <nav class="main-nav">
-      <a href="#" data-tab="home" class="nav-link active">الرئيسية</a>
-      <a href="#" data-tab="flight" class="nav-link">الطيران</a>
-      <a href="#" data-tab="realestate" class="nav-link">العقارات</a>
-      <a href="#" data-tab="electronics" class="nav-link">الإلكترونيات</a>
-      <a href="#" data-tab="cars" class="nav-link">السيارات</a>
-      <a href="#" data-tab="jobs" class="nav-link">الوظائف</a>
-      <a href="#" data-tab="about" class="nav-link">من نحن</a>
-      <a href="#" data-tab="privacy" class="nav-link">الخصوصية</a>
+      <a href="#" class="nav-link active" data-tab="home" id="navHome">الرئيسية</a>
+      <a href="#" class="nav-link" data-tab="flight" id="navFlight">الطيران</a>
+      <a href="#" class="nav-link" data-tab="realestate" id="navRealEstate">العقارات</a>
+      <a href="#" class="nav-link" data-tab="electronics" id="navElectronics">الإلكترونيات</a>
+      <a href="#" class="nav-link" data-tab="cars" id="navCars">السيارات</a>
+      <a href="#" class="nav-link" data-tab="jobs" id="navJobs">الوظائف</a>
+      <a href="blog.html" id="navBlog">البلوق</a>
+      <a href="#" class="nav-link" data-tab="about" id="navAbout">من نحن</a>
+      <a href="#" class="nav-link" data-tab="privacy" id="navPrivacy">الخصوصية</a>
     </nav>
   </header>
 
   <main class="container">
     <section id="homePane" class="tab-pane active-pane">
-      <div class="card">
-        <h2>Asmara.Store</h2>
+      <div class="card hero-card">
+        <h2>🇪🇷 Asmara.Store</h2>
         <p id="homeIntro"></p>
+      </div>
+
+      <div class="grid-2">
+        <div class="card">
+          <h3 id="homeFlightsTitle">أحدث الرحلات</h3>
+          <div id="homeFlightsPreview"></div>
+        </div>
+        <div class="card">
+          <h3 id="homeBlogTitle">آخر المقالات</h3>
+          <div id="homeBlogPreview"></div>
+        </div>
       </div>
     </section>
 
@@ -48,35 +62,35 @@
           <option value="ADD">أديس أبابا</option>
         </select>
         <input type="date" id="flightDate" />
-        <button id="searchFlightBtn" class="btn">بحث</button>
-        <div id="flightResults"></div>
+        <button class="btn" id="searchFlightBtn">بحث</button>
+        <div id="flightResults" class="results-box"></div>
       </div>
     </section>
 
     <section id="realestatePane" class="tab-pane">
       <div class="card">
-        <h2>العقارات</h2>
+        <h2 id="realestateTitle">العقارات</h2>
         <div id="realEstateGallery" class="gallery-grid"></div>
       </div>
     </section>
 
     <section id="electronicsPane" class="tab-pane">
       <div class="card">
-        <h2>الإلكترونيات</h2>
+        <h2 id="electronicsTitle">الإلكترونيات</h2>
         <div id="electronicsGallery" class="gallery-grid"></div>
       </div>
     </section>
 
     <section id="carsPane" class="tab-pane">
       <div class="card">
-        <h2>السيارات</h2>
+        <h2 id="carsTitle">السيارات</h2>
         <div id="carsGallery" class="gallery-grid"></div>
       </div>
     </section>
 
     <section id="jobsPane" class="tab-pane">
       <div class="card">
-        <h2>الوظائف</h2>
+        <h2 id="jobsTitle">الوظائف</h2>
         <div id="jobsGallery" class="gallery-grid"></div>
       </div>
     </section>
@@ -85,7 +99,7 @@
       <div class="card">
         <h2 id="aboutTitle"></h2>
         <p id="aboutText"></p>
-        <a href="https://wa.me/29170000000" target="_blank" id="aboutWhatsapp" class="btn-link"></a>
+        <a id="aboutWhatsapp" class="btn-link" target="_blank"></a>
       </div>
     </section>
 
@@ -93,13 +107,13 @@
       <div class="card">
         <h2 id="privacyTitle"></h2>
         <p id="privacyText"></p>
-        <a href="https://wa.me/29170000000" target="_blank" id="privacyWhatsapp" class="btn-link"></a>
+        <a id="privacyWhatsapp" class="btn-link" target="_blank"></a>
       </div>
     </section>
   </main>
 
-  <a href="https://wa.me/29170000000" target="_blank" id="floatingWhatsapp" class="floating-btn whatsapp-btn"></a>
-  <a href="internal.html" id="floatingAgent" class="floating-btn agent-btn"></a>
+  <a id="floatingWhatsapp" class="floating-btn whatsapp-btn" target="_blank"></a>
+  <a id="floatingAgent" class="floating-btn agent-btn" href="internal.html"></a>
 
   <div id="cookieBanner" class="cookie-banner">
     <span id="cookieText"></span>
