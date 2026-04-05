@@ -4,11 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     
-    <title>Asmara.Store | The First E-commerce Platform in Eritrea</title>
-    <meta name="description" content="Asmara.Store - The first e-commerce platform in Eritrea. Shop the best real estate, cars, electronics, and jobs.">
-    <meta name="keywords" content="Asmara.Store, Asmara, Eritrea, online shopping, real estate, cars, electronics, jobs">
+    <!-- ===== SEO Meta Tags محسنة ===== -->
+    <title>Asmara.Store | The First E-commerce Platform in Eritrea - Real Estate, Cars, Electronics, Jobs</title>
+    <meta name="description" content="Asmara.Store - The first e-commerce platform in Eritrea. Shop the best real estate, cars, electronics, and jobs. Fast shipping, secure payment, 24/7 customer support">
+    <meta name="keywords" content="Asmara.Store, Asmara, Eritrea, online shopping, real estate, cars for sale, electronics, jobs, shipping, secure payment">
     <meta name="author" content="Asmara.Store">
     <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+    <meta name="revisit-after" content="7 days">
+    
+    <!-- Open Graph (للمشاركة على فيسبوك) -->
+    <meta property="og:title" content="Asmara.Store | The First E-commerce Platform in Eritrea">
+    <meta property="og:description" content="Shop the best products and services in Eritrea. Secure payment and fast shipping">
+    <meta property="og:image" content="https://ibbe199.github.io/asmara-store/images/logo/og-image.jpg">
+    <meta property="og:url" content="https://ibbe199.github.io/asmara-store/">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Asmara.Store - The First E-commerce Platform in Eritrea">
+    <meta name="twitter:description" content="Shop the best products and services in Eritrea">
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#1e3a5f">
     
     <!-- Fonts & Icons -->
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -123,6 +142,26 @@
         .user-stat { text-align: center; flex: 1; background: var(--gray-light); padding: 0.5rem; border-radius: var(--radius-md); }
         .user-stat-number { font-size: 1.5rem; font-weight: bold; color: var(--secondary); }
         
+        /* شارة التوثيق */
+        .verified-badge {
+            display: inline-block;
+            background: var(--success);
+            color: white;
+            padding: 0.2rem 0.5rem;
+            border-radius: var(--radius-full);
+            font-size: 0.6rem;
+            margin-left: 0.5rem;
+        }
+        .unverified-badge {
+            display: inline-block;
+            background: var(--warning);
+            color: var(--primary-dark);
+            padding: 0.2rem 0.5rem;
+            border-radius: var(--radius-full);
+            font-size: 0.6rem;
+            margin-left: 0.5rem;
+        }
+        
         /* شريط التنقل */
         .amazon-nav {
             background: linear-gradient(135deg, var(--primary-dark), var(--primary));
@@ -165,7 +204,7 @@
             color: #f0f4fa;
             text-decoration: none;
             font-weight: 600;
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             transition: var(--transition);
             border-bottom: 2px solid transparent;
             cursor: pointer;
@@ -178,7 +217,7 @@
             border-bottom-color: var(--secondary);
         }
         
-        /* شريط البحث */
+        /* شريط البحث المتقدم */
         .search-bar {
             background: var(--white);
             border-radius: var(--radius-3xl);
@@ -394,6 +433,7 @@
             height: 100%;
             object-fit: cover;
             transition: transform 0.5s ease;
+            background: var(--gray-light);
         }
         .product-card:hover .product-image { transform: scale(1.05); }
         .image-zoom {
@@ -762,6 +802,12 @@
             border-radius: var(--radius-sm);
         }
         
+        /* تحسين الأداء - Lazy Loading */
+        img[loading="lazy"] {
+            opacity: 0;
+            animation: fadeIn 0.5s ease forwards;
+        }
+        
         /* استجابة الشاشات */
         @media (max-width: 768px) {
             .amazon-nav { flex-direction: column; text-align: center; }
@@ -816,6 +862,7 @@
             <button class="cart-btn" onclick="toggleCart()">🛒 <span class="cart-count" id="cartCount">0</span></button>
             <div id="userDisplay" class="user-info" style="display:none;" onclick="toggleUserDashboard()">
                 <i class="fas fa-user-circle"></i> <span id="userName"></span>
+                <span id="userVerifiedBadge" class="verified-badge" style="display:none;">✓ Verified</span>
             </div>
             <button id="loginModalBtn" class="login-btn">🔐 Login</button>
             <button id="logoutBtn" class="login-btn" style="display:none; background:#dc3545;" onclick="logoutUser()">🚪 Logout</button>
@@ -854,6 +901,7 @@
             <button class="btn-sm" style="width:100%; margin-bottom:0.5rem;" onclick="showMyOrders()">📦 My Orders</button>
             <button class="btn-sm" style="width:100%; margin-bottom:0.5rem;" onclick="showWishlist()">❤️ Wishlist</button>
             <button class="btn-sm" style="width:100%;" onclick="showMyAds()">📋 My Ads</button>
+            <button class="btn-sm" style="width:100%; margin-top:0.5rem;" onclick="verifyAccount()">🔐 Verify Account</button>
         </div>
     </div>
 
@@ -883,6 +931,20 @@
             <input type="password" id="regPassword" placeholder="Password">
             <input type="password" id="regConfirm" placeholder="Confirm Password">
             <button class="btn" onclick="registerUser()">Create Account</button>
+        </div>
+    </div>
+
+    <!-- ===== نافذة توثيق الحساب ===== -->
+    <div id="verifyModal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeVerifyModal()">✕</button>
+            <h2>🔐 Verify Your Account</h2>
+            <p style="margin: 1rem 0;">Enter the verification code sent to your phone:</p>
+            <input type="text" id="verifyCode" placeholder="6-digit code" style="text-align: center; font-size: 1.5rem;">
+            <button class="btn" onclick="submitVerification()" style="margin-top: 1rem;">Verify</button>
+            <p style="margin-top: 1rem; font-size: 0.8rem; text-align: center;">
+                <a href="#" onclick="resendVerificationCode()">Resend code</a>
+            </p>
         </div>
     </div>
 
@@ -924,6 +986,7 @@
                 </div>
                 <button class="search-btn" onclick="performSearch()">🔍 Advanced Search</button>
             </div>
+            <div id="searchSuggestions" class="search-suggestions" style="display: none;"></div>
         </div>
 
         <!-- ===== الصفحة الرئيسية ===== -->
@@ -968,7 +1031,7 @@
                     <div class="form-row"><div class="form-group"><label id="areaLabel">Area (m²)</label><input id="reArea" type="number" placeholder="Area"></div><div class="form-group"><label id="roomsLabel">Rooms</label><select id="reRooms"><option>1</option><option>2</option><option>3</option><option>4</option><option>5+</option></select></div></div>
                     <div class="form-row"><div class="form-group"><label id="priceLabel">Price ($)</label><input id="rePrice" type="number" placeholder="Price"></div><div class="form-group"><label id="finishingLabel">Finishing</label><select id="reFinish"><option>Luxury</option><option>Super Lux</option><option>Standard</option></select></div></div>
                     <div class="form-group"><label id="descLabel">Description</label><textarea id="reDesc" rows="2" placeholder="Property details..."></textarea></div>
-                    <div class="form-group"><label id="imageLabel">Property Image</label><input type="file" id="reImage" accept="image/*"></div>
+                    <div class="form-group"><label id="imageLabel">Property Image</label><input type="file" id="reImage" accept="image/*" onchange="compressAndPreview(this, 'rePreview')"></div>
                     <div class="image-preview" id="rePreview"></div>
                     <button class="btn" id="publishReBtn">📢 Publish</button>
                     <p id="reMsg"></p>
@@ -985,7 +1048,7 @@
                     <div class="form-row"><div class="form-group"><label id="priceLabel2">Price ($)</label><input id="elecPrice" type="number" placeholder="Price"></div><div class="form-group"><label id="conditionLabel">Condition</label><select id="elecCondition"><option>New</option><option>Used</option><option>Refurbished</option></select></div></div>
                     <div class="form-row"><div class="form-group"><label id="storageLabel">Storage</label><input id="elecStorage" placeholder="128GB"></div><div class="form-group"><label id="colorLabel">Color</label><input id="elecColor" placeholder="Color"></div></div>
                     <div class="form-group"><label id="descLabel2">Description</label><textarea id="elecDesc" rows="2" placeholder="Device specifications..."></textarea></div>
-                    <div class="form-group"><label id="imageLabel2">Image</label><input type="file" id="elecImage"></div>
+                    <div class="form-group"><label id="imageLabel2">Image</label><input type="file" id="elecImage" onchange="compressAndPreview(this, 'elecPreview')"></div>
                     <div class="image-preview" id="elecPreview"></div>
                     <button class="btn" id="publishElecBtn">📢 Publish</button>
                     <p id="elecMsg"></p>
@@ -1003,7 +1066,7 @@
                     <div class="form-row"><div class="form-group"><label id="priceLabel3">Price ($)</label><input id="carPrice" type="number" placeholder="Price"></div><div class="form-group"><label id="transmissionLabel">Transmission</label><select id="carTransmission"><option>Automatic</option><option>Manual</option></select></div></div>
                     <div class="form-row"><div class="form-group"><label id="colorLabel2">Color</label><input id="carColor" placeholder="Color"></div><div class="form-group"><label id="cityLabel2">City</label><select id="carCity"><option>Asmara</option><option>Massawa</option></select></div></div>
                     <div class="form-group"><label id="descLabel3">Description</label><textarea id="carDesc" rows="2" placeholder="Car features..."></textarea></div>
-                    <div class="form-group"><label id="imageLabel3">Image</label><input type="file" id="carImage"></div>
+                    <div class="form-group"><label id="imageLabel3">Image</label><input type="file" id="carImage" onchange="compressAndPreview(this, 'carPreview')"></div>
                     <div class="image-preview" id="carPreview"></div>
                     <button class="btn" id="publishCarBtn">📢 Publish</button>
                     <p id="carMsg"></p>
@@ -1039,7 +1102,7 @@
                     <div class="form-group"><label id="titleLabel">Title</label><input id="adName" placeholder="Title"></div>
                     <div class="form-group"><label id="priceLabel4">Price</label><input id="adPrice" type="number" placeholder="Price"></div>
                     <div class="form-group"><label id="descLabel5">Description</label><textarea id="adDesc" rows="2" placeholder="Description..."></textarea></div>
-                    <div class="form-group"><label id="imageLabel4">Image</label><input type="file" id="adImage"></div>
+                    <div class="form-group"><label id="imageLabel4">Image</label><input type="file" id="adImage" onchange="compressAndPreview(this, 'adPreview')"></div>
                     <div class="image-preview" id="adPreview"></div>
                     <button class="btn" id="publishGeneralBtn">📢 Publish</button>
                     <p id="generalMsg"></p>
@@ -1081,7 +1144,7 @@
         </div>
 
         <!-- ===== صفحة الدفع ===== -->
-        <div id="paymentPane" class="tab-pane"><div class="grid-2"><div class="card"><h3 id="proSubscriptionTitle">💳 Pro Subscription</h3><div style="font-size:1.8rem; color:var(--secondary);">$29<small>/month</small></div><button id="paypalBtn" class="btn"><i class="fab fa-paypal"></i> PayPal</button></div><div class="card"><h3 id="walletTitle">💰 My Wallet</h3><p id="walletBalance">Balance: <strong id="balanceAmount">$0</strong></p><button id="addFundsBtn" class="btn">Deposit $50</button></div></div><div class="card"><h3 id="transactionsTitle">📜 Transaction History</h3><div id="transactionsList"></div></div></div>
+        <div id="paymentPane" class="tab-pane"><div class="grid-2"><div class="card"><h3 id="proSubscriptionTitle">💳 Pro Subscription</h3><div style="font-size:1.8rem; color:var(--secondary);">$29<small>/month</small></div><button id="paypalBtn" class="btn"><i class="fab fa-paypal"></i> PayPal</button><div class="payment-methods" style="margin-top:1rem;"><p>Local Payment Options:</p><button class="btn-sm" onclick="showLocalPayment()">🏦 Bank Transfer</button><button class="btn-sm" onclick="showLocalPayment()">📱 Mobile Money</button><button class="btn-sm" onclick="showLocalPayment()">🏧 Western Union</button></div></div><div class="card"><h3 id="walletTitle">💰 My Wallet</h3><p id="walletBalance">Balance: <strong id="balanceAmount">$0</strong></p><button id="addFundsBtn" class="btn">Deposit $50</button></div></div><div class="card"><h3 id="transactionsTitle">📜 Transaction History</h3><div id="transactionsList"></div></div></div>
 
         <!-- ===== صفحة المراسلة ===== -->
         <div id="messagingPane" class="tab-pane"><div class="grid-2"><div class="card"><h3 id="chatsTitle">📋 Chats</h3><div id="contactsList" class="chat-list"></div></div><div class="card"><h3 id="messagingTitle">💬 Messaging</h3><div id="chatMessages" class="chat-list" style="height:200px;"></div><div class="chat-input-area" style="display:flex; gap:0.5rem; margin-top:0.5rem;"><input type="text" id="chatInput" placeholder="Type your message..."><button id="sendMsgBtn" class="btn-sm btn">Send</button></div></div></div></div>
@@ -1115,6 +1178,65 @@
         // Asmara.Store - Main JavaScript
         // اللغة الأساسية: الإنجليزية
         // ========================================
+        
+        // ===== ضغط الصور تلقائياً =====
+        async function compressImage(file, quality = 0.7) {
+            return new Promise((resolve, reject) => {
+                const reader = new FileReader();
+                reader.readAsDataURL(file);
+                reader.onload = (event) => {
+                    const img = new Image();
+                    img.src = event.target.result;
+                    img.onload = () => {
+                        const canvas = document.createElement('canvas');
+                        const ctx = canvas.getContext('2d');
+                        
+                        let width = img.width;
+                        let height = img.height;
+                        const maxSize = 800;
+                        
+                        if (width > maxSize) {
+                            height = (height * maxSize) / width;
+                            width = maxSize;
+                        }
+                        if (height > maxSize) {
+                            width = (width * maxSize) / height;
+                            height = maxSize;
+                        }
+                        
+                        canvas.width = width;
+                        canvas.height = height;
+                        ctx.drawImage(img, 0, 0, width, height);
+                        
+                        const format = canvas.toDataURL('image/jpeg', quality);
+                        resolve(format);
+                    };
+                    img.onerror = reject;
+                };
+                reader.onerror = reject;
+            });
+        }
+        
+        async function compressAndPreview(input, previewId) {
+            const file = input.files[0];
+            if (!file) return;
+            
+            const preview = document.getElementById(previewId);
+            if (preview) preview.innerHTML = '';
+            
+            const compressed = await compressImage(file, 0.7);
+            
+            const img = document.createElement('img');
+            img.src = compressed;
+            img.style.width = '50px';
+            img.style.height = '50px';
+            img.style.objectFit = 'cover';
+            img.style.borderRadius = '10px';
+            preview.appendChild(img);
+            
+            // تخزين الصورة المضغوطة
+            input.dataset.compressed = compressed;
+        }
         
         // ===== الترجمة الكاملة =====
         const TRANSLATIONS = {
@@ -1218,7 +1340,8 @@
                 jobs: "Jobs",
                 services: "Services",
                 advancedSearch: "Advanced Search",
-                writeReview: "Write your review..."
+                writeReview: "Write your review...",
+                verified: "Verified Account"
             },
             ar: {
                 tagline: "منصة تحترم عاداتنا وتقاليدنا - بروح القانون الإريتري",
@@ -1320,7 +1443,8 @@
                 jobs: "وظائف",
                 services: "خدمات",
                 advancedSearch: "بحث متقدم",
-                writeReview: "اكتب تقييمك..."
+                writeReview: "اكتب تقييمك...",
+                verified: "حساب موثق"
             },
             ti: {
                 tagline: "ልማዳትና ባህልና ዘከብር መድረኽ - ብመንፈስ ሕጊ ኤርትራ",
@@ -1422,13 +1546,15 @@
                 jobs: "ስራሕ",
                 services: "ኣገልግሎታት",
                 advancedSearch: "ላዕለዎት ምድላይ",
-                writeReview: "ውጤትካ ጽሓፍ..."
+                writeReview: "ውጤትካ ጽሓፍ...",
+                verified: "ምስጢር"
             }
         };
 
         // ===== متغيرات عامة =====
         let currentLang = 'en';
         let currentUser = null;
+        let isVerified = false;
         let balance = 0;
         let transactions = [];
         let messages = [{ id: 1, from: "Ali Hassan", to: "Buyer", text: "Hello", time: "10:30" }];
@@ -1509,6 +1635,7 @@
             if (!container) return;
             container.innerHTML = data.slice(0, 3).map(item => {
                 const price = item.price || item.salary;
+                const verifiedBadge = isVerified ? '<span class="verified-badge" style="margin-left:0.5rem;">✓</span>' : '';
                 return `
                     <div class="product-card" onclick="showProductDetails(${item.id}, '${section}')">
                         <div class="product-image-container">
@@ -1517,7 +1644,7 @@
                             <button class="share-btn" onclick="event.stopPropagation(); shareOnWhatsapp('${item.name}', '${price}', '${item.city}')"><i class="fab fa-whatsapp"></i></button>
                         </div>
                         <div class="product-info">
-                            <h4 class="product-title">${item.name}</h4>
+                            <h4 class="product-title">${item.name} ${verifiedBadge}</h4>
                             <div class="product-price">$${price}</div>
                             <div class="product-meta">
                                 <span class="badge">${item.type}</span>
@@ -1714,7 +1841,7 @@
             }
         }
         
-        // ===== دوال المستخدم =====
+        // ===== دوال المستخدم والتوثيق =====
         function setCookie(name, value, days) {
             const date = new Date();
             date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
@@ -1733,9 +1860,11 @@
             const p = document.getElementById('loginPassword').value;
             if (u && p) {
                 currentUser = u;
+                isVerified = false;
                 setCookie('username', u, 30);
                 setCookie('isAgent', p === 'agent123' ? 'true' : 'false', 30);
                 document.getElementById('userName').innerText = u;
+                document.getElementById('userVerifiedBadge').style.display = 'none';
                 document.getElementById('userDisplay').style.display = 'flex';
                 document.getElementById('loginModalBtn').style.display = 'none';
                 document.getElementById('logoutBtn').style.display = 'inline-block';
@@ -1748,6 +1877,7 @@
         
         function logoutUser() {
             currentUser = null;
+            isVerified = false;
             setCookie('username', '', -1);
             setCookie('isAgent', '', -1);
             document.getElementById('userDisplay').style.display = 'none';
@@ -1764,9 +1894,37 @@
             const confirm = document.getElementById('regConfirm').value;
             if (!name || !email || !phone || !pass) { showNotification('Please fill all fields', 'error'); return; }
             if (pass !== confirm) { showNotification('Passwords do not match', 'error'); return; }
-            showNotification('Account created successfully! You can now login.', 'success');
+            showNotification('Account created successfully! Please verify your account.', 'success');
             closeRegisterModal();
-            openLoginModal();
+            openVerifyModal();
+        }
+        
+        function verifyAccount() {
+            openVerifyModal();
+        }
+        
+        function openVerifyModal() {
+            document.getElementById('verifyModal').style.display = 'flex';
+        }
+        
+        function closeVerifyModal() {
+            document.getElementById('verifyModal').style.display = 'none';
+        }
+        
+        function submitVerification() {
+            const code = document.getElementById('verifyCode').value;
+            if (code === '123456') {
+                isVerified = true;
+                document.getElementById('userVerifiedBadge').style.display = 'inline-block';
+                showNotification('Account verified successfully!', 'success');
+                closeVerifyModal();
+            } else {
+                showNotification('Invalid verification code', 'error');
+            }
+        }
+        
+        function resendVerificationCode() {
+            showNotification('New verification code sent to your phone!', 'info');
         }
         
         function showRegister() { closeLoginModal(); document.getElementById('registerModal').style.display = 'flex'; }
@@ -1785,6 +1943,10 @@
         function showMyOrders() { alert('No orders yet'); }
         function showWishlist() { alert('Wishlist is empty'); }
         function showMyAds() { alert('No ads added yet'); }
+        
+        function showLocalPayment() {
+            showNotification('Payment options: Bank Transfer, Mobile Money, Western Union. Contact support for details.', 'info');
+        }
         
         // ===== دوال الوكيل =====
         let pendingAds = [], rejectedAds = [], blockedWords = ["sex", "naked", "alcohol", "drugs", "curse"];
@@ -2125,6 +2287,11 @@
         window.checkout = checkout;
         window.performSearch = performSearch;
         window.showProductDetails = showProductDetails;
+        window.verifyAccount = verifyAccount;
+        window.submitVerification = submitVerification;
+        window.resendVerificationCode = resendVerificationCode;
+        window.closeVerifyModal = closeVerifyModal;
+        window.showLocalPayment = showLocalPayment;
     </script>
 </body>
 </html>
