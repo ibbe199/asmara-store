@@ -1,139 +1,61 @@
 // ========================================
-// Asmara.Store - Data Models (نسخة مستقرة)
+// Asmara.Store - Data (مع صور Example)
 // ========================================
 
-// ===== صور احتياطية مضمونة (في حال عدم ظهور أي صورة) =====
-const FALLBACK_IMAGES = {
-    realEstate: "https://placehold.co/400x250/1e3a5f/white?text=عقار",
-    electronics: "https://placehold.co/400x250/2c5282/white?text=جهاز+إلكتروني",
-    cars: "https://placehold.co/400x250/3a5a40/white?text=سيارة",
-    jobs: "https://placehold.co/400x250/6d597b/white?text=وظيفة"
-};
+// Example Image - صور توضيحية فقط
+const EXAMPLE_IMG = "https://placehold.co/600x400/1e3a5f/white?text=📸+Example:+صورة+توضيحية";
 
-// ===== بيانات العقارات (بصور مضمونة) =====
-const realEstateData = [
-    { 
-        id: 1, 
-        name: "شقة فاخرة - تيرفولو", 
-        price: "$85,000", 
-        city: "أسمرة", 
-        type: "شقة",
-        bedrooms: 3,
-        bathrooms: 2,
-        area: "150m²",
-        image: "https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg?w=400&h=250&fit=crop&auto=format"
-    },
-    { 
-        id: 2, 
-        name: "فيلا - إدغا أريتي", 
-        price: "$250,000", 
-        city: "أسمرة", 
-        type: "فيلا",
-        bedrooms: 5,
-        bathrooms: 4,
-        area: "400m²",
-        image: "https://images.pexels.com/photos/2587054/pexels-photo-2587054.jpeg?w=400&h=250&fit=crop&auto=format"
-    },
-    { 
-        id: 3, 
-        name: "شقة - وسط أسمرة", 
-        price: "$65,000", 
-        city: "أسمرة", 
-        type: "شقة",
-        bedrooms: 2,
-        bathrooms: 1,
-        area: "95m²",
-        image: "https://images.pexels.com/photos/280229/pexels-photo-280229.jpeg?w=400&h=250&fit=crop&auto=format"
-    },
-    { 
-        id: 4, 
-        name: "أرض للبيع - مصوع", 
-        price: "$45,000", 
-        city: "مصوع", 
-        type: "أرض",
-        area: "600m²",
-        image: "https://images.pexels.com/photos/259588/pexels-photo-259588.jpeg?w=400&h=250&fit=crop&auto=format"
-    },
-    { 
-        id: 5, 
-        name: "مكتب تجاري - أسمرة", 
-        price: "$120,000", 
-        city: "أسمرة", 
-        type: "مكتب",
-        area: "120m²",
-        image: "https://images.pexels.com/photos/289777/pexels-photo-289777.jpeg?w=400&h=250&fit=crop&auto=format"
-    },
-    { 
-        id: 6, 
-        name: "شقة - كرن", 
-        price: "$55,000", 
-        city: "كرن", 
-        type: "شقة",
-        bedrooms: 2,
-        bathrooms: 1,
-        area: "100m²",
-        image: "https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg?w=400&h=250&fit=crop&auto=format"
-    }
+// بيانات العقارات - Example
+let realEstateAds = [
+    { id: 1, name: "شقة فاخرة - تيرفولو (Example)", price: 85000, city: "أسمرة", type: "شقة", bedrooms: 3, area: "150م²", finishing: "فاخر", views: 45, image: EXAMPLE_IMG, description: "Example: شقة فاخرة في أرقى أحياء أسمرة" },
+    { id: 2, name: "فيلا - إدغا أريتي (Example)", price: 250000, city: "أسمرة", type: "فيلا", bedrooms: 5, area: "400م²", finishing: "سوبر لوكس", views: 32, image: EXAMPLE_IMG, description: "Example: فيلا مستقلة بحديقة خاصة" },
+    { id: 3, name: "شقة - وسط أسمرة (Example)", price: 65000, city: "أسمرة", type: "شقة", bedrooms: 2, area: "95م²", finishing: "عادي", views: 28, image: EXAMPLE_IMG, description: "Example: شقة في موقع ممتاز" }
 ];
 
-// ===== بيانات الإلكترونيات (بصور مضمونة) =====
-const electronicsData = [
-    { id: 1, name: "iPhone 14 Pro", price: "$899", city: "أسمرة", condition: "جديد", image: "https://images.pexels.com/photos/788946/pexels-photo-788946.jpeg?w=400&h=250&fit=crop&auto=format" },
-    { id: 2, name: "MacBook Air M2", price: "$1,299", city: "أسمرة", condition: "جديد", image: "https://images.pexels.com/photos/18105/pexels-photo.jpg?w=400&h=250&fit=crop&auto=format" },
-    { id: 3, name: "Samsung Galaxy S23", price: "$699", city: "أسمرة", condition: "جديد", image: "https://images.pexels.com/photos/47261/pexels-photo-47261.jpeg?w=400&h=250&fit=crop&auto=format" },
-    { id: 4, name: "iPad Pro 11", price: "$799", city: "مصوع", condition: "مستعمل", image: "https://images.pexels.com/photos/1334597/pexels-photo-1334597.jpeg?w=400&h=250&fit=crop&auto=format" },
-    { id: 5, name: "Sony Headphones", price: "$349", city: "أسمرة", condition: "جديد", image: "https://images.pexels.com/photos/1648377/pexels-photo-1648377.jpeg?w=400&h=250&fit=crop&auto=format" },
-    { id: 6, name: "Dell XPS 15", price: "$1,599", city: "أسمرة", condition: "جديد", image: "https://images.pexels.com/photos/39284/macbook-apple-imac-computer-39284.jpeg?w=400&h=250&fit=crop&auto=format" }
+// بيانات الإلكترونيات - Example
+let electronicsAds = [
+    { id: 1, name: "iPhone 14 Pro (Example)", price: 899, city: "أسمرة", type: "هاتف", brand: "Apple", storage: "256GB", color: "أسود", condition: "جديد", views: 120, image: EXAMPLE_IMG, description: "Example: هاتف آيفون 14 برو" },
+    { id: 2, name: "MacBook Air M2 (Example)", price: 1299, city: "أسمرة", type: "لابتوب", brand: "Apple", storage: "512GB", color: "فضي", condition: "جديد", views: 78, image: EXAMPLE_IMG, description: "Example: لابتوب MacBook Air M2" },
+    { id: 3, name: "Samsung Galaxy S23 (Example)", price: 699, city: "أسمرة", type: "هاتف", brand: "Samsung", storage: "128GB", color: "أخضر", condition: "جديد", views: 56, image: EXAMPLE_IMG, description: "Example: هاتف سامسونج جالاكسي S23" }
 ];
 
-// ===== بيانات السيارات (بصور مضمونة) - تم تحديث الروابط =====
-const carsData = [
-    { id: 1, name: "Toyota Corolla 2020", price: "$9,000", city: "مصوع", year: 2020, mileage: "85,000 كم", image: "https://images.pexels.com/photos/113102/pexels-photo-113102.jpeg?w=400&h=250&fit=crop&auto=format" },
-    { id: 2, name: "Hyundai Tucson 2022", price: "$18,000", city: "أسمرة", year: 2022, mileage: "45,000 كم", image: "https://images.pexels.com/photos/1413412/pexels-photo-1413412.jpeg?w=400&h=250&fit=crop&auto=format" },
-    { id: 3, name: "Kia Sportage 2021", price: "$16,000", city: "أسمرة", year: 2021, mileage: "60,000 كم", image: "https://images.pexels.com/photos/2761842/pexels-photo-2761842.jpeg?w=400&h=250&fit=crop&auto=format" },
-    { id: 4, name: "Nissan Patrol 2019", price: "$35,000", city: "أسمرة", year: 2019, mileage: "95,000 كم", image: "https://images.pexels.com/photos/115465/pexels-photo-115465.jpeg?w=400&h=250&fit=crop&auto=format" },
-    { id: 5, name: "Toyota Hilux 2021", price: "$28,000", city: "مصوع", year: 2021, mileage: "50,000 كم", image: "https://images.pexels.com/photos/163931/pexels-photo-163931.jpeg?w=400&h=250&fit=crop&auto=format" },
-    { id: 6, name: "Honda Civic 2019", price: "$12,000", city: "أسمرة", year: 2019, mileage: "75,000 كم", image: "https://images.pexels.com/photos/157091/pexels-photo-157091.jpeg?w=400&h=250&fit=crop&auto=format" }
+// بيانات السيارات - Example
+let carsAds = [
+    { id: 1, name: "Toyota Corolla 2020 (Example)", price: 9000, city: "مصوع", type: "سيارة", brand: "Toyota", model: "Corolla", year: 2020, mileage: "85,000 كم", transmission: "أوتوماتيك", color: "أبيض", views: 67, image: EXAMPLE_IMG, description: "Example: تويوتا كورولا 2020" },
+    { id: 2, name: "Hyundai Tucson 2022 (Example)", price: 18000, city: "أسمرة", type: "سيارة", brand: "Hyundai", model: "Tucson", year: 2022, mileage: "45,000 كم", transmission: "أوتوماتيك", color: "أسود", views: 45, image: EXAMPLE_IMG, description: "Example: هيونداي توسان 2022" },
+    { id: 3, name: "Kia Sportage 2021 (Example)", price: 16000, city: "أسمرة", type: "سيارة", brand: "Kia", model: "Sportage", year: 2021, mileage: "60,000 كم", transmission: "أوتوماتيك", color: "فضي", views: 34, image: EXAMPLE_IMG, description: "Example: كيا سبورتاج 2021" }
 ];
 
-// ===== بيانات الوظائف (بصور مضمونة) =====
-const jobsData = [
-    { id: 1, name: "محاسب", salary: "$500", city: "أسمرة", company: "شركة أسمرة", type: "دوام كامل", image: "https://images.pexels.com/photos/3183197/pexels-photo-3183197.jpeg?w=400&h=250&fit=crop&auto=format" },
-    { id: 2, name: "مهندس مدني", salary: "$800", city: "أسمرة", company: "مقاولات الإخوة", type: "دوام كامل", image: "https://images.pexels.com/photos/416405/pexels-photo-416405.jpeg?w=400&h=250&fit=crop&auto=format" },
-    { id: 3, name: "مبرمج ويب", salary: "$1,200", city: "عن بعد", company: "شركة تقنية", type: "عن بعد", image: "https://images.pexels.com/photos/1181263/pexels-photo-1181263.jpeg?w=400&h=250&fit=crop&auto=format" },
-    { id: 4, name: "مسوق إلكتروني", salary: "$700", city: "أسمرة", company: "وكالة تسويق", type: "دوام جزئي", image: "https://images.pexels.com/photos/267350/pexels-photo-267350.jpeg?w=400&h=250&fit=crop&auto=format" },
-    { id: 5, name: "سائق توصيل", salary: "$400", city: "مصوع", company: "شركة توصيل", type: "دوام كامل", image: "https://images.pexels.com/photos/279949/pexels-photo-279949.jpeg?w=400&h=250&fit=crop&auto=format" },
-    { id: 6, name: "مبيعات", salary: "$600", city: "أسمرة", company: "شركة تجارية", type: "دوام كامل", image: "https://images.pexels.com/photos/3768131/pexels-photo-3768131.jpeg?w=400&h=250&fit=crop&auto=format" }
+// بيانات الوظائف - Example
+let jobsAds = [
+    { id: 1, name: "محاسب (Example)", salary: 500, city: "أسمرة", company: "شركة أسمرة", type: "دوام كامل", experience: "سنتان", qualification: "بكالوريوس", views: 89, image: EXAMPLE_IMG, description: "Example: مطلوب محاسب للعمل في شركة أسمرة" },
+    { id: 2, name: "مهندس مدني (Example)", salary: 800, city: "أسمرة", company: "مقاولات الإخوة", type: "دوام كامل", experience: "3-5 سنوات", qualification: "بكالوريوس", views: 56, image: EXAMPLE_IMG, description: "Example: مطلوب مهندس مدني للإشراف على المشاريع" },
+    { id: 3, name: "مبرمج ويب (Example)", salary: 1200, city: "عن بعد", company: "شركة تقنية", type: "عن بعد", experience: "سنة", qualification: "بكالوريوس", views: 34, image: EXAMPLE_IMG, description: "Example: مطلوب مبرمج ويب للعمل عن بعد" }
 ];
 
-// ===== دالة عرض المعارض (مع صور احتياطية) =====
-function renderGallery(containerId, data, category) {
-    const container = document.getElementById(containerId);
-    if (!container) return;
-    
-    container.innerHTML = "";
-    data.forEach(item => {
-        const div = document.createElement("div");
-        div.className = "gallery-item";
-        
-        // تحديد الصورة الاحتياطية حسب القسم
-        let fallbackImage = FALLBACK_IMAGES[category] || FALLBACK_IMAGES.realEstate;
-        
-        let details = "";
-        if (item.bedrooms) details = `${item.bedrooms} غرف | ${item.area}`;
-        else if (item.year) details = `${item.year} | ${item.mileage}`;
-        else if (item.condition) details = item.condition;
-        else if (item.company) details = `${item.company} | ${item.type}`;
-        
-        div.innerHTML = `
-            <img src="${item.image}" 
-                 alt="${item.name}" 
-                 loading="lazy" 
-                 onerror="this.src='${fallbackImage}'">
-            <h4>${item.name}</h4>
-            <p>${item.price || item.salary} | 📍 ${item.city}</p>
-            ${details ? `<small style="font-size:0.7rem; color:#666">${details}</small>` : ''}
-        `;
-        container.appendChild(div);
-    });
-}
+// بيانات الخدمات العامة - Example
+let generalAds = [
+    { id: 1, name: "شحن من دبي إلى أسمرة (Example)", price: 299, city: "أسمرة", type: "خدمة شحن", views: 34, image: EXAMPLE_IMG, description: "Example: خدمة شحن سريعة من دبي إلى أسمرة" },
+    { id: 2, name: "مكتب للايجار (Example)", price: 500, city: "أسمرة", type: "عقار تجاري", views: 23, image: EXAMPLE_IMG, description: "Example: مكتب مجهز للإيجار في وسط أسمرة" }
+];
+
+// شهادات العملاء - Example
+const testimonials = [
+    { name: "أحمد محمود (Example)", title: "مستثمر عقاري", text: "Example: منصة رائعة! ساعدتني في العثور على عقار مناسب.", rating: 5, avatar: "أ" },
+    { name: "سارة إبراهيم (Example)", title: "مغتربة", text: "Example: خدمة ممتازة. أنصح بها بشدة.", rating: 5, avatar: "س" },
+    { name: "محمد علي (Example)", title: "صاحب شركة", text: "Example: وظفت أفضل الكفاءات من خلال المنصة.", rating: 4, avatar: "م" }
+];
+
+// بيانات الرحلات - Example
+const allFlights = [
+    { from: "DXB", fromName: "دبي", to: "ASM", toName: "أسمرة", airline: "FlyDubai (Example)", flightNo: "FZ 849", price: "$450", time: "08:00", duration: "3h 30m" },
+    { from: "DXB", fromName: "دبي", to: "ASM", toName: "أسمرة", airline: "Ethiopian (Example)", flightNo: "ET 601", price: "$520", time: "14:20", duration: "4h 00m" },
+    { from: "JED", fromName: "جدة", to: "ASM", toName: "أسمرة", airline: "Ethiopian (Example)", flightNo: "ET 603", price: "$380", time: "09:15", duration: "2h 45m" }
+];
+
+// مقالات المدونة - Example
+const blogPosts = [
+    { id: 1, title: "📘 Example: دليل شراء عقار في أسمرة", category: "عقارات", summary: "Example: خطوات مهمة ونصائح قانونية", content: "<h3>Example: محتوى المقال</h3><p>هذا مثال توضيحي لمحتوى المقال.</p>", date: "2026-04-01", image: "🏠", author: "Example" },
+    { id: 2, title: "✈️ Example: نصائح لحجز أرخص رحلة", category: "سفر", summary: "Example: أفضل الأوقات وشركات الطيران", content: "<h3>Example: نصائح للسفر</h3><p>هذا مثال توضيحي.</p>", date: "2026-03-28", image: "✈️", author: "Example" },
+    { id: 3, title: "💼 Example: كيفية البحث عن وظيفة", category: "وظائف", summary: "Example: أفضل الطرق للعثور على فرص عمل", content: "<h3>Example: نصائح للبحث عن وظيفة</h3><p>هذا مثال توضيحي.</p>", date: "2026-03-25", image: "💼", author: "Example" }
+];
