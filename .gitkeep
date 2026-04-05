@@ -1,9 +1,8 @@
-# إنشاء الملفات
-touch images/.gitkeep
+# في Terminal (VS Code أو أي محرر)
 touch images/ads/.gitkeep
 touch images/users/avatars/.gitkeep
-touch reports/daily/.gitkeep
-touch reports/weekly/.gitkeep
-touch reports/monthly/.gitkeep
+touch reports/.gitkeep
 touch logs/.gitkeep
 touch uploads/.gitkeep
+touch images/temp/.gitkeep
+touch images/cache/.gitkeep
