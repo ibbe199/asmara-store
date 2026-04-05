@@ -3,96 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    
-    <!-- ===== SEO Meta Tags محسنة ===== -->
-    <title>Asmara.Store | The First E-commerce Platform in Eritrea - Real Estate, Cars, Electronics, Jobs</title>
-    <meta name="description" content="Asmara.Store - The first e-commerce platform in Eritrea. Shop the best real estate, cars, electronics, and jobs. Fast shipping, secure payment, 24/7 customer support">
-    <meta name="keywords" content="Asmara.Store, Asmara, Eritrea, online shopping, real estate, cars for sale, electronics, jobs, shipping, secure payment">
-    <meta name="author" content="Asmara.Store">
-    <meta name="robots" content="index, follow">
-    <meta name="language" content="English">
-    <meta name="revisit-after" content="7 days">
-    
-    <!-- Open Graph (للمشاركة على فيسبوك) -->
-    <meta property="og:title" content="Asmara.Store | The First E-commerce Platform in Eritrea">
-    <meta property="og:description" content="Shop the best products and services in Eritrea. Secure payment and fast shipping">
-    <meta property="og:image" content="https://ibbe199.github.io/asmara-store/images/logo/og-image.jpg">
-    <meta property="og:url" content="https://ibbe199.github.io/asmara-store/">
-    <meta property="og:type" content="website">
-    
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Asmara.Store - The First E-commerce Platform in Eritrea">
-    <meta name="twitter:description" content="Shop the best products and services in Eritrea">
-    
-    <!-- PWA Manifest -->
-    <link rel="manifest" href="manifest.json">
-    <meta name="theme-color" content="#1e3a5f">
-    
-    <!-- Fonts & Icons -->
+    <title>Asmara.Store | The First E-commerce Platform in Eritrea</title>
+    <meta name="description" content="Asmara.Store - The first e-commerce platform in Eritrea">
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     
     <style>
-        /* ========================================
-           Asmara.Store - Main Stylesheet
-           ======================================== */
-        
-        :root {
-            --primary-dark: #1e3a5f;
-            --primary: #2c5282;
-            --primary-light: #3a6b92;
-            --secondary: #c7a12b;
-            --secondary-dark: #a0801a;
-            --secondary-light: #e6b422;
-            --danger: #dc3545;
-            --success: #28a745;
-            --warning: #ffc107;
-            --info: #17a2b8;
-            --white: #ffffff;
-            --gray-bg: #f0f4f9;
-            --gray-light: #eef2f8;
-            --gray: #6c757d;
-            --text-dark: #1a2a3f;
-            --text-gray: #4a627a;
-            
-            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.05);
-            --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
-            --shadow-lg: 0 8px 20px rgba(0, 0, 0, 0.1);
-            --shadow-xl: 0 12px 30px rgba(0, 0, 0, 0.15);
-            
-            --radius-sm: 8px;
-            --radius-md: 12px;
-            --radius-lg: 16px;
-            --radius-xl: 20px;
-            --radius-2xl: 24px;
-            --radius-3xl: 28px;
-            --radius-full: 9999px;
-            
-            --transition: all 0.3s ease;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Inter', 'Cairo', sans-serif;
-            background: var(--gray-bg);
-            color: var(--text-dark);
-            line-height: 1.5;
-            direction: ltr;
-        }
-        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', 'Cairo', sans-serif; background: #f0f4f9; color: #1a2a3f; line-height: 1.5; direction: ltr; }
         body.lang-ar { direction: rtl; text-align: right; font-family: 'Cairo', 'Inter', sans-serif; }
         body.lang-ti { direction: rtl; text-align: right; }
         
         /* أنيميشن */
         @keyframes slideIn { from { transform: translateX(100%); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
-        @keyframes slideOut { from { transform: translateX(0); opacity: 1; } to { transform: translateX(100%); opacity: 0; } }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
         
         /* إشعارات */
@@ -100,71 +24,54 @@
             position: fixed;
             top: 80px;
             right: 20px;
-            background: var(--success);
+            background: #28a745;
             color: white;
             padding: 12px 20px;
-            border-radius: var(--radius-md);
+            border-radius: 12px;
             z-index: 3000;
             animation: slideIn 0.3s ease;
-            box-shadow: var(--shadow-lg);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
             display: flex;
             align-items: center;
             gap: 10px;
         }
-        .notification.error { background: var(--danger); }
-        .notification.warning { background: var(--warning); color: var(--primary-dark); }
-        .notification.info { background: var(--info); }
+        .notification.error { background: #dc3545; }
+        .notification.warning { background: #ffc107; color: #1e3a5f; }
+        .notification.info { background: #17a2b8; }
         
-        /* لوحة تحكم المستخدم */
+        /* لوحة المستخدم */
         .user-dashboard {
             display: none;
             position: fixed;
             top: 70px;
             right: 20px;
             width: 320px;
-            background: var(--white);
-            border-radius: var(--radius-xl);
-            box-shadow: var(--shadow-xl);
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
             z-index: 1500;
-            overflow: hidden;
         }
-        .user-dashboard.active { display: block; animation: slideIn 0.3s ease; }
-        .user-dashboard-header {
-            background: linear-gradient(135deg, var(--primary-dark), var(--primary));
-            color: white;
-            padding: 1rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+        .user-dashboard.active { display: block; }
+        .user-dashboard-header { background: #1e3a5f; color: white; padding: 1rem; display: flex; justify-content: space-between; }
         .user-dashboard-body { padding: 1rem; }
-        .user-stats { display: flex; justify-content: space-between; margin-bottom: 1rem; gap: 1rem; }
-        .user-stat { text-align: center; flex: 1; background: var(--gray-light); padding: 0.5rem; border-radius: var(--radius-md); }
-        .user-stat-number { font-size: 1.5rem; font-weight: bold; color: var(--secondary); }
+        .user-stats { display: flex; gap: 1rem; margin-bottom: 1rem; }
+        .user-stat { text-align: center; flex: 1; background: #eef2f8; padding: 0.5rem; border-radius: 12px; }
+        .user-stat-number { font-size: 1.5rem; font-weight: bold; color: #c7a12b; }
         
         /* شارة التوثيق */
         .verified-badge {
             display: inline-block;
-            background: var(--success);
+            background: #28a745;
             color: white;
             padding: 0.2rem 0.5rem;
-            border-radius: var(--radius-full);
-            font-size: 0.6rem;
-            margin-left: 0.5rem;
-        }
-        .unverified-badge {
-            display: inline-block;
-            background: var(--warning);
-            color: var(--primary-dark);
-            padding: 0.2rem 0.5rem;
-            border-radius: var(--radius-full);
+            border-radius: 20px;
             font-size: 0.6rem;
             margin-left: 0.5rem;
         }
         
         /* شريط التنقل */
         .amazon-nav {
-            background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+            background: linear-gradient(135deg, #1e3a5f, #2c5282);
             color: white;
             padding: 0.7rem 1.5rem;
             display: flex;
@@ -175,112 +82,76 @@
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: var(--shadow-lg);
         }
-        .nav-logo {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            cursor: pointer;
-        }
-        .nav-logo svg {
-            width: 40px;
-            height: 40px;
-        }
-        .nav-logo span {
-            font-size: 1.5rem;
-            font-weight: 800;
-            background: linear-gradient(135deg, #fff, var(--secondary-light));
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-        .nav-links {
-            display: flex;
-            gap: 0.4rem;
-            flex-wrap: wrap;
-        }
+        .nav-logo { display: flex; align-items: center; gap: 0.5rem; cursor: pointer; }
+        .nav-logo svg { width: 40px; height: 40px; }
+        .nav-logo span { font-size: 1.5rem; font-weight: 800; background: linear-gradient(135deg, #fff, #e6b422); -webkit-background-clip: text; background-clip: text; color: transparent; }
+        .nav-links { display: flex; gap: 0.4rem; flex-wrap: wrap; }
         .nav-links a {
             color: #f0f4fa;
             text-decoration: none;
             font-weight: 600;
             font-size: 0.7rem;
-            transition: var(--transition);
+            transition: 0.2s;
             border-bottom: 2px solid transparent;
             cursor: pointer;
             padding: 0.4rem 0.6rem;
-            border-radius: var(--radius-full);
+            border-radius: 9999px;
         }
-        .nav-links a:hover, .nav-links a.active {
-            color: var(--secondary);
-            background: rgba(199, 161, 43, 0.1);
-            border-bottom-color: var(--secondary);
-        }
+        .nav-links a:hover, .nav-links a.active { color: #c7a12b; background: rgba(199,161,43,0.1); border-bottom-color: #c7a12b; }
         
-        /* شريط البحث المتقدم */
+        /* شريط البحث */
         .search-bar {
-            background: var(--white);
-            border-radius: var(--radius-3xl);
+            background: white;
+            border-radius: 28px;
             padding: 1rem 1.5rem;
             margin-bottom: 1.5rem;
-            box-shadow: var(--shadow-md);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
         }
-        .search-row {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-            align-items: flex-end;
-        }
+        .search-row { display: flex; gap: 1rem; flex-wrap: wrap; align-items: flex-end; }
         .search-group { flex: 1; min-width: 150px; }
-        .search-group label { font-size: 0.7rem; color: var(--text-gray); display: block; margin-bottom: 0.2rem; }
+        .search-group label { font-size: 0.7rem; color: #4a627a; display: block; margin-bottom: 0.2rem; }
         .search-group input, .search-group select {
             width: 100%;
             padding: 0.6rem;
-            border: 1px solid var(--gray-light);
-            border-radius: var(--radius-md);
-            font-family: inherit;
+            border: 1px solid #eef2f8;
+            border-radius: 12px;
         }
         .search-btn {
-            background: var(--secondary);
-            color: var(--primary-dark);
+            background: #c7a12b;
+            color: #1e3a5f;
             border: none;
             padding: 0.6rem 1.5rem;
-            border-radius: var(--radius-full);
+            border-radius: 9999px;
             font-weight: 600;
             cursor: pointer;
-            transition: var(--transition);
         }
-        .search-btn:hover { background: var(--primary-dark); color: var(--white); }
+        .search-btn:hover { background: #1e3a5f; color: white; }
         
         /* أزرار */
-        .top-bar { display: flex; gap: 0.5rem; align-items: center; position: relative; }
+        .top-bar { display: flex; gap: 0.5rem; align-items: center; }
         .lang-switch { display: flex; gap: 0.5rem; }
-        .lang-btn, .login-btn, .user-menu-btn, .cart-btn {
+        .lang-btn, .login-btn, .cart-btn {
             background: rgba(255,255,255,0.15);
             border: none;
             padding: 0.3rem 0.9rem;
-            border-radius: var(--radius-full);
-            font-family: inherit;
-            font-weight: 500;
+            border-radius: 9999px;
             font-size: 0.8rem;
             cursor: pointer;
             color: white;
-            transition: var(--transition);
+            transition: 0.2s;
         }
-        .lang-btn.active, .login-btn:hover, .user-menu-btn:hover, .cart-btn:hover {
-            background: var(--secondary);
-            color: var(--primary-dark);
-        }
+        .lang-btn.active, .login-btn:hover, .cart-btn:hover { background: #c7a12b; color: #1e3a5f; }
         .cart-btn { position: relative; }
         .cart-count {
             position: absolute;
             top: -8px;
             right: -8px;
-            background: var(--danger);
+            background: #dc3545;
             color: white;
             font-size: 0.6rem;
             padding: 0.1rem 0.4rem;
-            border-radius: var(--radius-full);
+            border-radius: 9999px;
         }
         
         .container { max-width: 1400px; margin: 0 auto; padding: 1.5rem; }
@@ -289,17 +160,17 @@
         .hero {
             text-align: center;
             margin-bottom: 1.5rem;
-            background: linear-gradient(135deg, var(--white), var(--gray-light));
-            border-radius: var(--radius-3xl);
+            background: linear-gradient(135deg, white, #eef2f8);
+            border-radius: 36px;
             padding: 2rem;
-            box-shadow: var(--shadow-md);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
         }
-        .hero h1 { font-size: 2rem; color: var(--primary-dark); margin-bottom: 0.5rem; }
-        .tagline { font-size: 1rem; color: var(--secondary); font-weight: 700; }
+        .hero h1 { font-size: 2rem; color: #1e3a5f; margin-bottom: 0.5rem; }
+        .tagline { font-size: 1rem; color: #c7a12b; font-weight: 700; }
         .user-info {
-            background: var(--gray-light);
+            background: #eef2f8;
             padding: 0.5rem 1rem;
-            border-radius: var(--radius-xl);
+            border-radius: 20px;
             font-size: 0.8rem;
             display: flex;
             align-items: center;
@@ -323,84 +194,57 @@
             font-size: 0.8rem;
             font-weight: 600;
             cursor: pointer;
-            border-radius: var(--radius-full);
-            transition: var(--transition);
-            color: var(--text-gray);
+            border-radius: 9999px;
+            color: #4a627a;
         }
-        .tab-btn.active {
-            background: var(--primary);
-            color: white;
-        }
-        .tab-pane {
-            display: none;
-            animation: fadeIn 0.3s;
-        }
+        .tab-btn.active { background: #1e3a5f; color: white; }
+        .tab-pane { display: none; animation: fadeIn 0.3s; }
         .tab-pane.active-pane { display: block; }
         
         /* البطاقات */
         .card {
-            background: var(--white);
-            border-radius: var(--radius-2xl);
+            background: white;
+            border-radius: 24px;
             padding: 1.2rem;
             margin-bottom: 1.2rem;
-            box-shadow: var(--shadow-sm);
-            border: 1px solid var(--gray-light);
-            transition: var(--transition);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            border: 1px solid #eef2f8;
         }
-        .card:hover { box-shadow: var(--shadow-md); }
         .card h3 {
             font-size: 1.1rem;
-            color: var(--primary-dark);
+            color: #1e3a5f;
             margin-bottom: 0.8rem;
-            border-left: 4px solid var(--secondary);
+            border-left: 4px solid #c7a12b;
             padding-left: 0.8rem;
         }
-        body.lang-ar .card h3 {
-            border-left: none;
-            border-right: 4px solid var(--secondary);
-            padding-left: 0;
-            padding-right: 0.8rem;
-        }
+        body.lang-ar .card h3 { border-left: none; border-right: 4px solid #c7a12b; padding-left: 0; padding-right: 0.8rem; }
         
         /* النماذج */
         .form-row { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 0.5rem; }
         .form-group { flex: 1; min-width: 120px; }
-        .form-group label { display: block; font-size: 0.7rem; color: var(--text-gray); margin-bottom: 0.2rem; }
+        .form-group label { display: block; font-size: 0.7rem; color: #4a627a; margin-bottom: 0.2rem; }
         input, select, textarea {
             width: 100%;
             padding: 0.6rem;
             margin: 0.2rem 0;
             border: 1px solid #ccc;
-            border-radius: var(--radius-md);
-            font-family: inherit;
+            border-radius: 12px;
             font-size: 0.85rem;
-            transition: var(--transition);
-        }
-        input:focus, select:focus, textarea:focus {
-            outline: none;
-            border-color: var(--secondary);
-            box-shadow: 0 0 0 2px rgba(199, 161, 43, 0.2);
         }
         .btn {
-            background: var(--primary);
+            background: #1e3a5f;
             color: white;
             border: none;
             padding: 0.6rem 1rem;
-            border-radius: var(--radius-full);
+            border-radius: 9999px;
             font-weight: 600;
             cursor: pointer;
             width: 100%;
-            transition: var(--transition);
-            font-size: 0.85rem;
+            transition: 0.2s;
         }
-        .btn:hover {
-            background: var(--secondary);
-            color: var(--primary-dark);
-            transform: translateY(-2px);
-        }
+        .btn:hover { background: #c7a12b; color: #1e3a5f; transform: translateY(-2px); }
         .btn-sm { width: auto; padding: 0.3rem 0.8rem; display: inline-block; font-size: 0.75rem; }
         
-        /* الشبكات */
         .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.2rem; }
         
         /* معرض المنتجات */
@@ -411,18 +255,14 @@
             margin-top: 0.8rem;
         }
         .product-card {
-            background: var(--white);
-            border-radius: var(--radius-xl);
+            background: white;
+            border-radius: 20px;
             overflow: hidden;
-            transition: var(--transition);
+            transition: 0.3s;
             cursor: pointer;
-            position: relative;
-            box-shadow: var(--shadow-sm);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
         }
-        .product-card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-xl);
-        }
+        .product-card:hover { transform: translateY(-8px); box-shadow: 0 12px 24px rgba(0,0,0,0.12); }
         .product-image-container {
             position: relative;
             overflow: hidden;
@@ -433,253 +273,68 @@
             height: 100%;
             object-fit: cover;
             transition: transform 0.5s ease;
-            background: var(--gray-light);
         }
         .product-card:hover .product-image { transform: scale(1.05); }
-        .image-zoom {
-            position: absolute;
-            bottom: 10px;
-            right: 10px;
-            background: rgba(0,0,0,0.6);
-            color: white;
-            padding: 0.3rem 0.6rem;
-            border-radius: var(--radius-full);
-            font-size: 0.7rem;
-            opacity: 0;
-            transition: var(--transition);
-        }
-        .product-card:hover .image-zoom { opacity: 1; }
         .product-info { padding: 1rem; }
-        .product-title { font-size: 1rem; font-weight: 700; color: var(--primary-dark); margin-bottom: 0.3rem; }
-        .product-price { font-size: 1.1rem; font-weight: bold; color: var(--secondary); margin-bottom: 0.3rem; }
-        .product-details { font-size: 0.7rem; color: var(--text-gray); margin-bottom: 0.5rem; line-height: 1.4; }
+        .product-title { font-size: 1rem; font-weight: 700; color: #1e3a5f; }
+        .product-price { font-size: 1.1rem; font-weight: bold; color: #c7a12b; }
         .product-meta { display: flex; justify-content: space-between; align-items: center; margin-top: 0.5rem; }
-        .product-views { font-size: 0.6rem; color: var(--text-gray); }
         .badge {
-            display: inline-block;
-            background: var(--secondary);
-            color: var(--primary-dark);
+            background: #c7a12b;
+            color: #1e3a5f;
             padding: 0.2rem 0.5rem;
-            border-radius: var(--radius-full);
+            border-radius: 9999px;
             font-size: 0.6rem;
             font-weight: bold;
         }
         .add-to-cart {
-            background: var(--primary);
+            background: #1e3a5f;
             color: white;
             border: none;
             padding: 0.3rem 0.8rem;
-            border-radius: var(--radius-full);
+            border-radius: 9999px;
             cursor: pointer;
             font-size: 0.7rem;
-            transition: var(--transition);
         }
-        .add-to-cart:hover { background: var(--secondary); color: var(--primary-dark); }
-        .share-btn {
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            background: rgba(0,0,0,0.6);
-            color: white;
-            border: none;
-            border-radius: 50%;
-            width: 32px;
-            height: 32px;
-            cursor: pointer;
-            font-size: 0.8rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            transition: var(--transition);
-        }
-        .product-card:hover .share-btn { opacity: 1; }
-        .share-btn:hover { background: #25D366; }
+        .add-to-cart:hover { background: #c7a12b; color: #1e3a5f; }
         
-        /* شهادات العملاء */
-        .testimonials-grid {
+        /* الفوتر */
+        .footer {
+            background: #1e3a5f;
+            color: white;
+            margin-top: 2rem;
+            padding: 2rem 1.5rem 1.5rem;
+            border-radius: 28px 28px 0 0;
+        }
+        .footer-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 1.5rem;
-            margin-top: 1rem;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
         }
-        .testimonial-card {
-            background: var(--white);
-            border-radius: var(--radius-xl);
-            padding: 1.2rem;
-            text-align: center;
-            box-shadow: var(--shadow-sm);
-            transition: var(--transition);
-        }
-        .testimonial-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); }
-        .testimonial-avatar {
-            width: 70px;
-            height: 70px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 1rem;
-            font-size: 2rem;
-            color: white;
-        }
-        .testimonial-text { font-size: 0.85rem; color: var(--text-gray); margin-bottom: 1rem; line-height: 1.6; }
-        .testimonial-name { font-weight: 700; color: var(--primary-dark); }
-        .testimonial-title { font-size: 0.7rem; color: var(--secondary); }
-        .testimonial-stars { color: var(--secondary); margin-top: 0.5rem; }
-        
-        /* بطاقات الطيران */
-        .flight-card {
-            background: linear-gradient(135deg, var(--primary-dark), var(--primary));
-            color: white;
-            border-radius: var(--radius-xl);
-            padding: 1rem;
-            margin-bottom: 1rem;
-            transition: var(--transition);
-        }
-        .flight-card:hover { transform: translateX(-5px); background: var(--secondary); color: var(--primary-dark); }
-        .flight-route { font-size: 1.1rem; font-weight: bold; margin-bottom: 0.5rem; }
-        .flight-details { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; }
-        
-        /* المدونة */
-        .blog-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 1.5rem;
-            margin-top: 1rem;
-        }
-        .blog-card {
-            background: var(--white);
-            border-radius: var(--radius-xl);
-            overflow: hidden;
-            box-shadow: var(--shadow-sm);
-            transition: var(--transition);
-            cursor: pointer;
-        }
-        .blog-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); }
-        .blog-image {
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-            background: linear-gradient(135deg, var(--primary-dark), var(--primary));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3rem;
-        }
-        .blog-content { padding: 1.2rem; }
-        .blog-title { font-size: 1rem; font-weight: 700; color: var(--primary-dark); margin-bottom: 0.5rem; }
-        .blog-summary { font-size: 0.8rem; color: var(--text-gray); margin-bottom: 1rem; line-height: 1.5; }
-        .blog-meta {
-            display: flex;
-            justify-content: space-between;
-            font-size: 0.7rem;
-            color: #8ba0b5;
-            border-top: 1px solid var(--gray-light);
-            padding-top: 0.8rem;
-        }
-        .blog-category {
-            display: inline-block;
-            background: var(--secondary);
-            color: var(--primary-dark);
-            padding: 0.2rem 0.5rem;
-            border-radius: var(--radius-full);
-            font-size: 0.6rem;
+        .footer-section h4 { color: #c7a12b; margin-bottom: 1rem; }
+        .footer-section a {
+            color: #eef2f8;
+            text-decoration: none;
+            display: block;
             margin-bottom: 0.5rem;
-        }
-        
-        /* الأسئلة الشائعة */
-        .faq-item { border-bottom: 1px solid var(--gray-light); margin-bottom: 1rem; }
-        .faq-question {
-            background: #f8f9fa;
-            padding: 1rem;
-            border-radius: var(--radius-md);
+            font-size: 0.8rem;
             cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-weight: 600;
         }
-        .faq-question:hover { background: var(--gray-light); }
-        .faq-answer { padding: 1rem; display: none; color: var(--text-gray); font-size: 0.85rem; line-height: 1.6; }
-        .faq-answer.show { display: block; }
-        
-        /* صفحة اتصل بنا */
-        .contact-info { display: flex; flex-direction: column; gap: 1rem; }
-        .contact-card {
-            background: var(--gray-light);
-            padding: 1rem;
-            border-radius: var(--radius-md);
+        .footer-section a:hover { color: #c7a12b; transform: translateX(-5px); }
+        .social-links { display: flex; gap: 1rem; margin-top: 1rem; }
+        .social-links a {
+            width: 36px;
+            height: 36px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
             display: flex;
             align-items: center;
-            gap: 1rem;
-            transition: var(--transition);
+            justify-content: center;
         }
-        .contact-card:hover { transform: translateX(-5px); background: var(--secondary-light); }
-        .contact-card i { font-size: 1.5rem; color: var(--secondary); }
-        
-        /* نجوم التقييم */
-        .rating-input {
-            display: flex;
-            gap: 0.3rem;
-            direction: ltr;
-            margin: 0.5rem 0;
-        }
-        .rating-star {
-            font-size: 1.5rem;
-            cursor: pointer;
-            color: #ddd;
-            transition: var(--transition);
-        }
-        .rating-star:hover, .rating-star.active { color: var(--secondary); }
-        
-        /* سلة التسوق */
-        .cart-sidebar {
-            position: fixed;
-            top: 0;
-            right: -400px;
-            width: 400px;
-            height: 100%;
-            background: var(--white);
-            box-shadow: var(--shadow-xl);
-            z-index: 2000;
-            transition: right 0.3s ease;
-            overflow-y: auto;
-        }
-        body.lang-ar .cart-sidebar { right: auto; left: -400px; }
-        body.lang-ar .cart-sidebar.open { left: 0; right: auto; }
-        .cart-sidebar.open { right: 0; }
-        .cart-header {
-            background: var(--primary-dark);
-            color: white;
-            padding: 1rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .cart-item {
-            display: flex;
-            gap: 1rem;
-            padding: 1rem;
-            border-bottom: 1px solid var(--gray-light);
-        }
-        .cart-item img { width: 60px; height: 60px; object-fit: cover; border-radius: var(--radius-sm); }
-        .cart-item-details { flex: 1; }
-        .cart-item-title { font-weight: 600; }
-        .cart-item-price { color: var(--secondary); }
-        .cart-total { padding: 1rem; text-align: center; font-weight: bold; border-top: 2px solid var(--gray-light); }
-        .cart-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.5);
-            z-index: 1999;
-            display: none;
-        }
-        .cart-overlay.open { display: block; }
+        .social-links a:hover { background: #c7a12b; transform: translateY(-3px); }
+        .footer-bottom { text-align: center; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.7rem; }
+        .verified { color: #c7a12b; font-weight: 700; margin-top: 0.5rem; }
         
         /* النوافذ المنبثقة */
         .modal {
@@ -696,11 +351,9 @@
         }
         .modal-content {
             background: white;
-            border-radius: var(--radius-3xl);
-            max-width: 600px;
+            border-radius: 28px;
+            max-width: 500px;
             width: 90%;
-            max-height: 80vh;
-            overflow-y: auto;
             padding: 1.5rem;
             position: relative;
         }
@@ -708,7 +361,7 @@
             position: absolute;
             top: 1rem;
             right: 1rem;
-            background: var(--danger);
+            background: #dc3545;
             color: white;
             border: none;
             width: 32px;
@@ -718,117 +371,14 @@
         }
         body.lang-ar .modal-close { right: auto; left: 1rem; }
         
-        /* الفوتر */
-        .footer {
-            background: var(--primary-dark);
-            color: white;
-            margin-top: 2rem;
-            padding: 2rem 1.5rem 1.5rem;
-            border-radius: 28px 28px 0 0;
-        }
-        .footer-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
-        .footer-section h4 { color: var(--secondary); margin-bottom: 1rem; font-size: 1rem; }
-        .footer-section a {
-            color: #eef2f8;
-            text-decoration: none;
-            display: block;
-            margin-bottom: 0.5rem;
-            font-size: 0.8rem;
-            transition: var(--transition);
-            cursor: pointer;
-        }
-        .footer-section a:hover { color: var(--secondary); transform: translateX(-5px); }
-        body.lang-ar .footer-section a:hover { transform: translateX(5px); }
-        .social-links { display: flex; gap: 1rem; margin-top: 1rem; flex-wrap: wrap; }
-        .social-links a {
-            width: 36px;
-            height: 36px;
-            background: rgba(255,255,255,0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: var(--transition);
-        }
-        .social-links a:hover { background: var(--secondary); transform: translateY(-3px); }
-        .footer-bottom { text-align: center; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.7rem; }
-        .verified { color: var(--secondary); font-weight: 700; margin-top: 0.5rem; }
-        
-        /* لوحة الوكيل */
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
-            gap: 0.8rem;
-            margin-bottom: 1.5rem;
-        }
-        .stat-card {
-            background: linear-gradient(135deg, var(--primary-dark), var(--primary));
-            color: white;
-            border-radius: var(--radius-xl);
-            padding: 0.8rem;
-            text-align: center;
-        }
-        .stat-number { font-size: 1.5rem; font-weight: 800; }
-        .chat-list {
-            max-height: 200px;
-            overflow-y: auto;
-            border: 1px solid var(--gray-light);
-            border-radius: var(--radius-md);
-            padding: 0.4rem;
-        }
-        .chat-message {
-            padding: 0.5rem;
-            border-bottom: 1px solid var(--gray-light);
-            font-size: 0.8rem;
-        }
-        .rating-stars { color: var(--secondary); font-size: 0.65rem; }
-        
-        /* معاينة الصور */
-        .image-preview {
-            display: flex;
-            gap: 0.5rem;
-            flex-wrap: wrap;
-            margin-top: 0.5rem;
-        }
-        .image-preview img {
-            width: 50px;
-            height: 50px;
-            object-fit: cover;
-            border-radius: var(--radius-sm);
-        }
-        
-        /* تحسين الأداء - Lazy Loading */
-        img[loading="lazy"] {
-            opacity: 0;
-            animation: fadeIn 0.5s ease forwards;
-        }
-        
-        /* استجابة الشاشات */
         @media (max-width: 768px) {
             .amazon-nav { flex-direction: column; text-align: center; }
             .nav-links { justify-content: center; }
             .tabs { justify-content: center; }
-            .footer-grid { grid-template-columns: 1fr; text-align: center; }
-            .social-links { justify-content: center; }
-            .form-row { flex-direction: column; }
-            .container { padding: 1rem; }
-            .cart-sidebar { width: 100%; right: -100%; }
-            body.lang-ar .cart-sidebar { left: -100%; right: auto; }
-            .gallery-grid { grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); }
             .search-row { flex-direction: column; }
             .search-btn { width: 100%; }
-        }
-        
-        @media (max-width: 480px) {
+            .container { padding: 1rem; }
             .gallery-grid { grid-template-columns: 1fr; }
-            .stats-grid { grid-template-columns: repeat(2, 1fr); }
-            .stat-number { font-size: 1.2rem; }
-            .product-image-container { height: 180px; }
         }
     </style>
 </head>
@@ -844,19 +394,19 @@
             <span>Asmara.Store</span>
         </div>
         <div class="nav-links">
-            <a class="nav-tab-link" data-tab="home" id="navHome">🏠 Home</a>
-            <a class="nav-tab-link" data-tab="flight" id="navFlight">✈️ Flights</a>
-            <a class="nav-tab-link" data-tab="realestate" id="navRealEstate">🏠 Real Estate</a>
-            <a class="nav-tab-link" data-tab="electronics" id="navElectronics">📱 Electronics</a>
-            <a class="nav-tab-link" data-tab="cars" id="navCars">🚗 Cars</a>
-            <a class="nav-tab-link" data-tab="jobs" id="navJobs">💼 Jobs</a>
-            <a class="nav-tab-link" data-tab="general" id="navGeneral">📋 Services</a>
-            <a class="nav-tab-link" data-tab="blog" id="navBlog">📰 Blog</a>
-            <a class="nav-tab-link" data-tab="faq" id="navFaq">❓ FAQ</a>
-            <a class="nav-tab-link" data-tab="contact" id="navContact">📞 Contact</a>
-            <a class="nav-tab-link" data-tab="payment" id="navPayment">💳 Payment</a>
-            <a class="nav-tab-link" data-tab="messaging" id="navMessaging">💬 Messaging</a>
-            <a class="nav-tab-link" data-tab="ratings" id="navRatings">⭐ Ratings</a>
+            <a class="nav-tab-link" data-tab="home">🏠 Home</a>
+            <a class="nav-tab-link" data-tab="flight">✈️ Flights</a>
+            <a class="nav-tab-link" data-tab="realestate">🏠 Real Estate</a>
+            <a class="nav-tab-link" data-tab="electronics">📱 Electronics</a>
+            <a class="nav-tab-link" data-tab="cars">🚗 Cars</a>
+            <a class="nav-tab-link" data-tab="jobs">💼 Jobs</a>
+            <a class="nav-tab-link" data-tab="general">📋 Services</a>
+            <a class="nav-tab-link" data-tab="blog">📰 Blog</a>
+            <a class="nav-tab-link" data-tab="faq">❓ FAQ</a>
+            <a class="nav-tab-link" data-tab="contact">📞 Contact</a>
+            <a class="nav-tab-link" data-tab="payment">💳 Payment</a>
+            <a class="nav-tab-link" data-tab="messaging">💬 Messaging</a>
+            <a class="nav-tab-link" data-tab="ratings">⭐ Ratings</a>
         </div>
         <div class="top-bar">
             <button class="cart-btn" onclick="toggleCart()">🛒 <span class="cart-count" id="cartCount">0</span></button>
@@ -874,29 +424,29 @@
         </div>
     </div>
 
-    <!-- ===== سلة التسوق الجانبية ===== -->
-    <div id="cartOverlay" class="cart-overlay" onclick="toggleCart()"></div>
-    <div id="cartSidebar" class="cart-sidebar">
-        <div class="cart-header">
+    <!-- ===== سلة التسوق ===== -->
+    <div id="cartSidebar" class="cart-sidebar" style="position:fixed; top:0; right:-400px; width:400px; height:100%; background:white; box-shadow:0 10px 30px rgba(0,0,0,0.15); z-index:2000; transition:right 0.3s; overflow-y:auto;">
+        <div style="background:#1e3a5f; color:white; padding:1rem; display:flex; justify-content:space-between;">
             <span>🛒 Shopping Cart</span>
-            <button class="btn-sm" onclick="toggleCart()" style="background:none; color:white;">✕</button>
+            <button onclick="toggleCart()" style="background:none; border:none; color:white; cursor:pointer;">✕</button>
         </div>
         <div id="cartItems"></div>
-        <div class="cart-total" id="cartTotal">Total: $0</div>
-        <button class="btn" onclick="checkout()" style="margin: 1rem; width: calc(100% - 2rem);">Checkout</button>
+        <div class="cart-total" id="cartTotal" style="padding:1rem; text-align:center; font-weight:bold; border-top:2px solid #eef2f8;">Total: $0</div>
+        <button class="btn" onclick="checkout()" style="margin:1rem; width:calc(100% - 2rem);">Checkout</button>
     </div>
+    <div id="cartOverlay" style="position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); z-index:1999; display:none;" onclick="toggleCart()"></div>
 
-    <!-- ===== لوحة تحكم المستخدم ===== -->
+    <!-- ===== لوحة المستخدم ===== -->
     <div id="userDashboard" class="user-dashboard">
         <div class="user-dashboard-header">
             <span><i class="fas fa-user-circle"></i> <span id="dashboardUserName"></span></span>
-            <button class="btn-sm" onclick="toggleUserDashboard()" style="background: none; color: white;">✕</button>
+            <button class="btn-sm" onclick="toggleUserDashboard()" style="background:none; color:white;">✕</button>
         </div>
         <div class="user-dashboard-body">
             <div class="user-stats">
-                <div class="user-stat"><div class="user-stat-number" id="userAdsCount">0</div><div id="myAdsLabel">My Ads</div></div>
-                <div class="user-stat"><div class="user-stat-number" id="userMessagesCount">0</div><div id="myMessagesLabel">Messages</div></div>
-                <div class="user-stat"><div class="user-stat-number" id="userBalance">$0</div><div id="myBalanceLabel">Balance</div></div>
+                <div class="user-stat"><div class="user-stat-number" id="userAdsCount">0</div><div>My Ads</div></div>
+                <div class="user-stat"><div class="user-stat-number" id="userMessagesCount">0</div><div>Messages</div></div>
+                <div class="user-stat"><div class="user-stat-number" id="userBalance">$0</div><div>Balance</div></div>
             </div>
             <button class="btn-sm" style="width:100%; margin-bottom:0.5rem;" onclick="showMyOrders()">📦 My Orders</button>
             <button class="btn-sm" style="width:100%; margin-bottom:0.5rem;" onclick="showWishlist()">❤️ Wishlist</button>
@@ -905,119 +455,86 @@
         </div>
     </div>
 
-    <!-- ===== نافذة تسجيل الدخول ===== -->
+    <!-- ===== نوافذ تسجيل الدخول ===== -->
     <div id="loginModal" class="modal">
         <div class="modal-content">
             <button class="modal-close" onclick="closeLoginModal()">✕</button>
-            <h2 id="loginTitle">🔐 Login</h2>
+            <h2>🔐 Login</h2>
             <input type="text" id="loginUsername" placeholder="Username" style="margin-top:1rem;">
             <input type="password" id="loginPassword" placeholder="Password">
-            <button class="btn" onclick="loginUser()" id="loginSubmitBtn">Login</button>
+            <button class="btn" onclick="loginUser()">Login</button>
             <p style="margin-top:1rem; font-size:0.8rem;">Demo: user / 123456</p>
             <p style="margin-top:0.5rem; font-size:0.8rem;">Agent: agent / agent123</p>
-            <hr style="margin: 1rem 0;">
-            <p style="text-align:center; font-size:0.8rem;">Don't have an account? <a href="#" onclick="showRegister()" style="color:var(--secondary);">Create Account</a></p>
+            <hr style="margin:1rem 0;">
+            <p style="text-align:center;"><a href="#" onclick="showRegister()" style="color:#c7a12b;">Create Account</a></p>
         </div>
     </div>
 
-    <!-- ===== نافذة إنشاء حساب ===== -->
     <div id="registerModal" class="modal">
         <div class="modal-content">
             <button class="modal-close" onclick="closeRegisterModal()">✕</button>
-            <h2>📝 Create New Account</h2>
+            <h2>📝 Create Account</h2>
             <input type="text" id="regName" placeholder="Full Name" style="margin-top:1rem;">
-            <input type="email" id="regEmail" placeholder="Email Address">
-            <input type="tel" id="regPhone" placeholder="Phone Number">
+            <input type="email" id="regEmail" placeholder="Email">
+            <input type="tel" id="regPhone" placeholder="Phone">
             <input type="password" id="regPassword" placeholder="Password">
             <input type="password" id="regConfirm" placeholder="Confirm Password">
             <button class="btn" onclick="registerUser()">Create Account</button>
         </div>
     </div>
 
-    <!-- ===== نافذة توثيق الحساب ===== -->
     <div id="verifyModal" class="modal">
         <div class="modal-content">
             <button class="modal-close" onclick="closeVerifyModal()">✕</button>
-            <h2>🔐 Verify Your Account</h2>
-            <p style="margin: 1rem 0;">Enter the verification code sent to your phone:</p>
-            <input type="text" id="verifyCode" placeholder="6-digit code" style="text-align: center; font-size: 1.5rem;">
-            <button class="btn" onclick="submitVerification()" style="margin-top: 1rem;">Verify</button>
-            <p style="margin-top: 1rem; font-size: 0.8rem; text-align: center;">
-                <a href="#" onclick="resendVerificationCode()">Resend code</a>
-            </p>
+            <h2>🔐 Verify Account</h2>
+            <p>Enter verification code (123456):</p>
+            <input type="text" id="verifyCode" placeholder="6-digit code" style="text-align:center; font-size:1.5rem;">
+            <button class="btn" onclick="submitVerification()" style="margin-top:1rem;">Verify</button>
         </div>
     </div>
 
     <div class="container">
-        <!-- ===== شريط البحث المتقدم ===== -->
+        <!-- ===== شريط البحث ===== -->
         <div class="search-bar">
             <div class="search-row">
-                <div class="search-group">
-                    <label>🔍 Search</label>
-                    <input type="text" id="searchInput" placeholder="Search products...">
-                </div>
-                <div class="search-group">
-                    <label>📍 City</label>
-                    <select id="searchCity">
-                        <option value="">All</option>
-                        <option value="Asmara">Asmara</option>
-                        <option value="Massawa">Massawa</option>
-                        <option value="Keren">Keren</option>
-                    </select>
-                </div>
-                <div class="search-group">
-                    <label>💰 Price from</label>
-                    <input type="number" id="priceMin" placeholder="Min">
-                </div>
-                <div class="search-group">
-                    <label>💰 Price to</label>
-                    <input type="number" id="priceMax" placeholder="Max">
-                </div>
-                <div class="search-group">
-                    <label>📂 Category</label>
-                    <select id="searchCategory">
-                        <option value="">All</option>
-                        <option value="realestate">Real Estate</option>
-                        <option value="electronics">Electronics</option>
-                        <option value="cars">Cars</option>
-                        <option value="jobs">Jobs</option>
-                        <option value="general">Services</option>
-                    </select>
-                </div>
-                <button class="search-btn" onclick="performSearch()">🔍 Advanced Search</button>
+                <div class="search-group"><label>🔍 Search</label><input type="text" id="searchInput" placeholder="Search products..."></div>
+                <div class="search-group"><label>📍 City</label><select id="searchCity"><option value="">All</option><option value="Asmara">Asmara</option><option value="Massawa">Massawa</option><option value="Keren">Keren</option></select></div>
+                <div class="search-group"><label>💰 Price from</label><input type="number" id="priceMin" placeholder="Min"></div>
+                <div class="search-group"><label>💰 Price to</label><input type="number" id="priceMax" placeholder="Max"></div>
+                <div class="search-group"><label>📂 Category</label><select id="searchCategory"><option value="">All</option><option value="realestate">Real Estate</option><option value="electronics">Electronics</option><option value="cars">Cars</option><option value="jobs">Jobs</option><option value="general">Services</option></select></div>
+                <button class="search-btn" onclick="performSearch()">🔍 Search</button>
             </div>
-            <div id="searchSuggestions" class="search-suggestions" style="display: none;"></div>
         </div>
 
         <!-- ===== الصفحة الرئيسية ===== -->
         <div id="homePane" class="tab-pane active-pane">
             <div class="hero">
                 <h1>🇪🇷 Asmara.Store</h1>
-                <div class="tagline" id="tagline">"A platform that respects our customs and traditions - In the spirit of Eritrean law"</div>
-                <p id="homeIntro" style="margin-top: 1rem; color: var(--text-gray);">A trusted platform for flights, real estate, services, and official content.</p>
+                <div class="tagline">"A platform that respects our customs and traditions"</div>
+                <p style="margin-top:1rem; color:#4a627a;">A trusted platform for flights, real estate, services, and official content.</p>
             </div>
             
-            <div class="card"><h3>⭐ Customer Reviews</h3><div id="testimonialsGrid" class="testimonials-grid"></div></div>
-            <div class="card"><h3 id="homeFlightsTitle">🏠 Latest Properties</h3><div id="homeRealEstate" class="gallery-grid"></div></div>
-            <div class="card"><h3 id="homeElectronicsTitle">📱 Latest Electronics</h3><div id="homeElectronics" class="gallery-grid"></div></div>
-            <div class="card"><h3 id="homeCarsTitle">🚗 Latest Cars</h3><div id="homeCars" class="gallery-grid"></div></div>
-            <div class="card"><h3 id="homeJobsTitle">💼 Latest Jobs</h3><div id="homeJobs" class="gallery-grid"></div></div>
-            <div class="card"><h3 id="homeServicesTitle">📋 Featured Services</h3><div id="homeServices" class="gallery-grid"></div></div>
-            <div class="card"><h3 id="homeBlogTitle">📰 Latest Articles</h3><div id="homeBlogPreview"></div></div>
+            <div class="card"><h3>⭐ Customer Reviews</h3><div id="testimonialsGrid" class="testimonials-grid" style="display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:1.5rem;"></div></div>
+            <div class="card"><h3>🏠 Latest Properties</h3><div id="homeRealEstate" class="gallery-grid"></div></div>
+            <div class="card"><h3>📱 Latest Electronics</h3><div id="homeElectronics" class="gallery-grid"></div></div>
+            <div class="card"><h3>🚗 Latest Cars</h3><div id="homeCars" class="gallery-grid"></div></div>
+            <div class="card"><h3>💼 Latest Jobs</h3><div id="homeJobs" class="gallery-grid"></div></div>
+            <div class="card"><h3>📋 Featured Services</h3><div id="homeServices" class="gallery-grid"></div></div>
+            <div class="card"><h3>📰 Latest Articles</h3><div id="homeBlogPreview"></div></div>
         </div>
 
         <!-- ===== قسم الطيران ===== -->
         <div id="flightPane" class="tab-pane">
-            <div class="card"><h3 id="flightSearchTitle">✈️ Flights to Asmara (ASM)</h3><div id="allFlightsList"></div></div>
-            <div class="card"><h3 id="flightBookingTitle">🔍 Search Flights</h3>
-                <select id="flightFrom"><option value="DXB">Dubai (DXB)</option><option value="JED">Jeddah (JED)</option><option value="CAI">Cairo (CAI)</option><option value="ADD">Addis Ababa (ADD)</option></select>
+            <div class="card"><h3>✈️ Flights to Asmara (ASM)</h3><div id="allFlightsList"></div></div>
+            <div class="card"><h3>🔍 Search Flights</h3>
+                <select id="flightFrom"><option value="DXB">Dubai</option><option value="JED">Jeddah</option><option value="CAI">Cairo</option><option value="ADD">Addis Ababa</option></select>
                 <input type="date" id="flightDate" value="2026-05-15">
                 <button class="btn" id="searchFlightBtn">🔍 Search</button>
                 <div id="flightResults" style="background:#eef2f8; border-radius:16px; padding:0.8rem; margin-top:0.8rem;"></div>
             </div>
-            <div class="card"><h3 id="bookingInfoTitle">📋 Booking Information</h3>
+            <div class="card"><h3>📋 Booking Info</h3>
                 <input type="text" id="passengerName" placeholder="Full Name">
-                <input type="email" id="passengerEmail" placeholder="Email Address">
+                <input type="email" id="passengerEmail" placeholder="Email">
                 <button class="btn" id="confirmBookingBtn">✅ Confirm</button>
                 <p id="bookingMsg"></p>
             </div>
@@ -1026,544 +543,143 @@
         <!-- ===== قسم العقارات ===== -->
         <div id="realestatePane" class="tab-pane">
             <div class="grid-2">
-                <div class="card"><h3 id="addPropertyTitle">🏠 Add New Property</h3>
-                    <div class="form-row"><div class="form-group"><label id="propertyTypeLabel">Property Type</label><select id="reType"><option>Apartment</option><option>Villa</option><option>Land</option><option>Office</option></select></div><div class="form-group"><label id="cityLabel">City</label><select id="reCity"><option>Asmara</option><option>Massawa</option><option>Keren</option></select></div></div>
-                    <div class="form-row"><div class="form-group"><label id="areaLabel">Area (m²)</label><input id="reArea" type="number" placeholder="Area"></div><div class="form-group"><label id="roomsLabel">Rooms</label><select id="reRooms"><option>1</option><option>2</option><option>3</option><option>4</option><option>5+</option></select></div></div>
-                    <div class="form-row"><div class="form-group"><label id="priceLabel">Price ($)</label><input id="rePrice" type="number" placeholder="Price"></div><div class="form-group"><label id="finishingLabel">Finishing</label><select id="reFinish"><option>Luxury</option><option>Super Lux</option><option>Standard</option></select></div></div>
-                    <div class="form-group"><label id="descLabel">Description</label><textarea id="reDesc" rows="2" placeholder="Property details..."></textarea></div>
-                    <div class="form-group"><label id="imageLabel">Property Image</label><input type="file" id="reImage" accept="image/*" onchange="compressAndPreview(this, 'rePreview')"></div>
-                    <div class="image-preview" id="rePreview"></div>
+                <div class="card"><h3>🏠 Add Property</h3>
+                    <div class="form-row"><div class="form-group"><label>Type</label><select id="reType"><option>Apartment</option><option>Villa</option><option>Land</option></select></div><div class="form-group"><label>City</label><select id="reCity"><option>Asmara</option><option>Massawa</option></select></div></div>
+                    <div class="form-row"><div class="form-group"><label>Area (m²)</label><input id="reArea" type="number"></div><div class="form-group"><label>Rooms</label><select id="reRooms"><option>1</option><option>2</option><option>3</option></select></div></div>
+                    <div class="form-row"><div class="form-group"><label>Price ($)</label><input id="rePrice" type="number"></div><div class="form-group"><label>Finishing</label><select id="reFinish"><option>Luxury</option><option>Standard</option></select></div></div>
+                    <div class="form-group"><label>Description</label><textarea id="reDesc" rows="2"></textarea></div>
+                    <div class="form-group"><label>Image</label><input type="file" id="reImage"></div>
                     <button class="btn" id="publishReBtn">📢 Publish</button>
-                    <p id="reMsg"></p>
                 </div>
-                <div class="card"><h3 id="realestateGalleryTitle">🖼️ Gallery</h3><div id="realEstateGallery" class="gallery-grid"></div></div>
+                <div class="card"><h3>🖼️ Gallery</h3><div id="realEstateGallery" class="gallery-grid"></div></div>
             </div>
         </div>
 
         <!-- ===== قسم الإلكترونيات ===== -->
         <div id="electronicsPane" class="tab-pane">
             <div class="grid-2">
-                <div class="card"><h3 id="addDeviceTitle">📱 Add Device</h3>
-                    <div class="form-row"><div class="form-group"><label id="deviceTypeLabel">Device Type</label><select id="elecType"><option>Phone</option><option>Laptop</option><option>Tablet</option></select></div><div class="form-group"><label id="brandLabel">Brand</label><select id="elecBrand"><option>Apple</option><option>Samsung</option><option>Huawei</option></select></div></div>
-                    <div class="form-row"><div class="form-group"><label id="priceLabel2">Price ($)</label><input id="elecPrice" type="number" placeholder="Price"></div><div class="form-group"><label id="conditionLabel">Condition</label><select id="elecCondition"><option>New</option><option>Used</option><option>Refurbished</option></select></div></div>
-                    <div class="form-row"><div class="form-group"><label id="storageLabel">Storage</label><input id="elecStorage" placeholder="128GB"></div><div class="form-group"><label id="colorLabel">Color</label><input id="elecColor" placeholder="Color"></div></div>
-                    <div class="form-group"><label id="descLabel2">Description</label><textarea id="elecDesc" rows="2" placeholder="Device specifications..."></textarea></div>
-                    <div class="form-group"><label id="imageLabel2">Image</label><input type="file" id="elecImage" onchange="compressAndPreview(this, 'elecPreview')"></div>
-                    <div class="image-preview" id="elecPreview"></div>
+                <div class="card"><h3>📱 Add Device</h3>
+                    <div class="form-row"><div class="form-group"><label>Type</label><select id="elecType"><option>Phone</option><option>Laptop</option></select></div><div class="form-group"><label>Brand</label><select id="elecBrand"><option>Apple</option><option>Samsung</option></select></div></div>
+                    <div class="form-row"><div class="form-group"><label>Price ($)</label><input id="elecPrice" type="number"></div><div class="form-group"><label>Condition</label><select id="elecCondition"><option>New</option><option>Used</option></select></div></div>
+                    <div class="form-group"><label>Description</label><textarea id="elecDesc" rows="2"></textarea></div>
+                    <div class="form-group"><label>Image</label><input type="file" id="elecImage"></div>
                     <button class="btn" id="publishElecBtn">📢 Publish</button>
-                    <p id="elecMsg"></p>
                 </div>
-                <div class="card"><h3 id="electronicsGalleryTitle">🖼️ Gallery</h3><div id="electronicsGallery" class="gallery-grid"></div></div>
+                <div class="card"><h3>🖼️ Gallery</h3><div id="electronicsGallery" class="gallery-grid"></div></div>
             </div>
         </div>
 
         <!-- ===== قسم السيارات ===== -->
         <div id="carsPane" class="tab-pane">
             <div class="grid-2">
-                <div class="card"><h3 id="addCarTitle">🚗 Add Car</h3>
-                    <div class="form-row"><div class="form-group"><label id="carBrandLabel">Brand</label><input id="carBrand" placeholder="Toyota"></div><div class="form-group"><label id="carModelLabel">Model</label><input id="carModel" placeholder="Corolla"></div></div>
-                    <div class="form-row"><div class="form-group"><label id="yearLabel">Year</label><input id="carYear" type="number" placeholder="2022"></div><div class="form-group"><label id="mileageLabel">Mileage</label><input id="carMileage" placeholder="45,000 km"></div></div>
-                    <div class="form-row"><div class="form-group"><label id="priceLabel3">Price ($)</label><input id="carPrice" type="number" placeholder="Price"></div><div class="form-group"><label id="transmissionLabel">Transmission</label><select id="carTransmission"><option>Automatic</option><option>Manual</option></select></div></div>
-                    <div class="form-row"><div class="form-group"><label id="colorLabel2">Color</label><input id="carColor" placeholder="Color"></div><div class="form-group"><label id="cityLabel2">City</label><select id="carCity"><option>Asmara</option><option>Massawa</option></select></div></div>
-                    <div class="form-group"><label id="descLabel3">Description</label><textarea id="carDesc" rows="2" placeholder="Car features..."></textarea></div>
-                    <div class="form-group"><label id="imageLabel3">Image</label><input type="file" id="carImage" onchange="compressAndPreview(this, 'carPreview')"></div>
-                    <div class="image-preview" id="carPreview"></div>
+                <div class="card"><h3>🚗 Add Car</h3>
+                    <div class="form-row"><div class="form-group"><label>Brand</label><input id="carBrand" placeholder="Toyota"></div><div class="form-group"><label>Model</label><input id="carModel" placeholder="Corolla"></div></div>
+                    <div class="form-row"><div class="form-group"><label>Year</label><input id="carYear" type="number"></div><div class="form-group"><label>Mileage</label><input id="carMileage" placeholder="km"></div></div>
+                    <div class="form-row"><div class="form-group"><label>Price ($)</label><input id="carPrice" type="number"></div><div class="form-group"><label>Transmission</label><select id="carTransmission"><option>Automatic</option><option>Manual</option></select></div></div>
+                    <div class="form-group"><label>Description</label><textarea id="carDesc" rows="2"></textarea></div>
+                    <div class="form-group"><label>Image</label><input type="file" id="carImage"></div>
                     <button class="btn" id="publishCarBtn">📢 Publish</button>
-                    <p id="carMsg"></p>
                 </div>
-                <div class="card"><h3 id="carsGalleryTitle">🖼️ Gallery</h3><div id="carsGallery" class="gallery-grid"></div></div>
+                <div class="card"><h3>🖼️ Gallery</h3><div id="carsGallery" class="gallery-grid"></div></div>
             </div>
         </div>
 
         <!-- ===== قسم الوظائف ===== -->
         <div id="jobsPane" class="tab-pane">
             <div class="grid-2">
-                <div class="card"><h3 id="addJobTitle">💼 Add Job</h3>
-                    <div class="form-row"><div class="form-group"><label id="jobTitleLabel">Job Title</label><input id="jobTitle" placeholder="Job Title"></div><div class="form-group"><label id="companyLabel">Company</label><input id="jobCompany" placeholder="Company"></div></div>
-                    <div class="form-row"><div class="form-group"><label id="salaryLabel">Salary ($)</label><input id="jobSalary" type="number" placeholder="Salary"></div><div class="form-group"><label id="jobTypeLabel">Job Type</label><select id="jobType"><option>Full Time</option><option>Part Time</option><option>Remote</option></select></div></div>
-                    <div class="form-row"><div class="form-group"><label id="experienceLabel">Experience</label><select id="jobExperience"><option>No experience</option><option>1 year</option><option>2 years</option><option>3-5 years</option></select></div><div class="form-group"><label id="qualificationLabel">Qualification</label><select id="jobQualification"><option>High School</option><option>Diploma</option><option>Bachelor</option><option>Master</option></select></div></div>
-                    <div class="form-group"><label id="descLabel4">Description</label><textarea id="jobDesc" rows="2" placeholder="Job requirements..."></textarea></div>
-                    <div class="form-group"><label id="cityLabel3">City</label><select id="jobCity"><option>Asmara</option><option>Massawa</option><option>Remote</option></select></div>
+                <div class="card"><h3>💼 Add Job</h3>
+                    <div class="form-row"><div class="form-group"><label>Title</label><input id="jobTitle" placeholder="Job Title"></div><div class="form-group"><label>Company</label><input id="jobCompany" placeholder="Company"></div></div>
+                    <div class="form-row"><div class="form-group"><label>Salary ($)</label><input id="jobSalary" type="number"></div><div class="form-group"><label>Type</label><select id="jobType"><option>Full Time</option><option>Part Time</option></select></div></div>
+                    <div class="form-group"><label>Description</label><textarea id="jobDesc" rows="2"></textarea></div>
+                    <div class="form-group"><label>City</label><select id="jobCity"><option>Asmara</option><option>Massawa</option></select></div>
                     <button class="btn" id="publishJobBtn">📢 Publish</button>
-                    <p id="jobMsg"></p>
                 </div>
-                <div class="card"><h3 id="jobsGalleryTitle">🖼️ Jobs</h3><div id="jobsGallery" class="gallery-grid"></div>
-                    <div class="resume-upload" onclick="document.getElementById('resumeFile').click()"><i class="fas fa-cloud-upload-alt"></i> <span id="uploadResumeText">Upload Resume (PDF/Word)</span><input type="file" id="resumeFile" accept=".pdf,.doc,.docx" style="display:none"></div>
-                    <div id="resumeList" class="resume-list"></div>
-                </div>
+                <div class="card"><h3>🖼️ Jobs</h3><div id="jobsGallery" class="gallery-grid"></div></div>
             </div>
         </div>
 
-        <!-- ===== قسم الخدمات العامة ===== -->
+        <!-- ===== قسم الخدمات ===== -->
         <div id="generalPane" class="tab-pane">
             <div class="grid-2">
-                <div class="card"><h3 id="addGeneralTitle">📝 General Ad</h3>
-                    <div class="form-row"><div class="form-group"><label id="adTypeLabel">Ad Type</label><select id="adType"><option>Service</option><option>Product</option></select></div><div class="form-group"><label id="cityLabel4">City</label><select id="adCity"><option>Asmara</option><option>Massawa</option></select></div></div>
-                    <div class="form-group"><label id="titleLabel">Title</label><input id="adName" placeholder="Title"></div>
-                    <div class="form-group"><label id="priceLabel4">Price</label><input id="adPrice" type="number" placeholder="Price"></div>
-                    <div class="form-group"><label id="descLabel5">Description</label><textarea id="adDesc" rows="2" placeholder="Description..."></textarea></div>
-                    <div class="form-group"><label id="imageLabel4">Image</label><input type="file" id="adImage" onchange="compressAndPreview(this, 'adPreview')"></div>
-                    <div class="image-preview" id="adPreview"></div>
+                <div class="card"><h3>📝 General Ad</h3>
+                    <div class="form-row"><div class="form-group"><label>Type</label><select id="adType"><option>Service</option><option>Product</option></select></div><div class="form-group"><label>City</label><select id="adCity"><option>Asmara</option><option>Massawa</option></select></div></div>
+                    <div class="form-group"><label>Title</label><input id="adName" placeholder="Title"></div>
+                    <div class="form-group"><label>Price</label><input id="adPrice" type="number"></div>
+                    <div class="form-group"><label>Description</label><textarea id="adDesc" rows="2"></textarea></div>
+                    <div class="form-group"><label>Image</label><input type="file" id="adImage"></div>
                     <button class="btn" id="publishGeneralBtn">📢 Publish</button>
-                    <p id="generalMsg"></p>
                 </div>
-                <div class="card"><h3 id="generalGalleryTitle">🖼️ Services</h3><div id="generalGallery" class="gallery-grid"></div></div>
+                <div class="card"><h3>🖼️ Services</h3><div id="generalGallery" class="gallery-grid"></div></div>
             </div>
         </div>
 
-        <!-- ===== قسم المدونة ===== -->
-        <div id="blogPane" class="tab-pane"><div class="card"><h2 id="blogMainTitle">📰 Blog</h2><div id="blogGrid" class="blog-grid"></div></div></div>
+        <!-- ===== المدونة ===== -->
+        <div id="blogPane" class="tab-pane"><div class="card"><h2>📰 Blog</h2><div id="blogGrid" class="blog-grid"></div></div></div>
 
-        <!-- ===== صفحة الأسئلة الشائعة ===== -->
-        <div id="faqPane" class="tab-pane"><div class="card"><h3 id="faqTitle">❓ Frequently Asked Questions</h3>
-            <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)">📌 How can I add an ad? <i class="fas fa-chevron-down"></i></div><div class="faq-answer">You can add an ad through the dedicated tab for each section. Click 'Publish' after filling in the data and your ad will be reviewed by the agent.</div></div>
-            <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)">💰 How do I pay for premium ads? <i class="fas fa-chevron-down"></i></div><div class="faq-answer">You can pay via PayPal through the '💳 Payment' tab.</div></div>
-            <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)">🛡️ How are ads reviewed? <i class="fas fa-chevron-down"></i></div><div class="faq-answer">All ads are reviewed by a certified agent to ensure no violations of customs or laws.</div></div>
-            <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)">🌐 What languages are supported? <i class="fas fa-chevron-down"></i></div><div class="faq-answer">The platform supports three languages: English, Arabic, and Tigrinya.</div></div>
-            <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)">📞 How can I contact support? <i class="fas fa-chevron-down"></i></div><div class="faq-answer">You can contact us via WhatsApp through the floating button or via the 'Contact Us' tab.</div></div>
+        <!-- ===== الأسئلة الشائعة ===== -->
+        <div id="faqPane" class="tab-pane"><div class="card"><h3>❓ FAQ</h3>
+            <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)">📌 How to add an ad? <i class="fas fa-chevron-down"></i></div><div class="faq-answer">Use the dedicated tab for each section and click Publish.</div></div>
+            <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)">💰 How to pay? <i class="fas fa-chevron-down"></i></div><div class="faq-answer">Via PayPal or local bank transfer.</div></div>
         </div></div>
 
-        <!-- ===== صفحة اتصل بنا ===== -->
+        <!-- ===== اتصل بنا ===== -->
         <div id="contactPane" class="tab-pane">
             <div class="grid-2">
-                <div class="card"><h3 id="contactTitle">📞 Contact Us</h3>
+                <div class="card"><h3>📞 Contact Us</h3>
                     <div class="contact-info">
-                        <div class="contact-card"><i class="fab fa-whatsapp"></i><div><strong>WhatsApp</strong><br><a href="https://wa.me/29170000000" target="_blank" style="color:var(--secondary);">+291 70 000 000</a></div></div>
+                        <div class="contact-card"><i class="fab fa-whatsapp"></i><div><strong>WhatsApp</strong><br><a href="https://wa.me/29170000000" target="_blank">+291 70 000 000</a></div></div>
                         <div class="contact-card"><i class="far fa-envelope"></i><div><strong>Email</strong><br>info@asmara.store</div></div>
-                        <div class="contact-card"><i class="fas fa-map-marker-alt"></i><div><strong>Address</strong><br>Asmara, Eritrea</div></div>
-                        <div class="contact-card"><i class="far fa-clock"></i><div><strong>Working Hours</strong><br>Saturday - Thursday: 9AM - 5PM</div></div>
                     </div>
                 </div>
-                <div class="card"><h3 id="sendMessageTitle">✉️ Send a Message</h3>
-                    <input type="text" id="contactName" placeholder="Full Name">
-                    <input type="email" id="contactEmail" placeholder="Email Address">
-                    <textarea id="contactMessage" rows="4" placeholder="Your message..."></textarea>
-                    <button class="btn" onclick="sendContactMessage()" id="sendContactBtn">Send Message</button>
+                <div class="card"><h3>✉️ Send Message</h3>
+                    <input type="text" id="contactName" placeholder="Name">
+                    <input type="email" id="contactEmail" placeholder="Email">
+                    <textarea id="contactMessage" rows="4" placeholder="Message"></textarea>
+                    <button class="btn" onclick="sendContactMessage()">Send</button>
                 </div>
             </div>
         </div>
 
-        <!-- ===== صفحة الدفع ===== -->
-        <div id="paymentPane" class="tab-pane"><div class="grid-2"><div class="card"><h3 id="proSubscriptionTitle">💳 Pro Subscription</h3><div style="font-size:1.8rem; color:var(--secondary);">$29<small>/month</small></div><button id="paypalBtn" class="btn"><i class="fab fa-paypal"></i> PayPal</button><div class="payment-methods" style="margin-top:1rem;"><p>Local Payment Options:</p><button class="btn-sm" onclick="showLocalPayment()">🏦 Bank Transfer</button><button class="btn-sm" onclick="showLocalPayment()">📱 Mobile Money</button><button class="btn-sm" onclick="showLocalPayment()">🏧 Western Union</button></div></div><div class="card"><h3 id="walletTitle">💰 My Wallet</h3><p id="walletBalance">Balance: <strong id="balanceAmount">$0</strong></p><button id="addFundsBtn" class="btn">Deposit $50</button></div></div><div class="card"><h3 id="transactionsTitle">📜 Transaction History</h3><div id="transactionsList"></div></div></div>
+        <!-- ===== الدفع ===== -->
+        <div id="paymentPane" class="tab-pane">
+            <div class="grid-2">
+                <div class="card"><h3>💳 Pro Subscription</h3><div style="font-size:1.8rem; color:#c7a12b;">$29<small>/month</small></div><button id="paypalBtn" class="btn">PayPal</button></div>
+                <div class="card"><h3>💰 My Wallet</h3><p>Balance: <strong id="balanceAmount">$0</strong></p><button id="addFundsBtn" class="btn">Deposit $50</button></div>
+            </div>
+            <div class="card"><h3>📜 Transactions</h3><div id="transactionsList"></div></div>
+        </div>
 
-        <!-- ===== صفحة المراسلة ===== -->
-        <div id="messagingPane" class="tab-pane"><div class="grid-2"><div class="card"><h3 id="chatsTitle">📋 Chats</h3><div id="contactsList" class="chat-list"></div></div><div class="card"><h3 id="messagingTitle">💬 Messaging</h3><div id="chatMessages" class="chat-list" style="height:200px;"></div><div class="chat-input-area" style="display:flex; gap:0.5rem; margin-top:0.5rem;"><input type="text" id="chatInput" placeholder="Type your message..."><button id="sendMsgBtn" class="btn-sm btn">Send</button></div></div></div></div>
+        <!-- ===== المراسلة ===== -->
+        <div id="messagingPane" class="tab-pane"><div class="grid-2"><div class="card"><h3>📋 Chats</h3><div id="contactsList" class="chat-list"></div></div><div class="card"><h3>💬 Messaging</h3><div id="chatMessages" class="chat-list" style="height:200px;"></div><div><input type="text" id="chatInput" placeholder="Type message..."><button id="sendMsgBtn" class="btn-sm">Send</button></div></div></div></div>
 
-        <!-- ===== صفحة التقييمات ===== -->
-        <div id="ratingsPane" class="tab-pane"><div class="card"><h3 id="ratingsTitle">⭐ User Ratings</h3><div id="ratingsList"></div><textarea id="newRatingComment" rows="2" placeholder="Write your review..."></textarea><div class="rating-input"><span class="rating-star" data-value="1">★</span><span class="rating-star" data-value="2">★</span><span class="rating-star" data-value="3">★</span><span class="rating-star" data-value="4">★</span><span class="rating-star" data-value="5">★</span></div><button id="addRatingBtn" class="btn">Add Review</button></div></div>
+        <!-- ===== التقييمات ===== -->
+        <div id="ratingsPane" class="tab-pane"><div class="card"><h3>⭐ User Ratings</h3><div id="ratingsList"></div><textarea id="newRatingComment" rows="2" placeholder="Write review..."></textarea><div class="rating-input"><span class="rating-star" data-value="1">★</span><span class="rating-star" data-value="2">★</span><span class="rating-star" data-value="3">★</span><span class="rating-star" data-value="4">★</span><span class="rating-star" data-value="5">★</span></div><button id="addRatingBtn" class="btn">Add Review</button></div></div>
 
-        <!-- ===== أقسام الوكيل المخفية ===== -->
-        <div id="dashboardPane" class="tab-pane"><div class="stats-grid"><div class="stat-card"><div class="stat-number" id="statAds">0</div><div id="totalAdsLabel">Total Ads</div></div><div class="stat-card"><div class="stat-number" id="statPending">0</div><div id="pendingLabel">Pending</div></div><div class="stat-card"><div class="stat-number" id="statApproved">0</div><div id="approvedLabel">Approved</div></div><div class="stat-card"><div class="stat-number" id="statRejected">0</div><div id="rejectedLabel">Rejected</div></div></div><div class="card"><h3 id="performanceTitle">📈 Ad Performance</h3><div id="adPerformanceList"></div></div></div>
-        <div id="agentPane" class="tab-pane"><div class="grid-2"><div class="card"><h3 id="pendingReviewsTitle">⏳ Pending Reviews</h3><div id="pendingAdsList"></div></div><div class="card"><h3 id="violationsTitle">🚫 Violations</h3><div id="violationsList"></div></div></div><div class="card"><h3 id="agentLogTitle">📋 Agent Log</h3><div id="agentLogList"></div></div><div class="card"><h3 id="blockedWordsTitle">⚙️ Blocked Words</h3><div id="blockedWordsList"></div><div style="display:flex; gap:0.5rem;"><input type="text" id="newBlockedWord" placeholder="New blocked word"><button id="addBlockedWordBtn" class="btn-sm btn">Add</button></div></div></div>
-        <div id="reportsPane" class="tab-pane"><div class="card"><h3 id="reportsTitle">🚨 User Reports</h3><div id="reportsList"></div></div><div class="card"><h3 id="reportsLogTitle">📋 Reports Log</h3><div id="reportsLogList"></div></div></div>
-        <div id="institutionsPane" class="tab-pane"><div class="grid-2"><div class="card"><h3 id="ministryTradeTitle">🏛️ Ministry of Trade - Eritrea</h3><a href="https://www.comesa.int/state-of-eritrea/" target="_blank">COMESA</a></div><div class="card"><h3 id="ministryInfoTitle">📰 Ministry of Information - Shabait</h3><a href="http://www.shabait.com" target="_blank">Shabait.com</a></div><div class="card"><h3 id="hadasTitle">📰 Hadas Eritrea Newspaper</h3><a href="http://www.shabait.com/category/news/" target="_blank">Read Newspaper</a></div><div class="card"><h3 id="libraryTitle">📚 Asmara Library</h3><button id="libraryInfoBtn">Info</button></div></div></div>
-        <div id="policiesPane" class="tab-pane"><div class="policy-card"><h3>🔄 Return & Refund Policy</h3><ul><li>Return within 14 days of purchase</li><li>Product must be in original condition</li><li>Shipping fees are non-refundable</li><li>Refund within 7 business days</li></ul></div><div class="policy-card"><h3>🔒 Privacy Policy</h3><ul><li>We protect your personal data</li><li>We use encryption technologies</li><li>You can request data deletion</li></ul></div><div class="policy-card"><h3>🚚 Shipping Policy</h3><ul><li>We ship to all cities in Eritrea</li><li>Delivery: 3-7 business days</li><li>Free shipping over $100</li></ul></div></div>
+        <!-- ===== أقسام الوكيل ===== -->
+        <div id="dashboardPane" class="tab-pane"><div class="stats-grid"><div class="stat-card"><div class="stat-number" id="statAds">0</div><div>Total Ads</div></div><div class="stat-card"><div class="stat-number" id="statPending">0</div><div>Pending</div></div><div class="stat-card"><div class="stat-number" id="statApproved">0</div><div>Approved</div></div><div class="stat-card"><div class="stat-number" id="statRejected">0</div><div>Rejected</div></div></div><div class="card"><h3>📈 Ad Performance</h3><div id="adPerformanceList"></div></div></div>
+        <div id="agentPane" class="tab-pane"><div class="grid-2"><div class="card"><h3>⏳ Pending Reviews</h3><div id="pendingAdsList"></div></div><div class="card"><h3>🚫 Violations</h3><div id="violationsList"></div></div></div><div class="card"><h3>📋 Agent Log</h3><div id="agentLogList"></div></div><div class="card"><h3>⚙️ Blocked Words</h3><div id="blockedWordsList"></div><div><input type="text" id="newBlockedWord"><button id="addBlockedWordBtn">Add</button></div></div></div>
+        <div id="reportsPane" class="tab-pane"><div class="card"><h3>🚨 User Reports</h3><div id="reportsList"></div></div><div class="card"><h3>📋 Reports Log</h3><div id="reportsLogList"></div></div></div>
+        <div id="institutionsPane" class="tab-pane"><div class="grid-2"><div class="card"><h3>🏛️ Ministry of Trade</h3><a href="https://www.comesa.int/state-of-eritrea/" target="_blank">COMESA</a></div><div class="card"><h3>📰 Ministry of Info</h3><a href="http://www.shabait.com" target="_blank">Shabait.com</a></div><div class="card"><h3>📚 Asmara Library</h3><button id="libraryInfoBtn">Info</button></div></div></div>
+        <div id="policiesPane" class="tab-pane"><div class="policy-card"><h3>🔄 Return Policy</h3><ul><li>14 days return</li><li>Original condition required</li></ul></div></div>
     </div>
 
     <!-- ===== الفوتر ===== -->
     <footer class="footer">
         <div class="footer-grid">
-            <div class="footer-section"><h4 id="aboutFooterTitle">🇪🇷 About Us</h4><p id="aboutFooterText">Asmara.Store is a digital platform connecting Eritreans with trusted services at home and abroad.</p></div>
-            <div class="footer-section"><h4 id="quickLinksTitle">🔗 Quick Links</h4><a class="footer-link" data-tab="home">Home</a><a class="footer-link" data-tab="faq">FAQ</a><a class="footer-link" data-tab="contact">Contact</a><a class="footer-link" data-tab="policies">Policies</a></div>
-            <div class="footer-section"><h4 id="policiesTitle">⚖️ Policies</h4><a id="privacyPolicyLink">Privacy</a><a id="securityPolicyLink">Security</a><a id="returnsPolicyLink">Returns</a><a id="shippingPolicyLink">Shipping</a></div>
-            <div class="footer-section"><h4 id="agentFooterTitle">🛡️ Agent</h4><a id="agentPanelLink">🔐 Agent Login</a><div class="social-links"><a href="https://facebook.com/asmara.store" target="_blank"><i class="fab fa-facebook-f"></i></a><a href="https://twitter.com/asmara_store" target="_blank"><i class="fab fa-twitter"></i></a><a href="https://instagram.com/asmara.store" target="_blank"><i class="fab fa-instagram"></i></a><a href="https://wa.me/29170000000" target="_blank"><i class="fab fa-whatsapp"></i></a><a href="https://t.me/asmara_store" target="_blank"><i class="fab fa-telegram"></i></a></div></div>
+            <div class="footer-section"><h4>🇪🇷 About Us</h4><p>Digital platform connecting Eritreans with trusted services.</p></div>
+            <div class="footer-section"><h4>🔗 Quick Links</h4><a class="footer-link" data-tab="home">Home</a><a class="footer-link" data-tab="faq">FAQ</a><a class="footer-link" data-tab="contact">Contact</a></div>
+            <div class="footer-section"><h4>⚖️ Policies</h4><a id="privacyPolicyLink">Privacy</a><a id="returnsPolicyLink">Returns</a></div>
+            <div class="footer-section"><h4>🛡️ Agent</h4><a id="agentPanelLink">Agent Login</a><div class="social-links"><a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a><a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a><a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a><a href="https://wa.me/29170000000" target="_blank"><i class="fab fa-whatsapp"></i></a></div></div>
         </div>
-        <div class="footer-bottom"><p>© 2026 Asmara.Store - All Rights Reserved</p><div class="verified">✓ Certified Platform</div></div>
+        <div class="footer-bottom"><p>© 2026 Asmara.Store</p><div class="verified">✓ Certified Platform</div></div>
     </footer>
 
     <div id="policyModal" class="modal"><div class="modal-content"><button class="modal-close" onclick="closePolicyModal()">✕</button><h2 id="policyModalTitle"></h2><div id="policyModalBody"></div></div></div>
 
     <script>
         // ========================================
-        // Asmara.Store - Main JavaScript
-        // اللغة الأساسية: الإنجليزية
+        // Asmara.Store - Main JavaScript (مصحح بالكامل)
         // ========================================
-        
-        // ===== ضغط الصور تلقائياً =====
-        async function compressImage(file, quality = 0.7) {
-            return new Promise((resolve, reject) => {
-                const reader = new FileReader();
-                reader.readAsDataURL(file);
-                reader.onload = (event) => {
-                    const img = new Image();
-                    img.src = event.target.result;
-                    img.onload = () => {
-                        const canvas = document.createElement('canvas');
-                        const ctx = canvas.getContext('2d');
-                        
-                        let width = img.width;
-                        let height = img.height;
-                        const maxSize = 800;
-                        
-                        if (width > maxSize) {
-                            height = (height * maxSize) / width;
-                            width = maxSize;
-                        }
-                        if (height > maxSize) {
-                            width = (width * maxSize) / height;
-                            height = maxSize;
-                        }
-                        
-                        canvas.width = width;
-                        canvas.height = height;
-                        ctx.drawImage(img, 0, 0, width, height);
-                        
-                        const format = canvas.toDataURL('image/jpeg', quality);
-                        resolve(format);
-                    };
-                    img.onerror = reject;
-                };
-                reader.onerror = reject;
-            });
-        }
-        
-        async function compressAndPreview(input, previewId) {
-            const file = input.files[0];
-            if (!file) return;
-            
-            const preview = document.getElementById(previewId);
-            if (preview) preview.innerHTML = '';
-            
-            const compressed = await compressImage(file, 0.7);
-            
-            const img = document.createElement('img');
-            img.src = compressed;
-            img.style.width = '50px';
-            img.style.height = '50px';
-            img.style.objectFit = 'cover';
-            img.style.borderRadius = '10px';
-            preview.appendChild(img);
-            
-            // تخزين الصورة المضغوطة
-            input.dataset.compressed = compressed;
-        }
-        
-        // ===== الترجمة الكاملة =====
-        const TRANSLATIONS = {
-            en: {
-                tagline: "A platform that respects our customs and traditions - In the spirit of Eritrean law",
-                homeIntro: "A trusted platform for flights, real estate, services, and official content.",
-                homeFlightsTitle: "🏠 Latest Properties",
-                homeElectronicsTitle: "📱 Latest Electronics",
-                homeCarsTitle: "🚗 Latest Cars",
-                homeJobsTitle: "💼 Latest Jobs",
-                homeServicesTitle: "📋 Featured Services",
-                homeBlogTitle: "📰 Latest Articles",
-                testimonialsTitle: "⭐ Customer Reviews",
-                flightSearchTitle: "✈️ Flights to Asmara (ASM)",
-                flightBookingTitle: "🔍 Search Flights",
-                bookingInfoTitle: "📋 Booking Information",
-                addPropertyTitle: "🏠 Add New Property",
-                addDeviceTitle: "📱 Add Device",
-                addCarTitle: "🚗 Add Car",
-                addJobTitle: "💼 Add Job",
-                addGeneralTitle: "📝 General Ad",
-                blogMainTitle: "📰 Blog",
-                faqTitle: "❓ Frequently Asked Questions",
-                contactTitle: "📞 Contact Us",
-                sendMessageTitle: "✉️ Send a Message",
-                sendBtn: "Send Message",
-                proSubscriptionTitle: "💳 Pro Subscription",
-                proDesc: "Unlimited ads + Advanced statistics",
-                walletTitle: "💰 My Wallet",
-                walletBalance: "Balance:",
-                transactionsTitle: "📜 Transaction History",
-                depositBtn: "Deposit $50",
-                chatsTitle: "📋 Chats",
-                messagingTitle: "💬 Messaging",
-                ratingsTitle: "⭐ User Ratings",
-                addRating: "Add Review",
-                totalAdsLabel: "Total Ads",
-                pendingLabel: "Pending",
-                approvedLabel: "Approved",
-                rejectedLabel: "Rejected",
-                performanceTitle: "📈 Ad Performance",
-                pendingReviewsTitle: "⏳ Pending Reviews",
-                violationsTitle: "🚫 Violations",
-                agentLogTitle: "📋 Agent Log",
-                blockedWordsTitle: "⚙️ Blocked Words",
-                reportsTitle: "🚨 User Reports",
-                reportsLogTitle: "📋 Reports Log",
-                ministryTradeTitle: "🏛️ Ministry of Trade - Eritrea",
-                ministryTradeDesc: "Responsible for regulating investment and trade in Eritrea",
-                ministryInfoTitle: "📰 Ministry of Information - Shabait",
-                hadasTitle: "📰 Hadas Eritrea Newspaper",
-                libraryTitle: "📚 Asmara Library",
-                comesaLink: "COMESA",
-                shabaitLink: "Shabait.com",
-                hadasLink: "Read Newspaper",
-                aboutFooterTitle: "🇪🇷 About Us",
-                aboutFooterText: "A digital platform connecting Eritreans with trusted services at home and abroad.",
-                quickLinksTitle: "🔗 Quick Links",
-                policiesTitle: "⚖️ Policies",
-                agentFooterTitle: "🛡️ Agent",
-                privacyLink: "Privacy Policy",
-                securityLink: "Security Policy",
-                returnsLink: "Return Policy",
-                shippingLink: "Shipping Policy",
-                login: "🔐 Login",
-                logout: "🚪 Logout",
-                register: "Create Account",
-                search: "🔍 Search",
-                confirm: "✅ Confirm",
-                publish: "📢 Publish",
-                addToCart: "Add to Cart",
-                checkout: "Checkout",
-                cart: "Cart",
-                bookingConfirmed: "✅ Booking confirmed",
-                pleaseEnterName: "❌ Please enter your name",
-                adSubmitted: "✅ Ad submitted for review",
-                pleaseFillData: "❌ Please fill required fields",
-                paymentSuccess: "✅ Payment successful!",
-                depositSuccess: "✅ $50 deposited",
-                reviewAdded: "✅ Review added",
-                messageSent: "✅ Message sent",
-                welcome: "✅ Welcome",
-                logoutMsg: "👋 Logged out",
-                agentWelcome: "🛡️ Welcome Agent",
-                noFlights: "❌ No flights available",
-                noResults: "No results found",
-                myAds: "My Ads",
-                myMessages: "Messages",
-                myBalance: "My Balance",
-                myOrders: "My Orders",
-                myWishlist: "Wishlist",
-                searchPlaceholder: "Search for products...",
-                searchByCity: "City",
-                priceFrom: "Price from",
-                priceTo: "Price to",
-                category: "Category",
-                all: "All",
-                realestate: "Real Estate",
-                electronics: "Electronics",
-                cars: "Cars",
-                jobs: "Jobs",
-                services: "Services",
-                advancedSearch: "Advanced Search",
-                writeReview: "Write your review...",
-                verified: "Verified Account"
-            },
-            ar: {
-                tagline: "منصة تحترم عاداتنا وتقاليدنا - بروح القانون الإريتري",
-                homeIntro: "منصة موثوقة للطيران والعقارات والخدمات والمحتوى الرسمي.",
-                homeFlightsTitle: "🏠 أحدث العقارات",
-                homeElectronicsTitle: "📱 أحدث الإلكترونيات",
-                homeCarsTitle: "🚗 أحدث السيارات",
-                homeJobsTitle: "💼 أحدث الوظائف",
-                homeServicesTitle: "📋 الخدمات المميزة",
-                homeBlogTitle: "📰 آخر المقالات",
-                testimonialsTitle: "⭐ آراء العملاء",
-                flightSearchTitle: "✈️ رحلات إلى أسمرة (ASM)",
-                flightBookingTitle: "🔍 البحث عن رحلة",
-                bookingInfoTitle: "📋 معلومات الحجز",
-                addPropertyTitle: "🏠 إضافة عقار جديد",
-                addDeviceTitle: "📱 إضافة جهاز",
-                addCarTitle: "🚗 إضافة سيارة",
-                addJobTitle: "💼 إضافة وظيفة",
-                addGeneralTitle: "📝 إعلان عام",
-                blogMainTitle: "📰 المدونة",
-                faqTitle: "❓ الأسئلة الشائعة",
-                contactTitle: "📞 اتصل بنا",
-                sendMessageTitle: "✉️ أرسل رسالة",
-                sendBtn: "إرسال الرسالة",
-                proSubscriptionTitle: "💳 اشتراك Pro",
-                proDesc: "إعلانات غير محدودة + إحصائيات متقدمة",
-                walletTitle: "💰 محفظتي",
-                walletBalance: "الرصيد:",
-                transactionsTitle: "📜 سجل المعاملات",
-                depositBtn: "إيداع $50",
-                chatsTitle: "📋 المحادثات",
-                messagingTitle: "💬 المراسلة",
-                ratingsTitle: "⭐ تقييم المستخدمين",
-                addRating: "إضافة تقييم",
-                totalAdsLabel: "إجمالي الإعلانات",
-                pendingLabel: "قيد المراجعة",
-                approvedLabel: "مقبولة",
-                rejectedLabel: "مرفوضة",
-                performanceTitle: "📈 أداء الإعلانات",
-                pendingReviewsTitle: "⏳ إعلانات تنتظر المراجعة",
-                violationsTitle: "🚫 الإعلانات المخالفة",
-                agentLogTitle: "📋 سجل مراجعة الوكيل",
-                blockedWordsTitle: "⚙️ إعدادات الكلمات الممنوعة",
-                reportsTitle: "🚨 بلاغات المستخدمين",
-                reportsLogTitle: "📋 سجل معالجة البلاغات",
-                ministryTradeTitle: "🏛️ وزارة التجارة - إريتريا",
-                ministryTradeDesc: "تنظيم الاستثمار والتجارة",
-                ministryInfoTitle: "📰 وزارة المعلومات - شبابت",
-                hadasTitle: "📰 الجريدة الإريترية - Hadas Eritrea",
-                libraryTitle: "📚 مكتبة أسمرة",
-                comesaLink: "COMESA",
-                shabaitLink: "Shabait.com",
-                hadasLink: "قراءة الجريدة",
-                aboutFooterTitle: "🇪🇷 من نحن",
-                aboutFooterText: "منصة رقمية تربط الإريتريين بخدمات موثوقة داخل الوطن وخارجه.",
-                quickLinksTitle: "🔗 روابط سريعة",
-                policiesTitle: "⚖️ سياسات",
-                agentFooterTitle: "🛡️ الوكيل",
-                privacyLink: "سياسة الخصوصية",
-                securityLink: "سياسة الأمان",
-                returnsLink: "سياسة الاسترجاع",
-                shippingLink: "سياسة الشحن",
-                login: "🔐 تسجيل الدخول",
-                logout: "🚪 خروج",
-                register: "إنشاء حساب",
-                search: "🔍 بحث",
-                confirm: "✅ تأكيد",
-                publish: "📢 نشر",
-                addToCart: "أضف إلى السلة",
-                checkout: "إتمام الشراء",
-                cart: "السلة",
-                bookingConfirmed: "✅ تم تأكيد الحجز",
-                pleaseEnterName: "❌ أدخل الاسم",
-                adSubmitted: "✅ تم إرسال الإعلان للمراجعة",
-                pleaseFillData: "❌ املأ البيانات الأساسية",
-                paymentSuccess: "✅ تم الدفع بنجاح!",
-                depositSuccess: "✅ تم إيداع $50",
-                reviewAdded: "✅ تم إضافة تقييمك",
-                messageSent: "✅ تم إرسال الرسالة",
-                welcome: "✅ مرحباً",
-                logoutMsg: "👋 تم تسجيل الخروج",
-                agentWelcome: "🛡️ مرحباً أيها الوكيل المعتمد",
-                noFlights: "❌ لا توجد رحلات متاحة لهذا المسار",
-                noResults: "لا توجد نتائج",
-                myAds: "إعلاناتي",
-                myMessages: "رسائلي",
-                myBalance: "رصيدي",
-                myOrders: "طلباتي",
-                myWishlist: "المفضلة",
-                searchPlaceholder: "ابحث عن منتج...",
-                searchByCity: "المدينة",
-                priceFrom: "السعر من",
-                priceTo: "السعر إلى",
-                category: "القسم",
-                all: "الكل",
-                realestate: "عقارات",
-                electronics: "إلكترونيات",
-                cars: "سيارات",
-                jobs: "وظائف",
-                services: "خدمات",
-                advancedSearch: "بحث متقدم",
-                writeReview: "اكتب تقييمك...",
-                verified: "حساب موثق"
-            },
-            ti: {
-                tagline: "ልማዳትና ባህልና ዘከብር መድረኽ - ብመንፈስ ሕጊ ኤርትራ",
-                homeIntro: "ንበረራ፣ ንብረት፣ ኣገልግሎታትን ወግዓዊ ዜናን እሙን መድረኽ።",
-                homeFlightsTitle: "🏠 ሓደሽቲ ንብረታት",
-                homeElectronicsTitle: "📱 ሓደሽቲ ኤሌክትሮኒክስ",
-                homeCarsTitle: "🚗 ሓደሽቲ ማኪናታት",
-                homeJobsTitle: "💼 ሓደሽቲ ስራሕታት",
-                homeServicesTitle: "📋 ፍሉጣት ኣገልግሎታት",
-                homeBlogTitle: "📰 ሓደሽቲ ዜናታት",
-                testimonialsTitle: "⭐ ርእይቶ ደንበኛታት",
-                flightSearchTitle: "✈️ በረራታት ናብ ኣስመራ (ASM)",
-                flightBookingTitle: "🔍 ምድላይ በረራ",
-                bookingInfoTitle: "📋 ሓበሬታ ምዝገባ",
-                addPropertyTitle: "🏠 ሓዲሽ ንብረት ምውሳኽ",
-                addDeviceTitle: "📱 መሳርሒ ምውሳኽ",
-                addCarTitle: "🚗 ማኪና ምውሳኽ",
-                addJobTitle: "💼 ስራሕ ምውሳኽ",
-                addGeneralTitle: "📝 ማስታወቂያ",
-                blogMainTitle: "📰 ብሎግ",
-                faqTitle: "❓ ተደጋጋሚ ሕቶታት",
-                contactTitle: "📞 ርኸቡና",
-                sendMessageTitle: "✉️ መልእኽቲ ሰደዱ",
-                sendBtn: "መልእኽቲ ሰደዱ",
-                proSubscriptionTitle: "💳 Pro ምዝገባ",
-                proDesc: "ደረት ዘይብሉ ማስታወቂያ + ላዕለዎት ስታቲስቲክ",
-                walletTitle: "💰 ቦርሳይ",
-                walletBalance: "ሂሳበይ:",
-                transactionsTitle: "📜 ግብዓታት",
-                depositBtn: "$50 ኣእትዉ",
-                chatsTitle: "📋 ምይይጥ",
-                messagingTitle: "💬 መልእኽቲ",
-                ratingsTitle: "⭐ ውጤት ተጠቃሚታት",
-                addRating: "ውጤት ምውሳኽ",
-                totalAdsLabel: "ምሉእ ማስታወቂያ",
-                pendingLabel: "ኣብ ምምሕዳር",
-                approvedLabel: "ተቐባልነት",
-                rejectedLabel: "ተኣቢኡ",
-                performanceTitle: "📈 ውጤት ማስታወቂያ",
-                pendingReviewsTitle: "⏳ ማስታወቂያታት ዝጽበዩ",
-                violationsTitle: "🚫 ጥሰታት",
-                agentLogTitle: "📋 መዝገብ ኤጀንት",
-                blockedWordsTitle: "⚙️ ዝተዓገዉ ቃላት",
-                reportsTitle: "🚨 ምምሕዳር ተጠቃሚታት",
-                reportsLogTitle: "📋 መዝገብ ምምሕዳር",
-                ministryTradeTitle: "🏛️ ሚኒስትሪ ንግድ - ኤርትራ",
-                ministryTradeDesc: "ምዕባለታት ንግድን ኢንቨስትመንትን",
-                ministryInfoTitle: "📰 ሚኒስትሪ ሓበሬታ - ሻባይት",
-                hadasTitle: "📰 ሓዳስ ኤርትራ ጋዜጣ",
-                libraryTitle: "📚 ቤተ-መጻሕፍቲ ኣስመራ",
-                comesaLink: "COMESA",
-                shabaitLink: "Shabait.com",
-                hadasLink: "ጋዜጣ ኣንብቡ",
-                aboutFooterTitle: "🇪🇷 ብዛዕባና",
-                aboutFooterText: "ንኤርትራውያን ምስ እሙናት ኣገልግሎታት ዘእሰር ዲጂታል መድረኽ",
-                quickLinksTitle: "🔗 ፅዑቕ መስመራት",
-                policiesTitle: "⚖️ ፖሊሲታት",
-                agentFooterTitle: "🛡️ ኤጀንት",
-                privacyLink: "ሕጊ ምስጢር",
-                securityLink: "ሕጊ ደህንነት",
-                returnsLink: "ሕጊ ምልሳዕ",
-                shippingLink: "ሕጊ ሽሓን",
-                login: "🔐 ምዝገባ",
-                logout: "🚪 ውጻእ",
-                register: "ሓዱሽ ሒሳብ",
-                search: "🔍 ድለይ",
-                confirm: "✅ ኣረጋግጽ",
-                publish: "📢 ምውሳኽ",
-                addToCart: "ናብ ቅርጺ ውሰድ",
-                checkout: "ምዝገባ",
-                cart: "ቅርጺ",
-                bookingConfirmed: "✅ ምዝገባ ተረጋጊጹ",
-                pleaseEnterName: "❌ ስምካ ኣእትዉ",
-                adSubmitted: "✅ ማስታወቂያ ናብ ምምሕዳር ተሰዲዱ",
-                pleaseFillData: "❌ ንዝጠቓለል ሓበሬታ መልእ",
-                paymentSuccess: "✅ ክፍሊት ተዛዚሙ!",
-                depositSuccess: "✅ $50 ተወሲኹ",
-                reviewAdded: "✅ ውጤትካ ተወሲኹ",
-                messageSent: "✅ መልእኽቲ ተሰዲዱ",
-                welcome: "✅ እንቋዕ ተደሓኹም",
-                logoutMsg: "👋 ተሰናቢትካ",
-                agentWelcome: "🛡️ እንቋዕ ተደሓኹም ኤጀንት",
-                noFlights: "❌ በረራ የለን",
-                noResults: "ውጤት ኣይተረኽበን",
-                myAds: "ማስታወቂያይ",
-                myMessages: "መልእኽቲ",
-                myBalance: "ሂሳበይ",
-                myOrders: "ትእዛዛተይ",
-                myWishlist: "ምርጫይ",
-                searchPlaceholder: "ምርት ድለይ...",
-                searchByCity: "ከተማ",
-                priceFrom: "ዋጋ ካብ",
-                priceTo: "ዋጋ ክሳብ",
-                category: "ክፍሊ",
-                all: "ኩሉ",
-                realestate: "ንብረት",
-                electronics: "ኤሌክትሮኒክስ",
-                cars: "ማኪና",
-                jobs: "ስራሕ",
-                services: "ኣገልግሎታት",
-                advancedSearch: "ላዕለዎት ምድላይ",
-                writeReview: "ውጤትካ ጽሓፍ...",
-                verified: "ምስጢር"
-            }
-        };
-
-        // ===== متغيرات عامة =====
-        let currentLang = 'en';
-        let currentUser = null;
-        let isVerified = false;
-        let balance = 0;
-        let transactions = [];
-        let messages = [{ id: 1, from: "Ali Hassan", to: "Buyer", text: "Hello", time: "10:30" }];
-        let ratings = [{ user: "Ahmed", rating: 5, comment: "Excellent platform!", date: "2026-04-01" }];
-        let resumes = [];
-        let isAgentMode = false;
-        let selectedRating = 5;
-        let searchQuery = { city: '' };
-        let cart = [];
         
         // ===== بيانات الإعلانات =====
         const realEstateImages = [
@@ -1573,78 +689,76 @@
         ];
         
         let realEstateAds = [
-            { id: 1, name: "Luxury Apartment - Tiravolo", price: 85000, city: "Asmara", type: "Apartment", bedrooms: 3, area: "150m²", finishing: "Luxury", views: 45, image: realEstateImages[0], description: "Luxury apartment in Asmara's finest neighborhood. Great view and full services." },
-            { id: 2, name: "Villa - Edaga Arbi", price: 250000, city: "Asmara", type: "Villa", bedrooms: 5, area: "400m²", finishing: "Super Lux", views: 32, image: realEstateImages[1], description: "Independent villa with private garden and parking." },
-            { id: 3, name: "Apartment - Downtown Asmara", price: 65000, city: "Asmara", type: "Apartment", bedrooms: 2, area: "95m²", finishing: "Standard", views: 28, image: realEstateImages[2], description: "Apartment in excellent location close to all services." }
+            { id: 1, name: "Luxury Apartment - Tiravolo", price: 85000, city: "Asmara", type: "Apartment", views: 45, image: realEstateImages[0], description: "Luxury apartment in Asmara's finest neighborhood." },
+            { id: 2, name: "Villa - Edaga Arbi", price: 250000, city: "Asmara", type: "Villa", views: 32, image: realEstateImages[1], description: "Independent villa with private garden." },
+            { id: 3, name: "Apartment - Downtown", price: 65000, city: "Asmara", type: "Apartment", views: 28, image: realEstateImages[2], description: "Apartment in excellent location." }
         ];
         
         let electronicsAds = [
-            { id: 1, name: "iPhone 14 Pro", price: 899, city: "Asmara", type: "Phone", brand: "Apple", storage: "256GB", color: "Black", condition: "New", views: 120, image: "https://images.pexels.com/photos/788946/pexels-photo-788946.jpeg?w=300&h=200&fit=crop", description: "iPhone 14 Pro with 6.1-inch Super Retina XDR display, 48MP camera." },
-            { id: 2, name: "MacBook Air M2", price: 1299, city: "Asmara", type: "Laptop", brand: "Apple", storage: "512GB", color: "Silver", condition: "New", views: 78, image: "https://images.pexels.com/photos/18105/pexels-photo.jpg?w=300&h=200&fit=crop", description: "MacBook Air with M2 chip, Retina display, long battery life." },
-            { id: 3, name: "Samsung Galaxy S23", price: 699, city: "Asmara", type: "Phone", brand: "Samsung", storage: "128GB", color: "Green", condition: "New", views: 56, image: "https://images.pexels.com/photos/47261/pexels-photo-47261.jpeg?w=300&h=200&fit=crop", description: "Samsung Galaxy S23 with 50MP camera and AMOLED display." }
+            { id: 1, name: "iPhone 14 Pro", price: 899, city: "Asmara", type: "Phone", views: 120, image: "https://images.pexels.com/photos/788946/pexels-photo-788946.jpeg?w=300&h=200&fit=crop", description: "iPhone 14 Pro with 48MP camera." },
+            { id: 2, name: "MacBook Air M2", price: 1299, city: "Asmara", type: "Laptop", views: 78, image: "https://images.pexels.com/photos/18105/pexels-photo.jpg?w=300&h=200&fit=crop", description: "MacBook Air with M2 chip." },
+            { id: 3, name: "Samsung Galaxy S23", price: 699, city: "Asmara", type: "Phone", views: 56, image: "https://images.pexels.com/photos/47261/pexels-photo-47261.jpeg?w=300&h=200&fit=crop", description: "Samsung Galaxy S23 with 50MP camera." }
         ];
         
         let carsAds = [
-            { id: 1, name: "Toyota Corolla 2020", price: 9000, city: "Massawa", type: "Car", brand: "Toyota", model: "Corolla", year: 2020, mileage: "85,000 km", transmission: "Automatic", color: "White", views: 67, image: "https://images.pexels.com/photos/113102/pexels-photo-113102.jpeg?w=300&h=200&fit=crop", description: "Toyota Corolla 2020 in excellent condition." },
-            { id: 2, name: "Hyundai Tucson 2022", price: 18000, city: "Asmara", type: "Car", brand: "Hyundai", model: "Tucson", year: 2022, mileage: "45,000 km", transmission: "Automatic", color: "Black", views: 45, image: "https://images.pexels.com/photos/1413412/pexels-photo-1413412.jpeg?w=300&h=200&fit=crop", description: "Hyundai Tucson 2022 with sunroof and backup camera." },
-            { id: 3, name: "Kia Sportage 2021", price: 16000, city: "Asmara", type: "Car", brand: "Kia", model: "Sportage", year: 2021, mileage: "60,000 km", transmission: "Automatic", color: "Silver", views: 34, image: "https://images.pexels.com/photos/2761842/pexels-photo-2761842.jpeg?w=300&h=200&fit=crop", description: "Kia Sportage 2021 in good condition." }
+            { id: 1, name: "Toyota Corolla 2020", price: 9000, city: "Massawa", type: "Car", views: 67, image: "https://images.pexels.com/photos/113102/pexels-photo-113102.jpeg?w=300&h=200&fit=crop", description: "Toyota Corolla in excellent condition." },
+            { id: 2, name: "Hyundai Tucson 2022", price: 18000, city: "Asmara", type: "Car", views: 45, image: "https://images.pexels.com/photos/1413412/pexels-photo-1413412.jpeg?w=300&h=200&fit=crop", description: "Hyundai Tucson with sunroof." },
+            { id: 3, name: "Kia Sportage 2021", price: 16000, city: "Asmara", type: "Car", views: 34, image: "https://images.pexels.com/photos/2761842/pexels-photo-2761842.jpeg?w=300&h=200&fit=crop", description: "Kia Sportage in good condition." }
         ];
         
         let jobsAds = [
-            { id: 1, name: "Accountant", salary: 500, city: "Asmara", company: "Asmara Company", type: "Full Time", experience: "2 years", qualification: "Bachelor", views: 89, image: "https://images.pexels.com/photos/3183197/pexels-photo-3183197.jpeg?w=300&h=200&fit=crop", description: "Accountant needed for Asmara Company." },
-            { id: 2, name: "Civil Engineer", salary: 800, city: "Asmara", company: "Brothers Construction", type: "Full Time", experience: "3-5 years", qualification: "Bachelor", views: 56, image: "https://images.pexels.com/photos/416405/pexels-photo-416405.jpeg?w=300&h=200&fit=crop", description: "Civil engineer needed for project supervision." },
-            { id: 3, name: "Web Developer", salary: 1200, city: "Remote", company: "Tech Company", type: "Remote", experience: "1 year", qualification: "Bachelor", views: 34, image: "https://images.pexels.com/photos/1181263/pexels-photo-1181263.jpeg?w=300&h=200&fit=crop", description: "Web developer needed for remote work." }
+            { id: 1, name: "Accountant", salary: 500, city: "Asmara", company: "Asmara Co", type: "Full Time", views: 89, image: "https://images.pexels.com/photos/3183197/pexels-photo-3183197.jpeg?w=300&h=200&fit=crop", description: "Accountant needed." },
+            { id: 2, name: "Civil Engineer", salary: 800, city: "Asmara", company: "Construction Co", type: "Full Time", views: 56, image: "https://images.pexels.com/photos/416405/pexels-photo-416405.jpeg?w=300&h=200&fit=crop", description: "Civil engineer needed." },
+            { id: 3, name: "Web Developer", salary: 1200, city: "Remote", company: "Tech Co", type: "Remote", views: 34, image: "https://images.pexels.com/photos/1181263/pexels-photo-1181263.jpeg?w=300&h=200&fit=crop", description: "Web developer needed." }
         ];
         
         let generalAds = [
-            { id: 1, name: "Shipping from Dubai to Asmara", price: 299, city: "Asmara", type: "Shipping Service", views: 34, image: "https://images.pexels.com/photos/279949/pexels-photo-279949.jpeg?w=300&h=200&fit=crop", description: "Fast shipping from Dubai to Asmara." },
-            { id: 2, name: "Office for Rent", price: 500, city: "Asmara", type: "Commercial Property", views: 23, image: "https://images.pexels.com/photos/289777/pexels-photo-289777.jpeg?w=300&h=200&fit=crop", description: "Furnished office for rent in downtown Asmara." }
+            { id: 1, name: "Shipping to Asmara", price: 299, city: "Asmara", type: "Service", views: 34, image: "https://images.pexels.com/photos/279949/pexels-photo-279949.jpeg?w=300&h=200&fit=crop", description: "Fast shipping from Dubai." },
+            { id: 2, name: "Office for Rent", price: 500, city: "Asmara", type: "Property", views: 23, image: "https://images.pexels.com/photos/289777/pexels-photo-289777.jpeg?w=300&h=200&fit=crop", description: "Furnished office for rent." }
         ];
         
         const testimonials = [
-            { name: "Ahmed Mahmoud", title: "Real Estate Investor", text: "Great platform! Helped me find the perfect property in Asmara.", rating: 5, avatar: "A" },
-            { name: "Sara Ibrahim", title: "Expat", text: "Excellent service. Highly recommended!", rating: 5, avatar: "S" },
-            { name: "Mohamed Ali", title: "Business Owner", text: "Found the best talent through this platform.", rating: 4, avatar: "M" }
+            { name: "Ahmed M.", title: "Investor", text: "Great platform! Found the perfect property.", rating: 5, avatar: "A" },
+            { name: "Sara I.", title: "Expat", text: "Excellent service! Highly recommended.", rating: 5, avatar: "S" },
+            { name: "Mohamed A.", title: "Business Owner", text: "Found the best talent through this platform.", rating: 4, avatar: "M" }
         ];
         
         const allFlights = [
-            { from: "DXB", fromName: "Dubai", to: "ASM", toName: "Asmara", airline: "FlyDubai", flightNo: "FZ 849", price: "$450", time: "08:00", duration: "3h 30m" },
-            { from: "DXB", fromName: "Dubai", to: "ASM", toName: "Asmara", airline: "Ethiopian", flightNo: "ET 601", price: "$520", time: "14:20", duration: "4h 00m" },
-            { from: "JED", fromName: "Jeddah", to: "ASM", toName: "Asmara", airline: "Ethiopian", flightNo: "ET 603", price: "$380", time: "09:15", duration: "2h 45m" },
-            { from: "CAI", fromName: "Cairo", to: "ASM", toName: "Asmara", airline: "EgyptAir", flightNo: "MS 851", price: "$490", time: "10:00", duration: "3h 15m" },
-            { from: "ADD", fromName: "Addis Ababa", to: "ASM", toName: "Asmara", airline: "Ethiopian", flightNo: "ET 312", price: "$210", time: "07:30", duration: "1h 30m" },
-            { from: "ADD", fromName: "Addis Ababa", to: "ASM", toName: "Asmara", airline: "Eritrean Airlines", flightNo: "ER 101", price: "$195", time: "13:45", duration: "1h 30m" }
+            { from: "DXB", fromName: "Dubai", to: "ASM", toName: "Asmara", airline: "FlyDubai", price: "$450", time: "08:00" },
+            { from: "JED", fromName: "Jeddah", to: "ASM", toName: "Asmara", airline: "Ethiopian", price: "$380", time: "09:15" },
+            { from: "CAI", fromName: "Cairo", to: "ASM", toName: "Asmara", airline: "EgyptAir", price: "$490", time: "10:00" },
+            { from: "ADD", fromName: "Addis Ababa", to: "ASM", toName: "Asmara", airline: "Ethiopian", price: "$210", time: "07:30" }
         ];
         
         const blogPosts = [
-            { id: 1, title: "📘 Guide to Buying Property in Asmara", category: "Real Estate", summary: "Important steps and legal advice for buying property safely.", content: "<h3>Steps to Buy Property in Asmara</h3><ul><li>Verify property ownership</li><li>Deal with certified agent</li><li>Sign official contract</li><li>Register contract in court</li></ul>", date: "2026-04-01", image: "🏠", author: "Asmara.Store Team" },
-            { id: 2, title: "✈️ Tips for Booking Cheap Flights", category: "Travel", summary: "Best times and airlines to get good prices.", content: "<h3>Tips for Cheap Flights</h3><ul><li>Book 6-8 weeks in advance</li><li>Compare prices</li><li>Fly mid-week</li><li>Avoid holiday seasons</li></ul>", date: "2026-03-28", image: "✈️", author: "Asmara.Store Team" },
-            { id: 3, title: "💼 How to Find a Job in Eritrea", category: "Jobs", summary: "Best ways to find suitable job opportunities.", content: "<h3>Job Search Methods</h3><ul><li>Follow job ads on our platform</li><li>Contact companies directly</li><li>Prepare a professional CV</li><li>Prepare for interviews</li></ul>", date: "2026-03-25", image: "💼", author: "Asmara.Store Team" }
+            { id: 1, title: "📘 Guide to Buying Property in Asmara", category: "Real Estate", summary: "Important steps for buying property safely.", content: "Content here...", date: "2026-04-01", image: "🏠", author: "Asmara.Store" },
+            { id: 2, title: "✈️ Tips for Booking Cheap Flights", category: "Travel", summary: "Best times to get good prices.", content: "Content here...", date: "2026-03-28", image: "✈️", author: "Asmara.Store" },
+            { id: 3, title: "💼 How to Find a Job in Eritrea", category: "Jobs", summary: "Best ways to find job opportunities.", content: "Content here...", date: "2026-03-25", image: "💼", author: "Asmara.Store" }
         ];
         
-        const policies = {
-            privacy: { title: "🔒 Privacy Policy", content: "We are committed to protecting your privacy. We do not share your personal information with third parties." },
-            security: { title: "🛡️ Security Policy", content: "We use the latest encryption technologies to protect your data." },
-            returns: { title: "🔄 Return Policy", content: "You can return the product within 14 days of purchase." },
-            shipping: { title: "🚚 Shipping Policy", content: "We ship to all cities in Eritrea. Delivery time: 3-7 business days." }
-        };
+        // ===== متغيرات عامة =====
+        let currentLang = 'en';
+        let currentUser = null;
+        let isVerified = false;
+        let balance = 0;
+        let transactions = [];
+        let messages = [{ id: 1, from: "Ali Hassan", to: "Buyer", text: "Hello", time: "10:30" }];
+        let ratings = [{ user: "Ahmed", rating: 5, comment: "Excellent platform!", date: "2026-04-01" }];
+        let cart = [];
         
-        // ===== دوال العرض الأساسية =====
-        function renderGallery(containerId, data, section) {
+        // ===== دوال العرض =====
+        function renderGallery(containerId, data) {
             const container = document.getElementById(containerId);
             if (!container) return;
             container.innerHTML = data.slice(0, 3).map(item => {
                 const price = item.price || item.salary;
-                const verifiedBadge = isVerified ? '<span class="verified-badge" style="margin-left:0.5rem;">✓</span>' : '';
                 return `
-                    <div class="product-card" onclick="showProductDetails(${item.id}, '${section}')">
+                    <div class="product-card" onclick="showProductDetails(${item.id}, '${containerId}')">
                         <div class="product-image-container">
                             <img src="${item.image}" class="product-image" loading="lazy" onerror="this.src='https://placehold.co/300x200/1e3a5f/white?text=Image'">
-                            <div class="image-zoom">🔍 Zoom</div>
-                            <button class="share-btn" onclick="event.stopPropagation(); shareOnWhatsapp('${item.name}', '${price}', '${item.city}')"><i class="fab fa-whatsapp"></i></button>
                         </div>
                         <div class="product-info">
-                            <h4 class="product-title">${item.name} ${verifiedBadge}</h4>
+                            <h4 class="product-title">${item.name}</h4>
                             <div class="product-price">$${price}</div>
                             <div class="product-meta">
                                 <span class="badge">${item.type}</span>
@@ -1658,82 +772,83 @@
         }
         
         function renderHomePage() {
-            renderGallery('homeRealEstate', realEstateAds, 'realestate');
-            renderGallery('homeElectronics', electronicsAds, 'electronics');
-            renderGallery('homeCars', carsAds, 'cars');
-            renderGallery('homeJobs', jobsAds, 'jobs');
-            renderGallery('homeServices', generalAds, 'general');
+            renderGallery('homeRealEstate', realEstateAds);
+            renderGallery('homeElectronics', electronicsAds);
+            renderGallery('homeCars', carsAds);
+            renderGallery('homeJobs', jobsAds);
+            renderGallery('homeServices', generalAds);
             
             const tc = document.getElementById('testimonialsGrid');
-            if (tc) tc.innerHTML = testimonials.map(t => `
-                <div class="testimonial-card">
-                    <div class="testimonial-avatar">${t.avatar}</div>
-                    <div class="testimonial-text">"${t.text}"</div>
-                    <div class="testimonial-name">${t.name}</div>
-                    <div class="testimonial-title">${t.title}</div>
-                    <div class="testimonial-stars">${"★".repeat(t.rating)}${"☆".repeat(5 - t.rating)}</div>
-                </div>
-            `).join('');
+            if (tc) {
+                tc.innerHTML = testimonials.map(t => `
+                    <div class="testimonial-card" style="background:white; border-radius:20px; padding:1.2rem; text-align:center;">
+                        <div style="width:70px; height:70px; border-radius:50%; background:linear-gradient(135deg,#1e3a5f,#c7a12b); display:flex; align-items:center; justify-content:center; margin:0 auto 1rem; font-size:2rem; color:white;">${t.avatar}</div>
+                        <p style="font-size:0.85rem; color:#4a627a;">"${t.text}"</p>
+                        <h4 style="margin-top:0.5rem;">${t.name}</h4>
+                        <small style="color:#c7a12b;">${t.title}</small>
+                        <div style="color:#c7a12b; margin-top:0.5rem;">${"★".repeat(t.rating)}${"☆".repeat(5-t.rating)}</div>
+                    </div>
+                `).join('');
+            }
             
             const bc = document.getElementById('homeBlogPreview');
-            if (bc) bc.innerHTML = blogPosts.slice(0, 3).map(p => `
-                <div style="margin-bottom:1rem; cursor:pointer" onclick="showBlogPost(${p.id})">
-                    <span class="blog-category">${p.category}</span>
-                    <h4 style="color:#1e3a5f">${p.title}</h4>
-                    <p style="font-size:0.8rem; color:#666">${p.summary}</p>
-                </div>
-            `).join('');
+            if (bc) {
+                bc.innerHTML = blogPosts.slice(0, 3).map(p => `
+                    <div style="margin-bottom:1rem; cursor:pointer; border-bottom:1px solid #eee; padding-bottom:0.5rem;" onclick="showBlogPost(${p.id})">
+                        <span style="background:#c7a12b; padding:0.2rem 0.5rem; border-radius:20px; font-size:0.6rem;">${p.category}</span>
+                        <h4 style="margin:0.3rem 0;">${p.title}</h4>
+                        <p style="font-size:0.75rem; color:#666;">${p.summary}</p>
+                    </div>
+                `).join('');
+            }
         }
         
         function renderAllFlights() {
             const c = document.getElementById('allFlightsList');
-            if (c) c.innerHTML = allFlights.map(f => `
-                <div class="flight-card">
-                    <div class="flight-route">✈️ ${f.fromName} → ${f.toName}</div>
-                    <div class="flight-details">
-                        <div>${f.airline} ${f.flightNo}</div>
-                        <div>🕐 ${f.time}</div>
-                        <div>${f.price}</div>
+            if (c) {
+                c.innerHTML = allFlights.map(f => `
+                    <div class="flight-card" style="background:linear-gradient(135deg,#1e3a5f,#2c5282); color:white; border-radius:20px; padding:1rem; margin-bottom:1rem;">
+                        <div style="font-size:1.1rem; font-weight:bold;">✈️ ${f.fromName} → ${f.toName}</div>
+                        <div style="display:flex; justify-content:space-between; margin-top:0.5rem;">
+                            <div>${f.airline}</div>
+                            <div>🕐 ${f.time}</div>
+                            <div>${f.price}</div>
+                        </div>
                     </div>
-                </div>
-            `).join('');
+                `).join('');
+            }
         }
         
         function renderBlog() {
             const c = document.getElementById('blogGrid');
-            if (c) c.innerHTML = blogPosts.map(p => `
-                <div class="blog-card" onclick="showBlogPost(${p.id})">
-                    <div class="blog-image">${p.image}</div>
-                    <div class="blog-content">
-                        <span class="blog-category">${p.category}</span>
-                        <h3 class="blog-title">${p.title}</h3>
-                        <p class="blog-summary">${p.summary}</p>
-                        <div class="blog-meta">
-                            <span>📅 ${p.date}</span>
-                            <span>✍️ ${p.author}</span>
-                            <span class="blog-read-more">Read More →</span>
+            if (c) {
+                c.innerHTML = blogPosts.map(p => `
+                    <div class="blog-card" style="background:white; border-radius:20px; overflow:hidden; cursor:pointer; margin-bottom:1rem;" onclick="showBlogPost(${p.id})">
+                        <div style="background:linear-gradient(135deg,#1e3a5f,#2c5282); height:120px; display:flex; align-items:center; justify-content:center; font-size:3rem;">${p.image}</div>
+                        <div style="padding:1rem;">
+                            <span style="background:#c7a12b; padding:0.2rem 0.5rem; border-radius:20px; font-size:0.6rem;">${p.category}</span>
+                            <h3 style="margin:0.5rem 0;">${p.title}</h3>
+                            <p style="font-size:0.8rem; color:#666;">${p.summary}</p>
+                            <div style="display:flex; justify-content:space-between; margin-top:0.5rem; font-size:0.7rem; color:#8ba0b5;">
+                                <span>📅 ${p.date}</span>
+                                <span>✍️ ${p.author}</span>
+                            </div>
                         </div>
                     </div>
-                </div>
-            `).join('');
+                `).join('');
+            }
         }
         
         function showBlogPost(id) {
             const p = blogPosts.find(p => p.id === id);
             if (p) {
-                document.getElementById('policyModalTitle').innerHTML = `${p.image} ${p.title}`;
+                document.getElementById('policyModalTitle').innerHTML = p.title;
                 document.getElementById('policyModalBody').innerHTML = p.content;
                 document.getElementById('policyModal').style.display = 'flex';
             }
         }
         
-        function renderFilteredRealEstate() {
-            let filtered = realEstateAds;
-            if (searchQuery.city) filtered = filtered.filter(ad => ad.city === searchQuery.city);
-            renderGallery('realEstateGallery', filtered, 'realestate');
-        }
-        
-        // ===== دوال سلة التسوق =====
+        // ===== سلة التسوق =====
         function addToCart(item) {
             cart.push(item);
             updateCartUI();
@@ -1744,20 +859,22 @@
             document.getElementById('cartCount').innerText = cart.length;
             const cartItemsDiv = document.getElementById('cartItems');
             let total = 0;
-            cartItemsDiv.innerHTML = cart.map((item, index) => {
-                total += item.price;
-                return `
-                    <div class="cart-item">
-                        <img src="${item.image}" alt="${item.name}">
-                        <div class="cart-item-details">
-                            <div class="cart-item-title">${item.name}</div>
-                            <div class="cart-item-price">$${item.price}</div>
+            if (cartItemsDiv) {
+                cartItemsDiv.innerHTML = cart.map((item, index) => {
+                    total += item.price;
+                    return `
+                        <div style="display:flex; gap:1rem; padding:1rem; border-bottom:1px solid #eef2f8;">
+                            <img src="${item.image}" style="width:60px; height:60px; object-fit:cover; border-radius:8px;">
+                            <div style="flex:1;">
+                                <div style="font-weight:600;">${item.name}</div>
+                                <div style="color:#c7a12b;">$${item.price}</div>
+                            </div>
+                            <button class="btn-sm" onclick="removeFromCart(${index})">🗑️</button>
                         </div>
-                        <button class="btn-sm" onclick="removeFromCart(${index})">🗑️</button>
-                    </div>
-                `;
-            }).join('');
-            document.getElementById('cartTotal').innerHTML = `Total: $${total}`;
+                    `;
+                }).join('');
+                document.getElementById('cartTotal').innerHTML = `Total: $${total}`;
+            }
         }
         
         function removeFromCart(index) {
@@ -1766,8 +883,10 @@
         }
         
         function toggleCart() {
-            document.getElementById('cartSidebar').classList.toggle('open');
-            document.getElementById('cartOverlay').classList.toggle('open');
+            const sidebar = document.getElementById('cartSidebar');
+            const overlay = document.getElementById('cartOverlay');
+            if (sidebar) sidebar.style.right = sidebar.style.right === '0px' ? '-400px' : '0px';
+            if (overlay) overlay.style.display = overlay.style.display === 'block' ? 'none' : 'block';
         }
         
         function checkout() {
@@ -1781,67 +900,45 @@
             toggleCart();
         }
         
-        // ===== دوال البحث =====
+        // ===== البحث =====
         function performSearch() {
-            const keyword = document.getElementById('searchInput').value.toLowerCase();
-            const city = document.getElementById('searchCity').value;
-            const minPrice = parseFloat(document.getElementById('priceMin').value) || 0;
-            const maxPrice = parseFloat(document.getElementById('priceMax').value) || Infinity;
-            const category = document.getElementById('searchCategory').value;
+            const keyword = document.getElementById('searchInput')?.value.toLowerCase() || '';
+            const city = document.getElementById('searchCity')?.value || '';
+            const minPrice = parseFloat(document.getElementById('priceMin')?.value) || 0;
+            const maxPrice = parseFloat(document.getElementById('priceMax')?.value) || Infinity;
             
             let results = [];
-            if (!category || category === 'realestate') results.push(...realEstateAds.filter(i => (!keyword || i.name.toLowerCase().includes(keyword)) && (!city || i.city === city) && i.price >= minPrice && i.price <= maxPrice));
-            if (!category || category === 'electronics') results.push(...electronicsAds.filter(i => (!keyword || i.name.toLowerCase().includes(keyword)) && (!city || i.city === city) && i.price >= minPrice && i.price <= maxPrice));
-            if (!category || category === 'cars') results.push(...carsAds.filter(i => (!keyword || i.name.toLowerCase().includes(keyword)) && (!city || i.city === city) && i.price >= minPrice && i.price <= maxPrice));
-            if (!category || category === 'jobs') results.push(...jobsAds.filter(i => (!keyword || i.name.toLowerCase().includes(keyword)) && (!city || i.city === city) && i.salary >= minPrice && i.salary <= maxPrice));
-            if (!category || category === 'general') results.push(...generalAds.filter(i => (!keyword || i.name.toLowerCase().includes(keyword)) && (!city || i.city === city) && i.price >= minPrice && i.price <= maxPrice));
+            results.push(...realEstateAds.filter(i => (!keyword || i.name.toLowerCase().includes(keyword)) && (!city || i.city === city) && i.price >= minPrice && i.price <= maxPrice));
+            results.push(...electronicsAds.filter(i => (!keyword || i.name.toLowerCase().includes(keyword)) && (!city || i.city === city) && i.price >= minPrice && i.price <= maxPrice));
+            results.push(...carsAds.filter(i => (!keyword || i.name.toLowerCase().includes(keyword)) && (!city || i.city === city) && i.price >= minPrice && i.price <= maxPrice));
             
             showNotification(results.length ? `Found ${results.length} results` : 'No results found', results.length ? 'success' : 'info');
         }
         
-        // ===== دوال إضافية =====
+        // ===== إشعارات =====
         function showNotification(message, type = 'success') {
             const notification = document.createElement('div');
             notification.className = `notification ${type}`;
-            notification.innerHTML = `<i class="fas fa-${type === 'success' ? 'check-circle' : (type === 'error' ? 'exclamation-circle' : 'info-circle')}"></i> ${message}`;
+            notification.innerHTML = `<i class="fas fa-${type === 'success' ? 'check-circle' : 'exclamation-circle'}"></i> ${message}`;
             document.body.appendChild(notification);
-            setTimeout(() => {
-                notification.style.animation = 'slideOut 0.3s ease';
-                setTimeout(() => notification.remove(), 300);
-            }, 3000);
-        }
-        
-        function shareOnWhatsapp(title, price, city) {
-            const text = `Check this ad on Asmara.Store\n\n📌 ${title}\n💰 $${price}\n📍 ${city}\n\nLink: ${window.location.href}`;
-            window.open(`https://wa.me/?text=${encodeURIComponent(text)}`, '_blank');
+            setTimeout(() => notification.remove(), 3000);
         }
         
         function showProductDetails(id, section) {
             let product;
-            if (section === 'realestate') product = realEstateAds.find(p => p.id === id);
-            else if (section === 'electronics') product = electronicsAds.find(p => p.id === id);
-            else if (section === 'cars') product = carsAds.find(p => p.id === id);
-            else if (section === 'jobs') product = jobsAds.find(p => p.id === id);
+            if (section === 'homeRealEstate') product = realEstateAds.find(p => p.id === id);
+            else if (section === 'homeElectronics') product = electronicsAds.find(p => p.id === id);
+            else if (section === 'homeCars') product = carsAds.find(p => p.id === id);
+            else if (section === 'homeJobs') product = jobsAds.find(p => p.id === id);
             else product = generalAds.find(p => p.id === id);
             
             if (product) {
                 const price = product.price || product.salary;
-                document.getElementById('policyModalTitle').innerHTML = product.name;
-                document.getElementById('policyModalBody').innerHTML = `
-                    <img src="${product.image}" style="width:100%; border-radius:16px; margin-bottom:1rem;">
-                    <p><strong>💰 Price:</strong> $${price}</p>
-                    <p><strong>📍 City:</strong> ${product.city}</p>
-                    <p><strong>📝 Description:</strong> ${product.description || 'No additional description'}</p>
-                    <hr>
-                    <button class="btn" onclick="addToCart({id:${product.id}, name:'${product.name}', price:${price}, image:'${product.image}'}); closePolicyModal();">🛒 Add to Cart</button>
-                `;
-                document.getElementById('policyModal').style.display = 'flex';
-                product.views = (product.views || 0) + 1;
-                renderHomePage();
+                alert(`${product.name}\n💰 Price: $${price}\n📍 City: ${product.city}\n📝 Description: ${product.description}`);
             }
         }
         
-        // ===== دوال المستخدم والتوثيق =====
+        // ===== المستخدم =====
         function setCookie(name, value, days) {
             const date = new Date();
             date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
@@ -1856,63 +953,57 @@
         }
         
         function loginUser() {
-            const u = document.getElementById('loginUsername').value;
-            const p = document.getElementById('loginPassword').value;
+            const u = document.getElementById('loginUsername')?.value;
+            const p = document.getElementById('loginPassword')?.value;
             if (u && p) {
                 currentUser = u;
-                isVerified = false;
                 setCookie('username', u, 30);
-                setCookie('isAgent', p === 'agent123' ? 'true' : 'false', 30);
                 document.getElementById('userName').innerText = u;
-                document.getElementById('userVerifiedBadge').style.display = 'none';
                 document.getElementById('userDisplay').style.display = 'flex';
                 document.getElementById('loginModalBtn').style.display = 'none';
                 document.getElementById('logoutBtn').style.display = 'inline-block';
                 closeLoginModal();
-                updateUserDashboard();
-                showNotification(`${TRANSLATIONS[currentLang]?.welcome || 'Welcome'} ${u}`, 'success');
+                showNotification(`Welcome ${u}`, 'success');
                 if (p === 'agent123') showAgentPanel();
-            } else showNotification(TRANSLATIONS[currentLang]?.pleaseFillData || "Please enter data", 'error');
+            } else {
+                showNotification('Please enter username and password', 'error');
+            }
         }
         
         function logoutUser() {
             currentUser = null;
-            isVerified = false;
             setCookie('username', '', -1);
-            setCookie('isAgent', '', -1);
             document.getElementById('userDisplay').style.display = 'none';
             document.getElementById('loginModalBtn').style.display = 'inline-block';
             document.getElementById('logoutBtn').style.display = 'none';
-            showNotification(TRANSLATIONS[currentLang]?.logoutMsg || "Logged out", 'info');
+            showNotification('Logged out', 'info');
         }
         
         function registerUser() {
-            const name = document.getElementById('regName').value;
-            const email = document.getElementById('regEmail').value;
-            const phone = document.getElementById('regPhone').value;
-            const pass = document.getElementById('regPassword').value;
-            const confirm = document.getElementById('regConfirm').value;
-            if (!name || !email || !phone || !pass) { showNotification('Please fill all fields', 'error'); return; }
-            if (pass !== confirm) { showNotification('Passwords do not match', 'error'); return; }
-            showNotification('Account created successfully! Please verify your account.', 'success');
+            const name = document.getElementById('regName')?.value;
+            const email = document.getElementById('regEmail')?.value;
+            const phone = document.getElementById('regPhone')?.value;
+            const pass = document.getElementById('regPassword')?.value;
+            const confirm = document.getElementById('regConfirm')?.value;
+            if (!name || !email || !phone || !pass) {
+                showNotification('Please fill all fields', 'error');
+                return;
+            }
+            if (pass !== confirm) {
+                showNotification('Passwords do not match', 'error');
+                return;
+            }
+            showNotification('Account created! Please verify your account.', 'success');
             closeRegisterModal();
             openVerifyModal();
         }
         
-        function verifyAccount() {
-            openVerifyModal();
-        }
-        
-        function openVerifyModal() {
-            document.getElementById('verifyModal').style.display = 'flex';
-        }
-        
-        function closeVerifyModal() {
-            document.getElementById('verifyModal').style.display = 'none';
-        }
+        function verifyAccount() { openVerifyModal(); }
+        function openVerifyModal() { document.getElementById('verifyModal').style.display = 'flex'; }
+        function closeVerifyModal() { document.getElementById('verifyModal').style.display = 'none'; }
         
         function submitVerification() {
-            const code = document.getElementById('verifyCode').value;
+            const code = document.getElementById('verifyCode')?.value;
             if (code === '123456') {
                 isVerified = true;
                 document.getElementById('userVerifiedBadge').style.display = 'inline-block';
@@ -1923,34 +1014,17 @@
             }
         }
         
-        function resendVerificationCode() {
-            showNotification('New verification code sent to your phone!', 'info');
-        }
-        
         function showRegister() { closeLoginModal(); document.getElementById('registerModal').style.display = 'flex'; }
         function closeRegisterModal() { document.getElementById('registerModal').style.display = 'none'; }
         function openLoginModal() { document.getElementById('loginModal').style.display = 'flex'; }
         function closeLoginModal() { document.getElementById('loginModal').style.display = 'none'; }
-        
         function toggleUserDashboard() { document.getElementById('userDashboard').classList.toggle('active'); }
-        function updateUserDashboard() {
-            document.getElementById('dashboardUserName').innerText = currentUser || 'Guest';
-            document.getElementById('userAdsCount').innerText = "0";
-            document.getElementById('userMessagesCount').innerText = messages.filter(m => m.to === currentUser).length;
-            document.getElementById('userBalance').innerHTML = `$${balance}`;
-        }
-        
         function showMyOrders() { alert('No orders yet'); }
         function showWishlist() { alert('Wishlist is empty'); }
         function showMyAds() { alert('No ads added yet'); }
         
-        function showLocalPayment() {
-            showNotification('Payment options: Bank Transfer, Mobile Money, Western Union. Contact support for details.', 'info');
-        }
-        
-        // ===== دوال الوكيل =====
-        let pendingAds = [], rejectedAds = [], blockedWords = ["sex", "naked", "alcohol", "drugs", "curse"];
-        
+        // ===== الوكيل =====
+        let isAgentMode = false;
         function showAgentPanel() {
             if (!isAgentMode) {
                 isAgentMode = true;
@@ -1969,7 +1043,7 @@
             }
         }
         
-        // ===== دوال المراسلة والتقييم =====
+        // ===== المراسلة والتقييم =====
         function loadChat() {
             const c = document.getElementById('chatMessages');
             if (c) c.innerHTML = messages.map(m => `<div class="chat-message"><strong>${m.from}</strong><div>${m.text}</div><small>${m.time}</small></div>`).join('');
@@ -1977,47 +1051,43 @@
         
         function loadRatings() {
             const r = document.getElementById('ratingsList');
-            if (r) r.innerHTML = ratings.map(r => `
-                <div class="chat-message">
-                    <strong>${r.user}</strong>
-                    <div class="rating-stars">${"★".repeat(r.rating)}${"☆".repeat(5 - r.rating)}</div>
-                    <div>${r.comment}</div>
-                    <small>${r.date}</small>
-                </div>
-            `).join('');
+            if (r) r.innerHTML = ratings.map(r => `<div class="chat-message"><strong>${r.user}</strong><div class="rating-stars">${"★".repeat(r.rating)}${"☆".repeat(5-r.rating)}</div><div>${r.comment}</div><small>${r.date}</small></div>`).join('');
         }
         
         function initRatingStars() {
             document.querySelectorAll('.rating-star').forEach(star => {
                 star.addEventListener('click', function() {
-                    selectedRating = parseInt(this.dataset.value);
-                    document.querySelectorAll('.rating-star').forEach(s => s.classList.remove('active'));
-                    for (let i = 0; i < selectedRating; i++) document.querySelectorAll('.rating-star')[i]?.classList.add('active');
+                    const val = parseInt(this.dataset.value);
+                    document.querySelectorAll('.rating-star').forEach((s, i) => {
+                        if (i < val) s.classList.add('active');
+                        else s.classList.remove('active');
+                    });
                 });
             });
         }
         
         // ===== دوال إضافية =====
         function searchFlights() {
-            const from = document.getElementById("flightFrom").value;
-            const date = document.getElementById("flightDate").value;
+            const from = document.getElementById('flightFrom')?.value;
+            const date = document.getElementById('flightDate')?.value;
             const flights = allFlights.filter(f => f.from === from);
-            const rd = document.getElementById("flightResults");
-            if (flights.length === 0) { rd.innerHTML = "❌ No flights available"; return; }
-            rd.innerHTML = `<strong>Search Results (${date}):</strong><br>` + flights.map(f => `<div style="padding:8px; border-bottom:1px solid #ddd;">✈️ ${f.airline} | ${f.price} | 🕐 ${f.time}</div>`).join('');
-        }
-        
-        function filterByCity(city) {
-            searchQuery.city = city;
-            showNotification(`Filtered by city: ${city || 'All'}`, 'info');
-            renderFilteredRealEstate();
+            const rd = document.getElementById('flightResults');
+            if (rd) {
+                if (flights.length === 0) {
+                    rd.innerHTML = '❌ No flights available';
+                    return;
+                }
+                rd.innerHTML = `<strong>Search Results (${date}):</strong><br>` + flights.map(f => `<div style="padding:8px; border-bottom:1px solid #ddd;">✈️ ${f.airline} | ${f.price} | 🕐 ${f.time}</div>`).join('');
+            }
         }
         
         function toggleFaq(element) {
             const answer = element.nextElementSibling;
-            answer.classList.toggle('show');
-            element.querySelector('i').classList.toggle('fa-chevron-down');
-            element.querySelector('i').classList.toggle('fa-chevron-up');
+            if (answer) {
+                answer.classList.toggle('show');
+                element.querySelector('i').classList.toggle('fa-chevron-down');
+                element.querySelector('i').classList.toggle('fa-chevron-up');
+            }
         }
         
         function sendContactMessage() {
@@ -2029,41 +1099,22 @@
                 document.getElementById('contactName').value = '';
                 document.getElementById('contactEmail').value = '';
                 document.getElementById('contactMessage').value = '';
-            } else showNotification('Please fill all fields', 'error');
+            } else {
+                showNotification('Please fill all fields', 'error');
+            }
         }
         
         function updateWallet() {
             document.getElementById('balanceAmount').innerHTML = `$${balance}`;
-            document.getElementById('transactionsList').innerHTML = transactions.map(t => `<div style="padding:5px 0;">${t.date} - ${t.amount} - ${t.type}</div>`).join('') || "<p>No transactions</p>";
-        }
-        
-        function setupPreview(inputId, previewId) {
-            document.getElementById(inputId)?.addEventListener("change", function(e) {
-                const preview = document.getElementById(previewId);
-                if (preview) preview.innerHTML = "";
-                const file = e.target.files[0];
-                if (file && preview) {
-                    const reader = new FileReader();
-                    reader.onload = (ev) => {
-                        const img = document.createElement("img");
-                        img.src = ev.target.result;
-                        preview.appendChild(img);
-                    };
-                    reader.readAsDataURL(file);
-                }
-            });
-        }
-        
-        function createPublishHandler(fields, msgId) {
-            return () => {
-                let values = fields.map(f => document.getElementById(f.id)?.value || "");
-                if (!values[0]) { showNotification("Please fill required fields", 'error'); return; }
-                showNotification("Ad submitted for review", 'success');
-                fields.forEach(f => { let el = document.getElementById(f.id); if (el) el.value = ""; });
-            };
+            const tl = document.getElementById('transactionsList');
+            if (tl) tl.innerHTML = transactions.map(t => `<div>${t.date} - ${t.amount} - ${t.type}</div>`).join('') || '<p>No transactions</p>';
         }
         
         function showPolicy(type) {
+            const policies = {
+                privacy: { title: "Privacy Policy", content: "We protect your data." },
+                returns: { title: "Return Policy", content: "14 days return policy." }
+            };
             const p = policies[type];
             if (p) {
                 document.getElementById('policyModalTitle').innerHTML = p.title;
@@ -2074,70 +1125,26 @@
         
         function closePolicyModal() { document.getElementById('policyModal').style.display = 'none'; }
         
-        // ===== دوال الترجمة =====
+        // ===== الترجمة =====
+        const TRANSLATIONS = {
+            en: { tagline: "A platform that respects our customs", homeIntro: "Trusted platform" },
+            ar: { tagline: "منصة تحترم عاداتنا", homeIntro: "منصة موثوقة" },
+            ti: { tagline: "ልማዳትና ባህልና ዘከብር መድረኽ", homeIntro: "እሙን መድረኽ" }
+        };
+        
         function updateLanguage(lang) {
             currentLang = lang;
             const t = TRANSLATIONS[lang];
-            if (!t) return;
-            
-            const elements = [
-                'tagline', 'homeIntro', 'homeFlightsTitle', 'homeElectronicsTitle',
-                'homeCarsTitle', 'homeJobsTitle', 'homeServicesTitle', 'homeBlogTitle',
-                'testimonialsTitle', 'flightSearchTitle', 'flightBookingTitle', 'bookingInfoTitle',
-                'addPropertyTitle', 'addDeviceTitle', 'addCarTitle', 'addJobTitle', 'addGeneralTitle',
-                'blogMainTitle', 'faqTitle', 'contactTitle', 'sendMessageTitle', 'sendBtn',
-                'proSubscriptionTitle', 'proDesc', 'walletTitle', 'walletBalance', 'transactionsTitle', 'depositBtn',
-                'chatsTitle', 'messagingTitle', 'ratingsTitle', 'addRating', 'totalAdsLabel',
-                'pendingLabel', 'approvedLabel', 'rejectedLabel', 'performanceTitle',
-                'pendingReviewsTitle', 'violationsTitle', 'agentLogTitle', 'blockedWordsTitle',
-                'reportsTitle', 'reportsLogTitle', 'ministryTradeTitle', 'ministryTradeDesc',
-                'ministryInfoTitle', 'hadasTitle', 'libraryTitle', 'comesaLink', 'shabaitLink', 'hadasLink',
-                'aboutFooterTitle', 'aboutFooterText', 'quickLinksTitle', 'policiesTitle', 'agentFooterTitle',
-                'privacyLink', 'securityLink', 'returnsLink', 'shippingLink', 'myAdsLabel', 'myMessagesLabel', 'myBalanceLabel'
-            ];
-            
-            elements.forEach(id => {
-                const el = document.getElementById(id);
-                if (el && t[id]) el.innerText = t[id];
-            });
-            
-            const navElements = {
-                navHome: t.navHome, navFlight: t.navFlight, navRealEstate: t.navRealEstate,
-                navElectronics: t.navElectronics, navCars: t.navCars, navJobs: t.navJobs,
-                navGeneral: t.navGeneral, navBlog: t.navBlog, navFaq: t.navFaq,
-                navContact: t.navContact, navPayment: t.navPayment, navMessaging: t.navMessaging,
-                navRatings: t.navRatings
-            };
-            for (const [id, text] of Object.entries(navElements)) {
-                const el = document.getElementById(id);
-                if (el) el.innerText = text;
+            if (t) {
+                document.querySelector('.tagline').innerText = t.tagline;
+                document.getElementById('homeIntro').innerText = t.homeIntro;
             }
-            
-            const loginBtn = document.getElementById("loginModalBtn");
-            if (loginBtn) loginBtn.innerHTML = t.login;
-            const searchBtn = document.getElementById("searchFlightBtn");
-            if (searchBtn) searchBtn.innerHTML = t.search;
-            const confirmBtn = document.getElementById("confirmBookingBtn");
-            if (confirmBtn) confirmBtn.innerHTML = t.confirm;
-            const addRatingBtn = document.getElementById("addRatingBtn");
-            if (addRatingBtn) addRatingBtn.innerHTML = t.addRating;
-            
-            const publishBtns = ['publishReBtn', 'publishElecBtn', 'publishCarBtn', 'publishJobBtn', 'publishGeneralBtn'];
-            publishBtns.forEach(id => { const btn = document.getElementById(id); if (btn) btn.innerHTML = t.publish; });
-            
-            if (lang === 'en') {
-                document.body.className = 'lang-en';
-                document.body.dir = 'ltr';
-            } else {
-                document.body.className = `lang-${lang}`;
-                document.body.dir = 'rtl';
-            }
-            
+            document.body.className = `lang-${lang}`;
+            document.body.dir = lang === 'en' ? 'ltr' : 'rtl';
             document.querySelectorAll('.lang-btn').forEach(btn => {
                 if (btn.dataset.lang === lang) btn.classList.add('active');
                 else btn.classList.remove('active');
             });
-            
             localStorage.setItem('preferredLang', lang);
             setCookie('lang', lang, 30);
         }
@@ -2156,17 +1163,6 @@
             if (tabId === 'home') renderHomePage();
         }
         
-        // ===== رفع السيرة الذاتية =====
-        document.getElementById('resumeFile')?.addEventListener('change', function(e) {
-            const file = e.target.files[0];
-            if (file) {
-                resumes.push({ name: file.name, date: new Date().toLocaleDateString() });
-                showNotification(`Resume uploaded: ${file.name}`, 'success');
-                const container = document.getElementById('resumeList');
-                if (container) container.innerHTML = resumes.map(r => `<div class="resume-item">📄 ${r.name} <small>${r.date}</small></div>`).join('');
-            }
-        });
-        
         // ===== ربط الأحداث =====
         function bindEvents() {
             document.getElementById("loginModalBtn").onclick = openLoginModal;
@@ -2177,7 +1173,7 @@
             };
             document.getElementById("sendMsgBtn").onclick = () => {
                 const i = document.getElementById("chatInput");
-                if (i.value.trim()) {
+                if (i && i.value.trim()) {
                     messages.push({ from: currentUser || "Guest", text: i.value, time: new Date().toLocaleTimeString() });
                     loadChat();
                     i.value = "";
@@ -2186,26 +1182,37 @@
             };
             document.getElementById("addRatingBtn").onclick = () => {
                 const c = document.getElementById("newRatingComment")?.value;
+                const activeStars = document.querySelectorAll('.rating-star.active').length;
                 if (c) {
-                    ratings.unshift({ user: currentUser || "User", rating: selectedRating, comment: c, date: new Date().toLocaleDateString() });
+                    ratings.unshift({ user: currentUser || "User", rating: activeStars || 5, comment: c, date: new Date().toLocaleDateString() });
                     loadRatings();
                     document.getElementById("newRatingComment").value = "";
                     showNotification("Review added", 'success');
-                } else showNotification("Write your review", 'error');
+                } else {
+                    showNotification("Write your review", 'error');
+                }
             };
             document.getElementById("paypalBtn").onclick = () => {
-                setTimeout(() => { balance += 29; transactions.unshift({ date: new Date().toLocaleDateString(), amount: "+$29", type: "Pro Subscription" }); updateWallet(); showNotification("Payment successful!", 'success'); }, 500);
+                setTimeout(() => {
+                    balance += 29;
+                    transactions.unshift({ date: new Date().toLocaleDateString(), amount: "+$29", type: "Pro Subscription" });
+                    updateWallet();
+                    showNotification("Payment successful!", 'success');
+                }, 500);
             };
-            document.getElementById("addFundsBtn").onclick = () => { balance += 50; transactions.unshift({ date: new Date().toLocaleDateString(), amount: "+$50", type: "Deposit" }); updateWallet(); showNotification("$50 deposited", 'success'); };
+            document.getElementById("addFundsBtn").onclick = () => {
+                balance += 50;
+                transactions.unshift({ date: new Date().toLocaleDateString(), amount: "+$50", type: "Deposit" });
+                updateWallet();
+                showNotification("$50 deposited", 'success');
+            };
             
             document.getElementById("privacyPolicyLink").onclick = (e) => { e.preventDefault(); showPolicy('privacy'); };
-            document.getElementById("securityPolicyLink").onclick = (e) => { e.preventDefault(); showPolicy('security'); };
             document.getElementById("returnsPolicyLink").onclick = (e) => { e.preventDefault(); showPolicy('returns'); };
-            document.getElementById("shippingPolicyLink").onclick = (e) => { e.preventDefault(); showPolicy('shipping'); };
             document.getElementById("agentPanelLink").onclick = (e) => { e.preventDefault(); showAgentPanel(); };
             document.getElementById("libraryInfoBtn").onclick = () => {
-                document.getElementById('policyModalTitle').innerHTML = "📚 Asmara National Library";
-                document.getElementById('policyModalBody').innerHTML = "<h3>Asmara National Library</h3><ul><li>National Documentation Center</li><li>Historical manuscripts</li><li>Research center</li></ul>";
+                document.getElementById('policyModalTitle').innerHTML = "📚 Asmara Library";
+                document.getElementById('policyModalBody').innerHTML = "<p>National Documentation Center</p>";
                 document.getElementById('policyModal').style.display = 'flex';
             };
             
@@ -2217,44 +1224,37 @@
                 switchTab(link.dataset.tab);
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             }));
+            
+            // أزرار النشر
+            document.getElementById("publishReBtn")?.addEventListener("click", () => showNotification("Property ad submitted for review", 'success'));
+            document.getElementById("publishElecBtn")?.addEventListener("click", () => showNotification("Device ad submitted for review", 'success'));
+            document.getElementById("publishCarBtn")?.addEventListener("click", () => showNotification("Car ad submitted for review", 'success'));
+            document.getElementById("publishJobBtn")?.addEventListener("click", () => showNotification("Job ad submitted for review", 'success'));
+            document.getElementById("publishGeneralBtn")?.addEventListener("click", () => showNotification("General ad submitted for review", 'success'));
         }
         
-        // ===== التهيئة الرئيسية =====
+        // ===== التهيئة =====
         document.addEventListener('DOMContentLoaded', function() {
             const savedUser = getCookie('username');
-            const isAgent = getCookie('isAgent') === 'true';
             if (savedUser) {
                 currentUser = savedUser;
                 document.getElementById('userName').innerText = savedUser;
                 document.getElementById('userDisplay').style.display = 'flex';
                 document.getElementById('loginModalBtn').style.display = 'none';
                 document.getElementById('logoutBtn').style.display = 'inline-block';
-                updateUserDashboard();
-                if (isAgent) showAgentPanel();
             }
             
             const savedLang = localStorage.getItem('preferredLang') || getCookie('lang') || 'en';
             updateLanguage(savedLang);
             
             bindEvents();
-            setupPreview("reImage", "rePreview");
-            setupPreview("elecImage", "elecPreview");
-            setupPreview("carImage", "carPreview");
-            setupPreview("adImage", "adPreview");
-            
-            document.getElementById("publishReBtn")?.addEventListener("click", createPublishHandler(["reType", "reCity", "reArea", "reRooms", "rePrice", "reFinish", "reDesc"], "reMsg"));
-            document.getElementById("publishElecBtn")?.addEventListener("click", createPublishHandler(["elecType", "elecBrand", "elecPrice", "elecCondition", "elecStorage", "elecColor", "elecDesc"], "elecMsg"));
-            document.getElementById("publishCarBtn")?.addEventListener("click", createPublishHandler(["carBrand", "carModel", "carYear", "carMileage", "carPrice", "carTransmission", "carColor", "carCity", "carDesc"], "carMsg"));
-            document.getElementById("publishJobBtn")?.addEventListener("click", createPublishHandler(["jobTitle", "jobCompany", "jobSalary", "jobType", "jobExperience", "jobQualification", "jobDesc", "jobCity"], "jobMsg"));
-            document.getElementById("publishGeneralBtn")?.addEventListener("click", createPublishHandler(["adType", "adCity", "adName", "adPrice", "adDesc"], "generalMsg"));
-            
             renderAllFlights();
             renderHomePage();
-            renderFilteredRealEstate();
-            renderGallery('electronicsGallery', electronicsAds, 'electronics');
-            renderGallery('carsGallery', carsAds, 'cars');
-            renderGallery('jobsGallery', jobsAds, 'jobs');
-            renderGallery('generalGallery', generalAds, 'general');
+            renderGallery('realEstateGallery', realEstateAds);
+            renderGallery('electronicsGallery', electronicsAds);
+            renderGallery('carsGallery', carsAds);
+            renderGallery('jobsGallery', jobsAds);
+            renderGallery('generalGallery', generalAds);
             renderBlog();
             loadRatings();
             loadChat();
@@ -2267,8 +1267,6 @@
         // تعريف الدوال العامة
         window.showBlogPost = showBlogPost;
         window.closePolicyModal = closePolicyModal;
-        window.filterByCity = filterByCity;
-        window.shareOnWhatsapp = shareOnWhatsapp;
         window.toggleFaq = toggleFaq;
         window.sendContactMessage = sendContactMessage;
         window.toggleUserDashboard = toggleUserDashboard;
@@ -2289,9 +1287,7 @@
         window.showProductDetails = showProductDetails;
         window.verifyAccount = verifyAccount;
         window.submitVerification = submitVerification;
-        window.resendVerificationCode = resendVerificationCode;
         window.closeVerifyModal = closeVerifyModal;
-        window.showLocalPayment = showLocalPayment;
     </script>
 </body>
 </html>
