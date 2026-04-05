@@ -1,213 +1,266 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Asmara.Store | المنصة الأولى في إريتريا</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asmara.Store | المتجر الأول في إريتريا</title>
     
-    <!-- الروابط الخارجية -->
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;800&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- الروابط الخارجية: الخطوط والأيقونات -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
         :root {
-            --primary: #1e3a5f;
-            --secondary: #c7a12b;
-            --bg: #f0f4f9;
+            --primary-color: #1e3a5f;
+            --secondary-color: #c7a12b;
+            --light-bg: #f4f7f9;
             --white: #ffffff;
-            --text: #1a2a3f;
+            --text-dark: #1a2a3f;
+            --transition: all 0.3s ease;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Inter', 'Cairo', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; transition: 0.3s; }
-        
-        /* دعم الاتجاهات */
-        body.lang-ar, body.lang-ti { direction: rtl; text-align: right; }
 
-        /* الهيدر */
-        .navbar {
-            background: linear-gradient(135deg, var(--primary), #2c5282);
-            color: white; padding: 1rem 5%;
-            display: flex; align-items: center; justify-content: space-between;
-            position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        body {
+            font-family: 'Cairo', 'Inter', sans-serif;
+            background-color: var(--light-bg);
+            color: var(--text-dark);
+            overflow-x: hidden;
         }
-        .logo { display: flex; align-items: center; gap: 10px; cursor: pointer; font-size: 1.5rem; font-weight: 800; color: var(--secondary); }
-        
-        .nav-menu { display: flex; gap: 15px; flex-wrap: wrap; }
-        .nav-menu a {
-            color: white; text-decoration: none; font-size: 0.85rem; padding: 8px 15px;
-            border-radius: 25px; transition: 0.3s; cursor: pointer;
+
+        /* تنسيق الهيدر (Navigation) */
+        header {
+            background: linear-gradient(135deg, var(--primary-color), #2c5282);
+            color: white;
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
-        .nav-menu a:hover, .nav-menu a.active { background: var(--secondary); color: var(--primary); font-weight: bold; }
 
-        /* البحث */
-        .search-section { background: white; padding: 20px; border-radius: 15px; margin: 20px auto; max-width: 1100px; display: flex; gap: 10px; flex-wrap: wrap; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
-        .search-section input, .search-section select { flex: 1; padding: 12px; border: 1px solid #ddd; border-radius: 8px; min-width: 150px; }
-        .search-btn { background: var(--secondary); color: var(--primary); border: none; padding: 12px 25px; border-radius: 8px; font-weight: bold; cursor: pointer; }
+        .logo { font-size: 1.8rem; font-weight: 900; color: var(--secondary-color); cursor: pointer; }
+        
+        nav ul { display: flex; list-style: none; gap: 20px; }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            padding: 8px 15px;
+            border-radius: 20px;
+            transition: var(--transition);
+            cursor: pointer;
+        }
 
-        /* المحتوى والتبويبات */
-        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
-        .tab-pane { display: none; animation: fadeIn 0.4s ease-in-out; }
-        .tab-pane.active { display: block; }
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        nav ul li a:hover, nav ul li a.active {
+            background: var(--secondary-color);
+            color: var(--primary-color);
+        }
 
-        /* البطاقات */
-        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 25px; margin-top: 20px; }
-        .card { background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.05); transition: 0.3s; border: 1px solid #eee; }
-        .card:hover { transform: translateY(-8px); }
-        .card-img { width: 100%; height: 200px; object-fit: cover; background: #f9f9f9; }
+        /* سلة التسوق واللغة */
+        .nav-tools { display: flex; align-items: center; gap: 20px; }
+        .cart-icon { position: relative; cursor: pointer; font-size: 1.4rem; }
+        .cart-badge {
+            position: absolute;
+            top: -8px;
+            right: -10px;
+            background: var(--secondary-color);
+            color: var(--primary-color);
+            font-size: 0.7rem;
+            padding: 2px 6px;
+            border-radius: 50%;
+            font-weight: bold;
+        }
+
+        /* الأقسام (Tabs Content) */
+        .container { max-width: 1200px; margin: 30px auto; padding: 0 20px; }
+        .tab-content { display: none; animation: fadeInUp 0.5s ease; }
+        .tab-content.active { display: block; }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* بطاقات المنتجات */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 20px;
+        }
+
+        .card {
+            background: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: var(--transition);
+            border: 1px solid #eee;
+        }
+
+        .card:hover { transform: translateY(-10px); box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+        .card-img { width: 100%; height: 200px; object-fit: cover; }
         .card-body { padding: 20px; }
-        .card-price { color: var(--secondary); font-size: 1.2rem; font-weight: 800; margin: 10px 0; }
-        .add-btn { width: 100%; background: var(--primary); color: white; border: none; padding: 12px; border-radius: 8px; cursor: pointer; font-weight: 600; }
-
-        /* سلة التسوق */
-        .cart-drawer {
-            position: fixed; top: 0; right: -400px; width: 380px; height: 100%;
-            background: white; z-index: 2000; transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            display: flex; flex-direction: column; box-shadow: -5px 0 20px rgba(0,0,0,0.2);
+        .card-title { font-size: 1.1rem; font-weight: 700; margin-bottom: 10px; }
+        .card-price { color: var(--secondary-color); font-weight: 800; font-size: 1.2rem; }
+        .btn-buy {
+            width: 100%;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 10px;
+            margin-top: 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-family: 'Cairo';
+            font-weight: 600;
         }
-        .cart-drawer.open { right: 0; }
-        body.lang-ar .cart-drawer, body.lang-ti .cart-drawer { right: auto; left: -400px; }
-        body.lang-ar .cart-drawer.open, body.lang-ti .cart-drawer.open { left: 0; }
-        .cart-header { background: var(--primary); color: white; padding: 20px; display: flex; justify-content: space-between; align-items: center; }
-        
-        .overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1500; display: none; }
 
-        /* الفوتر */
-        footer { background: var(--primary); color: white; padding: 40px 5%; text-align: center; margin-top: 50px; border-radius: 30px 30px 0 0; }
+        /* سلة التسوق الجانبية */
+        .cart-sidebar {
+            position: fixed;
+            top: 0;
+            left: -400px; /* للغة العربية يفتح من اليسار */
+            width: 350px;
+            height: 100%;
+            background: white;
+            box-shadow: 5px 0 15px rgba(0,0,0,0.1);
+            z-index: 2000;
+            transition: 0.4s;
+            display: flex;
+            flex-direction: column;
+        }
+        .cart-sidebar.open { left: 0; }
+        .cart-header { background: var(--primary-color); color: white; padding: 20px; display: flex; justify-content: space-between; }
 
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            display: none;
+            z-index: 1500;
+        }
+
+        /* التجاوب مع الجوال */
         @media (max-width: 768px) {
-            .navbar { flex-direction: column; gap: 15px; }
-            .cart-drawer { width: 100%; }
+            header { flex-direction: column; gap: 15px; }
+            nav ul { flex-wrap: wrap; justify-content: center; }
+            .cart-sidebar { width: 100%; left: -100%; }
         }
     </style>
 </head>
-<body class="lang-en">
+<body>
+
+    <header>
+        <div class="logo" onclick="switchTab('home')">Asmara.Store</div>
+        <nav>
+            <ul>
+                <li><a onclick="switchTab('home')" class="nav-link active" id="btn-home">الرئيسية</a></li>
+                <li><a onclick="switchTab('flights')" class="nav-link" id="btn-flights">الطيران</a></li>
+                <li><a onclick="switchTab('realestate')" class="nav-link" id="btn-realestate">العقارات</a></li>
+                <li><a onclick="switchTab('electronics')" class="nav-link" id="btn-electronics">الإلكترونيات</a></li>
+            </ul>
+        </nav>
+        <div class="nav-tools">
+            <select id="langSwitcher" onchange="changeLanguage()" style="padding: 5px; border-radius: 5px;">
+                <option value="ar">العربية</option>
+                <option value="en">English</option>
+            </select>
+            <div class="cart-icon" onclick="toggleCart()">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-badge" id="cartCount">0</span>
+            </div>
+        </div>
+    </header>
 
     <div class="overlay" id="overlay" onclick="toggleCart()"></div>
 
-    <!-- الهيدر -->
-    <nav class="navbar">
-        <div class="logo" onclick="showTab('home')">
-            <i class="fas fa-shopping-bag"></i> Asmara.Store
-        </div>
-        <div class="nav-menu">
-            <a onclick="showTab('home')" id="link-home" class="active">🏠 Home</a>
-            <a onclick="showTab('flights')" id="link-flights">✈️ Flights</a>
-            <a onclick="showTab('realestate')" id="link-realestate">🏠 Real Estate</a>
-            <a onclick="showTab('electronics')" id="link-electronics">📱 Electronics</a>
-            <a onclick="showTab('cars')" id="link-cars">🚗 Cars</a>
-            <a onclick="showTab('jobs')" id="link-jobs">💼 Jobs</a>
-        </div>
-        <div style="display: flex; gap: 20px; align-items: center;">
-            <div onclick="toggleCart()" style="cursor:pointer; position:relative;">
-                <i class="fas fa-shopping-cart fa-lg"></i>
-                <span id="cartBadge" style="position:absolute; top:-10px; right:-10px; background:var(--secondary); color:var(--primary); font-size:12px; width:20px; height:20px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:bold;">0</span>
-            </div>
-            <select onchange="changeLang(this.value)" style="border-radius:5px; padding:3px;">
-                <option value="en">English</option>
-                <option value="ar">العربية</option>
-                <option value="ti">ትግርኛ</option>
-            </select>
-        </div>
-    </nav>
-
-    <!-- سلة التسوق الجانبية -->
-    <div class="cart-drawer" id="cartDrawer">
+    <!-- سلة التسوق -->
+    <div class="cart-sidebar" id="cartSidebar">
         <div class="cart-header">
-            <h3>Shopping Cart | سلة التسوق</h3>
-            <i class="fas fa-times fa-lg" style="cursor:pointer" onclick="toggleCart()"></i>
+            <h3>سلة التسوق</h3>
+            <i class="fas fa-times" style="cursor:pointer" onclick="toggleCart()"></i>
         </div>
-        <div id="cartContent" style="padding:20px; flex-grow:1; overflow-y:auto;">
-            <p style="text-align:center; color:#888;">Your cart is empty | السلة فارغة</p>
+        <div id="cartItems" style="padding: 20px; flex-grow: 1; overflow-y: auto;">
+            <!-- العناصر تظهر هنا -->
         </div>
-        <div style="padding:20px; border-top:1px solid #eee;">
-            <h3 id="totalDisplay">Total: $0</h3>
-            <button class="add-btn" style="background:var(--secondary); color:var(--primary); margin-top:10px;">Checkout | إتمام الشراء</button>
+        <div style="padding: 20px; border-top: 1px solid #eee;">
+            <h4>الإجمالي: <span id="cartTotal">0</span>$</h4>
+            <button class="btn-buy" style="background: var(--secondary-color); color: var(--primary-color);">إتمام الطلب</button>
         </div>
     </div>
 
     <div class="container">
-        
-        <!-- صفحة البداية -->
-        <div id="tab-home" class="tab-pane active">
-            <div style="text-align:center; padding:40px 0;">
-                <h1 id="mainTitle">Discover Everything in Eritrea</h1>
-                <p id="subTitle">Trusted marketplace for flights, homes, and more.</p>
-            </div>
-            <div class="grid" id="home-grid"></div>
-        </div>
+        <!-- الصفحة الرئيسية -->
+        <section id="home" class="tab-content active">
+            <h2 style="text-align: center; margin-bottom: 30px;">مرحباً بكم في Asmara.Store</h2>
+            <div class="grid" id="homeGrid"></div>
+        </section>
 
         <!-- صفحة الطيران -->
-        <div id="tab-flights" class="tab-pane">
-            <div class="search-section">
-                <input type="text" placeholder="From (City)">
-                <input type="text" placeholder="To (Asmara)" value="Asmara" disabled>
-                <input type="date">
-                <button class="search-btn">Search Flights</button>
-            </div>
-            <div class="grid" id="flights-grid"></div>
-        </div>
+        <section id="flights" class="tab-content">
+            <h2>✈️ حجز تذاكر الطيران إلى أسمرا</h2>
+            <div class="grid" id="flightsGrid"></div>
+        </section>
 
-        <!-- قسم العقارات -->
-        <div id="tab-realestate" class="tab-pane">
-            <h2 style="margin-bottom:20px;">🏠 Properties in Asmara & Massawa</h2>
-            <div class="grid" id="realestate-grid"></div>
-        </div>
+        <!-- صفحة العقارات -->
+        <section id="realestate" class="tab-content">
+            <h2>🏠 العقارات المتاحة</h2>
+            <div class="grid" id="reGrid"></div>
+        </section>
 
-        <!-- باقي الأقسام تتبع نفس الهيكل -->
-        <div id="tab-electronics" class="tab-pane"><div class="grid" id="electronics-grid"></div></div>
-        <div id="tab-cars" class="tab-pane"><div class="grid" id="cars-grid"></div></div>
-        <div id="tab-jobs" class="tab-pane"><div class="grid" id="jobs-grid"></div></div>
-
+        <!-- صفحة الإلكترونيات -->
+        <section id="electronics" class="tab-content">
+            <h2>📱 أحدث الأجهزة الإلكترونية</h2>
+            <div class="grid" id="elecGrid"></div>
+        </section>
     </div>
 
-    <footer>
-        <p>&copy; 2026 Asmara.Store - The Pride of Eritrea</p>
-        <div style="margin-top:15px; font-size:1.5rem; display:flex; justify-content:center; gap:20px;">
-            <i class="fab fa-facebook"></i> <i class="fab fa-instagram"></i> <i class="fab fa-whatsapp"></i>
-        </div>
-    </footer>
-
     <script>
-        // قاعدة البيانات
-        const db = [
-            { id: 1, type: 'home', title: 'Villa in Expo', price: 350000, cat: 'realestate', img: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=500' },
-            { id: 2, type: 'home', title: 'iPhone 15 Pro', price: 1200, cat: 'electronics', img: 'https://images.unsplash.com/photo-1696446701796-da61225697cc?w=500' },
-            { id: 3, type: 'home', title: 'Toyota Hilux 2023', price: 45000, cat: 'cars', img: 'https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=500' },
-            { id: 4, type: 'flights', title: 'Dubai to Asmara', price: 650, cat: 'flights', img: 'https://images.unsplash.com/photo-1436491865332-7a61a109c0f3?w=500' },
-            { id: 5, type: 'jobs', title: 'Software Developer', price: 0, cat: 'jobs', img: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=500' }
+        // قاعدة البيانات التجريبية
+        const products = [
+            { id: 1, name: "آيفون 15 برو", price: 1200, category: "electronics", img: "https://images.unsplash.com/photo-1696446701796-da61225697cc?w=400" },
+            { id: 2, name: "فيلا في حي تيرفولو", price: 450000, category: "realestate", img: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=400" },
+            { id: 3, name: "تذكرة دبي - أسمرا", price: 550, category: "flights", img: "https://images.unsplash.com/photo-1436491865332-7a61a109c0f3?w=400" },
+            { id: 4, name: "لابتوب ماك بوك", price: 1500, category: "electronics", img: "https://images.unsplash.com/photo-1517336714460-d1b16da02970?w=400" }
         ];
 
         let cart = [];
 
-        // إدارة التبويبات
-        function showTab(tabId) {
-            document.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active'));
-            document.querySelectorAll('.nav-menu a').forEach(a => a.classList.remove('active'));
+        // وظيفة التبديل بين الأقسام
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+            document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
+
+            document.getElementById(tabId).classList.add('active');
+            document.getElementById('btn-' + tabId).classList.add('active');
             
-            document.getElementById('tab-' + tabId).classList.add('active');
-            document.getElementById('link-' + tabId).classList.add('active');
-            
-            render(tabId);
+            renderProducts(tabId);
         }
 
-        // عرض المحتوى ديناميكياً
-        function render(target) {
-            const container = document.getElementById(target + '-grid');
-            if(!container) return;
+        // عرض المنتجات بناءً على القسم
+        function renderProducts(tabId) {
+            let filtered = tabId === 'home' ? products : products.filter(p => p.category === tabId);
+            let gridId = tabId === 'home' ? 'homeGrid' : tabId === 'flights' ? 'flightsGrid' : tabId === 'realestate' ? 'reGrid' : 'elecGrid';
             
-            const items = target === 'home' ? db : db.filter(i => i.cat === target);
+            const grid = document.getElementById(gridId);
+            if (!grid) return;
             
-            container.innerHTML = items.map(item => `
+            grid.innerHTML = filtered.map(p => `
                 <div class="card">
-                    <img src="${item.img}" class="card-img" alt="${item.title}">
+                    <img src="${p.img}" class="card-img">
                     <div class="card-body">
-                        <h3>${item.title}</h3>
-                        <p class="card-price">${item.price > 0 ? '$' + item.price.toLocaleString() : 'Contact for Price'}</p>
-                        <button class="add-btn" onclick="addToCart(${item.id})">
-                            ${item.cat === 'jobs' ? 'Apply Now' : 'Add to Cart'}
-                        </button>
+                        <div class="card-title">${p.name}</div>
+                        <div class="card-price">${p.price}$</div>
+                        <button class="btn-buy" onclick="addToCart(${p.id})">إضافة للسلة</button>
                     </div>
                 </div>
             `).join('');
@@ -215,69 +268,51 @@
 
         // سلة التسوق
         function toggleCart() {
-            document.getElementById('cartDrawer').classList.toggle('open');
+            document.getElementById('cartSidebar').classList.toggle('open');
             const overlay = document.getElementById('overlay');
             overlay.style.display = overlay.style.display === 'block' ? 'none' : 'block';
         }
 
         function addToCart(id) {
-            const item = db.find(i => i.id === id);
-            cart.push(item);
+            const product = products.find(p => p.id === id);
+            cart.push(product);
             updateCartUI();
-            if(window.innerWidth > 768) { // فتح السلة تلقائياً في الشاشات الكبيرة
-                 document.getElementById('cartDrawer').classList.add('open');
-                 document.getElementById('overlay').style.display = 'block';
-            }
         }
 
         function updateCartUI() {
-            document.getElementById('cartBadge').innerText = cart.length;
-            const content = document.getElementById('cartContent');
-            const totalDisplay = document.getElementById('totalDisplay');
+            document.getElementById('cartCount').innerText = cart.length;
+            const itemsContainer = document.getElementById('cartItems');
+            const totalContainer = document.getElementById('cartTotal');
             
-            if(cart.length === 0) {
-                content.innerHTML = '<p style="text-align:center; color:#888;">Empty.</p>';
-                totalDisplay.innerText = 'Total: $0';
-                return;
-            }
-
             let total = 0;
-            content.innerHTML = cart.map((item, idx) => {
+            itemsContainer.innerHTML = cart.map((item, index) => {
                 total += item.price;
                 return `
-                    <div style="display:flex; gap:10px; margin-bottom:15px; align-items:center;">
-                        <img src="${item.img}" style="width:50px; height:50px; border-radius:5px; object-fit:cover;">
-                        <div style="flex-grow:1;">
-                            <h5 style="font-size:0.9rem;">${item.title}</h5>
-                            <small>$${item.price}</small>
-                        </div>
-                        <i class="fas fa-trash" style="color:#dc3545; cursor:pointer;" onclick="removeItem(${idx})"></i>
+                    <div style="display:flex; justify-content:space-between; margin-bottom:15px; border-bottom:1px solid #eee; padding-bottom:5px;">
+                        <span>${item.name}</span>
+                        <b>${item.price}$</b>
+                        <i class="fas fa-trash" style="color:red; cursor:pointer" onclick="removeFromCart(${index})"></i>
                     </div>
                 `;
             }).join('');
-            totalDisplay.innerText = `Total:$${total.toLocaleString()}`;
+            totalContainer.innerText = total;
         }
 
-        function removeItem(index) {
+        function removeFromCart(index) {
             cart.splice(index, 1);
             updateCartUI();
         }
 
-        // تغيير اللغة
-        function changeLang(lang) {
-            document.body.className = 'lang-' + lang;
-            const t = {
-                en: { h: "Discover Everything in Eritrea", s: "Trusted marketplace for flights, homes, and more." },
-                ar: { h: "اكتشف كل شيء في إريتريا", s: "السوق الأكثر ثقة للطيران، العقارات، وأكثر." },
-                ti: { h: "ኣብ ኤርትራ ዘሎ ኩሉ ነገራት ይርከቡ", s: "ንበረራታት፡ ኣባይትን ካልእን ዝተኣመነ ዕዳጋ።" }
-            };
-            document.getElementById('mainTitle').innerText = t[lang].h;
-            document.getElementById('subTitle').innerText = t[lang].s;
-            document.body.dir = (lang === 'ar' || lang === 'ti') ? 'rtl' : 'ltr';
+        // تغيير اللغة (تبسيط)
+        function changeLanguage() {
+            const lang = document.getElementById('langSwitcher').value;
+            document.body.dir = lang === 'ar' ? 'rtl' : 'ltr';
+            // هنا يمكنك إضافة نصوص الترجمة لتبديل العناوين
         }
 
-        // التشغيل عند الفتح
-        window.onload = () => render('home');
+        // التشغيل عند التحميل
+        window.onload = () => renderProducts('home');
+
     </script>
 </body>
 </html>
