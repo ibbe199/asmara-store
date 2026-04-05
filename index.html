@@ -1,301 +1,1351 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en" dir="ltr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Asmara.Store | المتجر الأول في إريتريا</title>
-    
-    <!-- الروابط الخارجية: الخطوط والأيقونات -->
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&family=Inter:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <style>
-        :root {
-            --primary-color: #1e3a5f;
-            --secondary-color: #c7a12b;
-            --light-bg: #f4f7f9;
-            --white: #ffffff;
-            --text-dark: #1a2a3f;
-            --transition: all 0.3s ease;
-        }
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>Asmara.Store | The First E-commerce Platform in Eritrea</title>
+    <meta name="description" content="Asmara.Store - The first e-commerce platform in Eritrea" />
 
+    <!-- External Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&display=swap" rel="stylesheet" />
+
+    <!-- External Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+
+    <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
+        :root {
+            --primary: #1e3a5f;
+            --primary-2: #2c5282;
+            --gold: #c7a12b;
+            --bg: #f0f4f9;
+            --surface: #ffffff;
+            --surface-2: #eef2f8;
+            --text: #1a2a3f;
+            --muted: #4a627a;
+            --danger: #dc3545;
+            --success: #28a745;
+            --warning: #ffc107;
+            --info: #17a2b8;
+            --shadow: 0 8px 22px rgba(0,0,0,0.08);
+            --radius-xl: 28px;
+            --radius-lg: 20px;
+            --radius-md: 14px;
+        }
+
+        html { scroll-behavior: smooth; }
         body {
+            font-family: 'Inter', 'Cairo', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.5;
+            direction: ltr;
+        }
+        body.lang-ar,
+        body.lang-ti {
+            direction: rtl;
+            text-align: right;
             font-family: 'Cairo', 'Inter', sans-serif;
-            background-color: var(--light-bg);
-            color: var(--text-dark);
-            overflow-x: hidden;
         }
 
-        /* تنسيق الهيدر (Navigation) */
-        header {
-            background: linear-gradient(135deg, var(--primary-color), #2c5282);
-            color: white;
-            padding: 1rem 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        a { color: inherit; }
+        img { display: block; max-width: 100%; }
+        button, input, select, textarea { font: inherit; }
+
+        @keyframes slideIn {
+            from { transform: translateX(100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
         }
-
-        .logo { font-size: 1.8rem; font-weight: 900; color: var(--secondary-color); cursor: pointer; }
-        
-        nav ul { display: flex; list-style: none; gap: 20px; }
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.9rem;
-            padding: 8px 15px;
-            border-radius: 20px;
-            transition: var(--transition);
-            cursor: pointer;
-        }
-
-        nav ul li a:hover, nav ul li a.active {
-            background: var(--secondary-color);
-            color: var(--primary-color);
-        }
-
-        /* سلة التسوق واللغة */
-        .nav-tools { display: flex; align-items: center; gap: 20px; }
-        .cart-icon { position: relative; cursor: pointer; font-size: 1.4rem; }
-        .cart-badge {
-            position: absolute;
-            top: -8px;
-            right: -10px;
-            background: var(--secondary-color);
-            color: var(--primary-color);
-            font-size: 0.7rem;
-            padding: 2px 6px;
-            border-radius: 50%;
-            font-weight: bold;
-        }
-
-        /* الأقسام (Tabs Content) */
-        .container { max-width: 1200px; margin: 30px auto; padding: 0 20px; }
-        .tab-content { display: none; animation: fadeInUp 0.5s ease; }
-        .tab-content.active { display: block; }
-
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(20px); }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* بطاقات المنتجات */
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 25px;
-            margin-top: 20px;
+        .notification {
+            position: fixed;
+            top: 84px;
+            right: 20px;
+            color: #fff;
+            padding: 12px 18px;
+            border-radius: 12px;
+            z-index: 4000;
+            animation: slideIn 0.3s ease;
+            box-shadow: var(--shadow);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            max-width: 360px;
         }
+        .notification.success { background: var(--success); }
+        .notification.error { background: var(--danger); }
+        .notification.warning { background: var(--warning); color: var(--primary); }
+        .notification.info { background: var(--info); }
 
-        .card {
-            background: var(--white);
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            transition: var(--transition);
-            border: 1px solid #eee;
-        }
-
-        .card:hover { transform: translateY(-10px); box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
-        .card-img { width: 100%; height: 200px; object-fit: cover; }
-        .card-body { padding: 20px; }
-        .card-title { font-size: 1.1rem; font-weight: 700; margin-bottom: 10px; }
-        .card-price { color: var(--secondary-color); font-weight: 800; font-size: 1.2rem; }
-        .btn-buy {
-            width: 100%;
-            background: var(--primary-color);
+        .amazon-nav {
+            background: linear-gradient(135deg, var(--primary), var(--primary-2));
             color: white;
-            border: none;
-            padding: 10px;
-            margin-top: 15px;
-            border-radius: 8px;
+            padding: 0.8rem 1.25rem;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.18);
+        }
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
             cursor: pointer;
-            font-family: 'Cairo';
+            user-select: none;
+        }
+        .nav-logo span {
+            font-size: 1.45rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #fff, #e6b422);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .nav-links {
+            display: flex;
+            gap: 0.45rem;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        .nav-links a {
+            color: #f0f4fa;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.78rem;
+            transition: 0.2s ease;
+            cursor: pointer;
+            padding: 0.45rem 0.7rem;
+            border-radius: 9999px;
+            border: 1px solid transparent;
+        }
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--gold);
+            background: rgba(199,161,43,0.1);
+            border-color: rgba(199,161,43,0.28);
+        }
+
+        .top-bar {
+            display: flex;
+            gap: 0.55rem;
+            align-items: center;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+        }
+        .lang-switch { display: flex; gap: 0.4rem; }
+        .lang-btn,
+        .login-btn,
+        .cart-btn {
+            background: rgba(255,255,255,0.15);
+            border: none;
+            padding: 0.42rem 0.9rem;
+            border-radius: 9999px;
+            font-size: 0.82rem;
+            cursor: pointer;
+            color: white;
+            transition: 0.2s ease;
+        }
+        .lang-btn.active,
+        .login-btn:hover,
+        .cart-btn:hover {
+            background: var(--gold);
+            color: var(--primary);
+        }
+        .cart-btn { position: relative; }
+        .cart-count {
+            position: absolute;
+            top: -7px;
+            right: -7px;
+            background: var(--danger);
+            color: white;
+            font-size: 0.65rem;
+            padding: 0.12rem 0.42rem;
+            border-radius: 9999px;
+            min-width: 20px;
+            text-align: center;
+        }
+        .user-info {
+            background: rgba(255,255,255,0.14);
+            padding: 0.45rem 0.9rem;
+            border-radius: 9999px;
+            font-size: 0.82rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            cursor: pointer;
+        }
+        .verified-badge {
+            display: inline-block;
+            background: var(--success);
+            color: white;
+            padding: 0.18rem 0.46rem;
+            border-radius: 9999px;
+            font-size: 0.62rem;
+            margin-left: 0.25rem;
+        }
+
+        .container { max-width: 1400px; margin: 0 auto; padding: 1.5rem; }
+
+        .search-bar,
+        .card,
+        .hero,
+        .modal-content,
+        .user-dashboard,
+        .product-card,
+        .blog-card,
+        .chat-message,
+        .policy-card,
+        .contact-card,
+        .stat-card,
+        .testimonial-card {
+            background: var(--surface);
+            border-radius: var(--radius-lg);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border: 1px solid var(--surface-2);
+        }
+
+        .hero {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, white, var(--surface-2));
+            padding: 2rem;
+            border-radius: 36px;
+        }
+        .hero h1 { font-size: 2rem; color: var(--primary); margin-bottom: 0.5rem; }
+        .tagline { font-size: 1rem; color: var(--gold); font-weight: 800; }
+        #homeIntro {
+            margin-top: 1rem;
+            color: var(--muted);
+        }
+
+        .search-bar {
+            padding: 1rem 1.25rem;
+            margin-bottom: 1.5rem;
+        }
+        .search-row {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            align-items: flex-end;
+        }
+        .search-group { flex: 1; min-width: 150px; }
+        .search-group label,
+        .form-group label {
+            font-size: 0.75rem;
+            color: var(--muted);
+            display: block;
+            margin-bottom: 0.28rem;
             font-weight: 600;
         }
 
-        /* سلة التسوق الجانبية */
+        input, select, textarea {
+            width: 100%;
+            padding: 0.7rem 0.8rem;
+            margin: 0.2rem 0;
+            border: 1px solid #d6dee8;
+            border-radius: 12px;
+            font-size: 0.88rem;
+            background: #fff;
+            color: var(--text);
+        }
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: var(--gold);
+            box-shadow: 0 0 0 3px rgba(199,161,43,0.15);
+        }
+
+        .search-btn,
+        .btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 0.72rem 1rem;
+            border-radius: 9999px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.2s ease;
+        }
+        .search-btn:hover,
+        .btn:hover {
+            background: var(--gold);
+            color: var(--primary);
+            transform: translateY(-1px);
+        }
+        .btn { width: 100%; }
+        .btn-sm {
+            width: auto;
+            padding: 0.38rem 0.85rem;
+            display: inline-block;
+            font-size: 0.76rem;
+            border-radius: 9999px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: 0.2s ease;
+        }
+        .btn-sm:hover { background: var(--gold); color: var(--primary); }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.2rem;
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1rem;
+            margin-bottom: 1.2rem;
+        }
+        .stat-card {
+            padding: 1rem;
+            text-align: center;
+        }
+        .stat-number {
+            font-size: 1.8rem;
+            color: var(--gold);
+            font-weight: 800;
+        }
+
+        .card {
+            padding: 1.2rem;
+            margin-bottom: 1.2rem;
+        }
+        .card h2,
+        .card h3 {
+            font-size: 1.12rem;
+            color: var(--primary);
+            margin-bottom: 0.9rem;
+            border-left: 4px solid var(--gold);
+            padding-left: 0.8rem;
+        }
+        body.lang-ar .card h2,
+        body.lang-ar .card h3,
+        body.lang-ti .card h2,
+        body.lang-ti .card h3 {
+            border-left: none;
+            border-right: 4px solid var(--gold);
+            padding-left: 0;
+            padding-right: 0.8rem;
+        }
+
+        .form-row {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 0.5rem;
+        }
+        .form-group { flex: 1; min-width: 120px; }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.2rem;
+            margin-top: 0.8rem;
+        }
+        .product-card {
+            overflow: hidden;
+            transition: 0.28s ease;
+            cursor: pointer;
+        }
+        .product-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 14px 24px rgba(0,0,0,0.12);
+        }
+        .product-image-container {
+            position: relative;
+            overflow: hidden;
+            height: 200px;
+            background: #e8eef5;
+        }
+        .product-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        .product-card:hover .product-image { transform: scale(1.05); }
+        .product-info { padding: 1rem; }
+        .product-title { font-size: 1rem; font-weight: 800; color: var(--primary); }
+        .product-price { font-size: 1.1rem; font-weight: 800; color: var(--gold); margin-top: 0.2rem; }
+        .product-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 0.6rem;
+            flex-wrap: wrap;
+        }
+        .badge {
+            background: rgba(199,161,43,0.16);
+            color: var(--primary);
+            padding: 0.25rem 0.55rem;
+            border-radius: 9999px;
+            font-size: 0.68rem;
+            font-weight: 800;
+        }
+        .add-to-cart {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 0.38rem 0.9rem;
+            border-radius: 9999px;
+            cursor: pointer;
+            font-size: 0.74rem;
+            font-weight: 700;
+        }
+        .add-to-cart:hover { background: var(--gold); color: var(--primary); }
+
+        .tab-pane {
+            display: none;
+            animation: fadeIn 0.25s ease;
+        }
+        .tab-pane.active-pane { display: block; }
+
+        .user-dashboard {
+            display: none;
+            position: fixed;
+            top: 72px;
+            right: 20px;
+            width: 320px;
+            z-index: 1500;
+            overflow: hidden;
+        }
+        .user-dashboard.active { display: block; }
+        .user-dashboard-header {
+            background: var(--primary);
+            color: white;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .user-dashboard-body { padding: 1rem; }
+        .user-stats {
+            display: flex;
+            gap: 0.8rem;
+            margin-bottom: 1rem;
+        }
+        .user-stat {
+            text-align: center;
+            flex: 1;
+            background: var(--surface-2);
+            padding: 0.7rem;
+            border-radius: 12px;
+        }
+        .user-stat-number { font-size: 1.2rem; font-weight: 800; color: var(--gold); }
+
+        .modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.78);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+            padding: 1rem;
+        }
+        .modal-content {
+            max-width: 520px;
+            width: 100%;
+            padding: 1.5rem;
+            position: relative;
+        }
+        .modal-close {
+            position: absolute;
+            top: 0.9rem;
+            right: 0.9rem;
+            background: var(--danger);
+            color: white;
+            border: none;
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        body.lang-ar .modal-close,
+        body.lang-ti .modal-close {
+            right: auto;
+            left: 0.9rem;
+        }
+
         .cart-sidebar {
             position: fixed;
             top: 0;
-            left: -400px; /* للغة العربية يفتح من اليسار */
-            width: 350px;
+            right: -400px;
+            width: 400px;
+            max-width: 100%;
             height: 100%;
             background: white;
-            box-shadow: 5px 0 15px rgba(0,0,0,0.1);
-            z-index: 2000;
-            transition: 0.4s;
-            display: flex;
-            flex-direction: column;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.18);
+            z-index: 2100;
+            transition: right 0.3s ease;
+            overflow-y: auto;
         }
-        .cart-sidebar.open { left: 0; }
-        .cart-header { background: var(--primary-color); color: white; padding: 20px; display: flex; justify-content: space-between; }
-
-        .overlay {
+        .cart-overlay {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            inset: 0;
             background: rgba(0,0,0,0.5);
+            z-index: 2099;
             display: none;
-            z-index: 1500;
         }
 
-        /* التجاوب مع الجوال */
-        @media (max-width: 768px) {
-            header { flex-direction: column; gap: 15px; }
-            nav ul { flex-wrap: wrap; justify-content: center; }
-            .cart-sidebar { width: 100%; left: -100%; }
+        .faq-item {
+            border-bottom: 1px solid #e5ebf2;
+            padding: 0.2rem 0;
+        }
+        .faq-question {
+            cursor: pointer;
+            padding: 0.9rem 0;
+            font-weight: 700;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+        }
+        .faq-answer {
+            display: none;
+            padding: 0 0 0.9rem;
+            color: var(--muted);
+        }
+        .faq-answer.show { display: block; }
+
+        .chat-list { display: flex; flex-direction: column; gap: 0.8rem; }
+        .chat-message {
+            padding: 0.8rem;
+            background: var(--surface-2);
+            border-radius: 14px;
+        }
+        .rating-input {
+            display: flex;
+            gap: 0.4rem;
+            margin: 0.6rem 0 1rem;
+            font-size: 1.8rem;
+        }
+        .rating-star {
+            cursor: pointer;
+            color: #c8d0d8;
+            transition: 0.15s ease;
+        }
+        .rating-star.active { color: var(--gold); }
+        .rating-stars { color: var(--gold); margin: 0.2rem 0; }
+
+        .contact-info {
+            display: grid;
+            gap: 0.9rem;
+        }
+        .contact-card {
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.9rem;
+        }
+        .contact-card i {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: var(--surface-2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            flex-shrink: 0;
+        }
+
+        .flight-card,
+        .blog-card,
+        .policy-card,
+        .testimonial-card {
+            padding: 1rem;
+        }
+
+        .blog-grid,
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1rem;
+        }
+
+        .footer {
+            background: var(--primary);
+            color: white;
+            margin-top: 2rem;
+            padding: 2rem 1.5rem 1.5rem;
+            border-radius: 28px 28px 0 0;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        .footer-section h4 { color: var(--gold); margin-bottom: 1rem; }
+        .footer-section a {
+            color: #eef2f8;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.5rem;
+            font-size: 0.84rem;
+            cursor: pointer;
+        }
+        .footer-section a:hover { color: var(--gold); }
+        .social-links { display: flex; gap: 0.8rem; margin-top: 1rem; }
+        .social-links a {
+            width: 38px;
+            height: 38px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .social-links a:hover { background: var(--gold); color: var(--primary); }
+        .footer-bottom {
+            text-align: center;
+            padding-top: 1.4rem;
+            border-top: 1px solid rgba(255,255,255,0.12);
+            font-size: 0.78rem;
+        }
+        .verified { color: var(--gold); font-weight: 800; margin-top: 0.45rem; }
+
+        @media (max-width: 900px) {
+            .amazon-nav { flex-direction: column; align-items: stretch; }
+            .nav-links { justify-content: center; }
+            .top-bar { justify-content: center; }
+            .search-row { flex-direction: column; }
+            .search-btn { width: 100%; }
+            .container { padding: 1rem; }
+            .gallery-grid,
+            .blog-grid,
+            .testimonials-grid { grid-template-columns: 1fr; }
+            .user-dashboard { width: calc(100% - 2rem); right: 1rem; }
         }
     </style>
 </head>
-<body>
+<body class="lang-en">
+    <!-- Navigation -->
+    <div class="amazon-nav">
+        <div class="nav-logo" onclick="switchTab('home')">
+            <svg width="40" height="40" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+                <rect width="64" height="64" rx="14" fill="url(#logoGrad)"/>
+                <polygon points="32,12 38,28 54,28 42,38 48,54 32,44 16,54 22,38 10,28 26,28" fill="#c7a12b"/>
+                <defs>
+                    <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="#1e3a5f"/>
+                        <stop offset="100%" stop-color="#2c5282"/>
+                    </linearGradient>
+                </defs>
+            </svg>
+            <span>Asmara.Store</span>
+        </div>
 
-    <header>
-        <div class="logo" onclick="switchTab('home')">Asmara.Store</div>
-        <nav>
-            <ul>
-                <li><a onclick="switchTab('home')" class="nav-link active" id="btn-home">الرئيسية</a></li>
-                <li><a onclick="switchTab('flights')" class="nav-link" id="btn-flights">الطيران</a></li>
-                <li><a onclick="switchTab('realestate')" class="nav-link" id="btn-realestate">العقارات</a></li>
-                <li><a onclick="switchTab('electronics')" class="nav-link" id="btn-electronics">الإلكترونيات</a></li>
-            </ul>
-        </nav>
-        <div class="nav-tools">
-            <select id="langSwitcher" onchange="changeLanguage()" style="padding: 5px; border-radius: 5px;">
-                <option value="ar">العربية</option>
-                <option value="en">English</option>
-            </select>
-            <div class="cart-icon" onclick="toggleCart()">
-                <i class="fas fa-shopping-cart"></i>
-                <span class="cart-badge" id="cartCount">0</span>
+        <div class="nav-links" id="mainNavLinks">
+            <a href="#" class="nav-tab-link active" data-tab="home">🏠 Home</a>
+            <a href="#" class="nav-tab-link" data-tab="flight">✈️ Flights</a>
+            <a href="#" class="nav-tab-link" data-tab="realestate">🏠 Real Estate</a>
+            <a href="#" class="nav-tab-link" data-tab="electronics">📱 Electronics</a>
+            <a href="#" class="nav-tab-link" data-tab="cars">🚗 Cars</a>
+            <a href="#" class="nav-tab-link" data-tab="jobs">💼 Jobs</a>
+            <a href="#" class="nav-tab-link" data-tab="general">📋 Services</a>
+            <a href="#" class="nav-tab-link" data-tab="blog">📰 Blog</a>
+            <a href="#" class="nav-tab-link" data-tab="faq">❓ FAQ</a>
+            <a href="#" class="nav-tab-link" data-tab="contact">📞 Contact</a>
+            <a href="#" class="nav-tab-link" data-tab="payment">💳 Payment</a>
+            <a href="#" class="nav-tab-link" data-tab="messaging">💬 Messaging</a>
+            <a href="#" class="nav-tab-link" data-tab="ratings">⭐ Ratings</a>
+        </div>
+
+        <div class="top-bar">
+            <button class="cart-btn" onclick="toggleCart()">🛒 <span class="cart-count" id="cartCount">0</span></button>
+
+            <div id="userDisplay" class="user-info" style="display:none;" onclick="toggleUserDashboard()">
+                <i class="fas fa-user-circle"></i>
+                <span id="userName"></span>
+                <span id="userVerifiedBadge" class="verified-badge" style="display:none;">✓ Verified</span>
+            </div>
+
+            <button id="loginModalBtn" class="login-btn">🔐 Login</button>
+            <button id="logoutBtn" class="login-btn" style="display:none; background:#dc3545;" onclick="logoutUser()">🚪 Logout</button>
+
+            <div class="lang-switch">
+                <button class="lang-btn active" data-lang="en">English</button>
+                <button class="lang-btn" data-lang="ar">عربي</button>
+                <button class="lang-btn" data-lang="ti">ትግርኛ</button>
             </div>
         </div>
-    </header>
+    </div>
 
-    <div class="overlay" id="overlay" onclick="toggleCart()"></div>
+    <!-- Cart -->
+    <div id="cartSidebar" class="cart-sidebar">
+        <div style="background:#1e3a5f; color:white; padding:1rem; display:flex; justify-content:space-between; align-items:center;">
+            <span>🛒 Shopping Cart</span>
+            <button onclick="toggleCart()" style="background:none; border:none; color:white; cursor:pointer; font-size:1rem;">✕</button>
+        </div>
+        <div id="cartItems"></div>
+        <div id="cartTotal" style="padding:1rem; text-align:center; font-weight:800; border-top:2px solid #eef2f8;">Total: $0</div>
+        <button class="btn" onclick="checkout()" style="margin:1rem; width:calc(100% - 2rem);">Checkout</button>
+    </div>
+    <div id="cartOverlay" class="cart-overlay" onclick="toggleCart()"></div>
 
-    <!-- سلة التسوق -->
-    <div class="cart-sidebar" id="cartSidebar">
-        <div class="cart-header">
-            <h3>سلة التسوق</h3>
-            <i class="fas fa-times" style="cursor:pointer" onclick="toggleCart()"></i>
+    <!-- User dashboard -->
+    <div id="userDashboard" class="user-dashboard">
+        <div class="user-dashboard-header">
+            <span><i class="fas fa-user-circle"></i> <span id="dashboardUserName">Guest</span></span>
+            <button class="btn-sm" onclick="toggleUserDashboard()" style="background:none; color:white;">✕</button>
         </div>
-        <div id="cartItems" style="padding: 20px; flex-grow: 1; overflow-y: auto;">
-            <!-- العناصر تظهر هنا -->
+        <div class="user-dashboard-body">
+            <div class="user-stats">
+                <div class="user-stat"><div class="user-stat-number" id="userAdsCount">0</div><div>My Ads</div></div>
+                <div class="user-stat"><div class="user-stat-number" id="userMessagesCount">0</div><div>Messages</div></div>
+                <div class="user-stat"><div class="user-stat-number" id="userBalance">$0</div><div>Balance</div></div>
+            </div>
+            <button class="btn-sm" style="width:100%; margin-bottom:0.5rem;" onclick="showMyOrders()">📦 My Orders</button>
+            <button class="btn-sm" style="width:100%; margin-bottom:0.5rem;" onclick="showWishlist()">❤️ Wishlist</button>
+            <button class="btn-sm" style="width:100%;" onclick="showMyAds()">📋 My Ads</button>
+            <button class="btn-sm" style="width:100%; margin-top:0.5rem;" onclick="verifyAccount()">🔐 Verify Account</button>
         </div>
-        <div style="padding: 20px; border-top: 1px solid #eee;">
-            <h4>الإجمالي: <span id="cartTotal">0</span>$</h4>
-            <button class="btn-buy" style="background: var(--secondary-color); color: var(--primary-color);">إتمام الطلب</button>
+    </div>
+
+    <!-- Modals -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeLoginModal()">✕</button>
+            <h2>🔐 Login</h2>
+            <input type="text" id="loginUsername" placeholder="Username" style="margin-top:1rem;" />
+            <input type="password" id="loginPassword" placeholder="Password" />
+            <button class="btn" onclick="loginUser()">Login</button>
+            <p style="margin-top:1rem; font-size:0.82rem;">Demo User: <strong>user / 123456</strong></p>
+            <p style="margin-top:0.4rem; font-size:0.82rem;">Demo Agent: <strong>agent / agent123</strong></p>
+            <hr style="margin:1rem 0; border:none; border-top:1px solid #e6edf4;" />
+            <p style="text-align:center;"><a href="#" onclick="showRegister(); return false;" style="color:#c7a12b; text-decoration:none; font-weight:700;">Create Account</a></p>
+        </div>
+    </div>
+
+    <div id="registerModal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeRegisterModal()">✕</button>
+            <h2>📝 Create Account</h2>
+            <input type="text" id="regName" placeholder="Full Name" style="margin-top:1rem;" />
+            <input type="email" id="regEmail" placeholder="Email" />
+            <input type="tel" id="regPhone" placeholder="Phone" />
+            <input type="password" id="regPassword" placeholder="Password" />
+            <input type="password" id="regConfirm" placeholder="Confirm Password" />
+            <button class="btn" onclick="registerUser()">Create Account</button>
+        </div>
+    </div>
+
+    <div id="verifyModal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeVerifyModal()">✕</button>
+            <h2>🔐 Verify Account</h2>
+            <p>Enter verification code: <strong>123456</strong></p>
+            <input type="text" id="verifyCode" placeholder="6-digit code" style="text-align:center; font-size:1.3rem; letter-spacing:2px;" />
+            <button class="btn" onclick="submitVerification()" style="margin-top:1rem;">Verify</button>
+        </div>
+    </div>
+
+    <div id="policyModal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closePolicyModal()">✕</button>
+            <h2 id="policyModalTitle"></h2>
+            <div id="policyModalBody"></div>
         </div>
     </div>
 
     <div class="container">
-        <!-- الصفحة الرئيسية -->
-        <section id="home" class="tab-content active">
-            <h2 style="text-align: center; margin-bottom: 30px;">مرحباً بكم في Asmara.Store</h2>
-            <div class="grid" id="homeGrid"></div>
-        </section>
+        <!-- Search -->
+        <div class="search-bar">
+            <div class="search-row">
+                <div class="search-group">
+                    <label>🔍 Search</label>
+                    <input type="text" id="searchInput" placeholder="Search products..." />
+                </div>
+                <div class="search-group">
+                    <label>📍 City</label>
+                    <select id="searchCity">
+                        <option value="">All</option>
+                        <option value="Asmara">Asmara</option>
+                        <option value="Massawa">Massawa</option>
+                        <option value="Keren">Keren</option>
+                        <option value="Remote">Remote</option>
+                    </select>
+                </div>
+                <div class="search-group">
+                    <label>💰 Price from</label>
+                    <input type="number" id="priceMin" placeholder="Min" />
+                </div>
+                <div class="search-group">
+                    <label>💰 Price to</label>
+                    <input type="number" id="priceMax" placeholder="Max" />
+                </div>
+                <div class="search-group">
+                    <label>📂 Category</label>
+                    <select id="searchCategory">
+                        <option value="">All</option>
+                        <option value="realestate">Real Estate</option>
+                        <option value="electronics">Electronics</option>
+                        <option value="cars">Cars</option>
+                        <option value="jobs">Jobs</option>
+                        <option value="general">Services</option>
+                    </select>
+                </div>
+                <button class="search-btn" onclick="performSearch()">🔍 Search</button>
+            </div>
+        </div>
 
-        <!-- صفحة الطيران -->
-        <section id="flights" class="tab-content">
-            <h2>✈️ حجز تذاكر الطيران إلى أسمرا</h2>
-            <div class="grid" id="flightsGrid"></div>
-        </section>
+        <!-- Home -->
+        <div id="homePane" class="tab-pane active-pane">
+            <div class="hero">
+                <h1>🇪🇷 Asmara.Store</h1>
+                <div class="tagline">A platform that respects our customs and traditions</div>
+                <p id="homeIntro">A trusted platform for flights, real estate, services, and official content.</p>
+            </div>
 
-        <!-- صفحة العقارات -->
-        <section id="realestate" class="tab-content">
-            <h2>🏠 العقارات المتاحة</h2>
-            <div class="grid" id="reGrid"></div>
-        </section>
+            <div class="card">
+                <h3>⭐ Customer Reviews</h3>
+                <div id="testimonialsGrid" class="testimonials-grid"></div>
+            </div>
+            <div class="card"><h3>🏠 Latest Properties</h3><div id="homeRealEstate" class="gallery-grid"></div></div>
+            <div class="card"><h3>📱 Latest Electronics</h3><div id="homeElectronics" class="gallery-grid"></div></div>
+            <div class="card"><h3>🚗 Latest Cars</h3><div id="homeCars" class="gallery-grid"></div></div>
+            <div class="card"><h3>💼 Latest Jobs</h3><div id="homeJobs" class="gallery-grid"></div></div>
+            <div class="card"><h3>📋 Featured Services</h3><div id="homeServices" class="gallery-grid"></div></div>
+            <div class="card"><h3>📰 Latest Articles</h3><div id="homeBlogPreview"></div></div>
+        </div>
 
-        <!-- صفحة الإلكترونيات -->
-        <section id="electronics" class="tab-content">
-            <h2>📱 أحدث الأجهزة الإلكترونية</h2>
-            <div class="grid" id="elecGrid"></div>
-        </section>
+        <!-- Flights -->
+        <div id="flightPane" class="tab-pane">
+            <div class="card"><h3>✈️ Flights to Asmara (ASM)</h3><div id="allFlightsList"></div></div>
+            <div class="card">
+                <h3>🔍 Search Flights</h3>
+                <select id="flightFrom">
+                    <option value="DXB">Dubai</option>
+                    <option value="JED">Jeddah</option>
+                    <option value="CAI">Cairo</option>
+                    <option value="ADD">Addis Ababa</option>
+                </select>
+                <input type="date" id="flightDate" value="2026-05-15" />
+                <button class="btn" id="searchFlightBtn">🔍 Search</button>
+                <div id="flightResults" style="background:#eef2f8; border-radius:16px; padding:0.9rem; margin-top:0.9rem;"></div>
+            </div>
+            <div class="card">
+                <h3>📋 Booking Info</h3>
+                <input type="text" id="passengerName" placeholder="Full Name" />
+                <input type="email" id="passengerEmail" placeholder="Email" />
+                <button class="btn" id="confirmBookingBtn">✅ Confirm</button>
+                <p id="bookingMsg" style="margin-top:0.6rem; color:#4a627a;"></p>
+            </div>
+        </div>
+
+        <!-- Real Estate -->
+        <div id="realestatePane" class="tab-pane">
+            <div class="grid-2">
+                <div class="card">
+                    <h3>🏠 Add Property</h3>
+                    <div class="form-row">
+                        <div class="form-group"><label>Type</label><select id="reType"><option>Apartment</option><option>Villa</option><option>Land</option></select></div>
+                        <div class="form-group"><label>City</label><select id="reCity"><option>Asmara</option><option>Massawa</option><option>Keren</option></select></div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group"><label>Area (m²)</label><input id="reArea" type="number" /></div>
+                        <div class="form-group"><label>Rooms</label><select id="reRooms"><option>1</option><option>2</option><option>3</option><option>4</option></select></div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group"><label>Price ($)</label><input id="rePrice" type="number" /></div>
+                        <div class="form-group"><label>Finishing</label><select id="reFinish"><option>Luxury</option><option>Standard</option></select></div>
+                    </div>
+                    <div class="form-group"><label>Description</label><textarea id="reDesc" rows="2"></textarea></div>
+                    <div class="form-group"><label>Image</label><input type="file" id="reImage" accept="image/*" /></div>
+                    <button class="btn" id="publishReBtn">📢 Publish</button>
+                </div>
+                <div class="card"><h3>🖼️ Gallery</h3><div id="realEstateGallery" class="gallery-grid"></div></div>
+            </div>
+        </div>
+
+        <!-- Electronics -->
+        <div id="electronicsPane" class="tab-pane">
+            <div class="grid-2">
+                <div class="card">
+                    <h3>📱 Add Device</h3>
+                    <div class="form-row">
+                        <div class="form-group"><label>Type</label><select id="elecType"><option>Phone</option><option>Laptop</option><option>Tablet</option></select></div>
+                        <div class="form-group"><label>Brand</label><select id="elecBrand"><option>Apple</option><option>Samsung</option><option>Lenovo</option><option>Huawei</option></select></div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group"><label>Price ($)</label><input id="elecPrice" type="number" /></div>
+                        <div class="form-group"><label>Condition</label><select id="elecCondition"><option>New</option><option>Used</option></select></div>
+                    </div>
+                    <div class="form-group"><label>Description</label><textarea id="elecDesc" rows="2"></textarea></div>
+                    <div class="form-group"><label>Image</label><input type="file" id="elecImage" accept="image/*" /></div>
+                    <button class="btn" id="publishElecBtn">📢 Publish</button>
+                </div>
+                <div class="card"><h3>🖼️ Gallery</h3><div id="electronicsGallery" class="gallery-grid"></div></div>
+            </div>
+        </div>
+
+        <!-- Cars -->
+        <div id="carsPane" class="tab-pane">
+            <div class="grid-2">
+                <div class="card">
+                    <h3>🚗 Add Car</h3>
+                    <div class="form-row">
+                        <div class="form-group"><label>Brand</label><input id="carBrand" placeholder="Toyota" /></div>
+                        <div class="form-group"><label>Model</label><input id="carModel" placeholder="Corolla" /></div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group"><label>Year</label><input id="carYear" type="number" /></div>
+                        <div class="form-group"><label>Mileage</label><input id="carMileage" placeholder="km" /></div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group"><label>Price ($)</label><input id="carPrice" type="number" /></div>
+                        <div class="form-group"><label>Transmission</label><select id="carTransmission"><option>Automatic</option><option>Manual</option></select></div>
+                    </div>
+                    <div class="form-group"><label>Description</label><textarea id="carDesc" rows="2"></textarea></div>
+                    <div class="form-group"><label>Image</label><input type="file" id="carImage" accept="image/*" /></div>
+                    <button class="btn" id="publishCarBtn">📢 Publish</button>
+                </div>
+                <div class="card"><h3>🖼️ Gallery</h3><div id="carsGallery" class="gallery-grid"></div></div>
+            </div>
+        </div>
+
+        <!-- Jobs -->
+        <div id="jobsPane" class="tab-pane">
+            <div class="grid-2">
+                <div class="card">
+                    <h3>💼 Add Job</h3>
+                    <div class="form-row">
+                        <div class="form-group"><label>Title</label><input id="jobTitle" placeholder="Job Title" /></div>
+                        <div class="form-group"><label>Company</label><input id="jobCompany" placeholder="Company" /></div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group"><label>Salary ($)</label><input id="jobSalary" type="number" /></div>
+                        <div class="form-group"><label>Type</label><select id="jobType"><option>Full Time</option><option>Part Time</option><option>Remote</option></select></div>
+                    </div>
+                    <div class="form-group"><label>Description</label><textarea id="jobDesc" rows="2"></textarea></div>
+                    <div class="form-group"><label>City</label><select id="jobCity"><option>Asmara</option><option>Massawa</option><option>Keren</option><option>Remote</option></select></div>
+                    <button class="btn" id="publishJobBtn">📢 Publish</button>
+                </div>
+                <div class="card"><h3>🖼️ Jobs</h3><div id="jobsGallery" class="gallery-grid"></div></div>
+            </div>
+        </div>
+
+        <!-- Services -->
+        <div id="generalPane" class="tab-pane">
+            <div class="grid-2">
+                <div class="card">
+                    <h3>📝 General Ad</h3>
+                    <div class="form-row">
+                        <div class="form-group"><label>Type</label><select id="adType"><option>Service</option><option>Product</option></select></div>
+                        <div class="form-group"><label>City</label><select id="adCity"><option>Asmara</option><option>Massawa</option><option>Keren</option></select></div>
+                    </div>
+                    <div class="form-group"><label>Title</label><input id="adName" placeholder="Title" /></div>
+                    <div class="form-group"><label>Price</label><input id="adPrice" type="number" /></div>
+                    <div class="form-group"><label>Description</label><textarea id="adDesc" rows="2"></textarea></div>
+                    <div class="form-group"><label>Image</label><input type="file" id="adImage" accept="image/*" /></div>
+                    <button class="btn" id="publishGeneralBtn">📢 Publish</button>
+                </div>
+                <div class="card"><h3>🖼️ Services</h3><div id="generalGallery" class="gallery-grid"></div></div>
+            </div>
+        </div>
+
+        <!-- Blog -->
+        <div id="blogPane" class="tab-pane">
+            <div class="card"><h2>📰 Blog</h2><div id="blogGrid" class="blog-grid"></div></div>
+        </div>
+
+        <!-- FAQ -->
+        <div id="faqPane" class="tab-pane">
+            <div class="card">
+                <h3>❓ FAQ</h3>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">📌 How to add an ad? <i class="fas fa-chevron-down"></i></div>
+                    <div class="faq-answer">Use the dedicated section for each category, fill in the form, and click Publish.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">💰 How to pay? <i class="fas fa-chevron-down"></i></div>
+                    <div class="faq-answer">You can use PayPal or simulated wallet deposit from the Payment page.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">🔐 How to verify my account? <i class="fas fa-chevron-down"></i></div>
+                    <div class="faq-answer">Open the user dashboard and click Verify Account, then use the demo code 123456.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact -->
+        <div id="contactPane" class="tab-pane">
+            <div class="grid-2">
+                <div class="card">
+                    <h3>📞 Contact Us</h3>
+                    <div class="contact-info">
+                        <div class="contact-card">
+                            <i class="fab fa-whatsapp"></i>
+                            <div><strong>WhatsApp</strong><br /><a href="https://wa.me/29170000000" target="_blank" rel="noopener noreferrer">+291 70 000 000</a></div>
+                        </div>
+                        <div class="contact-card">
+                            <i class="far fa-envelope"></i>
+                            <div><strong>Email</strong><br /><a href="mailto:info@asmara.store">info@asmara.store</a></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <h3>✉️ Send Message</h3>
+                    <input type="text" id="contactName" placeholder="Name" />
+                    <input type="email" id="contactEmail" placeholder="Email" />
+                    <textarea id="contactMessage" rows="4" placeholder="Message"></textarea>
+                    <button class="btn" onclick="sendContactMessage()">Send</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Payment -->
+        <div id="paymentPane" class="tab-pane">
+            <div class="grid-2">
+                <div class="card"><h3>💳 Pro Subscription</h3><div style="font-size:1.8rem; color:#c7a12b; font-weight:800;">$29<small>/month</small></div><button id="paypalBtn" class="btn">PayPal</button></div>
+                <div class="card"><h3>💰 My Wallet</h3><p>Balance: <strong id="balanceAmount">$0</strong></p><button id="addFundsBtn" class="btn">Deposit $50</button></div>
+            </div>
+            <div class="card"><h3>📜 Transactions</h3><div id="transactionsList"></div></div>
+        </div>
+
+        <!-- Messaging -->
+        <div id="messagingPane" class="tab-pane">
+            <div class="grid-2">
+                <div class="card"><h3>📋 Chats</h3><div id="contactsList" class="chat-list"></div></div>
+                <div class="card">
+                    <h3>💬 Messaging</h3>
+                    <div id="chatMessages" class="chat-list" style="height:240px; overflow:auto;"></div>
+                    <div style="display:flex; gap:0.6rem; margin-top:0.8rem;">
+                        <input type="text" id="chatInput" placeholder="Type message..." />
+                        <button id="sendMsgBtn" class="btn-sm">Send</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Ratings -->
+        <div id="ratingsPane" class="tab-pane">
+            <div class="card">
+                <h3>⭐ User Ratings</h3>
+                <div id="ratingsList"></div>
+                <textarea id="newRatingComment" rows="2" placeholder="Write review..."></textarea>
+                <div class="rating-input">
+                    <span class="rating-star" data-value="1">★</span>
+                    <span class="rating-star" data-value="2">★</span>
+                    <span class="rating-star" data-value="3">★</span>
+                    <span class="rating-star" data-value="4">★</span>
+                    <span class="rating-star" data-value="5">★</span>
+                </div>
+                <button id="addRatingBtn" class="btn">Add Review</button>
+            </div>
+        </div>
+
+        <!-- Agent / internal -->
+        <div id="dashboardPane" class="tab-pane">
+            <div class="stats-grid">
+                <div class="stat-card"><div class="stat-number" id="statAds">0</div><div>Total Ads</div></div>
+                <div class="stat-card"><div class="stat-number" id="statPending">0</div><div>Pending</div></div>
+                <div class="stat-card"><div class="stat-number" id="statApproved">0</div><div>Approved</div></div>
+                <div class="stat-card"><div class="stat-number" id="statRejected">0</div><div>Rejected</div></div>
+            </div>
+            <div class="card"><h3>📈 Ad Performance</h3><div id="adPerformanceList">No performance data yet.</div></div>
+        </div>
+
+        <div id="agentPane" class="tab-pane">
+            <div class="grid-2">
+                <div class="card"><h3>⏳ Pending Reviews</h3><div id="pendingAdsList">No pending ads.</div></div>
+                <div class="card"><h3>🚫 Violations</h3><div id="violationsList">No violations.</div></div>
+            </div>
+            <div class="card"><h3>📋 Agent Log</h3><div id="agentLogList">No logs yet.</div></div>
+            <div class="card"><h3>⚙️ Blocked Words</h3><div id="blockedWordsList">spam, scam, fake</div><div style="display:flex; gap:0.6rem; margin-top:0.7rem;"><input type="text" id="newBlockedWord" placeholder="New blocked word" /><button id="addBlockedWordBtn" class="btn-sm">Add</button></div></div>
+        </div>
+
+        <div id="reportsPane" class="tab-pane">
+            <div class="card"><h3>🚨 User Reports</h3><div id="reportsList">No reports.</div></div>
+            <div class="card"><h3>📋 Reports Log</h3><div id="reportsLogList">No report logs.</div></div>
+        </div>
+
+        <div id="institutionsPane" class="tab-pane">
+            <div class="grid-2">
+                <div class="card"><h3>🏛️ Ministry of Trade</h3><a href="https://www.comesa.int/state-of-eritrea/" target="_blank" rel="noopener noreferrer">COMESA</a></div>
+                <div class="card"><h3>📰 Ministry of Info</h3><a href="http://www.shabait.com" target="_blank" rel="noopener noreferrer">Shabait.com</a></div>
+                <div class="card"><h3>📚 Asmara Library</h3><button id="libraryInfoBtn" class="btn-sm">Info</button></div>
+            </div>
+        </div>
+
+        <div id="policiesPane" class="tab-pane">
+            <div class="policy-card"><h3>🔄 Return Policy</h3><ul style="padding-left:1.2rem;"><li>14 days return</li><li>Original condition required</li></ul></div>
+        </div>
     </div>
 
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-section"><h4>🇪🇷 About Us</h4><p>Digital platform connecting Eritreans with trusted services.</p></div>
+            <div class="footer-section"><h4>🔗 Quick Links</h4><a href="#" class="footer-link" data-tab="home">Home</a><a href="#" class="footer-link" data-tab="faq">FAQ</a><a href="#" class="footer-link" data-tab="contact">Contact</a></div>
+            <div class="footer-section"><h4>⚖️ Policies</h4><a href="#" id="privacyPolicyLink">Privacy</a><a href="#" id="returnsPolicyLink">Returns</a></div>
+            <div class="footer-section"><h4>🛡️ Agent</h4><a href="#" id="agentPanelLink">Agent Login</a><div class="social-links"><a href="https://facebook.com" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a><a href="https://twitter.com" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a><a href="https://instagram.com" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a><a href="https://wa.me/29170000000" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i></a></div></div>
+        </div>
+        <div class="footer-bottom"><p>© 2026 Asmara.Store</p><div class="verified">✓ Certified Platform</div></div>
+    </footer>
+
     <script>
-        // قاعدة البيانات التجريبية
-        const products = [
-            { id: 1, name: "آيفون 15 برو", price: 1200, category: "electronics", img: "https://images.unsplash.com/photo-1696446701796-da61225697cc?w=400" },
-            { id: 2, name: "فيلا في حي تيرفولو", price: 450000, category: "realestate", img: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=400" },
-            { id: 3, name: "تذكرة دبي - أسمرا", price: 550, category: "flights", img: "https://images.unsplash.com/photo-1436491865332-7a61a109c0f3?w=400" },
-            { id: 4, name: "لابتوب ماك بوك", price: 1500, category: "electronics", img: "https://images.unsplash.com/photo-1517336714460-d1b16da02970?w=400" }
+        // ========================================
+        // Asmara.Store - Main JavaScript (Fixed)
+        // ========================================
+
+        const realEstateImages = [
+            'https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg?w=300&h=200&fit=crop',
+            'https://images.pexels.com/photos/2587054/pexels-photo-2587054.jpeg?w=300&h=200&fit=crop',
+            'https://images.pexels.com/photos/280229/pexels-photo-280229.jpeg?w=300&h=200&fit=crop'
         ];
 
+        let realEstateAds = [
+            { id: 1, name: 'Luxury Apartment - Tiravolo', price: 85000, city: 'Asmara', type: 'Apartment', category: 'realestate', views: 45, image: realEstateImages[0], description: 'Luxury apartment in Asmara\'s finest neighborhood.' },
+            { id: 2, name: 'Villa - Edaga Arbi', price: 250000, city: 'Asmara', type: 'Villa', category: 'realestate', views: 32, image: realEstateImages[1], description: 'Independent villa with private garden.' },
+            { id: 3, name: 'Apartment - Downtown', price: 65000, city: 'Asmara', type: 'Apartment', category: 'realestate', views: 28, image: realEstateImages[2], description: 'Apartment in excellent location.' }
+        ];
+
+        let electronicsAds = [
+            { id: 101, name: 'iPhone 14 Pro', price: 899, city: 'Asmara', type: 'Phone', category: 'electronics', views: 120, image: 'https://images.pexels.com/photos/788946/pexels-photo-788946.jpeg?w=300&h=200&fit=crop', description: 'iPhone 14 Pro with 48MP camera.' },
+            { id: 102, name: 'MacBook Air M2', price: 1299, city: 'Asmara', type: 'Laptop', category: 'electronics', views: 78, image: 'https://images.pexels.com/photos/18105/pexels-photo.jpg?w=300&h=200&fit=crop', description: 'MacBook Air with M2 chip.' },
+            { id: 103, name: 'Samsung Galaxy S23', price: 699, city: 'Asmara', type: 'Phone', category: 'electronics', views: 56, image: 'https://images.pexels.com/photos/47261/pexels-photo-47261.jpeg?w=300&h=200&fit=crop', description: 'Samsung Galaxy S23 with 50MP camera.' }
+        ];
+
+        let carsAds = [
+            { id: 201, name: 'Toyota Corolla 2020', price: 9000, city: 'Massawa', type: 'Car', category: 'cars', views: 67, image: 'https://images.pexels.com/photos/113102/pexels-photo-113102.jpeg?w=300&h=200&fit=crop', description: 'Toyota Corolla in excellent condition.' },
+            { id: 202, name: 'Hyundai Tucson 2022', price: 18000, city: 'Asmara', type: 'Car', category: 'cars', views: 45, image: 'https://images.pexels.com/photos/1413412/pexels-photo-1413412.jpeg?w=300&h=200&fit=crop', description: 'Hyundai Tucson with sunroof.' },
+            { id: 203, name: 'Kia Sportage 2021', price: 16000, city: 'Asmara', type: 'Car', category: 'cars', views: 34, image: 'https://images.pexels.com/photos/2761842/pexels-photo-2761842.jpeg?w=300&h=200&fit=crop', description: 'Kia Sportage in good condition.' }
+        ];
+
+        let jobsAds = [
+            { id: 301, name: 'Accountant', salary: 500, city: 'Asmara', company: 'Asmara Co', type: 'Full Time', category: 'jobs', views: 89, image: 'https://images.pexels.com/photos/3183197/pexels-photo-3183197.jpeg?w=300&h=200&fit=crop', description: 'Accountant needed.' },
+            { id: 302, name: 'Civil Engineer', salary: 800, city: 'Asmara', company: 'Construction Co', type: 'Full Time', category: 'jobs', views: 56, image: 'https://images.pexels.com/photos/416405/pexels-photo-416405.jpeg?w=300&h=200&fit=crop', description: 'Civil engineer needed.' },
+            { id: 303, name: 'Web Developer', salary: 1200, city: 'Remote', company: 'Tech Co', type: 'Remote', category: 'jobs', views: 34, image: 'https://images.pexels.com/photos/1181263/pexels-photo-1181263.jpeg?w=300&h=200&fit=crop', description: 'Web developer needed.' }
+        ];
+
+        let generalAds = [
+            { id: 401, name: 'Shipping to Asmara', price: 299, city: 'Asmara', type: 'Service', category: 'general', views: 34, image: 'https://images.pexels.com/photos/279949/pexels-photo-279949.jpeg?w=300&h=200&fit=crop', description: 'Fast shipping from Dubai.' },
+            { id: 402, name: 'Office for Rent', price: 500, city: 'Asmara', type: 'Property', category: 'general', views: 23, image: 'https://images.pexels.com/photos/289777/pexels-photo-289777.jpeg?w=300&h=200&fit=crop', description: 'Furnished office for rent.' }
+        ];
+
+        const testimonials = [
+            { name: 'Ahmed M.', title: 'Investor', text: 'Great platform! Found the perfect property.', rating: 5, avatar: 'A' },
+            { name: 'Sara I.', title: 'Expat', text: 'Excellent service! Highly recommended.', rating: 5, avatar: 'S' },
+            { name: 'Mohamed A.', title: 'Business Owner', text: 'Found the best talent through this platform.', rating: 4, avatar: 'M' }
+        ];
+
+        const allFlights = [
+            { from: 'DXB', fromName: 'Dubai', to: 'ASM', toName: 'Asmara', airline: 'FlyDubai', price: '$450', time: '08:00' },
+            { from: 'JED', fromName: 'Jeddah', to: 'ASM', toName: 'Asmara', airline: 'Ethiopian', price: '$380', time: '09:15' },
+            { from: 'CAI', fromName: 'Cairo', to: 'ASM', toName: 'Asmara', airline: 'EgyptAir', price: '$490', time: '10:00' },
+            { from: 'ADD', fromName: 'Addis Ababa', to: 'ASM', toName: 'Asmara', airline: 'Ethiopian', price: '$210', time: '07:30' }
+        ];
+
+        const blogPosts = [
+            { id: 1, title: '📘 Guide to Buying Property in Asmara', category: 'Real Estate', summary: 'Important steps for buying property safely.', content: '<p>Before buying property, verify ownership, inspect legal documents, and work with trusted local contacts.</p>', date: '2026-04-01', image: '🏠', author: 'Asmara.Store' },
+            { id: 2, title: '✈️ Tips for Booking Cheap Flights', category: 'Travel', summary: 'Best times to get good prices.', content: '<p>Book early, compare routes, and monitor airline schedules from Dubai, Jeddah, Cairo, and Addis Ababa.</p>', date: '2026-03-28', image: '✈️', author: 'Asmara.Store' },
+            { id: 3, title: '💼 How to Find a Job in Eritrea', category: 'Jobs', summary: 'Best ways to find job opportunities.', content: '<p>Build a strong CV, use reliable local contacts, and apply consistently to trusted employers.</p>', date: '2026-03-25', image: '💼', author: 'Asmara.Store' }
+        ];
+
+        const demoUsers = [
+            { username: 'user', password: '123456', role: 'user' },
+            { username: 'agent', password: 'agent123', role: 'agent' }
+        ];
+
+        const TRANSLATIONS = {
+            en: {
+                tagline: 'A platform that respects our customs and traditions',
+                homeIntro: 'A trusted platform for flights, real estate, services, and official content.'
+            },
+            ar: {
+                tagline: 'منصة تحترم عاداتنا وتقاليدنا',
+                homeIntro: 'منصة موثوقة للطيران والعقارات والخدمات والمحتوى الرسمي.'
+            },
+            ti: {
+                tagline: 'ልምድና ባህልና ዘከብር መድረኽ',
+                homeIntro: 'ንበረራ፣ ሪል እስቴት፣ ኣገልግሎትን ወግዓዊ ትሕዝቶን ዝተኣመነ መድረኽ።'
+            }
+        };
+
+        let currentLang = 'en';
+        let currentUser = null;
+        let currentRole = 'guest';
+        let isVerified = false;
+        let isAgentMode = false;
+        let balance = 0;
+        let transactions = [];
+        let messages = [
+            { id: 1, from: 'Ali Hassan', to: 'Buyer', text: 'Hello', time: '10:30' },
+            { id: 2, from: 'Sara', to: 'Buyer', text: 'Is this item available?', time: '13:10' }
+        ];
+        let ratings = [
+            { user: 'Ahmed', rating: 5, comment: 'Excellent platform!', date: '2026-04-01' },
+            { user: 'Muna', rating: 4, comment: 'Nice layout and simple to use.', date: '2026-04-03' }
+        ];
         let cart = [];
 
-        // وظيفة التبديل بين الأقسام
-        function switchTab(tabId) {
-            document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
-            document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
-
-            document.getElementById(tabId).classList.add('active');
-            document.getElementById('btn-' + tabId).classList.add('active');
-            
-            renderProducts(tabId);
+        function setCookie(name, value, days) {
+            const date = new Date();
+            date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
+            document.cookie = `${name}=${encodeURIComponent(value)};expires=${date.toUTCString()};path=/`;
         }
 
-        // عرض المنتجات بناءً على القسم
-        function renderProducts(tabId) {
-            let filtered = tabId === 'home' ? products : products.filter(p => p.category === tabId);
-            let gridId = tabId === 'home' ? 'homeGrid' : tabId === 'flights' ? 'flightsGrid' : tabId === 'realestate' ? 'reGrid' : 'elecGrid';
-            
-            const grid = document.getElementById(gridId);
-            if (!grid) return;
-            
-            grid.innerHTML = filtered.map(p => `
-                <div class="card">
-                    <img src="${p.img}" class="card-img">
-                    <div class="card-body">
-                        <div class="card-title">${p.name}</div>
-                        <div class="card-price">${p.price}$</div>
-                        <button class="btn-buy" onclick="addToCart(${p.id})">إضافة للسلة</button>
+        function getCookie(name) {
+            const match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+            return match ? decodeURIComponent(match[2]) : null;
+        }
+
+        function showNotification(message, type = 'success') {
+            const notification = document.createElement('div');
+            notification.className = `notification ${type}`;
+            const iconMap = {
+                success: 'check-circle',
+                error: 'times-circle',
+                warning: 'exclamation-triangle',
+                info: 'info-circle'
+            };
+            notification.innerHTML = `<i class="fas fa-${iconMap[type] || 'info-circle'}"></i> <span>${message}</span>`;
+            document.body.appendChild(notification);
+            setTimeout(() => notification.remove(), 3000);
+        }
+
+        function safeText(value) {
+            return String(value ?? '').replace(/[&<>"']/g, char => ({
+                '&': '&amp;',
+                '<': '&lt;',
+                '>': '&gt;',
+                '"': '&quot;',
+                "'": '&#39;'
+            }[char]));
+        }
+
+        function getAllAds() {
+            return [
+                ...realEstateAds,
+                ...electronicsAds,
+                ...carsAds,
+                ...jobsAds,
+                ...generalAds
+            ];
+        }
+
+        function renderGallery(containerId, data, limit = null) {
+            const container = document.getElementById(containerId);
+            if (!container) return;
+
+            const items = limit ? data.slice(0, limit) : data;
+            container.innerHTML = items.map(item => {
+                const price = item.price ?? item.salary ?? 0;
+                return `
+                    <div class="product-card" onclick="showProductDetails(${item.id}, '${containerId}')">
+                        <div class="product-image-container">
+                            <img src="${safeText(item.image)}" class="product-image" alt="${safeText(item.name)}" loading="lazy" onerror="this.src='https://placehold.co/300x200/1e3a5f/ffffff?text=Image'">
+                        </div>
+                        <div class="product-info">
+                            <h4 class="product-title">${safeText(item.name)}</h4>
+                            <div class="product-price">$${price}</div>
+                            <div class="product-meta">
+                                <span class="badge">${safeText(item.type || 'Item')}</span>
+                                <span class="product-views">👁️ ${item.views || 0}</span>
+                                <button class="add-to-cart" onclick="event.stopPropagation(); addToCart({ id:${item.id}, name:${JSON.stringify(item.name)}, price:${price}, image:${JSON.stringify(item.image)} })">➕ Add</button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }).join('') || '<p>No items found.</p>';
+        }
+
+        function renderHomePage() {
+            renderGallery('homeRealEstate', realEstateAds, 3);
+            renderGallery('homeElectronics', electronicsAds, 3);
+            renderGallery('homeCars', carsAds, 3);
+            renderGallery('homeJobs', jobsAds, 3);
+            renderGallery('homeServices', generalAds, 3);
+
+            const tc = document.getElementById('testimonialsGrid');
+            if (tc) {
+                tc.innerHTML = testimonials.map(t => `
+                    <div class="testimonial-card" style="padding:1.2rem; text-align:center;">
+                        <div style="width:70px; height:70px; border-radius:50%; background:linear-gradient(135deg,#1e3a5f,#c7a12b); display:flex; align-items:center; justify-content:center; margin:0 auto 1rem; font-size:2rem; color:white; font-weight:800;">${safeText(t.avatar)}</div>
+                        <p style="font-size:0.88rem; color:#4a627a;">&quot;${safeText(t.text)}&quot;</p>
+                        <h4 style="margin-top:0.6rem;">${safeText(t.name)}</h4>
+                        <small style="color:#c7a12b; font-weight:700;">${safeText(t.title)}</small>
+                        <div style="color:#c7a12b; margin-top:0.5rem;">${'★'.repeat(t.rating)}${'☆'.repeat(5 - t.rating)}</div>
+                    </div>
+                `).join('');
+            }
+
+            const bc = document.getElementById('homeBlogPreview');
+            if (bc) {
+                bc.innerHTML = blogPosts.slice(0, 3).map(post => `
+                    <div style="margin-bottom:1rem; cursor:pointer; border-bottom:1px solid #eee; padding-bottom:0.7rem;" onclick="showBlogPost(${post.id})">
+                        <span style="background:#c7a12b; padding:0.2rem 0.5rem; border-radius:20px; font-size:0.68rem; font-weight:700;">${safeText(post.category)}</span>
+                        <h4 style="margin:0.45rem 0;">${safeText(post.title)}</h4>
+                        <p style="font-size:0.8rem; color:#666;">${safeText(post.summary)}</p>
+                    </div>
+                `).join('');
+            }
+        }
+
+        function renderAllFlights() {
+            const c = document.getElementById('allFlightsList');
+            if (!c) return;
+            c.innerHTML = allFlights.map(f => `
+                <div class="flight-card" style="background:linear-gradient(135deg,#1e3a5f,#2c5282); color:white; border-radius:20px; margin-bottom:1rem;">
+                    <div style="font-size:1.06rem; font-weight:800;">✈️ ${safeText(f.fromName)} → ${safeText(f.toName)}</div>
+                    <div style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.6rem; margin-top:0.6rem;">
+                        <div>${safeText(f.airline)}</div>
+                        <div>🕐 ${safeText(f.time)}</div>
+                        <div>${safeText(f.price)}</div>
                     </div>
                 </div>
             `).join('');
         }
 
-        // سلة التسوق
-        function toggleCart() {
-            document.getElementById('cartSidebar').classList.toggle('open');
-            const overlay = document.getElementById('overlay');
-            overlay.style.display = overlay.style.display === 'block' ? 'none' : 'block';
-        }
-
-        function addToCart(id) {
-            const product = products.find(p => p.id === id);
-            cart.push(product);
-            updateCartUI();
-        }
-
-        function updateCartUI() {
-            document.getElementById('cartCount').innerText = cart.length;
-            const itemsContainer = document.getElementById('cartItems');
-            const totalContainer = document.getElementById('cartTotal');
-            
-            let total = 0;
-            itemsContainer.innerHTML = cart.map((item, index) => {
-                total += item.price;
-                return `
-                    <div style="display:flex; justify-content:space-between; margin-bottom:15px; border-bottom:1px solid #eee; padding-bottom:5px;">
-                        <span>${item.name}</span>
-                        <b>${item.price}$</b>
-                        <i class="fas fa-trash" style="color:red; cursor:pointer" onclick="removeFromCart(${index})"></i>
+        function renderBlog() {
+            const c = document.getElementById('blogGrid');
+            if (!c) return;
+            c.innerHTML = blogPosts.map(p => `
+                <div class="blog-card" style="overflow:hidden; cursor:pointer;" onclick="showBlogPost(${p.id})">
+                    <div style="background:linear-gradient(135deg,#1e3a5f,#2c5282); height:120px; display:flex; align-items:center; justify-content:center; font-size:3rem;">${safeText(p.image)}</div>
+                    <div style="padding:1rem;">
+                        <span style="background:#c7a12b; padding:0.2rem 0.5rem; border-radius:20px; font-size:0.65rem; font-weight:700;">${safeText(p.category)}</span>
+                        <h3 style="margin:0.5rem 0; font-size:1rem;">${safeText(p.title)}</h3>
+                        <p style="font-size:0.82rem; color:#666;">${safeText(p.summary)}</p>
+                        <div style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.5rem; margin-top:0.6rem; font-size:0.72rem; color:#8ba0b5;">
+                            <span>📅 ${safeText(p.date)}</span>
+                            <span>✍️ ${safeText(p.author)}</span>
+                        </div>
                     </div>
-                `;
-            }).join('');
-            totalContainer.innerText = total;
+                </div>
+            `).join('');
+        }
+
+        function showBlogPost(id) {
+            const post = blogPosts.find(p => p.id === id);
+            if (!post) return;
+            document.getElementById('policyModalTitle').innerHTML = safeText(post.title);
+            document.getElementById('policyModalBody').innerHTML = post.content;
+            document.getElementById('policyModal').style.display = 'flex';
+        }
+
+        function addToCart(item) {
+            cart.push(item);
+            updateCartUI();
+            showNotification(`${item.name} added to cart`, 'success');
         }
 
         function removeFromCart(index) {
@@ -303,16 +1353,624 @@
             updateCartUI();
         }
 
-        // تغيير اللغة (تبسيط)
-        function changeLanguage() {
-            const lang = document.getElementById('langSwitcher').value;
-            document.body.dir = lang === 'ar' ? 'rtl' : 'ltr';
-            // هنا يمكنك إضافة نصوص الترجمة لتبديل العناوين
+        function updateCartUI() {
+            const countEl = document.getElementById('cartCount');
+            const cartItemsDiv = document.getElementById('cartItems');
+            const totalEl = document.getElementById('cartTotal');
+            if (countEl) countEl.innerText = cart.length;
+            if (!cartItemsDiv || !totalEl) return;
+
+            let total = 0;
+            cartItemsDiv.innerHTML = cart.map((item, index) => {
+                total += Number(item.price) || 0;
+                return `
+                    <div style="display:flex; gap:1rem; padding:1rem; border-bottom:1px solid #eef2f8; align-items:center;">
+                        <img src="${safeText(item.image)}" alt="${safeText(item.name)}" style="width:60px; height:60px; object-fit:cover; border-radius:8px;">
+                        <div style="flex:1;">
+                            <div style="font-weight:700;">${safeText(item.name)}</div>
+                            <div style="color:#c7a12b; font-weight:700;">$${item.price}</div>
+                        </div>
+                        <button class="btn-sm" onclick="removeFromCart(${index})">🗑️</button>
+                    </div>
+                `;
+            }).join('') || '<p style="padding:1rem; color:#666;">Cart is empty.</p>';
+            totalEl.innerHTML = `Total: $${total}`;
         }
 
-        // التشغيل عند التحميل
-        window.onload = () => renderProducts('home');
+        function toggleCart() {
+            const sidebar = document.getElementById('cartSidebar');
+            const overlay = document.getElementById('cartOverlay');
+            const isOpen = sidebar.style.right === '0px';
+            sidebar.style.right = isOpen ? '-400px' : '0px';
+            overlay.style.display = isOpen ? 'none' : 'block';
+        }
 
+        function checkout() {
+            if (cart.length === 0) {
+                showNotification('Cart is empty', 'warning');
+                return;
+            }
+            const total = cart.reduce((sum, item) => sum + (Number(item.price) || 0), 0);
+            alert(`Order completed! Total: $${total}`);
+            cart = [];
+            updateCartUI();
+            toggleCart();
+        }
+
+        function performSearch() {
+            const keyword = (document.getElementById('searchInput')?.value || '').toLowerCase().trim();
+            const city = document.getElementById('searchCity')?.value || '';
+            const minPrice = parseFloat(document.getElementById('priceMin')?.value) || 0;
+            const maxPriceValue = document.getElementById('priceMax')?.value;
+            const maxPrice = maxPriceValue ? parseFloat(maxPriceValue) : Infinity;
+            const category = document.getElementById('searchCategory')?.value || '';
+
+            let pool = getAllAds();
+            if (category) pool = pool.filter(item => item.category === category);
+
+            const results = pool.filter(item => {
+                const itemPrice = item.price ?? item.salary ?? 0;
+                const nameMatch = !keyword || item.name.toLowerCase().includes(keyword) || (item.description || '').toLowerCase().includes(keyword);
+                const cityMatch = !city || item.city === city;
+                const priceMatch = itemPrice >= minPrice && itemPrice <= maxPrice;
+                return nameMatch && cityMatch && priceMatch;
+            });
+
+            if (!results.length) {
+                showNotification('No results found', 'info');
+                return;
+            }
+
+            switchTab('home');
+            document.getElementById('homeBlogPreview').innerHTML = `
+                <div class="card" style="box-shadow:none; border:1px dashed #d7dee7; margin:0;">
+                    <h4 style="margin-bottom:0.8rem; color:#1e3a5f;">Search Results (${results.length})</h4>
+                    <div class="gallery-grid" id="searchResultsGrid"></div>
+                </div>
+            `;
+            renderGallery('searchResultsGrid', results);
+            showNotification(`Found ${results.length} result(s)`, 'success');
+        }
+
+        function showProductDetails(id, section) {
+            const sources = {
+                homeRealEstate: realEstateAds,
+                realEstateGallery: realEstateAds,
+                homeElectronics: electronicsAds,
+                electronicsGallery: electronicsAds,
+                homeCars: carsAds,
+                carsGallery: carsAds,
+                homeJobs: jobsAds,
+                jobsGallery: jobsAds,
+                homeServices: generalAds,
+                generalGallery: generalAds,
+                searchResultsGrid: getAllAds()
+            };
+
+            const source = sources[section] || getAllAds();
+            const product = source.find(item => item.id === id);
+            if (!product) return;
+
+            const price = product.price ?? product.salary ?? 0;
+            alert(`${product.name}\n💰 Price: $${price}\n📍 City: ${product.city || '-'}\n📝 Description: ${product.description || '-'}`);
+        }
+
+        function refreshUserDashboard() {
+            const userAdsCount = document.getElementById('userAdsCount');
+            const userMessagesCount = document.getElementById('userMessagesCount');
+            const userBalance = document.getElementById('userBalance');
+            const dashboardUserName = document.getElementById('dashboardUserName');
+
+            if (dashboardUserName) dashboardUserName.innerText = currentUser || 'Guest';
+            if (userAdsCount) userAdsCount.innerText = currentUser ? '0' : '0';
+            if (userMessagesCount) userMessagesCount.innerText = String(messages.length);
+            if (userBalance) userBalance.innerText = `$${balance}`;
+        }
+
+        function loginUser() {
+            const u = document.getElementById('loginUsername')?.value?.trim();
+            const p = document.getElementById('loginPassword')?.value?.trim();
+            const foundUser = demoUsers.find(user => user.username === u && user.password === p);
+
+            if (!foundUser) {
+                showNotification('Invalid username or password', 'error');
+                return;
+            }
+
+            currentUser = foundUser.username;
+            currentRole = foundUser.role;
+            setCookie('username', foundUser.username, 30);
+            setCookie('userRole', foundUser.role, 30);
+
+            const userNameEl = document.getElementById('userName');
+            if (userNameEl) userNameEl.innerText = foundUser.username;
+            document.getElementById('userDisplay').style.display = 'flex';
+            document.getElementById('loginModalBtn').style.display = 'none';
+            document.getElementById('logoutBtn').style.display = 'inline-block';
+
+            refreshUserDashboard();
+            closeLoginModal();
+            showNotification(`Welcome ${foundUser.username}`, 'success');
+
+            if (foundUser.role === 'agent') showAgentPanel();
+        }
+
+        function logoutUser() {
+            currentUser = null;
+            currentRole = 'guest';
+            isVerified = false;
+            setCookie('username', '', -1);
+            setCookie('userRole', '', -1);
+            document.getElementById('userDisplay').style.display = 'none';
+            document.getElementById('loginModalBtn').style.display = 'inline-block';
+            document.getElementById('logoutBtn').style.display = 'none';
+            document.getElementById('userVerifiedBadge').style.display = 'none';
+            document.getElementById('userDashboard').classList.remove('active');
+            refreshUserDashboard();
+            showNotification('Logged out', 'info');
+        }
+
+        function registerUser() {
+            const name = document.getElementById('regName')?.value.trim();
+            const email = document.getElementById('regEmail')?.value.trim();
+            const phone = document.getElementById('regPhone')?.value.trim();
+            const pass = document.getElementById('regPassword')?.value;
+            const confirm = document.getElementById('regConfirm')?.value;
+
+            if (!name || !email || !phone || !pass) {
+                showNotification('Please fill all fields', 'error');
+                return;
+            }
+            if (pass !== confirm) {
+                showNotification('Passwords do not match', 'error');
+                return;
+            }
+            showNotification('Account created! Please verify your account.', 'success');
+            closeRegisterModal();
+            openVerifyModal();
+        }
+
+        function verifyAccount() {
+            if (!currentUser) {
+                showNotification('Please login first', 'warning');
+                return;
+            }
+            openVerifyModal();
+        }
+
+        function openVerifyModal() {
+            document.getElementById('verifyModal').style.display = 'flex';
+        }
+
+        function closeVerifyModal() {
+            document.getElementById('verifyModal').style.display = 'none';
+        }
+
+        function submitVerification() {
+            const code = document.getElementById('verifyCode')?.value?.trim();
+            if (code === '123456') {
+                isVerified = true;
+                document.getElementById('userVerifiedBadge').style.display = 'inline-block';
+                showNotification('Account verified successfully!', 'success');
+                closeVerifyModal();
+            } else {
+                showNotification('Invalid verification code', 'error');
+            }
+        }
+
+        function showRegister() {
+            closeLoginModal();
+            document.getElementById('registerModal').style.display = 'flex';
+        }
+
+        function closeRegisterModal() {
+            document.getElementById('registerModal').style.display = 'none';
+        }
+
+        function openLoginModal() {
+            document.getElementById('loginModal').style.display = 'flex';
+        }
+
+        function closeLoginModal() {
+            document.getElementById('loginModal').style.display = 'none';
+        }
+
+        function toggleUserDashboard() {
+            if (!currentUser) {
+                showNotification('Please login first', 'warning');
+                return;
+            }
+            refreshUserDashboard();
+            document.getElementById('userDashboard').classList.toggle('active');
+        }
+
+        function showMyOrders() { alert('No orders yet'); }
+        function showWishlist() { alert('Wishlist is empty'); }
+        function showMyAds() { alert('No ads added yet'); }
+
+        function showAgentPanel() {
+            if (isAgentMode) {
+                switchTab('dashboard');
+                return;
+            }
+
+            isAgentMode = true;
+            const navLinks = document.getElementById('mainNavLinks');
+            if (!navLinks) return;
+
+            const tabsToAdd = {
+                dashboard: '📊 Stats',
+                agent: '🛡️ Agent',
+                reports: '🚨 Reports',
+                institutions: '🏛️ Institutions',
+                policies: '📜 Policies'
+            };
+
+            Object.entries(tabsToAdd).forEach(([tab, label]) => {
+                if (!document.querySelector(`.nav-tab-link[data-tab="${tab}"]`)) {
+                    const link = document.createElement('a');
+                    link.href = '#';
+                    link.className = 'nav-tab-link';
+                    link.dataset.tab = tab;
+                    link.textContent = label;
+                    link.addEventListener('click', event => {
+                        event.preventDefault();
+                        switchTab(tab);
+                    });
+                    navLinks.appendChild(link);
+                }
+            });
+
+            updateAgentStats();
+            showNotification('Agent panel enabled', 'success');
+            switchTab('dashboard');
+        }
+
+        function updateAgentStats() {
+            const totalAds = getAllAds().length;
+            const statAds = document.getElementById('statAds');
+            const statPending = document.getElementById('statPending');
+            const statApproved = document.getElementById('statApproved');
+            const statRejected = document.getElementById('statRejected');
+            if (statAds) statAds.innerText = String(totalAds);
+            if (statPending) statPending.innerText = '5';
+            if (statApproved) statApproved.innerText = String(Math.max(totalAds - 2, 0));
+            if (statRejected) statRejected.innerText = '2';
+        }
+
+        function loadContacts() {
+            const contactsList = document.getElementById('contactsList');
+            if (!contactsList) return;
+            const senders = [...new Set(messages.map(m => m.from))];
+            contactsList.innerHTML = senders.map(name => `<div class="chat-message"><strong>${safeText(name)}</strong><div style="color:#4a627a; font-size:0.82rem;">Open conversation</div></div>`).join('') || '<div class="chat-message">No chats</div>';
+        }
+
+        function loadChat() {
+            const c = document.getElementById('chatMessages');
+            if (!c) return;
+            c.innerHTML = messages.map(m => `
+                <div class="chat-message">
+                    <strong>${safeText(m.from)}</strong>
+                    <div style="margin:0.25rem 0;">${safeText(m.text)}</div>
+                    <small style="color:#6f8296;">${safeText(m.time)}</small>
+                </div>
+            `).join('');
+            c.scrollTop = c.scrollHeight;
+            loadContacts();
+        }
+
+        function loadRatings() {
+            const list = document.getElementById('ratingsList');
+            if (!list) return;
+            list.innerHTML = ratings.map(item => `
+                <div class="chat-message" style="margin-bottom:0.7rem;">
+                    <strong>${safeText(item.user)}</strong>
+                    <div class="rating-stars">${'★'.repeat(item.rating)}${'☆'.repeat(5 - item.rating)}</div>
+                    <div>${safeText(item.comment)}</div>
+                    <small style="color:#6f8296;">${safeText(item.date)}</small>
+                </div>
+            `).join('');
+        }
+
+        function initRatingStars() {
+            document.querySelectorAll('.rating-star').forEach(star => {
+                star.addEventListener('click', function () {
+                    const val = parseInt(this.dataset.value, 10);
+                    document.querySelectorAll('.rating-star').forEach((s, i) => {
+                        s.classList.toggle('active', i < val);
+                    });
+                });
+            });
+        }
+
+        function searchFlights() {
+            const from = document.getElementById('flightFrom')?.value;
+            const date = document.getElementById('flightDate')?.value;
+            const flights = allFlights.filter(f => f.from === from);
+            const rd = document.getElementById('flightResults');
+            if (!rd) return;
+
+            if (flights.length === 0) {
+                rd.innerHTML = '❌ No flights available';
+                return;
+            }
+            rd.innerHTML = `<strong>Search Results (${safeText(date)}):</strong><br>` + flights.map(f => `
+                <div style="padding:8px 0; border-bottom:1px solid #d8e1ea;">✈️ ${safeText(f.airline)} | ${safeText(f.price)} | 🕐 ${safeText(f.time)}</div>
+            `).join('');
+        }
+
+        function toggleFaq(element) {
+            const answer = element.nextElementSibling;
+            if (!answer) return;
+            answer.classList.toggle('show');
+            const icon = element.querySelector('i');
+            if (icon) {
+                icon.classList.toggle('fa-chevron-down');
+                icon.classList.toggle('fa-chevron-up');
+            }
+        }
+
+        function sendContactMessage() {
+            const name = document.getElementById('contactName')?.value.trim();
+            const email = document.getElementById('contactEmail')?.value.trim();
+            const msg = document.getElementById('contactMessage')?.value.trim();
+            if (name && email && msg) {
+                showNotification('Message sent successfully!', 'success');
+                document.getElementById('contactName').value = '';
+                document.getElementById('contactEmail').value = '';
+                document.getElementById('contactMessage').value = '';
+            } else {
+                showNotification('Please fill all fields', 'error');
+            }
+        }
+
+        function updateWallet() {
+            const balanceAmount = document.getElementById('balanceAmount');
+            const transactionsList = document.getElementById('transactionsList');
+            if (balanceAmount) balanceAmount.innerHTML = `$${balance}`;
+            if (transactionsList) {
+                transactionsList.innerHTML = transactions.length
+                    ? transactions.map(t => `<div class="chat-message" style="margin-bottom:0.6rem;"><strong>${safeText(t.type)}</strong><div>${safeText(t.amount)}</div><small>${safeText(t.date)}</small></div>`).join('')
+                    : '<p>No transactions</p>';
+            }
+            refreshUserDashboard();
+        }
+
+        function showPolicy(type) {
+            const policies = {
+                privacy: { title: 'Privacy Policy', content: '<p>We protect your data and do not expose personal account details publicly.</p>' },
+                returns: { title: 'Return Policy', content: '<p>14 days return policy. Product must remain in original condition.</p>' }
+            };
+            const policy = policies[type];
+            if (!policy) return;
+            document.getElementById('policyModalTitle').innerHTML = policy.title;
+            document.getElementById('policyModalBody').innerHTML = policy.content;
+            document.getElementById('policyModal').style.display = 'flex';
+        }
+
+        function closePolicyModal() {
+            document.getElementById('policyModal').style.display = 'none';
+        }
+
+        function updateLanguage(lang) {
+            currentLang = lang;
+            const t = TRANSLATIONS[lang] || TRANSLATIONS.en;
+
+            const taglineEl = document.querySelector('.tagline');
+            const homeIntroEl = document.getElementById('homeIntro');
+            if (taglineEl) taglineEl.innerText = t.tagline;
+            if (homeIntroEl) homeIntroEl.innerText = t.homeIntro;
+
+            document.body.className = `lang-${lang}`;
+            document.body.dir = lang === 'en' ? 'ltr' : 'rtl';
+
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.lang === lang);
+            });
+
+            localStorage.setItem('preferredLang', lang);
+            setCookie('lang', lang, 30);
+        }
+
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-pane').forEach(pane => pane.classList.remove('active-pane'));
+            const pane = document.getElementById(`${tabId}Pane`);
+            if (pane) pane.classList.add('active-pane');
+
+            document.querySelectorAll('.nav-tab-link').forEach(btn => btn.classList.remove('active'));
+            const activeBtn = document.querySelector(`.nav-tab-link[data-tab="${tabId}"]`);
+            if (activeBtn) activeBtn.classList.add('active');
+
+            if (tabId === 'blog') renderBlog();
+            if (tabId === 'messaging') loadChat();
+            if (tabId === 'ratings') loadRatings();
+            if (tabId === 'home') renderHomePage();
+        }
+
+        function bindEvents() {
+            document.getElementById('loginModalBtn')?.addEventListener('click', openLoginModal);
+            document.getElementById('searchFlightBtn')?.addEventListener('click', searchFlights);
+            document.getElementById('confirmBookingBtn')?.addEventListener('click', () => {
+                const name = document.getElementById('passengerName')?.value?.trim();
+                const bookingMsg = document.getElementById('bookingMsg');
+                if (name) {
+                    if (bookingMsg) bookingMsg.innerText = `Booking confirmed for ${name}`;
+                    showNotification(`Booking confirmed for ${name}`, 'success');
+                } else {
+                    if (bookingMsg) bookingMsg.innerText = 'Please enter name';
+                    showNotification('Please enter name', 'error');
+                }
+            });
+
+            document.getElementById('sendMsgBtn')?.addEventListener('click', () => {
+                const input = document.getElementById('chatInput');
+                const text = input?.value?.trim();
+                if (!text) {
+                    showNotification('Type a message first', 'warning');
+                    return;
+                }
+                messages.push({
+                    from: currentUser || 'Guest',
+                    to: 'Support',
+                    text,
+                    time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+                });
+                loadChat();
+                refreshUserDashboard();
+                input.value = '';
+                showNotification('Message sent', 'success');
+            });
+
+            document.getElementById('addRatingBtn')?.addEventListener('click', () => {
+                const comment = document.getElementById('newRatingComment')?.value?.trim();
+                const activeStars = document.querySelectorAll('.rating-star.active').length || 5;
+                if (!comment) {
+                    showNotification('Write your review', 'error');
+                    return;
+                }
+                ratings.unshift({
+                    user: currentUser || 'User',
+                    rating: activeStars,
+                    comment,
+                    date: new Date().toLocaleDateString()
+                });
+                document.getElementById('newRatingComment').value = '';
+                document.querySelectorAll('.rating-star').forEach(star => star.classList.remove('active'));
+                loadRatings();
+                showNotification('Review added', 'success');
+            });
+
+            document.getElementById('paypalBtn')?.addEventListener('click', () => {
+                balance += 29;
+                transactions.unshift({ date: new Date().toLocaleDateString(), amount: '+$29', type: 'Pro Subscription' });
+                updateWallet();
+                showNotification('Payment successful!', 'success');
+            });
+
+            document.getElementById('addFundsBtn')?.addEventListener('click', () => {
+                balance += 50;
+                transactions.unshift({ date: new Date().toLocaleDateString(), amount: '+$50', type: 'Deposit' });
+                updateWallet();
+                showNotification('$50 deposited', 'success');
+            });
+
+            document.getElementById('privacyPolicyLink')?.addEventListener('click', e => {
+                e.preventDefault();
+                showPolicy('privacy');
+            });
+            document.getElementById('returnsPolicyLink')?.addEventListener('click', e => {
+                e.preventDefault();
+                showPolicy('returns');
+            });
+            document.getElementById('agentPanelLink')?.addEventListener('click', e => {
+                e.preventDefault();
+                showAgentPanel();
+            });
+            document.getElementById('libraryInfoBtn')?.addEventListener('click', () => {
+                document.getElementById('policyModalTitle').innerHTML = '📚 Asmara Library';
+                document.getElementById('policyModalBody').innerHTML = '<p>National Documentation Center</p>';
+                document.getElementById('policyModal').style.display = 'flex';
+            });
+            document.getElementById('addBlockedWordBtn')?.addEventListener('click', () => {
+                const input = document.getElementById('newBlockedWord');
+                const word = input?.value?.trim();
+                if (!word) return showNotification('Enter a word first', 'warning');
+                const list = document.getElementById('blockedWordsList');
+                list.innerHTML += `, ${safeText(word)}`;
+                input.value = '';
+                showNotification('Blocked word added', 'success');
+            });
+
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.addEventListener('click', () => updateLanguage(btn.dataset.lang));
+            });
+
+            document.querySelectorAll('.nav-tab-link').forEach(link => {
+                link.addEventListener('click', e => {
+                    e.preventDefault();
+                    switchTab(link.dataset.tab);
+                });
+            });
+
+            document.querySelectorAll('.footer-link').forEach(link => {
+                link.addEventListener('click', e => {
+                    e.preventDefault();
+                    switchTab(link.dataset.tab);
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                });
+            });
+
+            document.getElementById('publishReBtn')?.addEventListener('click', () => showNotification('Property ad submitted for review', 'success'));
+            document.getElementById('publishElecBtn')?.addEventListener('click', () => showNotification('Device ad submitted for review', 'success'));
+            document.getElementById('publishCarBtn')?.addEventListener('click', () => showNotification('Car ad submitted for review', 'success'));
+            document.getElementById('publishJobBtn')?.addEventListener('click', () => showNotification('Job ad submitted for review', 'success'));
+            document.getElementById('publishGeneralBtn')?.addEventListener('click', () => showNotification('General ad submitted for review', 'success'));
+
+            document.querySelectorAll('.modal').forEach(modal => {
+                modal.addEventListener('click', e => {
+                    if (e.target === modal) modal.style.display = 'none';
+                });
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedUser = getCookie('username');
+            const savedRole = getCookie('userRole');
+            const savedLang = localStorage.getItem('preferredLang') || getCookie('lang') || 'en';
+
+            if (savedUser) {
+                currentUser = savedUser;
+                currentRole = savedRole || 'user';
+                document.getElementById('userName').innerText = savedUser;
+                document.getElementById('userDisplay').style.display = 'flex';
+                document.getElementById('loginModalBtn').style.display = 'none';
+                document.getElementById('logoutBtn').style.display = 'inline-block';
+                if (currentRole === 'agent') showAgentPanel();
+            }
+
+            updateLanguage(savedLang);
+            bindEvents();
+            renderAllFlights();
+            renderHomePage();
+            renderGallery('realEstateGallery', realEstateAds);
+            renderGallery('electronicsGallery', electronicsAds);
+            renderGallery('carsGallery', carsAds);
+            renderGallery('jobsGallery', jobsAds);
+            renderGallery('generalGallery', generalAds);
+            renderBlog();
+            loadRatings();
+            loadChat();
+            updateWallet();
+            updateCartUI();
+            initRatingStars();
+            refreshUserDashboard();
+            switchTab('home');
+        });
+
+        window.showBlogPost = showBlogPost;
+        window.closePolicyModal = closePolicyModal;
+        window.toggleFaq = toggleFaq;
+        window.sendContactMessage = sendContactMessage;
+        window.toggleUserDashboard = toggleUserDashboard;
+        window.showMyOrders = showMyOrders;
+        window.showWishlist = showWishlist;
+        window.showMyAds = showMyAds;
+        window.loginUser = loginUser;
+        window.logoutUser = logoutUser;
+        window.closeLoginModal = closeLoginModal;
+        window.showRegister = showRegister;
+        window.closeRegisterModal = closeRegisterModal;
+        window.registerUser = registerUser;
+        window.addToCart = addToCart;
+        window.removeFromCart = removeFromCart;
+        window.toggleCart = toggleCart;
+        window.checkout = checkout;
+        window.performSearch = performSearch;
+        window.showProductDetails = showProductDetails;
+        window.verifyAccount = verifyAccount;
+        window.submitVerification = submitVerification;
+        window.closeVerifyModal = closeVerifyModal;
+        window.switchTab = switchTab;
     </script>
 </body>
 </html>
