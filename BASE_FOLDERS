@@ -1,0 +1,41 @@
+BASE_FOLDERS = [
+    # Frontend
+    "frontend/pages",
+    "frontend/pages/realestate",
+    "frontend/pages/cars",
+    "frontend/pages/electronics",
+    "frontend/pages/jobs",
+    "frontend/pages/flights",
+    "frontend/pages/services",
+    "frontend/components",
+    "frontend/styles",
+    "frontend/scripts",
+    "frontend/templates",
+    
+    # Backend
+    "backend/python",
+    "backend/php",
+    "backend/api",
+    "backend/models",
+    "backend/controllers",
+    "backend/services",
+    
+    # Assets
+    "assets/images",
+    "assets/icons",
+    "assets/fonts",
+    "assets/videos",
+    "assets/audio",
+    
+    # Other
+    "docs",
+    "config",
+    "data",
+    "archives",
+    "logs",
+    "uploads",
+    "others",
+    "project",
+    "tests",
+    "scripts"
+]

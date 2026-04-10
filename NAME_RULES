@@ -1,0 +1,16 @@
+NAME_RULES = [
+    # Asmara.Store specific
+    (["asmara", "store", "eritrea"], "project"),
+    (["index", "home", "main"], "frontend/pages"),
+    (["realestate", "property", "house", "apartment", "villa"], "frontend/pages/realestate"),
+    (["car", "vehicle", "auto", "toyota", "hyundai", "kia", "nissan"], "frontend/pages/cars"),
+    (["electronics", "phone", "laptop", "macbook", "iphone", "samsung"], "frontend/pages/electronics"),
+    (["job", "career", "employment", "resume", "cv"], "frontend/pages/jobs"),
+    (["flight", "airline", "ticket", "booking"], "frontend/pages/flights"),
+    (["service", "shipping", "delivery"], "frontend/pages/services"),
+    
+    # Original rules
+    (["car"], "frontend/pages/cars"),
+    (["job"], "frontend/pages/jobs"),
+    (["realestate", "house"], "frontend/pages/realestate"),
+]

@@ -1,149 +1,94 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en" dir="ltr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    
-    <!-- ===== SEO Meta Tags محسنة ===== -->
-    <title>Asmara.Store | المتجر الإلكتروني الأول في إريتريا - عقارات، سيارات، إلكترونيات</title>
-    <meta name="description" content="Asmara.Store - منصة التسوق الإلكتروني الأولى في إريتريا. تسوق أفضل العقارات، السيارات، الإلكترونيات، والوظائف. شحن سريع، دفع آمن، وخدمة عملاء 24/7">
-    <meta name="keywords" content="Asmara.Store, أسمرة, إريتريا, تسوق أونلاين, عقارات, سيارات للبيع, إلكترونيات, وظائف, شحن, دفع آمن, متجر إلكتروني">
-    <meta name="author" content="Asmara.Store">
-    <meta name="robots" content="index, follow">
-    <meta name="language" content="Arabic">
-    <meta name="revisit-after" content="7 days">
-    
-    <!-- Open Graph (للمشاركة على فيسبوك) -->
-    <meta property="og:title" content="Asmara.Store | المتجر الإلكتروني الأول في إريتريا">
-    <meta property="og:description" content="تسوق أفضل المنتجات والخدمات في إريتريا. دفع آمن وشحن سريع">
-    <meta property="og:image" content="https://ibbe199.github.io/asmara-store/images/logo/og-image.jpg">
-    <meta property="og:url" content="https://ibbe199.github.io/asmara-store/">
-    <meta property="og:type" content="website">
-    
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Asmara.Store - المتجر الإلكتروني الأول في إريتريا">
-    <meta name="twitter:description" content="تسوق أفضل المنتجات والخدمات في إريتريا">
-    
-    <!-- Fonts & Icons -->
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>Asmara.Store | The First E-commerce Platform in Eritrea</title>
+    <meta name="description" content="Asmara.Store - The first e-commerce platform in Eritrea" />
+
+    <!-- External Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&display=swap" rel="stylesheet" />
+
+    <!-- External Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+
     <style>
-        /* ========================================
-           Asmara.Store - Main Stylesheet (محسن)
-           ======================================== */
-        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
         :root {
-            --primary-dark: #1e3a5f;
-            --primary: #2c5282;
-            --primary-light: #3a6b92;
-            --secondary: #c7a12b;
-            --secondary-dark: #a0801a;
-            --secondary-light: #e6b422;
+            --primary: #1e3a5f;
+            --primary-2: #2c5282;
+            --gold: #c7a12b;
+            --bg: #f0f4f9;
+            --surface: #ffffff;
+            --surface-2: #eef2f8;
+            --text: #1a2a3f;
+            --muted: #4a627a;
             --danger: #dc3545;
             --success: #28a745;
             --warning: #ffc107;
             --info: #17a2b8;
-            --white: #ffffff;
-            --gray-bg: #f0f4f9;
-            --gray-light: #eef2f8;
-            --gray: #6c757d;
-            --text-dark: #1a2a3f;
-            --text-gray: #4a627a;
-            
-            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.05);
-            --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
-            --shadow-lg: 0 8px 20px rgba(0, 0, 0, 0.1);
-            --shadow-xl: 0 12px 30px rgba(0, 0, 0, 0.15);
-            
-            --radius-sm: 8px;
-            --radius-md: 12px;
-            --radius-lg: 16px;
-            --radius-xl: 20px;
-            --radius-2xl: 24px;
-            --radius-3xl: 28px;
-            --radius-full: 9999px;
-            
-            --transition: all 0.3s ease;
+            --shadow: 0 8px 22px rgba(0,0,0,0.08);
+            --radius-xl: 28px;
+            --radius-lg: 20px;
+            --radius-md: 14px;
         }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
+
+        html { scroll-behavior: smooth; }
         body {
-            font-family: 'Cairo', 'Inter', sans-serif;
-            background: var(--gray-bg);
-            color: var(--text-dark);
+            font-family: 'Inter', 'Cairo', sans-serif;
+            background: var(--bg);
+            color: var(--text);
             line-height: 1.5;
-            direction: rtl;
+            direction: ltr;
         }
-        
-        body.lang-en { direction: ltr; text-align: left; }
-        body.lang-ti { direction: rtl; text-align: right; }
-        
-        /* ===== أنيميشن ===== */
-        @keyframes slideIn { from { transform: translateX(100%); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
-        @keyframes slideOut { from { transform: translateX(0); opacity: 1; } to { transform: translateX(100%); opacity: 0; } }
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-        @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
-        
-        /* ===== إشعارات ===== */
+        body.lang-ar,
+        body.lang-ti {
+            direction: rtl;
+            text-align: right;
+            font-family: 'Cairo', 'Inter', sans-serif;
+        }
+
+        a { color: inherit; }
+        img { display: block; max-width: 100%; }
+        button, input, select, textarea { font: inherit; }
+
+        @keyframes slideIn {
+            from { transform: translateX(100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
         .notification {
             position: fixed;
-            top: 80px;
+            top: 84px;
             right: 20px;
-            background: var(--success);
-            color: white;
-            padding: 12px 20px;
-            border-radius: var(--radius-md);
-            z-index: 3000;
+            color: #fff;
+            padding: 12px 18px;
+            border-radius: 12px;
+            z-index: 4000;
             animation: slideIn 0.3s ease;
-            box-shadow: var(--shadow-lg);
+            box-shadow: var(--shadow);
             display: flex;
             align-items: center;
             gap: 10px;
+            max-width: 360px;
         }
+        .notification.success { background: var(--success); }
         .notification.error { background: var(--danger); }
-        .notification.warning { background: var(--warning); color: var(--primary-dark); }
+        .notification.warning { background: var(--warning); color: var(--primary); }
         .notification.info { background: var(--info); }
-        
-        /* ===== لوحة تحكم المستخدم ===== */
-        .user-dashboard {
-            display: none;
-            position: fixed;
-            top: 70px;
-            right: 20px;
-            width: 320px;
-            background: var(--white);
-            border-radius: var(--radius-xl);
-            box-shadow: var(--shadow-xl);
-            z-index: 1500;
-            overflow: hidden;
-        }
-        .user-dashboard.active { display: block; animation: slideIn 0.3s ease; }
-        .user-dashboard-header {
-            background: linear-gradient(135deg, var(--primary-dark), var(--primary));
-            color: white;
-            padding: 1rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .user-dashboard-body { padding: 1rem; }
-        .user-stats { display: flex; justify-content: space-between; margin-bottom: 1rem; gap: 1rem; }
-        .user-stat { text-align: center; flex: 1; background: var(--gray-light); padding: 0.5rem; border-radius: var(--radius-md); }
-        .user-stat-number { font-size: 1.5rem; font-weight: bold; color: var(--secondary); }
-        
-        /* ===== شريط التنقل ===== */
+
         .amazon-nav {
-            background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+            background: linear-gradient(135deg, var(--primary), var(--primary-2));
             color: white;
-            padding: 0.7rem 1.5rem;
+            padding: 0.8rem 1.25rem;
             display: flex;
             flex-wrap: wrap;
             align-items: center;
@@ -152,55 +97,143 @@
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: var(--shadow-lg);
+            box-shadow: 0 4px 14px rgba(0,0,0,0.18);
         }
         .nav-logo {
             display: flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 0.6rem;
             cursor: pointer;
-        }
-        .nav-logo svg {
-            width: 40px;
-            height: 40px;
+            user-select: none;
         }
         .nav-logo span {
-            font-size: 1.5rem;
+            font-size: 1.45rem;
             font-weight: 800;
-            background: linear-gradient(135deg, #fff, var(--secondary-light));
+            background: linear-gradient(135deg, #fff, #e6b422);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
         }
         .nav-links {
             display: flex;
-            gap: 0.4rem;
+            gap: 0.45rem;
             flex-wrap: wrap;
+            align-items: center;
         }
         .nav-links a {
             color: #f0f4fa;
             text-decoration: none;
             font-weight: 600;
-            font-size: 0.75rem;
-            transition: var(--transition);
-            border-bottom: 2px solid transparent;
+            font-size: 0.78rem;
+            transition: 0.2s ease;
             cursor: pointer;
-            padding: 0.4rem 0.6rem;
-            border-radius: var(--radius-full);
+            padding: 0.45rem 0.7rem;
+            border-radius: 9999px;
+            border: 1px solid transparent;
         }
-        .nav-links a:hover, .nav-links a.active {
-            color: var(--secondary);
-            background: rgba(199, 161, 43, 0.1);
-            border-bottom-color: var(--secondary);
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--gold);
+            background: rgba(199,161,43,0.1);
+            border-color: rgba(199,161,43,0.28);
         }
-        
-        /* ===== شريط البحث ===== */
-        .search-bar {
-            background: var(--white);
-            border-radius: var(--radius-3xl);
-            padding: 1rem 1.5rem;
+
+        .top-bar {
+            display: flex;
+            gap: 0.55rem;
+            align-items: center;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+        }
+        .lang-switch { display: flex; gap: 0.4rem; }
+        .lang-btn,
+        .login-btn,
+        .cart-btn {
+            background: rgba(255,255,255,0.15);
+            border: none;
+            padding: 0.42rem 0.9rem;
+            border-radius: 9999px;
+            font-size: 0.82rem;
+            cursor: pointer;
+            color: white;
+            transition: 0.2s ease;
+        }
+        .lang-btn.active,
+        .login-btn:hover,
+        .cart-btn:hover {
+            background: var(--gold);
+            color: var(--primary);
+        }
+        .cart-btn { position: relative; }
+        .cart-count {
+            position: absolute;
+            top: -7px;
+            right: -7px;
+            background: var(--danger);
+            color: white;
+            font-size: 0.65rem;
+            padding: 0.12rem 0.42rem;
+            border-radius: 9999px;
+            min-width: 20px;
+            text-align: center;
+        }
+        .user-info {
+            background: rgba(255,255,255,0.14);
+            padding: 0.45rem 0.9rem;
+            border-radius: 9999px;
+            font-size: 0.82rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            cursor: pointer;
+        }
+        .verified-badge {
+            display: inline-block;
+            background: var(--success);
+            color: white;
+            padding: 0.18rem 0.46rem;
+            border-radius: 9999px;
+            font-size: 0.62rem;
+            margin-left: 0.25rem;
+        }
+
+        .container { max-width: 1400px; margin: 0 auto; padding: 1.5rem; }
+
+        .search-bar,
+        .card,
+        .hero,
+        .modal-content,
+        .user-dashboard,
+        .product-card,
+        .blog-card,
+        .chat-message,
+        .policy-card,
+        .contact-card,
+        .stat-card,
+        .testimonial-card {
+            background: var(--surface);
+            border-radius: var(--radius-lg);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border: 1px solid var(--surface-2);
+        }
+
+        .hero {
+            text-align: center;
             margin-bottom: 1.5rem;
-            box-shadow: var(--shadow-md);
+            background: linear-gradient(135deg, white, var(--surface-2));
+            padding: 2rem;
+            border-radius: 36px;
+        }
+        .hero h1 { font-size: 2rem; color: var(--primary); margin-bottom: 0.5rem; }
+        .tagline { font-size: 1rem; color: var(--gold); font-weight: 800; }
+        #homeIntro {
+            margin-top: 1rem;
+            color: var(--muted);
+        }
+
+        .search-bar {
+            padding: 1rem 1.25rem;
+            margin-bottom: 1.5rem;
         }
         .search-row {
             display: flex;
@@ -208,224 +241,135 @@
             flex-wrap: wrap;
             align-items: flex-end;
         }
-        .search-group {
-            flex: 1;
-            min-width: 150px;
-        }
-        .search-group label {
-            font-size: 0.7rem;
-            color: var(--text-gray);
+        .search-group { flex: 1; min-width: 150px; }
+        .search-group label,
+        .form-group label {
+            font-size: 0.75rem;
+            color: var(--muted);
             display: block;
-            margin-bottom: 0.2rem;
-        }
-        .search-group input, .search-group select {
-            width: 100%;
-            padding: 0.6rem;
-            border: 1px solid var(--gray-light);
-            border-radius: var(--radius-md);
-            font-family: inherit;
-        }
-        .search-btn {
-            background: var(--secondary);
-            color: var(--primary-dark);
-            border: none;
-            padding: 0.6rem 1.5rem;
-            border-radius: var(--radius-full);
+            margin-bottom: 0.28rem;
             font-weight: 600;
-            cursor: pointer;
-            transition: var(--transition);
         }
-        .search-btn:hover {
-            background: var(--primary-dark);
-            color: var(--white);
-        }
-        
-        /* ===== أزرار ===== */
-        .top-bar { display: flex; gap: 0.5rem; align-items: center; position: relative; }
-        .lang-switch { display: flex; gap: 0.5rem; }
-        .lang-btn, .login-btn, .user-menu-btn, .cart-btn {
-            background: rgba(255,255,255,0.15);
-            border: none;
-            padding: 0.3rem 0.9rem;
-            border-radius: var(--radius-full);
-            font-family: inherit;
-            font-weight: 500;
-            font-size: 0.8rem;
-            cursor: pointer;
-            color: white;
-            transition: var(--transition);
-        }
-        .lang-btn.active, .login-btn:hover, .user-menu-btn:hover, .cart-btn:hover {
-            background: var(--secondary);
-            color: var(--primary-dark);
-        }
-        .cart-btn { position: relative; }
-        .cart-count {
-            position: absolute;
-            top: -8px;
-            right: -8px;
-            background: var(--danger);
-            color: white;
-            font-size: 0.6rem;
-            padding: 0.1rem 0.4rem;
-            border-radius: var(--radius-full);
-        }
-        
-        .container { max-width: 1400px; margin: 0 auto; padding: 1.5rem; }
-        
-        /* ===== الهيرو ===== */
-        .hero {
-            text-align: center;
-            margin-bottom: 1.5rem;
-            background: linear-gradient(135deg, var(--white), var(--gray-light));
-            border-radius: var(--radius-3xl);
-            padding: 2rem;
-            box-shadow: var(--shadow-md);
-        }
-        .hero h1 { font-size: 2rem; color: var(--primary-dark); margin-bottom: 0.5rem; }
-        .tagline { font-size: 1rem; color: var(--secondary); font-weight: 700; }
-        .user-info {
-            background: var(--gray-light);
-            padding: 0.5rem 1rem;
-            border-radius: var(--radius-xl);
-            font-size: 0.8rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            cursor: pointer;
-        }
-        
-        /* ===== التبويبات ===== */
-        .tabs {
-            display: flex;
-            gap: 0.2rem;
-            flex-wrap: wrap;
-            margin-bottom: 1.5rem;
-            border-bottom: 2px solid #e2e8f0;
-            padding-bottom: 0.5rem;
-        }
-        .tab-btn {
-            background: transparent;
-            border: none;
-            padding: 0.5rem 1rem;
-            font-size: 0.8rem;
-            font-weight: 600;
-            cursor: pointer;
-            border-radius: var(--radius-full);
-            transition: var(--transition);
-            color: var(--text-gray);
-        }
-        .tab-btn.active {
-            background: var(--primary);
-            color: white;
-        }
-        .tab-pane {
-            display: none;
-            animation: fadeIn 0.3s;
-        }
-        .tab-pane.active-pane { display: block; }
-        
-        /* ===== البطاقات ===== */
-        .card {
-            background: var(--white);
-            border-radius: var(--radius-2xl);
-            padding: 1.2rem;
-            margin-bottom: 1.2rem;
-            box-shadow: var(--shadow-sm);
-            border: 1px solid var(--gray-light);
-            transition: var(--transition);
-        }
-        .card:hover { box-shadow: var(--shadow-md); }
-        .card h3 {
-            font-size: 1.1rem;
-            color: var(--primary-dark);
-            margin-bottom: 0.8rem;
-            border-right: 4px solid var(--secondary);
-            padding-right: 0.8rem;
-        }
-        body.lang-en .card h3 {
-            border-right: none;
-            border-left: 4px solid var(--secondary);
-            padding-right: 0;
-            padding-left: 0.8rem;
-        }
-        
-        /* ===== النماذج ===== */
-        .form-row { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 0.5rem; }
-        .form-group { flex: 1; min-width: 120px; }
-        .form-group label { display: block; font-size: 0.7rem; color: var(--text-gray); margin-bottom: 0.2rem; }
+
         input, select, textarea {
             width: 100%;
-            padding: 0.6rem;
+            padding: 0.7rem 0.8rem;
             margin: 0.2rem 0;
-            border: 1px solid #ccc;
-            border-radius: var(--radius-md);
-            font-family: inherit;
-            font-size: 0.85rem;
-            transition: var(--transition);
+            border: 1px solid #d6dee8;
+            border-radius: 12px;
+            font-size: 0.88rem;
+            background: #fff;
+            color: var(--text);
         }
         input:focus, select:focus, textarea:focus {
             outline: none;
-            border-color: var(--secondary);
-            box-shadow: 0 0 0 2px rgba(199, 161, 43, 0.2);
+            border-color: var(--gold);
+            box-shadow: 0 0 0 3px rgba(199,161,43,0.15);
         }
+
+        .search-btn,
         .btn {
             background: var(--primary);
             color: white;
             border: none;
-            padding: 0.6rem 1rem;
-            border-radius: var(--radius-full);
-            font-weight: 600;
+            padding: 0.72rem 1rem;
+            border-radius: 9999px;
+            font-weight: 700;
             cursor: pointer;
-            width: 100%;
-            transition: var(--transition);
-            font-size: 0.85rem;
+            transition: 0.2s ease;
         }
+        .search-btn:hover,
         .btn:hover {
-            background: var(--secondary);
-            color: var(--primary-dark);
-            transform: translateY(-2px);
-        }
-        .btn-sm { width: auto; padding: 0.3rem 0.8rem; display: inline-block; font-size: 0.75rem; }
-        .btn-outline {
-            background: transparent;
-            border: 2px solid var(--primary);
+            background: var(--gold);
             color: var(--primary);
+            transform: translateY(-1px);
         }
-        .btn-outline:hover {
+        .btn { width: 100%; }
+        .btn-sm {
+            width: auto;
+            padding: 0.38rem 0.85rem;
+            display: inline-block;
+            font-size: 0.76rem;
+            border-radius: 9999px;
             background: var(--primary);
             color: white;
+            border: none;
+            cursor: pointer;
+            transition: 0.2s ease;
         }
-        
-        /* ===== الشبكات ===== */
-        .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.2rem; }
-        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.2rem; }
-        .grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.2rem; }
-        
-        /* ===== معرض المنتجات (محسن مع تكبير) ===== */
+        .btn-sm:hover { background: var(--gold); color: var(--primary); }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.2rem;
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1rem;
+            margin-bottom: 1.2rem;
+        }
+        .stat-card {
+            padding: 1rem;
+            text-align: center;
+        }
+        .stat-number {
+            font-size: 1.8rem;
+            color: var(--gold);
+            font-weight: 800;
+        }
+
+        .card {
+            padding: 1.2rem;
+            margin-bottom: 1.2rem;
+        }
+        .card h2,
+        .card h3 {
+            font-size: 1.12rem;
+            color: var(--primary);
+            margin-bottom: 0.9rem;
+            border-left: 4px solid var(--gold);
+            padding-left: 0.8rem;
+        }
+        body.lang-ar .card h2,
+        body.lang-ar .card h3,
+        body.lang-ti .card h2,
+        body.lang-ti .card h3 {
+            border-left: none;
+            border-right: 4px solid var(--gold);
+            padding-left: 0;
+            padding-right: 0.8rem;
+        }
+
+        .form-row {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 0.5rem;
+        }
+        .form-group { flex: 1; min-width: 120px; }
+
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.2rem;
             margin-top: 0.8rem;
         }
         .product-card {
-            background: var(--white);
-            border-radius: var(--radius-xl);
             overflow: hidden;
-            transition: var(--transition);
+            transition: 0.28s ease;
             cursor: pointer;
-            position: relative;
-            box-shadow: var(--shadow-sm);
         }
         .product-card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-xl);
+            transform: translateY(-6px);
+            box-shadow: 0 14px 24px rgba(0,0,0,0.12);
         }
         .product-image-container {
             position: relative;
             overflow: hidden;
-            height: 220px;
+            height: 200px;
+            background: #e8eef5;
         }
         .product-image {
             width: 100%;
@@ -433,1632 +377,1578 @@
             object-fit: cover;
             transition: transform 0.5s ease;
         }
-        .product-card:hover .product-image {
-            transform: scale(1.05);
-        }
-        .image-zoom {
-            position: absolute;
-            bottom: 10px;
-            right: 10px;
-            background: rgba(0,0,0,0.6);
-            color: white;
-            padding: 0.3rem 0.6rem;
-            border-radius: var(--radius-full);
-            font-size: 0.7rem;
-            opacity: 0;
-            transition: var(--transition);
-        }
-        .product-card:hover .image-zoom { opacity: 1; }
+        .product-card:hover .product-image { transform: scale(1.05); }
         .product-info { padding: 1rem; }
-        .product-title { font-size: 1rem; font-weight: 700; color: var(--primary-dark); margin-bottom: 0.3rem; }
-        .product-price { font-size: 1.1rem; font-weight: bold; color: var(--secondary); margin-bottom: 0.3rem; }
-        .product-details { font-size: 0.7rem; color: var(--text-gray); margin-bottom: 0.5rem; line-height: 1.4; }
-        .product-meta { display: flex; justify-content: space-between; align-items: center; margin-top: 0.5rem; }
-        .product-views { font-size: 0.6rem; color: var(--text-gray); }
+        .product-title { font-size: 1rem; font-weight: 800; color: var(--primary); }
+        .product-price { font-size: 1.1rem; font-weight: 800; color: var(--gold); margin-top: 0.2rem; }
+        .product-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 0.6rem;
+            flex-wrap: wrap;
+        }
         .badge {
-            display: inline-block;
-            background: var(--secondary);
-            color: var(--primary-dark);
-            padding: 0.2rem 0.5rem;
-            border-radius: var(--radius-full);
-            font-size: 0.6rem;
-            font-weight: bold;
+            background: rgba(199,161,43,0.16);
+            color: var(--primary);
+            padding: 0.25rem 0.55rem;
+            border-radius: 9999px;
+            font-size: 0.68rem;
+            font-weight: 800;
         }
         .add-to-cart {
             background: var(--primary);
             color: white;
             border: none;
-            padding: 0.3rem 0.8rem;
-            border-radius: var(--radius-full);
+            padding: 0.38rem 0.9rem;
+            border-radius: 9999px;
             cursor: pointer;
-            font-size: 0.7rem;
-            transition: var(--transition);
+            font-size: 0.74rem;
+            font-weight: 700;
         }
-        .add-to-cart:hover {
-            background: var(--secondary);
-            color: var(--primary-dark);
-        }
-        .share-btn {
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            background: rgba(0,0,0,0.6);
-            color: white;
-            border: none;
-            border-radius: 50%;
-            width: 32px;
-            height: 32px;
-            cursor: pointer;
-            font-size: 0.8rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            transition: var(--transition);
-        }
-        .product-card:hover .share-btn { opacity: 1; }
-        .share-btn:hover { background: #25D366; }
-        
-        /* ===== شهادات العملاء ===== */
-        .testimonials-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 1.5rem;
-            margin-top: 1rem;
-        }
-        .testimonial-card {
-            background: var(--white);
-            border-radius: var(--radius-xl);
-            padding: 1.2rem;
-            text-align: center;
-            box-shadow: var(--shadow-sm);
-            transition: var(--transition);
-        }
-        .testimonial-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); }
-        .testimonial-avatar {
-            width: 70px;
-            height: 70px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 1rem;
-            font-size: 2rem;
-            color: white;
-        }
-        .testimonial-text { font-size: 0.85rem; color: var(--text-gray); margin-bottom: 1rem; line-height: 1.6; }
-        .testimonial-name { font-weight: 700; color: var(--primary-dark); }
-        .testimonial-title { font-size: 0.7rem; color: var(--secondary); }
-        .testimonial-stars { color: var(--secondary); margin-top: 0.5rem; }
-        
-        /* ===== الخريطة ===== */
-        .map-container { width: 100%; height: 300px; border-radius: var(--radius-xl); overflow: hidden; margin-top: 1rem; }
-        .map-placeholder {
-            background: linear-gradient(135deg, var(--primary-dark), var(--primary));
-            width: 100%;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            flex-direction: column;
-        }
-        .map-marker {
-            cursor: pointer;
-            transition: var(--transition);
-            padding: 0.5rem 1rem;
-            background: rgba(255,255,255,0.2);
-            border-radius: var(--radius-full);
-            margin: 0.2rem;
-        }
-        .map-marker:hover { transform: scale(1.05); background: var(--secondary); color: var(--primary-dark); }
-        
-        /* ===== بطاقات الطيران ===== */
-        .flight-card {
-            background: linear-gradient(135deg, var(--primary-dark), var(--primary));
-            color: white;
-            border-radius: var(--radius-xl);
-            padding: 1rem;
-            margin-bottom: 1rem;
-            transition: var(--transition);
-        }
-        .flight-card:hover { transform: translateX(-5px); background: var(--secondary); color: var(--primary-dark); }
-        .flight-route { font-size: 1.1rem; font-weight: bold; margin-bottom: 0.5rem; }
-        .flight-details { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; }
-        
-        /* ===== المدونة ===== */
-        .blog-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 1.5rem;
-            margin-top: 1rem;
-        }
-        .blog-card {
-            background: var(--white);
-            border-radius: var(--radius-xl);
-            overflow: hidden;
-            box-shadow: var(--shadow-sm);
-            transition: var(--transition);
-            cursor: pointer;
-        }
-        .blog-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); }
-        .blog-image {
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-            background: linear-gradient(135deg, var(--primary-dark), var(--primary));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3rem;
-        }
-        .blog-content { padding: 1.2rem; }
-        .blog-title { font-size: 1rem; font-weight: 700; color: var(--primary-dark); margin-bottom: 0.5rem; }
-        .blog-summary { font-size: 0.8rem; color: var(--text-gray); margin-bottom: 1rem; line-height: 1.5; }
-        .blog-meta {
-            display: flex;
-            justify-content: space-between;
-            font-size: 0.7rem;
-            color: #8ba0b5;
-            border-top: 1px solid var(--gray-light);
-            padding-top: 0.8rem;
-        }
-        .blog-category {
-            display: inline-block;
-            background: var(--secondary);
-            color: var(--primary-dark);
-            padding: 0.2rem 0.5rem;
-            border-radius: var(--radius-full);
-            font-size: 0.6rem;
-            margin-bottom: 0.5rem;
-        }
-        
-        /* ===== الأسئلة الشائعة ===== */
-        .faq-item { border-bottom: 1px solid var(--gray-light); margin-bottom: 1rem; }
-        .faq-question {
-            background: #f8f9fa;
-            padding: 1rem;
-            border-radius: var(--radius-md);
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-weight: 600;
-        }
-        .faq-question:hover { background: var(--gray-light); }
-        .faq-answer { padding: 1rem; display: none; color: var(--text-gray); font-size: 0.85rem; line-height: 1.6; }
-        .faq-answer.show { display: block; }
-        
-        /* ===== صفحة اتصل بنا ===== */
-        .contact-info { display: flex; flex-direction: column; gap: 1rem; }
-        .contact-card {
-            background: var(--gray-light);
-            padding: 1rem;
-            border-radius: var(--radius-md);
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            transition: var(--transition);
-        }
-        .contact-card:hover { transform: translateX(-5px); background: var(--secondary-light); }
-        .contact-card i { font-size: 1.5rem; color: var(--secondary); }
-        
-        /* ===== رفع السيرة الذاتية ===== */
-        .resume-upload {
-            border: 2px dashed var(--secondary);
-            border-radius: var(--radius-md);
-            padding: 1rem;
-            text-align: center;
-            margin-top: 1rem;
-            cursor: pointer;
-            transition: var(--transition);
-        }
-        .resume-upload:hover { background: #fef8e7; }
-        .resume-list { margin-top: 1rem; }
-        .resume-item {
-            background: var(--gray-light);
-            padding: 0.5rem;
-            border-radius: var(--radius-sm);
-            margin-bottom: 0.5rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        /* ===== نجوم التقييم ===== */
-        .rating-input {
-            display: flex;
-            gap: 0.3rem;
-            direction: ltr;
-            margin: 0.5rem 0;
-        }
-        .rating-star {
-            font-size: 1.5rem;
-            cursor: pointer;
-            color: #ddd;
-            transition: var(--transition);
-        }
-        .rating-star:hover, .rating-star.active { color: var(--secondary); }
-        
-        /* ===== سلة التسوق ===== */
-        .cart-sidebar {
-            position: fixed;
-            top: 0;
-            left: -400px;
-            width: 400px;
-            height: 100%;
-            background: var(--white);
-            box-shadow: var(--shadow-xl);
-            z-index: 2000;
-            transition: left 0.3s ease;
-            overflow-y: auto;
-        }
-        .cart-sidebar.open { left: 0; }
-        .cart-header {
-            background: var(--primary-dark);
-            color: white;
-            padding: 1rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .cart-item {
-            display: flex;
-            gap: 1rem;
-            padding: 1rem;
-            border-bottom: 1px solid var(--gray-light);
-        }
-        .cart-item img { width: 60px; height: 60px; object-fit: cover; border-radius: var(--radius-sm); }
-        .cart-item-details { flex: 1; }
-        .cart-item-title { font-weight: 600; }
-        .cart-item-price { color: var(--secondary); }
-        .cart-total { padding: 1rem; text-align: center; font-weight: bold; border-top: 2px solid var(--gray-light); }
-        .cart-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.5);
-            z-index: 1999;
+        .add-to-cart:hover { background: var(--gold); color: var(--primary); }
+
+        .tab-pane {
             display: none;
+            animation: fadeIn 0.25s ease;
         }
-        .cart-overlay.open { display: block; }
-        
-        /* ===== النوافذ المنبثقة ===== */
+        .tab-pane.active-pane { display: block; }
+
+        .user-dashboard {
+            display: none;
+            position: fixed;
+            top: 72px;
+            right: 20px;
+            width: 320px;
+            z-index: 1500;
+            overflow: hidden;
+        }
+        .user-dashboard.active { display: block; }
+        .user-dashboard-header {
+            background: var(--primary);
+            color: white;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .user-dashboard-body { padding: 1rem; }
+        .user-stats {
+            display: flex;
+            gap: 0.8rem;
+            margin-bottom: 1rem;
+        }
+        .user-stat {
+            text-align: center;
+            flex: 1;
+            background: var(--surface-2);
+            padding: 0.7rem;
+            border-radius: 12px;
+        }
+        .user-stat-number { font-size: 1.2rem; font-weight: 800; color: var(--gold); }
+
         .modal {
             display: none;
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.8);
+            inset: 0;
+            background: rgba(0,0,0,0.78);
             z-index: 2000;
             justify-content: center;
             align-items: center;
+            padding: 1rem;
         }
         .modal-content {
-            background: white;
-            border-radius: var(--radius-3xl);
-            max-width: 600px;
-            width: 90%;
-            max-height: 80vh;
-            overflow-y: auto;
+            max-width: 520px;
+            width: 100%;
             padding: 1.5rem;
             position: relative;
         }
         .modal-close {
             position: absolute;
-            top: 1rem;
-            left: 1rem;
+            top: 0.9rem;
+            right: 0.9rem;
             background: var(--danger);
             color: white;
             border: none;
-            width: 32px;
-            height: 32px;
+            width: 34px;
+            height: 34px;
             border-radius: 50%;
             cursor: pointer;
         }
-        
-        /* ===== سياسات ===== */
-        .policy-card {
-            background: var(--white);
-            border-radius: var(--radius-xl);
-            padding: 1.5rem;
-            margin-bottom: 1rem;
-            box-shadow: var(--shadow-sm);
+        body.lang-ar .modal-close,
+        body.lang-ti .modal-close {
+            right: auto;
+            left: 0.9rem;
         }
-        .policy-card h3 { color: var(--primary); margin-bottom: 1rem; }
-        .policy-card ul { padding-right: 1.5rem; }
-        .policy-card li { margin-bottom: 0.5rem; color: var(--text-gray); }
-        
-        /* ===== الفوتر ===== */
+
+        .cart-sidebar {
+            position: fixed;
+            top: 0;
+            right: -400px;
+            width: 400px;
+            max-width: 100%;
+            height: 100%;
+            background: white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.18);
+            z-index: 2100;
+            transition: right 0.3s ease;
+            overflow-y: auto;
+        }
+        .cart-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.5);
+            z-index: 2099;
+            display: none;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #e5ebf2;
+            padding: 0.2rem 0;
+        }
+        .faq-question {
+            cursor: pointer;
+            padding: 0.9rem 0;
+            font-weight: 700;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+        }
+        .faq-answer {
+            display: none;
+            padding: 0 0 0.9rem;
+            color: var(--muted);
+        }
+        .faq-answer.show { display: block; }
+
+        .chat-list { display: flex; flex-direction: column; gap: 0.8rem; }
+        .chat-message {
+            padding: 0.8rem;
+            background: var(--surface-2);
+            border-radius: 14px;
+        }
+        .rating-input {
+            display: flex;
+            gap: 0.4rem;
+            margin: 0.6rem 0 1rem;
+            font-size: 1.8rem;
+        }
+        .rating-star {
+            cursor: pointer;
+            color: #c8d0d8;
+            transition: 0.15s ease;
+        }
+        .rating-star.active { color: var(--gold); }
+        .rating-stars { color: var(--gold); margin: 0.2rem 0; }
+
+        .contact-info {
+            display: grid;
+            gap: 0.9rem;
+        }
+        .contact-card {
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.9rem;
+        }
+        .contact-card i {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: var(--surface-2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            flex-shrink: 0;
+        }
+
+        .flight-card,
+        .blog-card,
+        .policy-card,
+        .testimonial-card {
+            padding: 1rem;
+        }
+
+        .blog-grid,
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1rem;
+        }
+
         .footer {
-            background: var(--primary-dark);
+            background: var(--primary);
             color: white;
             margin-top: 2rem;
             padding: 2rem 1.5rem 1.5rem;
-            border-radius: var(--radius-3xl) var(--radius-3xl) 0 0;
+            border-radius: 28px 28px 0 0;
         }
         .footer-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
             gap: 2rem;
             margin-bottom: 2rem;
         }
-        .footer-section h4 {
-            color: var(--secondary);
-            margin-bottom: 1rem;
-            font-size: 1rem;
-        }
+        .footer-section h4 { color: var(--gold); margin-bottom: 1rem; }
         .footer-section a {
             color: #eef2f8;
             text-decoration: none;
             display: block;
             margin-bottom: 0.5rem;
-            font-size: 0.8rem;
-            transition: var(--transition);
+            font-size: 0.84rem;
             cursor: pointer;
         }
-        .footer-section a:hover {
-            color: var(--secondary);
-            transform: translateX(-5px);
-        }
-        .social-links {
-            display: flex;
-            gap: 1rem;
-            margin-top: 1rem;
-            flex-wrap: wrap;
-        }
+        .footer-section a:hover { color: var(--gold); }
+        .social-links { display: flex; gap: 0.8rem; margin-top: 1rem; }
         .social-links a {
-            width: 36px;
-            height: 36px;
+            width: 38px;
+            height: 38px;
             background: rgba(255,255,255,0.1);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            transition: var(--transition);
         }
-        .social-links a:hover {
-            background: var(--secondary);
-            transform: translateY(-3px);
-        }
+        .social-links a:hover { background: var(--gold); color: var(--primary); }
         .footer-bottom {
             text-align: center;
-            padding-top: 1.5rem;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            font-size: 0.7rem;
+            padding-top: 1.4rem;
+            border-top: 1px solid rgba(255,255,255,0.12);
+            font-size: 0.78rem;
         }
-        .verified { color: var(--secondary); font-weight: 700; margin-top: 0.5rem; }
-        
-        /* ===== لوحة الوكيل ===== */
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
-            gap: 0.8rem;
-            margin-bottom: 1.5rem;
-        }
-        .stat-card {
-            background: linear-gradient(135deg, var(--primary-dark), var(--primary));
-            color: white;
-            border-radius: var(--radius-xl);
-            padding: 0.8rem;
-            text-align: center;
-        }
-        .stat-number { font-size: 1.5rem; font-weight: 800; }
-        .chat-list {
-            max-height: 200px;
-            overflow-y: auto;
-            border: 1px solid var(--gray-light);
-            border-radius: var(--radius-md);
-            padding: 0.4rem;
-        }
-        .chat-message {
-            padding: 0.5rem;
-            border-bottom: 1px solid var(--gray-light);
-            font-size: 0.8rem;
-        }
-        .rating-stars { color: var(--secondary); font-size: 0.65rem; }
-        
-        /* ===== معاينة الصور ===== */
-        .image-preview {
-            display: flex;
-            gap: 0.5rem;
-            flex-wrap: wrap;
-            margin-top: 0.5rem;
-        }
-        .image-preview img {
-            width: 50px;
-            height: 50px;
-            object-fit: cover;
-            border-radius: var(--radius-sm);
-        }
-        
-        /* ===== استجابة الشاشات ===== */
-        @media (max-width: 768px) {
-            .amazon-nav { flex-direction: column; text-align: center; }
+        .verified { color: var(--gold); font-weight: 800; margin-top: 0.45rem; }
+
+        @media (max-width: 900px) {
+            .amazon-nav { flex-direction: column; align-items: stretch; }
             .nav-links { justify-content: center; }
-            .tabs { justify-content: center; }
-            .footer-grid { grid-template-columns: 1fr; text-align: center; }
-            .social-links { justify-content: center; }
-            .form-row { flex-direction: column; }
-            .container { padding: 1rem; }
-            .cart-sidebar { width: 100%; left: -100%; }
-            .grid-3, .grid-4 { grid-template-columns: 1fr; }
+            .top-bar { justify-content: center; }
             .search-row { flex-direction: column; }
             .search-btn { width: 100%; }
-        }
-        
-        @media (max-width: 480px) {
-            .gallery-grid { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
-            .stats-grid { grid-template-columns: repeat(2, 1fr); }
-            .stat-number { font-size: 1.2rem; }
-            .product-image-container { height: 180px; }
+            .container { padding: 1rem; }
+            .gallery-grid,
+            .blog-grid,
+            .testimonials-grid { grid-template-columns: 1fr; }
+            .user-dashboard { width: calc(100% - 2rem); right: 1rem; }
         }
     </style>
 </head>
-<body class="lang-ar">
-    <!-- ===== شريط التنقل ===== -->
+<body class="lang-en">
+    <!-- Navigation -->
     <div class="amazon-nav">
         <div class="nav-logo" onclick="switchTab('home')">
-            <svg width="40" height="40" viewBox="0 0 64 64" fill="none">
+            <svg width="40" height="40" viewBox="0 0 64 64" fill="none" aria-hidden="true">
                 <rect width="64" height="64" rx="14" fill="url(#logoGrad)"/>
                 <polygon points="32,12 38,28 54,28 42,38 48,54 32,44 16,54 22,38 10,28 26,28" fill="#c7a12b"/>
-                <defs><linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#1e3a5f"/><stop offset="100%" stop-color="#2c5282"/></linearGradient></defs>
+                <defs>
+                    <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="#1e3a5f"/>
+                        <stop offset="100%" stop-color="#2c5282"/>
+                    </linearGradient>
+                </defs>
             </svg>
             <span>Asmara.Store</span>
         </div>
-        <div class="nav-links">
-            <a class="nav-tab-link" data-tab="home" id="navHome">🏠 الرئيسية</a>
-            <a class="nav-tab-link" data-tab="flight" id="navFlight">✈️ طيران</a>
-            <a class="nav-tab-link" data-tab="realestate" id="navRealEstate">🏠 عقارات</a>
-            <a class="nav-tab-link" data-tab="electronics" id="navElectronics">📱 إلكترونيات</a>
-            <a class="nav-tab-link" data-tab="cars" id="navCars">🚗 سيارات</a>
-            <a class="nav-tab-link" data-tab="jobs" id="navJobs">💼 وظائف</a>
-            <a class="nav-tab-link" data-tab="general" id="navGeneral">📋 خدمات</a>
-            <a class="nav-tab-link" data-tab="blog" id="navBlog">📰 مدونة</a>
-            <a class="nav-tab-link" data-tab="faq" id="navFaq">❓ أسئلة شائعة</a>
-            <a class="nav-tab-link" data-tab="contact" id="navContact">📞 اتصل بنا</a>
-            <a class="nav-tab-link" data-tab="payment" id="navPayment">💳 دفع</a>
-            <a class="nav-tab-link" data-tab="messaging" id="navMessaging">💬 مراسلة</a>
-            <a class="nav-tab-link" data-tab="ratings" id="navRatings">⭐ تقييمات</a>
+
+        <div class="nav-links" id="mainNavLinks">
+            <a href="#" class="nav-tab-link active" data-tab="home">🏠 Home</a>
+            <a href="#" class="nav-tab-link" data-tab="flight">✈️ Flights</a>
+            <a href="#" class="nav-tab-link" data-tab="realestate">🏠 Real Estate</a>
+            <a href="#" class="nav-tab-link" data-tab="electronics">📱 Electronics</a>
+            <a href="#" class="nav-tab-link" data-tab="cars">🚗 Cars</a>
+            <a href="#" class="nav-tab-link" data-tab="jobs">💼 Jobs</a>
+            <a href="#" class="nav-tab-link" data-tab="general">📋 Services</a>
+            <a href="#" class="nav-tab-link" data-tab="blog">📰 Blog</a>
+            <a href="#" class="nav-tab-link" data-tab="faq">❓ FAQ</a>
+            <a href="#" class="nav-tab-link" data-tab="contact">📞 Contact</a>
+            <a href="#" class="nav-tab-link" data-tab="payment">💳 Payment</a>
+            <a href="#" class="nav-tab-link" data-tab="messaging">💬 Messaging</a>
+            <a href="#" class="nav-tab-link" data-tab="ratings">⭐ Ratings</a>
         </div>
+
         <div class="top-bar">
-            <button class="cart-btn" onclick="toggleCart()">
-                🛒 <span class="cart-count" id="cartCount">0</span>
-            </button>
+            <button class="cart-btn" onclick="toggleCart()">🛒 <span class="cart-count" id="cartCount">0</span></button>
+
             <div id="userDisplay" class="user-info" style="display:none;" onclick="toggleUserDashboard()">
-                <i class="fas fa-user-circle"></i> <span id="userName"></span>
+                <i class="fas fa-user-circle"></i>
+                <span id="userName"></span>
+                <span id="userVerifiedBadge" class="verified-badge" style="display:none;">✓ Verified</span>
             </div>
-            <button id="loginModalBtn" class="login-btn">🔐 تسجيل الدخول</button>
-            <button id="logoutBtn" class="login-btn" style="display:none; background:#dc3545;" onclick="logoutUser()">🚪 خروج</button>
+
+            <button id="loginModalBtn" class="login-btn">🔐 Login</button>
+            <button id="logoutBtn" class="login-btn" style="display:none; background:#dc3545;" onclick="logoutUser()">🚪 Logout</button>
+
             <div class="lang-switch">
+                <button class="lang-btn active" data-lang="en">English</button>
                 <button class="lang-btn" data-lang="ar">عربي</button>
-                <button class="lang-btn" data-lang="en">EN</button>
                 <button class="lang-btn" data-lang="ti">ትግርኛ</button>
             </div>
         </div>
     </div>
 
-    <!-- ===== سلة التسوق الجانبية ===== -->
-    <div id="cartOverlay" class="cart-overlay" onclick="toggleCart()"></div>
+    <!-- Cart -->
     <div id="cartSidebar" class="cart-sidebar">
-        <div class="cart-header">
-            <span>🛒 سلة التسوق</span>
-            <button class="btn-sm" onclick="toggleCart()" style="background:none; color:white;">✕</button>
+        <div style="background:#1e3a5f; color:white; padding:1rem; display:flex; justify-content:space-between; align-items:center;">
+            <span>🛒 Shopping Cart</span>
+            <button onclick="toggleCart()" style="background:none; border:none; color:white; cursor:pointer; font-size:1rem;">✕</button>
         </div>
         <div id="cartItems"></div>
-        <div class="cart-total" id="cartTotal">المجموع: $0</div>
-        <button class="btn" onclick="checkout()" style="margin: 1rem; width: calc(100% - 2rem);">إتمام الشراء</button>
+        <div id="cartTotal" style="padding:1rem; text-align:center; font-weight:800; border-top:2px solid #eef2f8;">Total: $0</div>
+        <button class="btn" onclick="checkout()" style="margin:1rem; width:calc(100% - 2rem);">Checkout</button>
     </div>
+    <div id="cartOverlay" class="cart-overlay" onclick="toggleCart()"></div>
 
-    <!-- ===== لوحة تحكم المستخدم ===== -->
+    <!-- User dashboard -->
     <div id="userDashboard" class="user-dashboard">
         <div class="user-dashboard-header">
-            <span><i class="fas fa-user-circle"></i> <span id="dashboardUserName"></span></span>
-            <button class="btn-sm" onclick="toggleUserDashboard()" style="background: none; color: white;">✕</button>
+            <span><i class="fas fa-user-circle"></i> <span id="dashboardUserName">Guest</span></span>
+            <button class="btn-sm" onclick="toggleUserDashboard()" style="background:none; color:white;">✕</button>
         </div>
         <div class="user-dashboard-body">
             <div class="user-stats">
-                <div class="user-stat"><div class="user-stat-number" id="userAdsCount">0</div><div id="myAdsLabel">إعلاناتي</div></div>
-                <div class="user-stat"><div class="user-stat-number" id="userMessagesCount">0</div><div id="myMessagesLabel">رسائل</div></div>
-                <div class="user-stat"><div class="user-stat-number" id="userBalance">$0</div><div id="myBalanceLabel">رصيدي</div></div>
+                <div class="user-stat"><div class="user-stat-number" id="userAdsCount">0</div><div>My Ads</div></div>
+                <div class="user-stat"><div class="user-stat-number" id="userMessagesCount">0</div><div>Messages</div></div>
+                <div class="user-stat"><div class="user-stat-number" id="userBalance">$0</div><div>Balance</div></div>
             </div>
-            <button class="btn-sm" style="width:100%; margin-bottom:0.5rem;" onclick="showMyOrders()">📦 طلباتي</button>
-            <button class="btn-sm" style="width:100%; margin-bottom:0.5rem;" onclick="showWishlist()">❤️ المفضلة</button>
-            <button class="btn-sm" style="width:100%;" onclick="showMyAds()">📋 إعلاناتي</button>
+            <button class="btn-sm" style="width:100%; margin-bottom:0.5rem;" onclick="showMyOrders()">📦 My Orders</button>
+            <button class="btn-sm" style="width:100%; margin-bottom:0.5rem;" onclick="showWishlist()">❤️ Wishlist</button>
+            <button class="btn-sm" style="width:100%;" onclick="showMyAds()">📋 My Ads</button>
+            <button class="btn-sm" style="width:100%; margin-top:0.5rem;" onclick="verifyAccount()">🔐 Verify Account</button>
         </div>
     </div>
 
-    <!-- ===== نافذة تسجيل الدخول ===== -->
+    <!-- Modals -->
     <div id="loginModal" class="modal">
         <div class="modal-content">
             <button class="modal-close" onclick="closeLoginModal()">✕</button>
-            <h2 id="loginTitle">🔐 تسجيل الدخول</h2>
-            <input type="text" id="loginUsername" placeholder="اسم المستخدم" style="margin-top:1rem;">
-            <input type="password" id="loginPassword" placeholder="كلمة المرور">
-            <button class="btn" onclick="loginUser()" id="loginSubmitBtn">دخول</button>
-            <p style="margin-top:1rem; font-size:0.8rem;">مستخدم تجريبي: user / 123456</p>
-            <p style="margin-top:0.5rem; font-size:0.8rem;">وكيل تجريبي: agent / agent123</p>
-            <hr style="margin: 1rem 0;">
-            <p style="text-align:center; font-size:0.8rem;">ليس لديك حساب؟ <a href="#" onclick="showRegister()" style="color:var(--secondary);">إنشاء حساب جديد</a></p>
+            <h2>🔐 Login</h2>
+            <input type="text" id="loginUsername" placeholder="Username" style="margin-top:1rem;" />
+            <input type="password" id="loginPassword" placeholder="Password" />
+            <button class="btn" onclick="loginUser()">Login</button>
+            <p style="margin-top:1rem; font-size:0.82rem;">Demo User: <strong>user / 123456</strong></p>
+            <p style="margin-top:0.4rem; font-size:0.82rem;">Demo Agent: <strong>agent / agent123</strong></p>
+            <hr style="margin:1rem 0; border:none; border-top:1px solid #e6edf4;" />
+            <p style="text-align:center;"><a href="#" onclick="showRegister(); return false;" style="color:#c7a12b; text-decoration:none; font-weight:700;">Create Account</a></p>
         </div>
     </div>
 
-    <!-- ===== نافذة إنشاء حساب ===== -->
     <div id="registerModal" class="modal">
         <div class="modal-content">
             <button class="modal-close" onclick="closeRegisterModal()">✕</button>
-            <h2>📝 إنشاء حساب جديد</h2>
-            <input type="text" id="regName" placeholder="الاسم الكامل" style="margin-top:1rem;">
-            <input type="email" id="regEmail" placeholder="البريد الإلكتروني">
-            <input type="tel" id="regPhone" placeholder="رقم الهاتف">
-            <input type="password" id="regPassword" placeholder="كلمة المرور">
-            <input type="password" id="regConfirm" placeholder="تأكيد كلمة المرور">
-            <button class="btn" onclick="registerUser()">إنشاء حساب</button>
+            <h2>📝 Create Account</h2>
+            <input type="text" id="regName" placeholder="Full Name" style="margin-top:1rem;" />
+            <input type="email" id="regEmail" placeholder="Email" />
+            <input type="tel" id="regPhone" placeholder="Phone" />
+            <input type="password" id="regPassword" placeholder="Password" />
+            <input type="password" id="regConfirm" placeholder="Confirm Password" />
+            <button class="btn" onclick="registerUser()">Create Account</button>
+        </div>
+    </div>
+
+    <div id="verifyModal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeVerifyModal()">✕</button>
+            <h2>🔐 Verify Account</h2>
+            <p>Enter verification code: <strong>123456</strong></p>
+            <input type="text" id="verifyCode" placeholder="6-digit code" style="text-align:center; font-size:1.3rem; letter-spacing:2px;" />
+            <button class="btn" onclick="submitVerification()" style="margin-top:1rem;">Verify</button>
+        </div>
+    </div>
+
+    <div id="policyModal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closePolicyModal()">✕</button>
+            <h2 id="policyModalTitle"></h2>
+            <div id="policyModalBody"></div>
         </div>
     </div>
 
     <div class="container">
-        <!-- ===== شريط البحث المتقدم ===== -->
+        <!-- Search -->
         <div class="search-bar">
             <div class="search-row">
                 <div class="search-group">
-                    <label>🔍 بحث</label>
-                    <input type="text" id="searchInput" placeholder="ابحث عن منتج...">
+                    <label>🔍 Search</label>
+                    <input type="text" id="searchInput" placeholder="Search products..." />
                 </div>
                 <div class="search-group">
-                    <label>📍 المدينة</label>
+                    <label>📍 City</label>
                     <select id="searchCity">
-                        <option value="">الكل</option>
-                        <option value="أسمرة">أسمرة</option>
-                        <option value="مصوع">مصوع</option>
-                        <option value="كرن">كرن</option>
+                        <option value="">All</option>
+                        <option value="Asmara">Asmara</option>
+                        <option value="Massawa">Massawa</option>
+                        <option value="Keren">Keren</option>
+                        <option value="Remote">Remote</option>
                     </select>
                 </div>
                 <div class="search-group">
-                    <label>💰 السعر من</label>
-                    <input type="number" id="priceMin" placeholder="الحد الأدنى">
+                    <label>💰 Price from</label>
+                    <input type="number" id="priceMin" placeholder="Min" />
                 </div>
                 <div class="search-group">
-                    <label>💰 السعر إلى</label>
-                    <input type="number" id="priceMax" placeholder="الحد الأقصى">
+                    <label>💰 Price to</label>
+                    <input type="number" id="priceMax" placeholder="Max" />
                 </div>
                 <div class="search-group">
-                    <label>📂 القسم</label>
+                    <label>📂 Category</label>
                     <select id="searchCategory">
-                        <option value="">الكل</option>
-                        <option value="realestate">عقارات</option>
-                        <option value="electronics">إلكترونيات</option>
-                        <option value="cars">سيارات</option>
-                        <option value="jobs">وظائف</option>
-                        <option value="general">خدمات</option>
+                        <option value="">All</option>
+                        <option value="realestate">Real Estate</option>
+                        <option value="electronics">Electronics</option>
+                        <option value="cars">Cars</option>
+                        <option value="jobs">Jobs</option>
+                        <option value="general">Services</option>
                     </select>
                 </div>
-                <button class="search-btn" onclick="performSearch()">🔍 بحث متقدم</button>
+                <button class="search-btn" onclick="performSearch()">🔍 Search</button>
             </div>
         </div>
 
-        <!-- ===== الصفحة الرئيسية ===== -->
+        <!-- Home -->
         <div id="homePane" class="tab-pane active-pane">
             <div class="hero">
                 <h1>🇪🇷 Asmara.Store</h1>
-                <div class="tagline" id="tagline">"منصة تحترم عاداتنا وتقاليدنا - بروح القانون الإريتري"</div>
-                <p id="homeIntro" style="margin-top: 1rem; color: var(--text-gray);"></p>
+                <div class="tagline">A platform that respects our customs and traditions</div>
+                <p id="homeIntro">A trusted platform for flights, real estate, services, and official content.</p>
             </div>
-            
-            <!-- قسم شهادات العملاء -->
+
             <div class="card">
-                <h3>⭐ آراء عملائنا</h3>
-                <div class="testimonials-grid" id="testimonialsGrid"></div>
+                <h3>⭐ Customer Reviews</h3>
+                <div id="testimonialsGrid" class="testimonials-grid"></div>
             </div>
-            
-            <div class="card"><h3 id="homeFlightsTitle">🏠 أحدث العقارات</h3><div id="homeRealEstate" class="gallery-grid"></div></div>
-            <div class="card"><h3 id="homeElectronicsTitle">📱 أحدث الإلكترونيات</h3><div id="homeElectronics" class="gallery-grid"></div></div>
-            <div class="card"><h3 id="homeCarsTitle">🚗 أحدث السيارات</h3><div id="homeCars" class="gallery-grid"></div></div>
-            <div class="card"><h3 id="homeJobsTitle">💼 أحدث الوظائف</h3><div id="homeJobs" class="gallery-grid"></div></div>
-            <div class="card"><h3 id="homeServicesTitle">📋 الخدمات المميزة</h3><div id="homeServices" class="gallery-grid"></div></div>
-            <div class="card"><h3 id="homeBlogTitle">📰 آخر المقالات</h3><div id="homeBlogPreview"></div></div>
+            <div class="card"><h3>🏠 Latest Properties</h3><div id="homeRealEstate" class="gallery-grid"></div></div>
+            <div class="card"><h3>📱 Latest Electronics</h3><div id="homeElectronics" class="gallery-grid"></div></div>
+            <div class="card"><h3>🚗 Latest Cars</h3><div id="homeCars" class="gallery-grid"></div></div>
+            <div class="card"><h3>💼 Latest Jobs</h3><div id="homeJobs" class="gallery-grid"></div></div>
+            <div class="card"><h3>📋 Featured Services</h3><div id="homeServices" class="gallery-grid"></div></div>
+            <div class="card"><h3>📰 Latest Articles</h3><div id="homeBlogPreview"></div></div>
         </div>
 
-        <!-- ===== قسم الطيران ===== -->
+        <!-- Flights -->
         <div id="flightPane" class="tab-pane">
-            <div class="card"><h3 id="flightSearchTitle">✈️ رحلات إلى أسمرة (ASM)</h3><div id="allFlightsList"></div></div>
-            <div class="card"><h3 id="flightBookingTitle">🔍 البحث عن رحلة</h3>
-                <select id="flightFrom"><option value="DXB">دبي (DXB)</option><option value="JED">جدة (JED)</option><option value="CAI">القاهرة (CAI)</option><option value="ADD">أديس أبابا (ADD)</option></select>
-                <input type="date" id="flightDate" value="2026-05-15">
-                <button class="btn" id="searchFlightBtn">🔍 بحث</button>
-                <div id="flightResults" style="background:#eef2f8; border-radius:16px; padding:0.8rem; margin-top:0.8rem;"></div>
+            <div class="card"><h3>✈️ Flights to Asmara (ASM)</h3><div id="allFlightsList"></div></div>
+            <div class="card">
+                <h3>🔍 Search Flights</h3>
+                <select id="flightFrom">
+                    <option value="DXB">Dubai</option>
+                    <option value="JED">Jeddah</option>
+                    <option value="CAI">Cairo</option>
+                    <option value="ADD">Addis Ababa</option>
+                </select>
+                <input type="date" id="flightDate" value="2026-05-15" />
+                <button class="btn" id="searchFlightBtn">🔍 Search</button>
+                <div id="flightResults" style="background:#eef2f8; border-radius:16px; padding:0.9rem; margin-top:0.9rem;"></div>
             </div>
-            <div class="card"><h3 id="bookingInfoTitle">📋 معلومات الحجز</h3>
-                <input type="text" id="passengerName" placeholder="الاسم الكامل">
-                <input type="email" id="passengerEmail" placeholder="البريد الإلكتروني">
-                <button class="btn" id="confirmBookingBtn">✅ تأكيد الحجز</button>
-                <p id="bookingMsg"></p>
+            <div class="card">
+                <h3>📋 Booking Info</h3>
+                <input type="text" id="passengerName" placeholder="Full Name" />
+                <input type="email" id="passengerEmail" placeholder="Email" />
+                <button class="btn" id="confirmBookingBtn">✅ Confirm</button>
+                <p id="bookingMsg" style="margin-top:0.6rem; color:#4a627a;"></p>
             </div>
         </div>
 
-        <!-- ===== قسم العقارات ===== -->
+        <!-- Real Estate -->
         <div id="realestatePane" class="tab-pane">
             <div class="grid-2">
-                <div class="card"><h3 id="addPropertyTitle">🏠 إضافة عقار جديد</h3>
-                    <div class="form-row"><div class="form-group"><label id="propertyTypeLabel">نوع العقار</label><select id="reType"><option>شقة</option><option>فيلا</option><option>أرض</option><option>مكتب</option></select></div><div class="form-group"><label id="cityLabel">المدينة</label><select id="reCity"><option>أسمرة</option><option>مصوع</option><option>كرن</option></select></div></div>
-                    <div class="form-row"><div class="form-group"><label id="areaLabel">المساحة (م²)</label><input id="reArea" type="number" placeholder="المساحة"></div><div class="form-group"><label id="roomsLabel">عدد الغرف</label><select id="reRooms"><option>1</option><option>2</option><option>3</option><option>4</option><option>5+</option></select></div></div>
-                    <div class="form-row"><div class="form-group"><label id="priceLabel">السعر ($)</label><input id="rePrice" type="number" placeholder="السعر"></div><div class="form-group"><label id="finishingLabel">التشطيب</label><select id="reFinish"><option>فاخر</option><option>سوبر لوكس</option><option>عادي</option></select></div></div>
-                    <div class="form-group"><label id="descLabel">الوصف</label><textarea id="reDesc" rows="2" placeholder="تفاصيل العقار..."></textarea></div>
-                    <div class="form-group"><label id="imageLabel">صورة العقار</label><input type="file" id="reImage" accept="image/*"></div>
-                    <div class="image-preview" id="rePreview"></div>
-                    <button class="btn" id="publishReBtn">📢 نشر العقار</button>
-                    <p id="reMsg"></p>
+                <div class="card">
+                    <h3>🏠 Add Property</h3>
+                    <div class="form-row">
+                        <div class="form-group"><label>Type</label><select id="reType"><option>Apartment</option><option>Villa</option><option>Land</option></select></div>
+                        <div class="form-group"><label>City</label><select id="reCity"><option>Asmara</option><option>Massawa</option><option>Keren</option></select></div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group"><label>Area (m²)</label><input id="reArea" type="number" /></div>
+                        <div class="form-group"><label>Rooms</label><select id="reRooms"><option>1</option><option>2</option><option>3</option><option>4</option></select></div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group"><label>Price ($)</label><input id="rePrice" type="number" /></div>
+                        <div class="form-group"><label>Finishing</label><select id="reFinish"><option>Luxury</option><option>Standard</option></select></div>
+                    </div>
+                    <div class="form-group"><label>Description</label><textarea id="reDesc" rows="2"></textarea></div>
+                    <div class="form-group"><label>Image</label><input type="file" id="reImage" accept="image/*" /></div>
+                    <button class="btn" id="publishReBtn">📢 Publish</button>
                 </div>
-                <div class="card"><h3 id="realestateGalleryTitle">🖼️ معرض العقارات</h3><div id="realEstateGallery" class="gallery-grid"></div>
-                    <div class="map-container"><div class="map-placeholder"><i class="fas fa-map-marker-alt" style="font-size: 3rem;"></i><p id="mapTitle">📍 خريطة العقارات</p><div style="display: flex; gap: 0.5rem; margin-top: 1rem; flex-wrap: wrap;"><div class="map-marker" onclick="filterByCity('أسمرة')">📍 أسمرة</div><div class="map-marker" onclick="filterByCity('مصوع')">📍 مصوع</div><div class="map-marker" onclick="filterByCity('كرن')">📍 كرن</div><div class="map-marker" onclick="filterByCity('')">🗺️ الكل</div></div></div></div>
-                </div>
+                <div class="card"><h3>🖼️ Gallery</h3><div id="realEstateGallery" class="gallery-grid"></div></div>
             </div>
         </div>
 
-        <!-- ===== قسم الإلكترونيات ===== -->
+        <!-- Electronics -->
         <div id="electronicsPane" class="tab-pane">
             <div class="grid-2">
-                <div class="card"><h3 id="addDeviceTitle">📱 إضافة جهاز</h3>
-                    <div class="form-row"><div class="form-group"><label id="deviceTypeLabel">النوع</label><select id="elecType"><option>هاتف</option><option>لابتوب</option><option>جهاز لوحي</option></select></div><div class="form-group"><label id="brandLabel">الماركة</label><select id="elecBrand"><option>Apple</option><option>Samsung</option><option>Huawei</option></select></div></div>
-                    <div class="form-row"><div class="form-group"><label id="priceLabel2">السعر ($)</label><input id="elecPrice" type="number" placeholder="السعر"></div><div class="form-group"><label id="conditionLabel">الحالة</label><select id="elecCondition"><option>جديد</option><option>مستعمل</option><option>مجدد</option></select></div></div>
-                    <div class="form-row"><div class="form-group"><label id="storageLabel">الذاكرة</label><input id="elecStorage" placeholder="128GB"></div><div class="form-group"><label id="colorLabel">اللون</label><input id="elecColor" placeholder="اللون"></div></div>
-                    <div class="form-group"><label id="descLabel2">الوصف</label><textarea id="elecDesc" rows="2" placeholder="مواصفات الجهاز..."></textarea></div>
-                    <div class="form-group"><label id="imageLabel2">صورة</label><input type="file" id="elecImage"></div>
-                    <div class="image-preview" id="elecPreview"></div>
-                    <button class="btn" id="publishElecBtn">📢 نشر</button>
-                    <p id="elecMsg"></p>
+                <div class="card">
+                    <h3>📱 Add Device</h3>
+                    <div class="form-row">
+                        <div class="form-group"><label>Type</label><select id="elecType"><option>Phone</option><option>Laptop</option><option>Tablet</option></select></div>
+                        <div class="form-group"><label>Brand</label><select id="elecBrand"><option>Apple</option><option>Samsung</option><option>Lenovo</option><option>Huawei</option></select></div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group"><label>Price ($)</label><input id="elecPrice" type="number" /></div>
+                        <div class="form-group"><label>Condition</label><select id="elecCondition"><option>New</option><option>Used</option></select></div>
+                    </div>
+                    <div class="form-group"><label>Description</label><textarea id="elecDesc" rows="2"></textarea></div>
+                    <div class="form-group"><label>Image</label><input type="file" id="elecImage" accept="image/*" /></div>
+                    <button class="btn" id="publishElecBtn">📢 Publish</button>
                 </div>
-                <div class="card"><h3 id="electronicsGalleryTitle">🖼️ المعرض</h3><div id="electronicsGallery" class="gallery-grid"></div></div>
+                <div class="card"><h3>🖼️ Gallery</h3><div id="electronicsGallery" class="gallery-grid"></div></div>
             </div>
         </div>
 
-        <!-- ===== قسم السيارات ===== -->
+        <!-- Cars -->
         <div id="carsPane" class="tab-pane">
             <div class="grid-2">
-                <div class="card"><h3 id="addCarTitle">🚗 إضافة سيارة</h3>
-                    <div class="form-row"><div class="form-group"><label id="carBrandLabel">الماركة</label><input id="carBrand" placeholder="Toyota"></div><div class="form-group"><label id="carModelLabel">الموديل</label><input id="carModel" placeholder="Corolla"></div></div>
-                    <div class="form-row"><div class="form-group"><label id="yearLabel">سنة الصنع</label><input id="carYear" type="number" placeholder="2022"></div><div class="form-group"><label id="mileageLabel">الكيلومترات</label><input id="carMileage" placeholder="45,000 كم"></div></div>
-                    <div class="form-row"><div class="form-group"><label id="priceLabel3">السعر ($)</label><input id="carPrice" type="number" placeholder="السعر"></div><div class="form-group"><label id="transmissionLabel">ناقل الحركة</label><select id="carTransmission"><option>أوتوماتيك</option><option>عادي</option></select></div></div>
-                    <div class="form-row"><div class="form-group"><label id="colorLabel2">اللون</label><input id="carColor" placeholder="اللون"></div><div class="form-group"><label id="cityLabel2">المدينة</label><select id="carCity"><option>أسمرة</option><option>مصوع</option></select></div></div>
-                    <div class="form-group"><label id="descLabel3">الوصف</label><textarea id="carDesc" rows="2" placeholder="مميزات السيارة..."></textarea></div>
-                    <div class="form-group"><label id="imageLabel3">صورة</label><input type="file" id="carImage"></div>
-                    <div class="image-preview" id="carPreview"></div>
-                    <button class="btn" id="publishCarBtn">📢 نشر</button>
-                    <p id="carMsg"></p>
+                <div class="card">
+                    <h3>🚗 Add Car</h3>
+                    <div class="form-row">
+                        <div class="form-group"><label>Brand</label><input id="carBrand" placeholder="Toyota" /></div>
+                        <div class="form-group"><label>Model</label><input id="carModel" placeholder="Corolla" /></div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group"><label>Year</label><input id="carYear" type="number" /></div>
+                        <div class="form-group"><label>Mileage</label><input id="carMileage" placeholder="km" /></div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group"><label>Price ($)</label><input id="carPrice" type="number" /></div>
+                        <div class="form-group"><label>Transmission</label><select id="carTransmission"><option>Automatic</option><option>Manual</option></select></div>
+                    </div>
+                    <div class="form-group"><label>Description</label><textarea id="carDesc" rows="2"></textarea></div>
+                    <div class="form-group"><label>Image</label><input type="file" id="carImage" accept="image/*" /></div>
+                    <button class="btn" id="publishCarBtn">📢 Publish</button>
                 </div>
-                <div class="card"><h3 id="carsGalleryTitle">🖼️ المعرض</h3><div id="carsGallery" class="gallery-grid"></div></div>
+                <div class="card"><h3>🖼️ Gallery</h3><div id="carsGallery" class="gallery-grid"></div></div>
             </div>
         </div>
 
-        <!-- ===== قسم الوظائف ===== -->
+        <!-- Jobs -->
         <div id="jobsPane" class="tab-pane">
             <div class="grid-2">
-                <div class="card"><h3 id="addJobTitle">💼 إضافة وظيفة</h3>
-                    <div class="form-row"><div class="form-group"><label id="jobTitleLabel">المسمى</label><input id="jobTitle" placeholder="المسمى"></div><div class="form-group"><label id="companyLabel">الشركة</label><input id="jobCompany" placeholder="الشركة"></div></div>
-                    <div class="form-row"><div class="form-group"><label id="salaryLabel">الراتب ($)</label><input id="jobSalary" type="number" placeholder="الراتب"></div><div class="form-group"><label id="jobTypeLabel">نوع الدوام</label><select id="jobType"><option>دوام كامل</option><option>دوام جزئي</option><option>عن بعد</option></select></div></div>
-                    <div class="form-row"><div class="form-group"><label id="experienceLabel">الخبرة</label><select id="jobExperience"><option>بدون خبرة</option><option>سنة</option><option>سنتان</option><option>3-5 سنوات</option></select></div><div class="form-group"><label id="qualificationLabel">المؤهل</label><select id="jobQualification"><option>ثانوية</option><option>دبلوم</option><option>بكالوريوس</option><option>ماجستير</option></select></div></div>
-                    <div class="form-group"><label id="descLabel4">الوصف</label><textarea id="jobDesc" rows="2"></textarea></div>
-                    <div class="form-group"><label id="cityLabel3">المدينة</label><select id="jobCity"><option>أسمرة</option><option>مصوع</option><option>عن بعد</option></select></div>
-                    <button class="btn" id="publishJobBtn">📢 نشر الوظيفة</button>
-                    <p id="jobMsg"></p>
+                <div class="card">
+                    <h3>💼 Add Job</h3>
+                    <div class="form-row">
+                        <div class="form-group"><label>Title</label><input id="jobTitle" placeholder="Job Title" /></div>
+                        <div class="form-group"><label>Company</label><input id="jobCompany" placeholder="Company" /></div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group"><label>Salary ($)</label><input id="jobSalary" type="number" /></div>
+                        <div class="form-group"><label>Type</label><select id="jobType"><option>Full Time</option><option>Part Time</option><option>Remote</option></select></div>
+                    </div>
+                    <div class="form-group"><label>Description</label><textarea id="jobDesc" rows="2"></textarea></div>
+                    <div class="form-group"><label>City</label><select id="jobCity"><option>Asmara</option><option>Massawa</option><option>Keren</option><option>Remote</option></select></div>
+                    <button class="btn" id="publishJobBtn">📢 Publish</button>
                 </div>
-                <div class="card"><h3 id="jobsGalleryTitle">🖼️ فرص العمل</h3><div id="jobsGallery" class="gallery-grid"></div>
-                    <div class="resume-upload" onclick="document.getElementById('resumeFile').click()"><i class="fas fa-cloud-upload-alt"></i> <span id="uploadResumeText">رفع السيرة الذاتية (PDF/Word)</span><input type="file" id="resumeFile" accept=".pdf,.doc,.docx" style="display:none"></div>
-                    <div id="resumeList" class="resume-list"></div>
-                </div>
+                <div class="card"><h3>🖼️ Jobs</h3><div id="jobsGallery" class="gallery-grid"></div></div>
             </div>
         </div>
 
-        <!-- ===== قسم الخدمات العامة ===== -->
+        <!-- Services -->
         <div id="generalPane" class="tab-pane">
             <div class="grid-2">
-                <div class="card"><h3 id="addGeneralTitle">📝 إعلان عام</h3>
-                    <div class="form-row"><div class="form-group"><label id="adTypeLabel">النوع</label><select id="adType"><option>خدمة</option><option>منتج</option></select></div><div class="form-group"><label id="cityLabel4">المدينة</label><select id="adCity"><option>أسمرة</option><option>مصوع</option></select></div></div>
-                    <div class="form-group"><label id="titleLabel">العنوان</label><input id="adName" placeholder="العنوان"></div>
-                    <div class="form-group"><label id="priceLabel4">السعر</label><input id="adPrice" type="number" placeholder="السعر"></div>
-                    <div class="form-group"><label id="descLabel5">الوصف</label><textarea id="adDesc" rows="2"></textarea></div>
-                    <div class="form-group"><label id="imageLabel4">صورة</label><input type="file" id="adImage"></div>
-                    <div class="image-preview" id="adPreview"></div>
-                    <button class="btn" id="publishGeneralBtn">📢 نشر</button>
-                    <p id="generalMsg"></p>
+                <div class="card">
+                    <h3>📝 General Ad</h3>
+                    <div class="form-row">
+                        <div class="form-group"><label>Type</label><select id="adType"><option>Service</option><option>Product</option></select></div>
+                        <div class="form-group"><label>City</label><select id="adCity"><option>Asmara</option><option>Massawa</option><option>Keren</option></select></div>
+                    </div>
+                    <div class="form-group"><label>Title</label><input id="adName" placeholder="Title" /></div>
+                    <div class="form-group"><label>Price</label><input id="adPrice" type="number" /></div>
+                    <div class="form-group"><label>Description</label><textarea id="adDesc" rows="2"></textarea></div>
+                    <div class="form-group"><label>Image</label><input type="file" id="adImage" accept="image/*" /></div>
+                    <button class="btn" id="publishGeneralBtn">📢 Publish</button>
                 </div>
-                <div class="card"><h3 id="generalGalleryTitle">🖼️ الخدمات</h3><div id="generalGallery" class="gallery-grid"></div></div>
+                <div class="card"><h3>🖼️ Services</h3><div id="generalGallery" class="gallery-grid"></div></div>
             </div>
         </div>
 
-        <!-- ===== قسم المدونة ===== -->
-        <div id="blogPane" class="tab-pane"><div class="card"><h2 id="blogMainTitle">📰 المدونة</h2><div id="blogGrid" class="blog-grid"></div></div></div>
+        <!-- Blog -->
+        <div id="blogPane" class="tab-pane">
+            <div class="card"><h2>📰 Blog</h2><div id="blogGrid" class="blog-grid"></div></div>
+        </div>
 
-        <!-- ===== صفحة الأسئلة الشائعة ===== -->
-        <div id="faqPane" class="tab-pane"><div class="card"><h3 id="faqTitle">❓ الأسئلة الشائعة</h3>
-            <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)">📌 كيف يمكنني إضافة إعلان؟ <i class="fas fa-chevron-down"></i></div><div class="faq-answer">يمكنك إضافة إعلان من خلال التبويب المخصص لكل قسم (عقارات، سيارات، إلخ). اضغط على "نشر" بعد ملء البيانات وسيتم مراجعة إعلانك من قبل الوكيل.</div></div>
-            <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)">💰 كيف أدفع مقابل الإعلانات المميزة؟ <i class="fas fa-chevron-down"></i></div><div class="faq-answer">يمكنك الدفع عبر PayPal من خلال تبويب "💳 دفع". بعد الدفع ستحصل على رصيد يمكنك استخدامه لترقية إعلاناتك.</div></div>
-            <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)">🛡️ كيف يتم مراجعة الإعلانات؟ <i class="fas fa-chevron-down"></i></div><div class="faq-answer">يتم مراجعة جميع الإعلانات من قبل وكيل معتمد للتأكد من عدم وجود مخالفات للعادات والتقاليد أو القوانين.</div></div>
-            <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)">🌐 ما هي اللغات المدعومة؟ <i class="fas fa-chevron-down"></i></div><div class="faq-answer">المنصة تدعم ثلاث لغات: العربية، الإنجليزية، والتقرينية. يمكنك تبديل اللغة من الأزرار في الأعلى.</div></div>
-            <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)">📞 كيف يمكنني التواصل مع الدعم؟ <i class="fas fa-chevron-down"></i></div><div class="faq-answer">يمكنك التواصل عبر واتساب من خلال الأيقونة العائمة أو عبر تبويب "اتصل بنا".</div></div>
-            <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)">🔄 كيف يمكنني استرجاع منتج؟ <i class="fas fa-chevron-down"></i></div><div class="faq-answer">يمكنك استرجاع المنتج خلال 14 يوماً من تاريخ الشراء بشرط أن يكون بحالته الأصلية. للتفاصيل، راجع سياسة الاسترجاع.</div></div>
-        </div></div>
-
-        <!-- ===== صفحة سياسات ===== -->
-        <div id="policiesPane" class="tab-pane">
-            <div class="policy-card">
-                <h3>🔄 سياسة الاستبدال والاسترجاع</h3>
-                <ul>
-                    <li>يمكنك استرجاع المنتج خلال 14 يوماً من تاريخ الشراء</li>
-                    <li>يجب أن يكون المنتج بحالته الأصلية وغير مستخدم</li>
-                    <li>رسوم الشحن غير قابلة للاسترداد</li>
-                    <li>سيتم استرداد المبلغ خلال 7 أيام عمل</li>
-                </ul>
-            </div>
-            <div class="policy-card">
-                <h3>🔒 سياسة الخصوصية</h3>
-                <ul>
-                    <li>نحن نحمي بياناتك الشخصية ولا نشاركها مع أطراف ثالثة</li>
-                    <li>نستخدم تقنيات التشفير لحماية معلوماتك</li>
-                    <li>يمكنك طلب حذف بياناتك في أي وقت</li>
-                </ul>
-            </div>
-            <div class="policy-card">
-                <h3>🚚 سياسة الشحن</h3>
-                <ul>
-                    <li>نوفر الشحن لجميع مدن إريتريا</li>
-                    <li>وقت التوصيل: 3-7 أيام عمل</li>
-                    <li>الشحن مجاني للطلبات التي تزيد عن $100</li>
-                </ul>
+        <!-- FAQ -->
+        <div id="faqPane" class="tab-pane">
+            <div class="card">
+                <h3>❓ FAQ</h3>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">📌 How to add an ad? <i class="fas fa-chevron-down"></i></div>
+                    <div class="faq-answer">Use the dedicated section for each category, fill in the form, and click Publish.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">💰 How to pay? <i class="fas fa-chevron-down"></i></div>
+                    <div class="faq-answer">You can use PayPal or simulated wallet deposit from the Payment page.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">🔐 How to verify my account? <i class="fas fa-chevron-down"></i></div>
+                    <div class="faq-answer">Open the user dashboard and click Verify Account, then use the demo code 123456.</div>
+                </div>
             </div>
         </div>
 
-        <!-- ===== صفحة اتصل بنا ===== -->
+        <!-- Contact -->
         <div id="contactPane" class="tab-pane">
             <div class="grid-2">
-                <div class="card"><h3 id="contactTitle">📞 اتصل بنا</h3>
+                <div class="card">
+                    <h3>📞 Contact Us</h3>
                     <div class="contact-info">
-                        <div class="contact-card"><i class="fab fa-whatsapp"></i><div><strong>واتساب</strong><br><a href="https://wa.me/29170000000" target="_blank" style="color:var(--secondary);">+291 70 000 000</a></div></div>
-                        <div class="contact-card"><i class="far fa-envelope"></i><div><strong>البريد الإلكتروني</strong><br>info@asmara.store</div></div>
-                        <div class="contact-card"><i class="fas fa-map-marker-alt"></i><div><strong>العنوان</strong><br>أسمرة، إريتريا</div></div>
-                        <div class="contact-card"><i class="far fa-clock"></i><div><strong>ساعات العمل</strong><br>السبت - الخميس: 9ص - 5م</div></div>
+                        <div class="contact-card">
+                            <i class="fab fa-whatsapp"></i>
+                            <div><strong>WhatsApp</strong><br /><a href="https://wa.me/29170000000" target="_blank" rel="noopener noreferrer">+291 70 000 000</a></div>
+                        </div>
+                        <div class="contact-card">
+                            <i class="far fa-envelope"></i>
+                            <div><strong>Email</strong><br /><a href="mailto:info@asmara.store">info@asmara.store</a></div>
+                        </div>
                     </div>
                 </div>
-                <div class="card"><h3 id="sendMessageTitle">✉️ أرسل رسالة</h3>
-                    <input type="text" id="contactName" placeholder="الاسم الكامل">
-                    <input type="email" id="contactEmail" placeholder="البريد الإلكتروني">
-                    <textarea id="contactMessage" rows="4" placeholder="رسالتك..."></textarea>
-                    <button class="btn" onclick="sendContactMessage()" id="sendContactBtn">إرسال الرسالة</button>
+                <div class="card">
+                    <h3>✉️ Send Message</h3>
+                    <input type="text" id="contactName" placeholder="Name" />
+                    <input type="email" id="contactEmail" placeholder="Email" />
+                    <textarea id="contactMessage" rows="4" placeholder="Message"></textarea>
+                    <button class="btn" onclick="sendContactMessage()">Send</button>
                 </div>
             </div>
         </div>
 
-        <!-- ===== صفحة الدفع ===== -->
-        <div id="paymentPane" class="tab-pane"><div class="grid-2"><div class="card"><h3 id="proSubscriptionTitle">💳 اشتراك Pro</h3><p id="proDesc">إعلانات غير محدودة + إحصائيات متقدمة</p><div style="font-size:1.8rem; color:var(--secondary);">$29<small>/شهر</small></div><button id="paypalBtn" class="btn"><i class="fab fa-paypal"></i> PayPal</button><p id="paymentMsg"></p></div><div class="card"><h3 id="walletTitle">💰 محفظتي</h3><p id="walletBalance">الرصيد: <strong id="balanceAmount">$0</strong></p><button id="addFundsBtn" class="btn btn-warning" id="depositBtn">إيداع $50</button></div></div><div class="card"><h3 id="transactionsTitle">📜 سجل المعاملات</h3><div id="transactionsList"></div></div></div>
+        <!-- Payment -->
+        <div id="paymentPane" class="tab-pane">
+            <div class="grid-2">
+                <div class="card"><h3>💳 Pro Subscription</h3><div style="font-size:1.8rem; color:#c7a12b; font-weight:800;">$29<small>/month</small></div><button id="paypalBtn" class="btn">PayPal</button></div>
+                <div class="card"><h3>💰 My Wallet</h3><p>Balance: <strong id="balanceAmount">$0</strong></p><button id="addFundsBtn" class="btn">Deposit $50</button></div>
+            </div>
+            <div class="card"><h3>📜 Transactions</h3><div id="transactionsList"></div></div>
+        </div>
 
-        <!-- ===== صفحة المراسلة ===== -->
-        <div id="messagingPane" class="tab-pane"><div class="grid-2"><div class="card"><h3 id="chatsTitle">📋 المحادثات</h3><div id="contactsList" class="chat-list"></div></div><div class="card"><h3 id="messagingTitle">💬 المراسلة</h3><div id="chatMessages" class="chat-list" style="height:200px;"></div><div class="chat-input-area" style="display:flex; gap:0.5rem; margin-top:0.5rem;"><input type="text" id="chatInput" placeholder="اكتب رسالتك..."><button id="sendMsgBtn" class="btn-sm btn">إرسال</button></div></div></div></div>
+        <!-- Messaging -->
+        <div id="messagingPane" class="tab-pane">
+            <div class="grid-2">
+                <div class="card"><h3>📋 Chats</h3><div id="contactsList" class="chat-list"></div></div>
+                <div class="card">
+                    <h3>💬 Messaging</h3>
+                    <div id="chatMessages" class="chat-list" style="height:240px; overflow:auto;"></div>
+                    <div style="display:flex; gap:0.6rem; margin-top:0.8rem;">
+                        <input type="text" id="chatInput" placeholder="Type message..." />
+                        <button id="sendMsgBtn" class="btn-sm">Send</button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-        <!-- ===== صفحة التقييمات ===== -->
-        <div id="ratingsPane" class="tab-pane"><div class="card"><h3 id="ratingsTitle">⭐ تقييم المستخدمين</h3><div id="ratingsList"></div><div style="margin-top:0.8rem;"><textarea id="newRatingComment" rows="2" placeholder="اكتب تقييمك..."></textarea><div class="rating-input" id="ratingInput"><span class="rating-star" data-value="1">★</span><span class="rating-star" data-value="2">★</span><span class="rating-star" data-value="3">★</span><span class="rating-star" data-value="4">★</span><span class="rating-star" data-value="5">★</span></div><button id="addRatingBtn" class="btn">إضافة تقييم</button></div></div></div>
+        <!-- Ratings -->
+        <div id="ratingsPane" class="tab-pane">
+            <div class="card">
+                <h3>⭐ User Ratings</h3>
+                <div id="ratingsList"></div>
+                <textarea id="newRatingComment" rows="2" placeholder="Write review..."></textarea>
+                <div class="rating-input">
+                    <span class="rating-star" data-value="1">★</span>
+                    <span class="rating-star" data-value="2">★</span>
+                    <span class="rating-star" data-value="3">★</span>
+                    <span class="rating-star" data-value="4">★</span>
+                    <span class="rating-star" data-value="5">★</span>
+                </div>
+                <button id="addRatingBtn" class="btn">Add Review</button>
+            </div>
+        </div>
 
-        <!-- ===== أقسام الوكيل المخفية ===== -->
-        <div id="dashboardPane" class="tab-pane"><div class="stats-grid"><div class="stat-card"><div class="stat-number" id="statAds">0</div><div class="stat-label" id="totalAdsLabel">إجمالي الإعلانات</div></div><div class="stat-card"><div class="stat-number" id="statPending">0</div><div class="stat-label" id="pendingLabel">قيد المراجعة</div></div><div class="stat-card"><div class="stat-number" id="statApproved">0</div><div class="stat-label" id="approvedLabel">مقبولة</div></div><div class="stat-card"><div class="stat-number" id="statRejected">0</div><div class="stat-label" id="rejectedLabel">مرفوضة</div></div></div><div class="card"><h3 id="performanceTitle">📈 أداء الإعلانات</h3><div id="adPerformanceList"></div></div></div>
-        <div id="agentPane" class="tab-pane"><div class="grid-2"><div class="card"><h3 id="pendingReviewsTitle">⏳ إعلانات تنتظر المراجعة</h3><div id="pendingAdsList"></div></div><div class="card"><h3 id="violationsTitle">🚫 الإعلانات المخالفة</h3><div id="violationsList"></div></div></div><div class="card"><h3 id="agentLogTitle">📋 سجل مراجعة الوكيل</h3><div id="agentLogList"></div></div><div class="card"><h3 id="blockedWordsTitle">⚙️ إعدادات الكلمات الممنوعة</h3><div id="blockedWordsList" style="display:flex; flex-wrap:wrap; gap:0.3rem;"></div><div style="display:flex; gap:0.5rem;"><input type="text" id="newBlockedWord" placeholder="كلمة ممنوعة جديدة"><button id="addBlockedWordBtn" class="btn-sm btn">إضافة</button></div></div></div>
-        <div id="reportsPane" class="tab-pane"><div class="card"><h3 id="reportsTitle">🚨 بلاغات المستخدمين</h3><div id="reportsList"></div></div><div class="card"><h3 id="reportsLogTitle">📋 سجل معالجة البلاغات</h3><div id="reportsLogList"></div></div></div>
-        <div id="institutionsPane" class="tab-pane"><div class="grid-2"><div class="card"><h3 id="ministryTradeTitle">🏛️ وزارة التجارة - إريتريا</h3><p id="ministryTradeDesc">تنظيم الاستثمار والتجارة</p><a href="https://www.comesa.int/state-of-eritrea/" target="_blank" class="btn-sm btn" id="comesaLink">COMESA</a></div><div class="card"><h3 id="ministryInfoTitle">📰 وزارة المعلومات - شبابت</h3><a href="http://www.shabait.com" target="_blank" class="btn-sm btn" id="shabaitLink">Shabait.com</a></div><div class="card"><h3 id="hadasTitle">📰 الجريدة الإريترية - Hadas Eritrea</h3><a href="http://www.shabait.com/category/news/" target="_blank" class="btn-sm btn" id="hadasLink">قراءة الجريدة</a></div><div class="card"><h3 id="libraryTitle">📚 مكتبة أسمرة</h3><button id="libraryInfoBtn" class="btn-sm btn">معلومات</button></div></div></div>
+        <!-- Agent / internal -->
+        <div id="dashboardPane" class="tab-pane">
+            <div class="stats-grid">
+                <div class="stat-card"><div class="stat-number" id="statAds">0</div><div>Total Ads</div></div>
+                <div class="stat-card"><div class="stat-number" id="statPending">0</div><div>Pending</div></div>
+                <div class="stat-card"><div class="stat-number" id="statApproved">0</div><div>Approved</div></div>
+                <div class="stat-card"><div class="stat-number" id="statRejected">0</div><div>Rejected</div></div>
+            </div>
+            <div class="card"><h3>📈 Ad Performance</h3><div id="adPerformanceList">No performance data yet.</div></div>
+        </div>
+
+        <div id="agentPane" class="tab-pane">
+            <div class="grid-2">
+                <div class="card"><h3>⏳ Pending Reviews</h3><div id="pendingAdsList">No pending ads.</div></div>
+                <div class="card"><h3>🚫 Violations</h3><div id="violationsList">No violations.</div></div>
+            </div>
+            <div class="card"><h3>📋 Agent Log</h3><div id="agentLogList">No logs yet.</div></div>
+            <div class="card"><h3>⚙️ Blocked Words</h3><div id="blockedWordsList">spam, scam, fake</div><div style="display:flex; gap:0.6rem; margin-top:0.7rem;"><input type="text" id="newBlockedWord" placeholder="New blocked word" /><button id="addBlockedWordBtn" class="btn-sm">Add</button></div></div>
+        </div>
+
+        <div id="reportsPane" class="tab-pane">
+            <div class="card"><h3>🚨 User Reports</h3><div id="reportsList">No reports.</div></div>
+            <div class="card"><h3>📋 Reports Log</h3><div id="reportsLogList">No report logs.</div></div>
+        </div>
+
+        <div id="institutionsPane" class="tab-pane">
+            <div class="grid-2">
+                <div class="card"><h3>🏛️ Ministry of Trade</h3><a href="https://www.comesa.int/state-of-eritrea/" target="_blank" rel="noopener noreferrer">COMESA</a></div>
+                <div class="card"><h3>📰 Ministry of Info</h3><a href="http://www.shabait.com" target="_blank" rel="noopener noreferrer">Shabait.com</a></div>
+                <div class="card"><h3>📚 Asmara Library</h3><button id="libraryInfoBtn" class="btn-sm">Info</button></div>
+            </div>
+        </div>
+
+        <div id="policiesPane" class="tab-pane">
+            <div class="policy-card"><h3>🔄 Return Policy</h3><ul style="padding-left:1.2rem;"><li>14 days return</li><li>Original condition required</li></ul></div>
+        </div>
     </div>
 
-    <!-- ===== الفوتر ===== -->
+    <!-- Footer -->
     <footer class="footer">
         <div class="footer-grid">
-            <div class="footer-section"><h4 id="aboutFooterTitle">🇪🇷 من نحن</h4><p id="aboutFooterText">Asmara.Store منصة رقمية تربط الإريتريين بخدمات موثوقة داخل الوطن وخارجه. نلتزم بأعلى معايير الجودة والأمان.</p></div>
-            <div class="footer-section"><h4 id="quickLinksTitle">🔗 روابط سريعة</h4>
-                <a class="footer-link" data-tab="home">الرئيسية</a>
-                <a class="footer-link" data-tab="faq">أسئلة شائعة</a>
-                <a class="footer-link" data-tab="contact">اتصل بنا</a>
-                <a class="footer-link" data-tab="policies">سياسات</a>
-            </div>
-            <div class="footer-section"><h4 id="policiesTitle">⚖️ سياسات</h4>
-                <a id="privacyPolicyLink">سياسة الخصوصية</a>
-                <a id="securityPolicyLink">سياسة الأمان</a>
-                <a id="returnsPolicyLink">سياسة الاسترجاع</a>
-                <a id="shippingPolicyLink">سياسة الشحن</a>
-            </div>
-            <div class="footer-section"><h4 id="agentFooterTitle">🛡️ الوكيل</h4>
-                <a id="agentPanelLink">🔐 دخول الوكيل</a>
-                <div class="social-links">
-                    <a href="https://facebook.com/asmara.store" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://twitter.com/asmara_store" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
-                    <a href="https://instagram.com/asmara.store" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
-                    <a href="https://wa.me/29170000000" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i></a>
-                    <a href="https://t.me/asmara_store" target="_blank" rel="noopener noreferrer"><i class="fab fa-telegram"></i></a>
-                </div>
-            </div>
+            <div class="footer-section"><h4>🇪🇷 About Us</h4><p>Digital platform connecting Eritreans with trusted services.</p></div>
+            <div class="footer-section"><h4>🔗 Quick Links</h4><a href="#" class="footer-link" data-tab="home">Home</a><a href="#" class="footer-link" data-tab="faq">FAQ</a><a href="#" class="footer-link" data-tab="contact">Contact</a></div>
+            <div class="footer-section"><h4>⚖️ Policies</h4><a href="#" id="privacyPolicyLink">Privacy</a><a href="#" id="returnsPolicyLink">Returns</a></div>
+            <div class="footer-section"><h4>🛡️ Agent</h4><a href="#" id="agentPanelLink">Agent Login</a><div class="social-links"><a href="https://facebook.com" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a><a href="https://twitter.com" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a><a href="https://instagram.com" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a><a href="https://wa.me/29170000000" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i></a></div></div>
         </div>
-        <div class="footer-bottom">
-            <p>© 2026 Asmara.Store - جميع الحقوق محفوظة</p>
-            <div class="verified">✓ منصة معتمدة من الوكيل الوطني</div>
-        </div>
+        <div class="footer-bottom"><p>© 2026 Asmara.Store</p><div class="verified">✓ Certified Platform</div></div>
     </footer>
-
-    <!-- ===== النوافذ المنبثقة ===== -->
-    <div id="policyModal" class="modal"><div class="modal-content"><button class="modal-close" onclick="closePolicyModal()">✕</button><h2 id="policyModalTitle"></h2><div id="policyModalBody"></div></div></div>
 
     <script>
         // ========================================
-        // Asmara.Store - Main JavaScript (محسن بالكامل)
+        // Asmara.Store - Main JavaScript (Fixed)
         // ========================================
-        
-        // ===== بيانات المنتجات (محسنة) =====
+
         const realEstateImages = [
-            "https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg?w=300&h=200&fit=crop",
-            "https://images.pexels.com/photos/2587054/pexels-photo-2587054.jpeg?w=300&h=200&fit=crop",
-            "https://images.pexels.com/photos/280229/pexels-photo-280229.jpeg?w=300&h=200&fit=crop"
+            'https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg?w=300&h=200&fit=crop',
+            'https://images.pexels.com/photos/2587054/pexels-photo-2587054.jpeg?w=300&h=200&fit=crop',
+            'https://images.pexels.com/photos/280229/pexels-photo-280229.jpeg?w=300&h=200&fit=crop'
         ];
-        
+
         let realEstateAds = [
-            { id: 1, name: "شقة فاخرة - تيرفولو", price: 85000, city: "أسمرة", type: "شقة", bedrooms: 3, area: "150م²", finishing: "فاخر", views: 45, image: realEstateImages[0], description: "شقة فاخرة في أرقى أحياء أسمرة. تتميز بإطلالة رائعة وخدمات متكاملة. قريبة من المدارس والمستشفيات." },
-            { id: 2, name: "فيلا - إدغا أريتي", price: 250000, city: "أسمرة", type: "فيلا", bedrooms: 5, area: "400م²", finishing: "سوبر لوكس", views: 32, image: realEstateImages[1], description: "فيلا مستقلة بحديقة خاصة وموقف سيارات. تصميم عصري ومساحات واسعة." },
-            { id: 3, name: "شقة - وسط أسمرة", price: 65000, city: "أسمرة", type: "شقة", bedrooms: 2, area: "95م²", finishing: "عادي", views: 28, image: realEstateImages[2], description: "شقة في موقع ممتاز قريب من جميع الخدمات. مناسبة للعائلات." }
+            { id: 1, name: 'Luxury Apartment - Tiravolo', price: 85000, city: 'Asmara', type: 'Apartment', category: 'realestate', views: 45, image: realEstateImages[0], description: 'Luxury apartment in Asmara\'s finest neighborhood.' },
+            { id: 2, name: 'Villa - Edaga Arbi', price: 250000, city: 'Asmara', type: 'Villa', category: 'realestate', views: 32, image: realEstateImages[1], description: 'Independent villa with private garden.' },
+            { id: 3, name: 'Apartment - Downtown', price: 65000, city: 'Asmara', type: 'Apartment', category: 'realestate', views: 28, image: realEstateImages[2], description: 'Apartment in excellent location.' }
         ];
-        
+
         let electronicsAds = [
-            { id: 1, name: "iPhone 14 Pro", price: 899, city: "أسمرة", type: "هاتف", brand: "Apple", storage: "256GB", color: "أسود", condition: "جديد", views: 120, image: "https://images.pexels.com/photos/788946/pexels-photo-788946.jpeg?w=300&h=200&fit=crop", description: "هاتف آيفون 14 برو بشاشة 6.1 إنش، كاميرا احترافية، ومعالج A16 Bionic." },
-            { id: 2, name: "MacBook Air M2", price: 1299, city: "أسمرة", type: "لابتوب", brand: "Apple", storage: "512GB", color: "فضي", condition: "جديد", views: 78, image: "https://images.pexels.com/photos/18105/pexels-photo.jpg?w=300&h=200&fit=crop", description: "لابتوب MacBook Air بشريحة M2، شاشة Retina، بطارية تدوم طويلاً." },
-            { id: 3, name: "Samsung Galaxy S23", price: 699, city: "أسمرة", type: "هاتف", brand: "Samsung", storage: "128GB", color: "أخضر", condition: "جديد", views: 56, image: "https://images.pexels.com/photos/47261/pexels-photo-47261.jpeg?w=300&h=200&fit=crop", description: "هاتف سامسونج جالاكسي S23 بكاميرا 50 ميجابكسل وشاشة AMOLED." }
+            { id: 101, name: 'iPhone 14 Pro', price: 899, city: 'Asmara', type: 'Phone', category: 'electronics', views: 120, image: 'https://images.pexels.com/photos/788946/pexels-photo-788946.jpeg?w=300&h=200&fit=crop', description: 'iPhone 14 Pro with 48MP camera.' },
+            { id: 102, name: 'MacBook Air M2', price: 1299, city: 'Asmara', type: 'Laptop', category: 'electronics', views: 78, image: 'https://images.pexels.com/photos/18105/pexels-photo.jpg?w=300&h=200&fit=crop', description: 'MacBook Air with M2 chip.' },
+            { id: 103, name: 'Samsung Galaxy S23', price: 699, city: 'Asmara', type: 'Phone', category: 'electronics', views: 56, image: 'https://images.pexels.com/photos/47261/pexels-photo-47261.jpeg?w=300&h=200&fit=crop', description: 'Samsung Galaxy S23 with 50MP camera.' }
         ];
-        
+
         let carsAds = [
-            { id: 1, name: "Toyota Corolla 2020", price: 9000, city: "مصوع", type: "سيارة", brand: "Toyota", model: "Corolla", year: 2020, mileage: "85,000 كم", transmission: "أوتوماتيك", color: "أبيض", views: 67, image: "https://images.pexels.com/photos/113102/pexels-photo-113102.jpeg?w=300&h=200&fit=crop", description: "سيارة تويوتا كورولا 2020 بحالة ممتازة، مكيفة، نظام صوت متطور." },
-            { id: 2, name: "Hyundai Tucson 2022", price: 18000, city: "أسمرة", type: "سيارة", brand: "Hyundai", model: "Tucson", year: 2022, mileage: "45,000 كم", transmission: "أوتوماتيك", color: "أسود", views: 45, image: "https://images.pexels.com/photos/1413412/pexels-photo-1413412.jpeg?w=300&h=200&fit=crop", description: "هيونداي توسان 2022 دفع رباعي، فتحة سقف، كاميرا خلفية." },
-            { id: 3, name: "Kia Sportage 2021", price: 16000, city: "أسمرة", type: "سيارة", brand: "Kia", model: "Sportage", year: 2021, mileage: "60,000 كم", transmission: "أوتوماتيك", color: "فضي", views: 34, image: "https://images.pexels.com/photos/2761842/pexels-photo-2761842.jpeg?w=300&h=200&fit=crop", description: "كيا سبورتاج 2021 بحالة جيدة، صيانة دورية." }
+            { id: 201, name: 'Toyota Corolla 2020', price: 9000, city: 'Massawa', type: 'Car', category: 'cars', views: 67, image: 'https://images.pexels.com/photos/113102/pexels-photo-113102.jpeg?w=300&h=200&fit=crop', description: 'Toyota Corolla in excellent condition.' },
+            { id: 202, name: 'Hyundai Tucson 2022', price: 18000, city: 'Asmara', type: 'Car', category: 'cars', views: 45, image: 'https://images.pexels.com/photos/1413412/pexels-photo-1413412.jpeg?w=300&h=200&fit=crop', description: 'Hyundai Tucson with sunroof.' },
+            { id: 203, name: 'Kia Sportage 2021', price: 16000, city: 'Asmara', type: 'Car', category: 'cars', views: 34, image: 'https://images.pexels.com/photos/2761842/pexels-photo-2761842.jpeg?w=300&h=200&fit=crop', description: 'Kia Sportage in good condition.' }
         ];
-        
+
         let jobsAds = [
-            { id: 1, name: "محاسب", salary: 500, city: "أسمرة", company: "شركة أسمرة", type: "دوام كامل", experience: "سنتان", qualification: "بكالوريوس", views: 89, image: "https://images.pexels.com/photos/3183197/pexels-photo-3183197.jpeg?w=300&h=200&fit=crop", description: "مطلوب محاسب خبرة سنتين للعمل في شركة أسمرة. إجادة استخدام برامج المحاسبة." },
-            { id: 2, name: "مهندس مدني", salary: 800, city: "أسمرة", company: "مقاولات الإخوة", type: "دوام كامل", experience: "3-5 سنوات", qualification: "بكالوريوس", views: 56, image: "https://images.pexels.com/photos/416405/pexels-photo-416405.jpeg?w=300&h=200&fit=crop", description: "مطلوب مهندس مدني للإشراف على المشاريع. خبرة في التصميم والإشراف." },
-            { id: 3, name: "مبرمج ويب", salary: 1200, city: "عن بعد", company: "شركة تقنية", type: "عن بعد", experience: "سنة", qualification: "بكالوريوس", views: 34, image: "https://images.pexels.com/photos/1181263/pexels-photo-1181263.jpeg?w=300&h=200&fit=crop", description: "مطلوب مبرمج ويب للعمل عن بعد. إجادة HTML/CSS/JavaScript وReact." }
+            { id: 301, name: 'Accountant', salary: 500, city: 'Asmara', company: 'Asmara Co', type: 'Full Time', category: 'jobs', views: 89, image: 'https://images.pexels.com/photos/3183197/pexels-photo-3183197.jpeg?w=300&h=200&fit=crop', description: 'Accountant needed.' },
+            { id: 302, name: 'Civil Engineer', salary: 800, city: 'Asmara', company: 'Construction Co', type: 'Full Time', category: 'jobs', views: 56, image: 'https://images.pexels.com/photos/416405/pexels-photo-416405.jpeg?w=300&h=200&fit=crop', description: 'Civil engineer needed.' },
+            { id: 303, name: 'Web Developer', salary: 1200, city: 'Remote', company: 'Tech Co', type: 'Remote', category: 'jobs', views: 34, image: 'https://images.pexels.com/photos/1181263/pexels-photo-1181263.jpeg?w=300&h=200&fit=crop', description: 'Web developer needed.' }
         ];
-        
+
         let generalAds = [
-            { id: 1, name: "شحن من دبي إلى أسمرة", price: 299, city: "أسمرة", type: "خدمة شحن", views: 34, image: "https://images.pexels.com/photos/279949/pexels-photo-279949.jpeg?w=300&h=200&fit=crop", description: "خدمة شحن سريعة من دبي إلى أسمرة. تغليف آمن وتوصيل حتى الباب." },
-            { id: 2, name: "مكتب للايجار", price: 500, city: "أسمرة", type: "عقار تجاري", views: 23, image: "https://images.pexels.com/photos/289777/pexels-photo-289777.jpeg?w=300&h=200&fit=crop", description: "مكتب مجهز للإيجار في وسط أسمرة. مساحة 50م²، شامل الخدمات." }
+            { id: 401, name: 'Shipping to Asmara', price: 299, city: 'Asmara', type: 'Service', category: 'general', views: 34, image: 'https://images.pexels.com/photos/279949/pexels-photo-279949.jpeg?w=300&h=200&fit=crop', description: 'Fast shipping from Dubai.' },
+            { id: 402, name: 'Office for Rent', price: 500, city: 'Asmara', type: 'Property', category: 'general', views: 23, image: 'https://images.pexels.com/photos/289777/pexels-photo-289777.jpeg?w=300&h=200&fit=crop', description: 'Furnished office for rent.' }
         ];
-        
-        // ===== سلة التسوق =====
+
+        const testimonials = [
+            { name: 'Ahmed M.', title: 'Investor', text: 'Great platform! Found the perfect property.', rating: 5, avatar: 'A' },
+            { name: 'Sara I.', title: 'Expat', text: 'Excellent service! Highly recommended.', rating: 5, avatar: 'S' },
+            { name: 'Mohamed A.', title: 'Business Owner', text: 'Found the best talent through this platform.', rating: 4, avatar: 'M' }
+        ];
+
+        const allFlights = [
+            { from: 'DXB', fromName: 'Dubai', to: 'ASM', toName: 'Asmara', airline: 'FlyDubai', price: '$450', time: '08:00' },
+            { from: 'JED', fromName: 'Jeddah', to: 'ASM', toName: 'Asmara', airline: 'Ethiopian', price: '$380', time: '09:15' },
+            { from: 'CAI', fromName: 'Cairo', to: 'ASM', toName: 'Asmara', airline: 'EgyptAir', price: '$490', time: '10:00' },
+            { from: 'ADD', fromName: 'Addis Ababa', to: 'ASM', toName: 'Asmara', airline: 'Ethiopian', price: '$210', time: '07:30' }
+        ];
+
+        const blogPosts = [
+            { id: 1, title: '📘 Guide to Buying Property in Asmara', category: 'Real Estate', summary: 'Important steps for buying property safely.', content: '<p>Before buying property, verify ownership, inspect legal documents, and work with trusted local contacts.</p>', date: '2026-04-01', image: '🏠', author: 'Asmara.Store' },
+            { id: 2, title: '✈️ Tips for Booking Cheap Flights', category: 'Travel', summary: 'Best times to get good prices.', content: '<p>Book early, compare routes, and monitor airline schedules from Dubai, Jeddah, Cairo, and Addis Ababa.</p>', date: '2026-03-28', image: '✈️', author: 'Asmara.Store' },
+            { id: 3, title: '💼 How to Find a Job in Eritrea', category: 'Jobs', summary: 'Best ways to find job opportunities.', content: '<p>Build a strong CV, use reliable local contacts, and apply consistently to trusted employers.</p>', date: '2026-03-25', image: '💼', author: 'Asmara.Store' }
+        ];
+
+        const demoUsers = [
+            { username: 'user', password: '123456', role: 'user' },
+            { username: 'agent', password: 'agent123', role: 'agent' }
+        ];
+
+        const TRANSLATIONS = {
+            en: {
+                tagline: 'A platform that respects our customs and traditions',
+                homeIntro: 'A trusted platform for flights, real estate, services, and official content.'
+            },
+            ar: {
+                tagline: 'منصة تحترم عاداتنا وتقاليدنا',
+                homeIntro: 'منصة موثوقة للطيران والعقارات والخدمات والمحتوى الرسمي.'
+            },
+            ti: {
+                tagline: 'ልምድና ባህልና ዘከብር መድረኽ',
+                homeIntro: 'ንበረራ፣ ሪል እስቴት፣ ኣገልግሎትን ወግዓዊ ትሕዝቶን ዝተኣመነ መድረኽ።'
+            }
+        };
+
+        let currentLang = 'en';
+        let currentUser = null;
+        let currentRole = 'guest';
+        let isVerified = false;
+        let isAgentMode = false;
+        let balance = 0;
+        let transactions = [];
+        let messages = [
+            { id: 1, from: 'Ali Hassan', to: 'Buyer', text: 'Hello', time: '10:30' },
+            { id: 2, from: 'Sara', to: 'Buyer', text: 'Is this item available?', time: '13:10' }
+        ];
+        let ratings = [
+            { user: 'Ahmed', rating: 5, comment: 'Excellent platform!', date: '2026-04-01' },
+            { user: 'Muna', rating: 4, comment: 'Nice layout and simple to use.', date: '2026-04-03' }
+        ];
         let cart = [];
-        
+
+        function setCookie(name, value, days) {
+            const date = new Date();
+            date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
+            document.cookie = `${name}=${encodeURIComponent(value)};expires=${date.toUTCString()};path=/`;
+        }
+
+        function getCookie(name) {
+            const match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+            return match ? decodeURIComponent(match[2]) : null;
+        }
+
+        function showNotification(message, type = 'success') {
+            const notification = document.createElement('div');
+            notification.className = `notification ${type}`;
+            const iconMap = {
+                success: 'check-circle',
+                error: 'times-circle',
+                warning: 'exclamation-triangle',
+                info: 'info-circle'
+            };
+            notification.innerHTML = `<i class="fas fa-${iconMap[type] || 'info-circle'}"></i> <span>${message}</span>`;
+            document.body.appendChild(notification);
+            setTimeout(() => notification.remove(), 3000);
+        }
+
+        function safeText(value) {
+            return String(value ?? '').replace(/[&<>"']/g, char => ({
+                '&': '&amp;',
+                '<': '&lt;',
+                '>': '&gt;',
+                '"': '&quot;',
+                "'": '&#39;'
+            }[char]));
+        }
+
+        function getAllAds() {
+            return [
+                ...realEstateAds,
+                ...electronicsAds,
+                ...carsAds,
+                ...jobsAds,
+                ...generalAds
+            ];
+        }
+
+        function renderGallery(containerId, data, limit = null) {
+            const container = document.getElementById(containerId);
+            if (!container) return;
+
+            const items = limit ? data.slice(0, limit) : data;
+            container.innerHTML = items.map(item => {
+                const price = item.price ?? item.salary ?? 0;
+                return `
+                    <div class="product-card" onclick="showProductDetails(${item.id}, '${containerId}')">
+                        <div class="product-image-container">
+                            <img src="${safeText(item.image)}" class="product-image" alt="${safeText(item.name)}" loading="lazy" onerror="this.src='https://placehold.co/300x200/1e3a5f/ffffff?text=Image'">
+                        </div>
+                        <div class="product-info">
+                            <h4 class="product-title">${safeText(item.name)}</h4>
+                            <div class="product-price">$${price}</div>
+                            <div class="product-meta">
+                                <span class="badge">${safeText(item.type || 'Item')}</span>
+                                <span class="product-views">👁️ ${item.views || 0}</span>
+                                <button class="add-to-cart" onclick="event.stopPropagation(); addToCart({ id:${item.id}, name:${JSON.stringify(item.name)}, price:${price}, image:${JSON.stringify(item.image)} })">➕ Add</button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }).join('') || '<p>No items found.</p>';
+        }
+
+        function renderHomePage() {
+            renderGallery('homeRealEstate', realEstateAds, 3);
+            renderGallery('homeElectronics', electronicsAds, 3);
+            renderGallery('homeCars', carsAds, 3);
+            renderGallery('homeJobs', jobsAds, 3);
+            renderGallery('homeServices', generalAds, 3);
+
+            const tc = document.getElementById('testimonialsGrid');
+            if (tc) {
+                tc.innerHTML = testimonials.map(t => `
+                    <div class="testimonial-card" style="padding:1.2rem; text-align:center;">
+                        <div style="width:70px; height:70px; border-radius:50%; background:linear-gradient(135deg,#1e3a5f,#c7a12b); display:flex; align-items:center; justify-content:center; margin:0 auto 1rem; font-size:2rem; color:white; font-weight:800;">${safeText(t.avatar)}</div>
+                        <p style="font-size:0.88rem; color:#4a627a;">&quot;${safeText(t.text)}&quot;</p>
+                        <h4 style="margin-top:0.6rem;">${safeText(t.name)}</h4>
+                        <small style="color:#c7a12b; font-weight:700;">${safeText(t.title)}</small>
+                        <div style="color:#c7a12b; margin-top:0.5rem;">${'★'.repeat(t.rating)}${'☆'.repeat(5 - t.rating)}</div>
+                    </div>
+                `).join('');
+            }
+
+            const bc = document.getElementById('homeBlogPreview');
+            if (bc) {
+                bc.innerHTML = blogPosts.slice(0, 3).map(post => `
+                    <div style="margin-bottom:1rem; cursor:pointer; border-bottom:1px solid #eee; padding-bottom:0.7rem;" onclick="showBlogPost(${post.id})">
+                        <span style="background:#c7a12b; padding:0.2rem 0.5rem; border-radius:20px; font-size:0.68rem; font-weight:700;">${safeText(post.category)}</span>
+                        <h4 style="margin:0.45rem 0;">${safeText(post.title)}</h4>
+                        <p style="font-size:0.8rem; color:#666;">${safeText(post.summary)}</p>
+                    </div>
+                `).join('');
+            }
+        }
+
+        function renderAllFlights() {
+            const c = document.getElementById('allFlightsList');
+            if (!c) return;
+            c.innerHTML = allFlights.map(f => `
+                <div class="flight-card" style="background:linear-gradient(135deg,#1e3a5f,#2c5282); color:white; border-radius:20px; margin-bottom:1rem;">
+                    <div style="font-size:1.06rem; font-weight:800;">✈️ ${safeText(f.fromName)} → ${safeText(f.toName)}</div>
+                    <div style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.6rem; margin-top:0.6rem;">
+                        <div>${safeText(f.airline)}</div>
+                        <div>🕐 ${safeText(f.time)}</div>
+                        <div>${safeText(f.price)}</div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function renderBlog() {
+            const c = document.getElementById('blogGrid');
+            if (!c) return;
+            c.innerHTML = blogPosts.map(p => `
+                <div class="blog-card" style="overflow:hidden; cursor:pointer;" onclick="showBlogPost(${p.id})">
+                    <div style="background:linear-gradient(135deg,#1e3a5f,#2c5282); height:120px; display:flex; align-items:center; justify-content:center; font-size:3rem;">${safeText(p.image)}</div>
+                    <div style="padding:1rem;">
+                        <span style="background:#c7a12b; padding:0.2rem 0.5rem; border-radius:20px; font-size:0.65rem; font-weight:700;">${safeText(p.category)}</span>
+                        <h3 style="margin:0.5rem 0; font-size:1rem;">${safeText(p.title)}</h3>
+                        <p style="font-size:0.82rem; color:#666;">${safeText(p.summary)}</p>
+                        <div style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.5rem; margin-top:0.6rem; font-size:0.72rem; color:#8ba0b5;">
+                            <span>📅 ${safeText(p.date)}</span>
+                            <span>✍️ ${safeText(p.author)}</span>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function showBlogPost(id) {
+            const post = blogPosts.find(p => p.id === id);
+            if (!post) return;
+            document.getElementById('policyModalTitle').innerHTML = safeText(post.title);
+            document.getElementById('policyModalBody').innerHTML = post.content;
+            document.getElementById('policyModal').style.display = 'flex';
+        }
+
         function addToCart(item) {
             cart.push(item);
             updateCartUI();
-            showNotification(`تم إضافة ${item.name} إلى السلة`, 'success');
+            showNotification(`${item.name} added to cart`, 'success');
         }
-        
-        function updateCartUI() {
-            document.getElementById('cartCount').innerText = cart.length;
-            const cartItemsDiv = document.getElementById('cartItems');
-            let total = 0;
-            cartItemsDiv.innerHTML = cart.map((item, index) => {
-                total += item.price;
-                return `
-                    <div class="cart-item">
-                        <img src="${item.image}" alt="${item.name}">
-                        <div class="cart-item-details">
-                            <div class="cart-item-title">${item.name}</div>
-                            <div class="cart-item-price">$${item.price}</div>
-                        </div>
-                        <button class="btn-sm" onclick="removeFromCart(${index})">🗑️</button>
-                    </div>
-                `;
-            }).join('');
-            document.getElementById('cartTotal').innerHTML = `المجموع: $${total}`;
-        }
-        
+
         function removeFromCart(index) {
             cart.splice(index, 1);
             updateCartUI();
         }
-        
-        function toggleCart() {
-            document.getElementById('cartSidebar').classList.toggle('open');
-            document.getElementById('cartOverlay').classList.toggle('open');
+
+        function updateCartUI() {
+            const countEl = document.getElementById('cartCount');
+            const cartItemsDiv = document.getElementById('cartItems');
+            const totalEl = document.getElementById('cartTotal');
+            if (countEl) countEl.innerText = cart.length;
+            if (!cartItemsDiv || !totalEl) return;
+
+            let total = 0;
+            cartItemsDiv.innerHTML = cart.map((item, index) => {
+                total += Number(item.price) || 0;
+                return `
+                    <div style="display:flex; gap:1rem; padding:1rem; border-bottom:1px solid #eef2f8; align-items:center;">
+                        <img src="${safeText(item.image)}" alt="${safeText(item.name)}" style="width:60px; height:60px; object-fit:cover; border-radius:8px;">
+                        <div style="flex:1;">
+                            <div style="font-weight:700;">${safeText(item.name)}</div>
+                            <div style="color:#c7a12b; font-weight:700;">$${item.price}</div>
+                        </div>
+                        <button class="btn-sm" onclick="removeFromCart(${index})">🗑️</button>
+                    </div>
+                `;
+            }).join('') || '<p style="padding:1rem; color:#666;">Cart is empty.</p>';
+            totalEl.innerHTML = `Total: $${total}`;
         }
-        
+
+        function toggleCart() {
+            const sidebar = document.getElementById('cartSidebar');
+            const overlay = document.getElementById('cartOverlay');
+            const isOpen = sidebar.style.right === '0px';
+            sidebar.style.right = isOpen ? '-400px' : '0px';
+            overlay.style.display = isOpen ? 'none' : 'block';
+        }
+
         function checkout() {
             if (cart.length === 0) {
-                showNotification('سلة التسوق فارغة', 'warning');
+                showNotification('Cart is empty', 'warning');
                 return;
             }
-            alert(`تم إتمام عملية الشراء بنجاح! إجمالي المبلغ: $${cart.reduce((t, i) => t + i.price, 0)}`);
+            const total = cart.reduce((sum, item) => sum + (Number(item.price) || 0), 0);
+            alert(`Order completed! Total: $${total}`);
             cart = [];
             updateCartUI();
             toggleCart();
         }
-        
-        // ===== شهادات العملاء =====
-        const testimonials = [
-            { name: "أحمد محمود", title: "مستثمر عقاري", text: "منصة رائعة! ساعدتني في العثور على عقار مناسب في أسمرة. التعامل كان احترافياً وسريعاً.", rating: 5, avatar: "أ" },
-            { name: "سارة إبراهيم", title: "مغتربة", text: "خدمة ممتازة. تمكنت من شحن أغراضي من دبي إلى أسمرة بكل سهولة وأمان.", rating: 5, avatar: "س" },
-            { name: "محمد علي", title: "صاحب شركة", text: "وظفت أفضل الكفاءات من خلال المنصة. أنصح بها بشدة.", rating: 4, avatar: "م" },
-            { name: "فاطمة حسن", title: "ربة منزل", text: "اشتريت هاتف iPhone 14 Pro بسعر ممتاز. المنتج أصلي والتوصيل سريع.", rating: 5, avatar: "ف" }
-        ];
-        
-        function renderTestimonials() {
-            const container = document.getElementById('testimonialsGrid');
-            if (!container) return;
-            container.innerHTML = testimonials.map(t => `
-                <div class="testimonial-card">
-                    <div class="testimonial-avatar">${t.avatar}</div>
-                    <div class="testimonial-text">"${t.text}"</div>
-                    <div class="testimonial-name">${t.name}</div>
-                    <div class="testimonial-title">${t.title}</div>
-                    <div class="testimonial-stars">${"★".repeat(t.rating)}${"☆".repeat(5 - t.rating)}</div>
-                </div>
-            `).join('');
-        }
-        
-        // ===== البحث المتقدم =====
+
         function performSearch() {
-            const keyword = document.getElementById('searchInput').value.toLowerCase();
-            const city = document.getElementById('searchCity').value;
-            const minPrice = parseFloat(document.getElementById('priceMin').value) || 0;
-            const maxPrice = parseFloat(document.getElementById('priceMax').value) || Infinity;
-            const category = document.getElementById('searchCategory').value;
-            
-            let results = [];
-            
-            if (!category || category === 'realestate') {
-                results.push(...realEstateAds.filter(item => 
-                    (!keyword || item.name.toLowerCase().includes(keyword) || item.description.toLowerCase().includes(keyword)) &&
-                    (!city || item.city === city) &&
-                    item.price >= minPrice && item.price <= maxPrice
-                ).map(i => ({ ...i, section: 'realestate' })));
-            }
-            if (!category || category === 'electronics') {
-                results.push(...electronicsAds.filter(item => 
-                    (!keyword || item.name.toLowerCase().includes(keyword) || item.description.toLowerCase().includes(keyword)) &&
-                    (!city || item.city === city) &&
-                    item.price >= minPrice && item.price <= maxPrice
-                ).map(i => ({ ...i, section: 'electronics' })));
-            }
-            if (!category || category === 'cars') {
-                results.push(...carsAds.filter(item => 
-                    (!keyword || item.name.toLowerCase().includes(keyword) || item.description.toLowerCase().includes(keyword)) &&
-                    (!city || item.city === city) &&
-                    item.price >= minPrice && item.price <= maxPrice
-                ).map(i => ({ ...i, section: 'cars' })));
-            }
-            if (!category || category === 'jobs') {
-                results.push(...jobsAds.filter(item => 
-                    (!keyword || item.name.toLowerCase().includes(keyword) || item.description.toLowerCase().includes(keyword)) &&
-                    (!city || item.city === city) &&
-                    (item.salary >= minPrice && item.salary <= maxPrice)
-                ).map(i => ({ ...i, section: 'jobs', price: i.salary })));
-            }
-            if (!category || category === 'general') {
-                results.push(...generalAds.filter(item => 
-                    (!keyword || item.name.toLowerCase().includes(keyword) || item.description.toLowerCase().includes(keyword)) &&
-                    (!city || item.city === city) &&
-                    item.price >= minPrice && item.price <= maxPrice
-                ).map(i => ({ ...i, section: 'general' })));
-            }
-            
-            if (results.length === 0) {
-                showNotification('لا توجد نتائج مطابقة', 'info');
+            const keyword = (document.getElementById('searchInput')?.value || '').toLowerCase().trim();
+            const city = document.getElementById('searchCity')?.value || '';
+            const minPrice = parseFloat(document.getElementById('priceMin')?.value) || 0;
+            const maxPriceValue = document.getElementById('priceMax')?.value;
+            const maxPrice = maxPriceValue ? parseFloat(maxPriceValue) : Infinity;
+            const category = document.getElementById('searchCategory')?.value || '';
+
+            let pool = getAllAds();
+            if (category) pool = pool.filter(item => item.category === category);
+
+            const results = pool.filter(item => {
+                const itemPrice = item.price ?? item.salary ?? 0;
+                const nameMatch = !keyword || item.name.toLowerCase().includes(keyword) || (item.description || '').toLowerCase().includes(keyword);
+                const cityMatch = !city || item.city === city;
+                const priceMatch = itemPrice >= minPrice && itemPrice <= maxPrice;
+                return nameMatch && cityMatch && priceMatch;
+            });
+
+            if (!results.length) {
+                showNotification('No results found', 'info');
                 return;
             }
-            
-            showNotification(`تم العثور على ${results.length} نتيجة`, 'success');
-            // عرض النتائج (يمكن فتح تبويب خاص بالنتائج)
-            console.log('نتائج البحث:', results);
-        }
-        
-        // ===== ترجمة =====
-        const TRANSLATIONS = {
-            ar: {
-                tagline: "منصة تحترم عاداتنا وتقاليدنا - بروح القانون الإريتري",
-                homeIntro: "منصة موثوقة للطيران والعقارات والخدمات والمحتوى الرسمي.",
-                // ... باقي الترجمة كما هي
-            },
-            en: {
-                tagline: "A platform that respects our customs and traditions - In the spirit of Eritrean law",
-                homeIntro: "A trusted platform for flights, real estate, services, and official content.",
-                // ... باقي الترجمة كما هي
-            },
-            ti: {
-                tagline: "ልማዳትና ባህልና ዘከብር መድረኽ - ብመንፈስ ሕጊ ኤርትራ",
-                homeIntro: "ንበረራ፣ ንብረት፣ ኣገልግሎታትን ወግዓዊ ዜናን እሙን መድረኽ።",
-                // ... باقي الترجمة كما هي
-            }
-        };
-        
-        // ===== متغيرات عامة =====
-        let currentLang = 'ar';
-        let currentUser = null;
-        let balance = 0;
-        let transactions = [];
-        let messages = [{ id: 1, from: "علي حسن", to: "مشتري", text: "مرحباً", time: "10:30" }];
-        let ratings = [{ user: "أحمد", rating: 5, comment: "منصة ممتازة ومحترمة", date: "2026-04-01" }];
-        let resumes = [];
-        let isAgentMode = false;
-        let selectedRating = 5;
-        let searchQuery = { city: '' };
-        
-        // ===== بيانات الرحلات =====
-        const allFlights = [
-            { from: "DXB", fromName: "دبي", to: "ASM", toName: "أسمرة", airline: "FlyDubai", flightNo: "FZ 849", price: "$450", time: "08:00", duration: "3h 30m" },
-            { from: "DXB", fromName: "دبي", to: "ASM", toName: "أسمرة", airline: "Ethiopian", flightNo: "ET 601", price: "$520", time: "14:20", duration: "4h 00m" },
-            { from: "JED", fromName: "جدة", to: "ASM", toName: "أسمرة", airline: "Ethiopian", flightNo: "ET 603", price: "$380", time: "09:15", duration: "2h 45m" },
-            { from: "CAI", fromName: "القاهرة", to: "ASM", toName: "أسمرة", airline: "EgyptAir", flightNo: "MS 851", price: "$490", time: "10:00", duration: "3h 15m" },
-            { from: "ADD", fromName: "أديس أبابا", to: "ASM", toName: "أسمرة", airline: "Ethiopian", flightNo: "ET 312", price: "$210", time: "07:30", duration: "1h 30m" },
-            { from: "ADD", fromName: "أديس أبابا", to: "ASM", toName: "أسمرة", airline: "Eritrean Airlines", flightNo: "ER 101", price: "$195", time: "13:45", duration: "1h 30m" }
-        ];
-        
-        // ===== مقالات المدونة =====
-        const blogPosts = [
-            { id: 1, title: "📘 دليل شراء عقار في أسمرة", category: "عقارات", summary: "خطوات مهمة ونصائح قانونية لشراء العقارات بأمان.", content: "<h3>خطوات شراء عقار في أسمرة</h3><ul><li>التأكد من ملكية العقار عبر السجل العقاري</li><li>التعامل مع وكيل معتمد</li><li>توقيع عقد رسمي موثق</li><li>تسجيل العقد في المحكمة</li></ul><h3>نصائح مهمة</h3><ul><li>لا تدفع دفعة أولى قبل التأكد من المستندات</li><li>استشر محامياً مختصاً</li><li>تأكد من عدم وجود نزاعات على العقار</li></ul>", date: "2026-04-01", image: "🏠", author: "فريق Asmara.Store" },
-            { id: 2, title: "✈️ نصائح لحجز أرخص رحلة", category: "سفر", summary: "أفضل الأوقات وشركات الطيران للحصول على أسعار مناسبة.", content: "<h3>نصائح لحجز رحلة رخيصة</h3><ul><li>احجز قبل 6-8 أسابيع من السفر</li><li>قارن الأسعار بين FlyDubai و Ethiopian و EgyptAir</li><li>سافر في منتصف الأسبوع (الثلاثاء أو الأربعاء)</li><li>تجنب مواسم العطلات الرسمية</li><li>استخدم وضع التصفح المتخفي للمقارنة</li></ul>", date: "2026-03-28", image: "✈️", author: "فريق Asmara.Store" },
-            { id: 3, title: "💼 كيفية البحث عن وظيفة في إريتريا", category: "وظائف", summary: "أفضل الطرق للعثور على فرص عمل مناسبة في القطاعين العام والخاص.", content: "<h3>طرق البحث عن وظيفة</h3><ul><li>تابع إعلانات الوظائف على منصتنا أسبوعياً</li><li>تواصل مع الشركات مباشرة عبر البريد الإلكتروني</li><li>حضر سيرة ذاتية احترافية باللغتين العربية والإنجليزية</li><li>استعد للمقابلات الشخصية</li><li>استفد من معارض التوظيف</li></ul>", date: "2026-03-25", image: "💼", author: "فريق Asmara.Store" }
-        ];
-        
-        // ===== سياسات =====
-        const policies = {
-            privacy: { title: "🔒 سياسة الخصوصية", content: "نحن في Asmara.Store نلتزم بحماية خصوصية بياناتك. لا نقوم بمشاركة معلوماتك الشخصية مع أي طرف ثالث. يتم تخزين بياناتك بشكل آمن وفق أعلى معايير الأمان." },
-            security: { title: "🛡️ سياسة الأمان", content: "نستخدم أحدث تقنيات التشفير لحماية بياناتك. جميع المدفوعات تتم عبر بوابات دفع آمنة. يتم مراجعة جميع الإعلانات قبل النشر لضمان الامتثال للقوانين." },
-            returns: { title: "🔄 سياسة الاسترجاع", content: "يمكنك استرجاع المنتج خلال 14 يوماً من تاريخ الشراء بشرط أن يكون بحالته الأصلية. رسوم الشحن غير قابلة للاسترداد. سيتم استرداد المبلغ خلال 7 أيام عمل." },
-            shipping: { title: "🚚 سياسة الشحن", content: "نوفر الشحن لجميع مدن إريتريا. وقت التوصيل: 3-7 أيام عمل. الشحن مجاني للطلبات التي تزيد عن $100." }
-        };
-        
-        // ===== دوال العرض المحسنة =====
-        function renderProductCard(item, section) {
-            const price = item.price || item.salary;
-            const isJob = !!item.salary;
-            return `
-                <div class="product-card" onclick="showProductDetails(${item.id}, '${section}')">
-                    <div class="product-image-container">
-                        <img src="${item.image}" class="product-image" alt="${item.name}" loading="lazy" onerror="this.src='https://placehold.co/300x200/1e3a5f/white?text=صورة'">
-                        <div class="image-zoom">🔍 تكبير</div>
-                        <button class="share-btn" onclick="event.stopPropagation(); shareOnWhatsapp('${item.name}', '${price}', '${item.city}')"><i class="fab fa-whatsapp"></i></button>
-                    </div>
-                    <div class="product-info">
-                        <h4 class="product-title">${item.name}</h4>
-                        <div class="product-price">$${price}</div>
-                        <div class="product-details">${item.description || (item.bedrooms ? `${item.bedrooms} غرف | ${item.area} | ${item.finishing}` : (item.brand ? `${item.brand} | ${item.storage || ''} | ${item.condition}` : (item.year ? `${item.brand} ${item.model} | ${item.year} | ${item.mileage}` : (item.company ? `${item.company} | ${item.type} | خبرة ${item.experience}` : ''))))}</div>
-                        <div class="product-meta">
-                            <span class="badge">${item.type}</span>
-                            <span class="product-views">👁️ ${item.views || 0}</span>
-                            <button class="add-to-cart" onclick="event.stopPropagation(); addToCart({id:${item.id}, name:'${item.name}', price:${price}, image:'${item.image}'})">➕ أضف للسلة</button>
-                        </div>
-                    </div>
+
+            switchTab('home');
+            document.getElementById('homeBlogPreview').innerHTML = `
+                <div class="card" style="box-shadow:none; border:1px dashed #d7dee7; margin:0;">
+                    <h4 style="margin-bottom:0.8rem; color:#1e3a5f;">Search Results (${results.length})</h4>
+                    <div class="gallery-grid" id="searchResultsGrid"></div>
                 </div>
             `;
+            renderGallery('searchResultsGrid', results);
+            showNotification(`Found ${results.length} result(s)`, 'success');
         }
-        
-        function renderGallery(containerId, data, section) {
-            const container = document.getElementById(containerId);
-            if (!container) return;
-            container.innerHTML = data.slice(0, 6).map(item => renderProductCard(item, section)).join('');
-        }
-        
-        function renderHomePage() {
-            renderGallery('homeRealEstate', realEstateAds, 'realestate');
-            renderGallery('homeElectronics', electronicsAds, 'electronics');
-            renderGallery('homeCars', carsAds, 'cars');
-            renderGallery('homeJobs', jobsAds, 'jobs');
-            renderGallery('homeServices', generalAds, 'general');
-            renderTestimonials();
-            const bc = document.getElementById('homeBlogPreview');
-            if (bc) {
-                bc.innerHTML = blogPosts.slice(0, 3).map(p => `
-                    <div style="margin-bottom:1rem; padding-bottom:1rem; border-bottom:1px solid #eee; cursor:pointer" onclick="showBlogPost(${p.id})">
-                        <span class="blog-category">${p.category}</span>
-                        <h4 style="color:#1e3a5f; margin:0.3rem 0">${p.title}</h4>
-                        <p style="font-size:0.8rem; color:#666">${p.summary.substring(0, 100)}...</p>
-                        <small style="color:var(--secondary)">📅 ${p.date}</small>
-                    </div>
-                `).join('');
-            }
-        }
-        
-        // ===== دوال إضافية =====
-        function showNotification(message, type = 'success') {
-            const notification = document.createElement('div');
-            notification.className = `notification ${type}`;
-            notification.innerHTML = `<i class="fas fa-${type === 'success' ? 'check-circle' : (type === 'error' ? 'exclamation-circle' : 'info-circle')}"></i> ${message}`;
-            document.body.appendChild(notification);
-            setTimeout(() => {
-                notification.style.animation = 'slideOut 0.3s ease';
-                setTimeout(() => notification.remove(), 300);
-            }, 3000);
-        }
-        
-        function shareOnWhatsapp(title, price, city) {
-            const text = `🔍 شاهد هذا الإعلان على Asmara.Store\n\n📌 ${title}\n💰 $${price}\n📍 ${city}\n\nرابط: ${window.location.href}`;
-            window.open(`https://wa.me/?text=${encodeURIComponent(text)}`, '_blank');
-        }
-        
+
         function showProductDetails(id, section) {
-            let product;
-            if (section === 'realestate') product = realEstateAds.find(p => p.id === id);
-            else if (section === 'electronics') product = electronicsAds.find(p => p.id === id);
-            else if (section === 'cars') product = carsAds.find(p => p.id === id);
-            else if (section === 'jobs') product = jobsAds.find(p => p.id === id);
-            else product = generalAds.find(p => p.id === id);
-            
-            if (product) {
-                const price = product.price || product.salary;
-                document.getElementById('policyModalTitle').innerHTML = product.name;
-                document.getElementById('policyModalBody').innerHTML = `
-                    <img src="${product.image}" style="width:100%; border-radius:16px; margin-bottom:1rem;">
-                    <p><strong>💰 السعر:</strong> $${price}</p>
-                    <p><strong>📍 المدينة:</strong> ${product.city}</p>
-                    <p><strong>📝 الوصف:</strong> ${product.description || 'لا يوجد وصف إضافي'}</p>
-                    ${product.bedrooms ? `<p><strong>🛏️ الغرف:</strong> ${product.bedrooms}</p>` : ''}
-                    ${product.area ? `<p><strong>📐 المساحة:</strong> ${product.area}</p>` : ''}
-                    ${product.brand ? `<p><strong>🏷️ الماركة:</strong> ${product.brand}</p>` : ''}
-                    ${product.year ? `<p><strong>📅 السنة:</strong> ${product.year}</p>` : ''}
-                    ${product.company ? `<p><strong>🏢 الشركة:</strong> ${product.company}</p>` : ''}
-                    <hr>
-                    <button class="btn" onclick="addToCart({id:${product.id}, name:'${product.name}', price:${price}, image:'${product.image}'}); closePolicyModal();">🛒 أضف إلى السلة</button>
-                `;
-                document.getElementById('policyModal').style.display = 'flex';
-                // زيادة عدد المشاهدات
-                product.views = (product.views || 0) + 1;
-                renderHomePage();
-            }
+            const sources = {
+                homeRealEstate: realEstateAds,
+                realEstateGallery: realEstateAds,
+                homeElectronics: electronicsAds,
+                electronicsGallery: electronicsAds,
+                homeCars: carsAds,
+                carsGallery: carsAds,
+                homeJobs: jobsAds,
+                jobsGallery: jobsAds,
+                homeServices: generalAds,
+                generalGallery: generalAds,
+                searchResultsGrid: getAllAds()
+            };
+
+            const source = sources[section] || getAllAds();
+            const product = source.find(item => item.id === id);
+            if (!product) return;
+
+            const price = product.price ?? product.salary ?? 0;
+            alert(`${product.name}\n💰 Price: $${price}\n📍 City: ${product.city || '-'}\n📝 Description: ${product.description || '-'}`);
         }
-        
-        // ===== دوال المستخدم =====
-        function setCookie(name, value, days) {
-            const date = new Date();
-            date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-            document.cookie = `${name}=${value};expires=${date.toUTCString()};path=/`;
+
+        function refreshUserDashboard() {
+            const userAdsCount = document.getElementById('userAdsCount');
+            const userMessagesCount = document.getElementById('userMessagesCount');
+            const userBalance = document.getElementById('userBalance');
+            const dashboardUserName = document.getElementById('dashboardUserName');
+
+            if (dashboardUserName) dashboardUserName.innerText = currentUser || 'Guest';
+            if (userAdsCount) userAdsCount.innerText = currentUser ? '0' : '0';
+            if (userMessagesCount) userMessagesCount.innerText = String(messages.length);
+            if (userBalance) userBalance.innerText = `$${balance}`;
         }
-        
-        function getCookie(name) {
-            const value = `; ${document.cookie}`;
-            const parts = value.split(`; ${name}=`);
-            if (parts.length === 2) return parts.pop().split(';').shift();
-            return null;
-        }
-        
+
         function loginUser() {
-            const u = document.getElementById('loginUsername').value;
-            const p = document.getElementById('loginPassword').value;
-            if (u && p) {
-                currentUser = u;
-                setCookie('username', u, 30);
-                setCookie('isAgent', p === 'agent123' ? 'true' : 'false', 30);
-                document.getElementById('userName').innerText = u;
-                document.getElementById('userDisplay').style.display = 'flex';
-                document.getElementById('loginModalBtn').style.display = 'none';
-                document.getElementById('logoutBtn').style.display = 'inline-block';
-                closeLoginModal();
-                updateUserDashboard();
-                showNotification(`${TRANSLATIONS[currentLang]?.welcome || '✅ مرحباً'} ${u}`, 'success');
-                if (p === 'agent123') {
-                    showAgentPanel();
-                    showNotification(TRANSLATIONS[currentLang]?.agentWelcome || '🛡️ مرحباً أيها الوكيل المعتمد', 'info');
-                }
-            } else {
-                showNotification(TRANSLATIONS[currentLang]?.pleaseFillData || "❌ أدخل البيانات", 'error');
+            const u = document.getElementById('loginUsername')?.value?.trim();
+            const p = document.getElementById('loginPassword')?.value?.trim();
+            const foundUser = demoUsers.find(user => user.username === u && user.password === p);
+
+            if (!foundUser) {
+                showNotification('Invalid username or password', 'error');
+                return;
             }
+
+            currentUser = foundUser.username;
+            currentRole = foundUser.role;
+            setCookie('username', foundUser.username, 30);
+            setCookie('userRole', foundUser.role, 30);
+
+            const userNameEl = document.getElementById('userName');
+            if (userNameEl) userNameEl.innerText = foundUser.username;
+            document.getElementById('userDisplay').style.display = 'flex';
+            document.getElementById('loginModalBtn').style.display = 'none';
+            document.getElementById('logoutBtn').style.display = 'inline-block';
+
+            refreshUserDashboard();
+            closeLoginModal();
+            showNotification(`Welcome ${foundUser.username}`, 'success');
+
+            if (foundUser.role === 'agent') showAgentPanel();
         }
-        
+
         function logoutUser() {
             currentUser = null;
+            currentRole = 'guest';
+            isVerified = false;
             setCookie('username', '', -1);
-            setCookie('isAgent', '', -1);
+            setCookie('userRole', '', -1);
             document.getElementById('userDisplay').style.display = 'none';
             document.getElementById('loginModalBtn').style.display = 'inline-block';
             document.getElementById('logoutBtn').style.display = 'none';
-            showNotification(TRANSLATIONS[currentLang]?.logoutMsg || "👋 تم تسجيل الخروج", 'info');
+            document.getElementById('userVerifiedBadge').style.display = 'none';
+            document.getElementById('userDashboard').classList.remove('active');
+            refreshUserDashboard();
+            showNotification('Logged out', 'info');
         }
-        
+
         function registerUser() {
-            const name = document.getElementById('regName').value;
-            const email = document.getElementById('regEmail').value;
-            const phone = document.getElementById('regPhone').value;
-            const password = document.getElementById('regPassword').value;
-            const confirm = document.getElementById('regConfirm').value;
-            
-            if (!name || !email || !phone || !password) {
-                showNotification('يرجى ملء جميع الحقول', 'error');
+            const name = document.getElementById('regName')?.value.trim();
+            const email = document.getElementById('regEmail')?.value.trim();
+            const phone = document.getElementById('regPhone')?.value.trim();
+            const pass = document.getElementById('regPassword')?.value;
+            const confirm = document.getElementById('regConfirm')?.value;
+
+            if (!name || !email || !phone || !pass) {
+                showNotification('Please fill all fields', 'error');
                 return;
             }
-            if (password !== confirm) {
-                showNotification('كلمة المرور غير متطابقة', 'error');
+            if (pass !== confirm) {
+                showNotification('Passwords do not match', 'error');
                 return;
             }
-            
-            showNotification('تم إنشاء الحساب بنجاح! يمكنك تسجيل الدخول الآن', 'success');
+            showNotification('Account created! Please verify your account.', 'success');
             closeRegisterModal();
-            openLoginModal();
+            openVerifyModal();
         }
-        
+
+        function verifyAccount() {
+            if (!currentUser) {
+                showNotification('Please login first', 'warning');
+                return;
+            }
+            openVerifyModal();
+        }
+
+        function openVerifyModal() {
+            document.getElementById('verifyModal').style.display = 'flex';
+        }
+
+        function closeVerifyModal() {
+            document.getElementById('verifyModal').style.display = 'none';
+        }
+
+        function submitVerification() {
+            const code = document.getElementById('verifyCode')?.value?.trim();
+            if (code === '123456') {
+                isVerified = true;
+                document.getElementById('userVerifiedBadge').style.display = 'inline-block';
+                showNotification('Account verified successfully!', 'success');
+                closeVerifyModal();
+            } else {
+                showNotification('Invalid verification code', 'error');
+            }
+        }
+
         function showRegister() {
             closeLoginModal();
             document.getElementById('registerModal').style.display = 'flex';
         }
-        
+
         function closeRegisterModal() {
             document.getElementById('registerModal').style.display = 'none';
         }
-        
-        function openLoginModal() { document.getElementById('loginModal').style.display = 'flex'; }
-        function closeLoginModal() { document.getElementById('loginModal').style.display = 'none'; }
-        
-        function toggleUserDashboard() { document.getElementById('userDashboard').classList.toggle('active'); }
-        function updateUserDashboard() {
-            document.getElementById('dashboardUserName').innerText = currentUser || 'زائر';
-            document.getElementById('userAdsCount').innerText = "0";
-            document.getElementById('userMessagesCount').innerText = messages.filter(m => m.to === currentUser).length;
-            document.getElementById('userBalance').innerHTML = `$${balance}`;
+
+        function openLoginModal() {
+            document.getElementById('loginModal').style.display = 'flex';
         }
-        
-        function showMyOrders() { alert('عذراً، لا توجد طلبات سابقة'); }
-        function showWishlist() { alert('قائمة المفضلة فارغة حالياً'); }
-        function showMyAds() { alert('لا توجد إعلانات مضافة بعد'); }
-        
-        // ===== دوال الوكيل =====
-        let pendingAds = [], rejectedAds = [], blockedWords = ["سكس","جنس","عاري","خمر","حرام","سب","شتيمة"];
-        
-        function showAgentPanel() {
-            if (!isAgentMode) {
-                isAgentMode = true;
-                const tabs = document.querySelector('.tabs');
-                ['dashboard', 'agent', 'reports', 'institutions', 'policies'].forEach(tab => {
-                    if (!document.querySelector(`.tab-btn[data-tab="${tab}"]`)) {
-                        const btn = document.createElement('button');
-                        btn.className = 'tab-btn';
-                        btn.setAttribute('data-tab', tab);
-                        const names = { dashboard: "📊 إحصائيات", agent: "🛡️ الوكيل", reports: "🚨 بلاغات", institutions: "🏛️ مؤسسات", policies: "📜 سياسات" };
-                        btn.innerText = names[tab];
-                        btn.onclick = () => switchTab(tab);
-                        tabs.appendChild(btn);
-                    }
-                });
+
+        function closeLoginModal() {
+            document.getElementById('loginModal').style.display = 'none';
+        }
+
+        function toggleUserDashboard() {
+            if (!currentUser) {
+                showNotification('Please login first', 'warning');
+                return;
             }
+            refreshUserDashboard();
+            document.getElementById('userDashboard').classList.toggle('active');
         }
-        
-        // ===== دوال المراسلة والتقييم =====
+
+        function showMyOrders() { alert('No orders yet'); }
+        function showWishlist() { alert('Wishlist is empty'); }
+        function showMyAds() { alert('No ads added yet'); }
+
+        function showAgentPanel() {
+            if (isAgentMode) {
+                switchTab('dashboard');
+                return;
+            }
+
+            isAgentMode = true;
+            const navLinks = document.getElementById('mainNavLinks');
+            if (!navLinks) return;
+
+            const tabsToAdd = {
+                dashboard: '📊 Stats',
+                agent: '🛡️ Agent',
+                reports: '🚨 Reports',
+                institutions: '🏛️ Institutions',
+                policies: '📜 Policies'
+            };
+
+            Object.entries(tabsToAdd).forEach(([tab, label]) => {
+                if (!document.querySelector(`.nav-tab-link[data-tab="${tab}"]`)) {
+                    const link = document.createElement('a');
+                    link.href = '#';
+                    link.className = 'nav-tab-link';
+                    link.dataset.tab = tab;
+                    link.textContent = label;
+                    link.addEventListener('click', event => {
+                        event.preventDefault();
+                        switchTab(tab);
+                    });
+                    navLinks.appendChild(link);
+                }
+            });
+
+            updateAgentStats();
+            showNotification('Agent panel enabled', 'success');
+            switchTab('dashboard');
+        }
+
+        function updateAgentStats() {
+            const totalAds = getAllAds().length;
+            const statAds = document.getElementById('statAds');
+            const statPending = document.getElementById('statPending');
+            const statApproved = document.getElementById('statApproved');
+            const statRejected = document.getElementById('statRejected');
+            if (statAds) statAds.innerText = String(totalAds);
+            if (statPending) statPending.innerText = '5';
+            if (statApproved) statApproved.innerText = String(Math.max(totalAds - 2, 0));
+            if (statRejected) statRejected.innerText = '2';
+        }
+
+        function loadContacts() {
+            const contactsList = document.getElementById('contactsList');
+            if (!contactsList) return;
+            const senders = [...new Set(messages.map(m => m.from))];
+            contactsList.innerHTML = senders.map(name => `<div class="chat-message"><strong>${safeText(name)}</strong><div style="color:#4a627a; font-size:0.82rem;">Open conversation</div></div>`).join('') || '<div class="chat-message">No chats</div>';
+        }
+
         function loadChat() {
             const c = document.getElementById('chatMessages');
-            if (c) c.innerHTML = messages.map(m => `<div class="chat-message"><strong>${m.from}</strong><div>${m.text}</div><small>${m.time}</small></div>`).join('');
-        }
-        
-        function loadRatings() {
-            const r = document.getElementById('ratingsList');
-            if (r) r.innerHTML = ratings.map(r => `
+            if (!c) return;
+            c.innerHTML = messages.map(m => `
                 <div class="chat-message">
-                    <strong>${r.user}</strong>
-                    <div class="rating-stars">${"★".repeat(r.rating)}${"☆".repeat(5 - r.rating)}</div>
-                    <div>${r.comment}</div>
-                    <small>${r.date}</small>
+                    <strong>${safeText(m.from)}</strong>
+                    <div style="margin:0.25rem 0;">${safeText(m.text)}</div>
+                    <small style="color:#6f8296;">${safeText(m.time)}</small>
+                </div>
+            `).join('');
+            c.scrollTop = c.scrollHeight;
+            loadContacts();
+        }
+
+        function loadRatings() {
+            const list = document.getElementById('ratingsList');
+            if (!list) return;
+            list.innerHTML = ratings.map(item => `
+                <div class="chat-message" style="margin-bottom:0.7rem;">
+                    <strong>${safeText(item.user)}</strong>
+                    <div class="rating-stars">${'★'.repeat(item.rating)}${'☆'.repeat(5 - item.rating)}</div>
+                    <div>${safeText(item.comment)}</div>
+                    <small style="color:#6f8296;">${safeText(item.date)}</small>
                 </div>
             `).join('');
         }
-        
+
         function initRatingStars() {
             document.querySelectorAll('.rating-star').forEach(star => {
-                star.addEventListener('click', function() {
-                    selectedRating = parseInt(this.dataset.value);
-                    document.querySelectorAll('.rating-star').forEach(s => s.classList.remove('active'));
-                    for (let i = 0; i < selectedRating; i++) {
-                        document.querySelectorAll('.rating-star')[i]?.classList.add('active');
-                    }
+                star.addEventListener('click', function () {
+                    const val = parseInt(this.dataset.value, 10);
+                    document.querySelectorAll('.rating-star').forEach((s, i) => {
+                        s.classList.toggle('active', i < val);
+                    });
                 });
             });
         }
-        
-        // ===== دوال إضافية =====
-        function renderAllFlights() {
-            const c = document.getElementById('allFlightsList');
-            if (c) {
-                c.innerHTML = allFlights.map(f => `
-                    <div class="flight-card">
-                        <div class="flight-route">✈️ ${f.fromName} → ${f.toName}</div>
-                        <div class="flight-details">
-                            <div>${f.airline} ${f.flightNo}</div>
-                            <div>🕐 ${f.time}</div>
-                            <div>${f.price}</div>
-                        </div>
-                    </div>
-                `).join('');
-            }
-        }
-        
+
         function searchFlights() {
-            const from = document.getElementById("flightFrom").value;
-            const date = document.getElementById("flightDate").value;
+            const from = document.getElementById('flightFrom')?.value;
+            const date = document.getElementById('flightDate')?.value;
             const flights = allFlights.filter(f => f.from === from);
-            const rd = document.getElementById("flightResults");
+            const rd = document.getElementById('flightResults');
+            if (!rd) return;
+
             if (flights.length === 0) {
-                rd.innerHTML = "❌ لا توجد رحلات متاحة لهذا المسار";
+                rd.innerHTML = '❌ No flights available';
                 return;
             }
-            rd.innerHTML = `<strong>نتائج البحث (${date}):</strong><br>` + flights.map(f => `<div style="padding:8px; border-bottom:1px solid #ddd;">✈️ ${f.airline} | ${f.price} | 🕐 ${f.time}</div>`).join('');
+            rd.innerHTML = `<strong>Search Results (${safeText(date)}):</strong><br>` + flights.map(f => `
+                <div style="padding:8px 0; border-bottom:1px solid #d8e1ea;">✈️ ${safeText(f.airline)} | ${safeText(f.price)} | 🕐 ${safeText(f.time)}</div>
+            `).join('');
         }
-        
-        function filterByCity(city) {
-            searchQuery.city = city;
-            showNotification(`تم التصفية حسب مدينة ${city || 'الكل'}`, 'info');
-            renderFilteredRealEstate();
-        }
-        
-        function renderFilteredRealEstate() {
-            let filtered = realEstateAds;
-            if (searchQuery.city) filtered = filtered.filter(ad => ad.city === searchQuery.city);
-            renderGallery('realEstateGallery', filtered, 'realestate');
-        }
-        
-        function renderBlog() {
-            const c = document.getElementById('blogGrid');
-            if (c) {
-                c.innerHTML = blogPosts.map(p => `
-                    <div class="blog-card" onclick="showBlogPost(${p.id})">
-                        <div class="blog-image">${p.image}</div>
-                        <div class="blog-content">
-                            <span class="blog-category">${p.category}</span>
-                            <h3 class="blog-title">${p.title}</h3>
-                            <p class="blog-summary">${p.summary}</p>
-                            <div class="blog-meta">
-                                <span>📅 ${p.date}</span>
-                                <span>✍️ ${p.author}</span>
-                                <span class="blog-read-more">اقرأ المزيد ←</span>
-                            </div>
-                        </div>
-                    </div>
-                `).join('');
-            }
-        }
-        
-        function showBlogPost(id) {
-            const p = blogPosts.find(p => p.id === id);
-            if (p) {
-                document.getElementById('policyModalTitle').innerHTML = `${p.image} ${p.title}`;
-                document.getElementById('policyModalBody').innerHTML = p.content;
-                document.getElementById('policyModal').style.display = 'flex';
-            }
-        }
-        
+
         function toggleFaq(element) {
             const answer = element.nextElementSibling;
+            if (!answer) return;
             answer.classList.toggle('show');
-            element.querySelector('i').classList.toggle('fa-chevron-down');
-            element.querySelector('i').classList.toggle('fa-chevron-up');
+            const icon = element.querySelector('i');
+            if (icon) {
+                icon.classList.toggle('fa-chevron-down');
+                icon.classList.toggle('fa-chevron-up');
+            }
         }
-        
+
         function sendContactMessage() {
-            const name = document.getElementById('contactName')?.value;
-            const email = document.getElementById('contactEmail')?.value;
-            const message = document.getElementById('contactMessage')?.value;
-            if (name && email && message) {
-                showNotification("✅ تم إرسال رسالتك، سنتواصل معك قريباً", 'success');
+            const name = document.getElementById('contactName')?.value.trim();
+            const email = document.getElementById('contactEmail')?.value.trim();
+            const msg = document.getElementById('contactMessage')?.value.trim();
+            if (name && email && msg) {
+                showNotification('Message sent successfully!', 'success');
                 document.getElementById('contactName').value = '';
                 document.getElementById('contactEmail').value = '';
                 document.getElementById('contactMessage').value = '';
             } else {
-                showNotification("❌ يرجى ملء جميع الحقول", 'error');
+                showNotification('Please fill all fields', 'error');
             }
         }
-        
+
         function updateWallet() {
-            document.getElementById('balanceAmount').innerHTML = `$${balance}`;
-            document.getElementById('transactionsList').innerHTML = transactions.map(t => `<div style="padding:5px 0;">${t.date} - ${t.amount} - ${t.type}</div>`).join('') || "<p>لا توجد معاملات</p>";
-        }
-        
-        function setupPreview(inputId, previewId) {
-            document.getElementById(inputId)?.addEventListener("change", function(e) {
-                const preview = document.getElementById(previewId);
-                if (preview) preview.innerHTML = "";
-                const file = e.target.files[0];
-                if (file && preview) {
-                    const reader = new FileReader();
-                    reader.onload = (ev) => {
-                        const img = document.createElement("img");
-                        img.src = ev.target.result;
-                        preview.appendChild(img);
-                    };
-                    reader.readAsDataURL(file);
-                }
-            });
-        }
-        
-        function createPublishHandler(fields, msgId) {
-            return () => {
-                let values = fields.map(f => document.getElementById(f.id)?.value || "");
-                if (!values[0]) {
-                    showNotification("❌ املأ البيانات الأساسية", 'error');
-                    return;
-                }
-                showNotification("✅ تم إرسال الإعلان للمراجعة", 'success');
-                fields.forEach(f => {
-                    let el = document.getElementById(f.id);
-                    if (el) el.value = "";
-                });
-            };
-        }
-        
-        // ===== دوال الترجمة =====
-        function updateLanguage(lang) {
-            currentLang = lang;
-            const t = TRANSLATIONS[lang];
-            if (!t) return;
-            
-            document.getElementById("tagline").innerText = t.tagline;
-            document.getElementById("homeIntro").innerText = t.homeIntro;
-            
-            document.body.className = `lang-${lang}`;
-            document.body.dir = (lang === 'en') ? 'ltr' : 'rtl';
-            
-            document.querySelectorAll('.lang-btn').forEach(btn => {
-                if (btn.dataset.lang === lang) btn.classList.add('active');
-                else btn.classList.remove('active');
-            });
-            
-            localStorage.setItem('preferredLang', lang);
-            setCookie('lang', lang, 30);
-        }
-        
-        // ===== تبديل التبويبات =====
-        function switchTab(tabId) {
-            document.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active-pane'));
-            const pane = document.getElementById(`${tabId}Pane`);
-            if (pane) pane.classList.add('active-pane');
-            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
-            const activeBtn = document.querySelector(`.tab-btn[data-tab="${tabId}"]`);
-            if (activeBtn) activeBtn.classList.add('active');
-            
-            if (tabId === 'blog') renderBlog();
-            if (tabId === 'messaging') loadChat();
-            if (tabId === 'ratings') loadRatings();
-            if (tabId === 'realestate') renderFilteredRealEstate();
-            if (tabId === 'home') renderHomePage();
-        }
-        
-        // ===== عرض السياسات =====
-        function showPolicy(type) {
-            const p = policies[type];
-            if (p) {
-                document.getElementById('policyModalTitle').innerHTML = p.title;
-                document.getElementById('policyModalBody').innerHTML = p.content;
-                document.getElementById('policyModal').style.display = 'flex';
+            const balanceAmount = document.getElementById('balanceAmount');
+            const transactionsList = document.getElementById('transactionsList');
+            if (balanceAmount) balanceAmount.innerHTML = `$${balance}`;
+            if (transactionsList) {
+                transactionsList.innerHTML = transactions.length
+                    ? transactions.map(t => `<div class="chat-message" style="margin-bottom:0.6rem;"><strong>${safeText(t.type)}</strong><div>${safeText(t.amount)}</div><small>${safeText(t.date)}</small></div>`).join('')
+                    : '<p>No transactions</p>';
             }
+            refreshUserDashboard();
         }
-        
+
+        function showPolicy(type) {
+            const policies = {
+                privacy: { title: 'Privacy Policy', content: '<p>We protect your data and do not expose personal account details publicly.</p>' },
+                returns: { title: 'Return Policy', content: '<p>14 days return policy. Product must remain in original condition.</p>' }
+            };
+            const policy = policies[type];
+            if (!policy) return;
+            document.getElementById('policyModalTitle').innerHTML = policy.title;
+            document.getElementById('policyModalBody').innerHTML = policy.content;
+            document.getElementById('policyModal').style.display = 'flex';
+        }
+
         function closePolicyModal() {
             document.getElementById('policyModal').style.display = 'none';
         }
-        
-        // ===== رفع السيرة الذاتية =====
-        document.getElementById('resumeFile')?.addEventListener('change', function(e) {
-            const file = e.target.files[0];
-            if (file) {
-                resumes.push({ name: file.name, date: new Date().toLocaleDateString() });
-                showNotification(`تم رفع السيرة الذاتية: ${file.name}`, 'success');
-                const container = document.getElementById('resumeList');
-                if (container) {
-                    container.innerHTML = resumes.map(r => `<div class="resume-item"><span>📄 ${r.name}</span><small>${r.date}</small></div>`).join('');
-                }
-            }
-        });
-        
-        // ===== ربط الأحداث =====
-        function bindEvents() {
-            document.getElementById("loginModalBtn").onclick = openLoginModal;
-            document.getElementById("searchFlightBtn").onclick = searchFlights;
-            document.getElementById("confirmBookingBtn").onclick = () => {
-                const n = document.getElementById("passengerName")?.value;
-                showNotification(n ? `✅ تم تأكيد حجز ${n}` : "❌ أدخل الاسم", n ? 'success' : 'error');
-            };
-            document.getElementById("sendMsgBtn").onclick = () => {
-                const i = document.getElementById("chatInput");
-                if (i.value.trim()) {
-                    messages.push({ from: currentUser || "زائر", text: i.value, time: new Date().toLocaleTimeString() });
-                    loadChat();
-                    i.value = "";
-                    showNotification("✅ تم إرسال الرسالة", 'success');
-                }
-            };
-            document.getElementById("addRatingBtn").onclick = () => {
-                const c = document.getElementById("newRatingComment")?.value;
-                if (c) {
-                    ratings.unshift({ user: currentUser || "مستخدم جديد", rating: selectedRating, comment: c, date: new Date().toLocaleDateString() });
-                    loadRatings();
-                    document.getElementById("newRatingComment").value = "";
-                    showNotification("✅ تم إضافة تقييمك", 'success');
-                } else {
-                    showNotification("❌ اكتب تعليقك", 'error');
-                }
-            };
-            document.getElementById("paypalBtn").onclick = () => {
-                setTimeout(() => {
-                    balance += 29;
-                    transactions.unshift({ date: new Date().toLocaleDateString(), amount: "+$29", type: "اشتراك Pro" });
-                    updateWallet();
-                    showNotification("✅ تم الدفع بنجاح!", 'success');
-                }, 500);
-            };
-            document.getElementById("addFundsBtn").onclick = () => {
-                balance += 50;
-                transactions.unshift({ date: new Date().toLocaleDateString(), amount: "+$50", type: "إيداع" });
-                updateWallet();
-                showNotification("✅ تم إيداع $50", 'success');
-            };
-            
-            document.getElementById("privacyPolicyLink").onclick = (e) => { e.preventDefault(); showPolicy('privacy'); };
-            document.getElementById("securityPolicyLink").onclick = (e) => { e.preventDefault(); showPolicy('security'); };
-            document.getElementById("returnsPolicyLink").onclick = (e) => { e.preventDefault(); showPolicy('returns'); };
-            document.getElementById("shippingPolicyLink").onclick = (e) => { e.preventDefault(); showPolicy('shipping'); };
-            document.getElementById("agentPanelLink").onclick = (e) => { e.preventDefault(); showAgentPanel(); };
-            document.getElementById("libraryInfoBtn").onclick = () => {
-                document.getElementById('policyModalTitle').innerHTML = "📚 مكتبة أسمرة الوطنية";
-                document.getElementById('policyModalBody').innerHTML = "<h3>مكتبة أسمرة الوطنية</h3><ul><li>مركز التوثيق الوطني</li><li>مخطوطات ووثائق تاريخية</li><li>مركز بحثي رئيسي</li></ul>";
-                document.getElementById('policyModal').style.display = 'flex';
-            };
-            
-            document.querySelectorAll('.lang-btn').forEach(btn => btn.onclick = () => updateLanguage(btn.dataset.lang));
-            document.querySelectorAll('.tab-btn').forEach(btn => btn.onclick = () => switchTab(btn.dataset.tab));
-            document.querySelectorAll('.nav-tab-link').forEach(link => link.onclick = (e) => { e.preventDefault(); switchTab(link.dataset.tab); });
-            document.querySelectorAll('.footer-link').forEach(link => link.addEventListener('click', (e) => {
-                e.preventDefault();
-                switchTab(link.dataset.tab);
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-            }));
+
+        function updateLanguage(lang) {
+            currentLang = lang;
+            const t = TRANSLATIONS[lang] || TRANSLATIONS.en;
+
+            const taglineEl = document.querySelector('.tagline');
+            const homeIntroEl = document.getElementById('homeIntro');
+            if (taglineEl) taglineEl.innerText = t.tagline;
+            if (homeIntroEl) homeIntroEl.innerText = t.homeIntro;
+
+            document.body.className = `lang-${lang}`;
+            document.body.dir = lang === 'en' ? 'ltr' : 'rtl';
+
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.lang === lang);
+            });
+
+            localStorage.setItem('preferredLang', lang);
+            setCookie('lang', lang, 30);
         }
-        
-        // ===== التهيئة الرئيسية =====
-        document.addEventListener('DOMContentLoaded', function() {
+
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-pane').forEach(pane => pane.classList.remove('active-pane'));
+            const pane = document.getElementById(`${tabId}Pane`);
+            if (pane) pane.classList.add('active-pane');
+
+            document.querySelectorAll('.nav-tab-link').forEach(btn => btn.classList.remove('active'));
+            const activeBtn = document.querySelector(`.nav-tab-link[data-tab="${tabId}"]`);
+            if (activeBtn) activeBtn.classList.add('active');
+
+            if (tabId === 'blog') renderBlog();
+            if (tabId === 'messaging') loadChat();
+            if (tabId === 'ratings') loadRatings();
+            if (tabId === 'home') renderHomePage();
+        }
+
+        function bindEvents() {
+            document.getElementById('loginModalBtn')?.addEventListener('click', openLoginModal);
+            document.getElementById('searchFlightBtn')?.addEventListener('click', searchFlights);
+            document.getElementById('confirmBookingBtn')?.addEventListener('click', () => {
+                const name = document.getElementById('passengerName')?.value?.trim();
+                const bookingMsg = document.getElementById('bookingMsg');
+                if (name) {
+                    if (bookingMsg) bookingMsg.innerText = `Booking confirmed for ${name}`;
+                    showNotification(`Booking confirmed for ${name}`, 'success');
+                } else {
+                    if (bookingMsg) bookingMsg.innerText = 'Please enter name';
+                    showNotification('Please enter name', 'error');
+                }
+            });
+
+            document.getElementById('sendMsgBtn')?.addEventListener('click', () => {
+                const input = document.getElementById('chatInput');
+                const text = input?.value?.trim();
+                if (!text) {
+                    showNotification('Type a message first', 'warning');
+                    return;
+                }
+                messages.push({
+                    from: currentUser || 'Guest',
+                    to: 'Support',
+                    text,
+                    time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+                });
+                loadChat();
+                refreshUserDashboard();
+                input.value = '';
+                showNotification('Message sent', 'success');
+            });
+
+            document.getElementById('addRatingBtn')?.addEventListener('click', () => {
+                const comment = document.getElementById('newRatingComment')?.value?.trim();
+                const activeStars = document.querySelectorAll('.rating-star.active').length || 5;
+                if (!comment) {
+                    showNotification('Write your review', 'error');
+                    return;
+                }
+                ratings.unshift({
+                    user: currentUser || 'User',
+                    rating: activeStars,
+                    comment,
+                    date: new Date().toLocaleDateString()
+                });
+                document.getElementById('newRatingComment').value = '';
+                document.querySelectorAll('.rating-star').forEach(star => star.classList.remove('active'));
+                loadRatings();
+                showNotification('Review added', 'success');
+            });
+
+            document.getElementById('paypalBtn')?.addEventListener('click', () => {
+                balance += 29;
+                transactions.unshift({ date: new Date().toLocaleDateString(), amount: '+$29', type: 'Pro Subscription' });
+                updateWallet();
+                showNotification('Payment successful!', 'success');
+            });
+
+            document.getElementById('addFundsBtn')?.addEventListener('click', () => {
+                balance += 50;
+                transactions.unshift({ date: new Date().toLocaleDateString(), amount: '+$50', type: 'Deposit' });
+                updateWallet();
+                showNotification('$50 deposited', 'success');
+            });
+
+            document.getElementById('privacyPolicyLink')?.addEventListener('click', e => {
+                e.preventDefault();
+                showPolicy('privacy');
+            });
+            document.getElementById('returnsPolicyLink')?.addEventListener('click', e => {
+                e.preventDefault();
+                showPolicy('returns');
+            });
+            document.getElementById('agentPanelLink')?.addEventListener('click', e => {
+                e.preventDefault();
+                showAgentPanel();
+            });
+            document.getElementById('libraryInfoBtn')?.addEventListener('click', () => {
+                document.getElementById('policyModalTitle').innerHTML = '📚 Asmara Library';
+                document.getElementById('policyModalBody').innerHTML = '<p>National Documentation Center</p>';
+                document.getElementById('policyModal').style.display = 'flex';
+            });
+            document.getElementById('addBlockedWordBtn')?.addEventListener('click', () => {
+                const input = document.getElementById('newBlockedWord');
+                const word = input?.value?.trim();
+                if (!word) return showNotification('Enter a word first', 'warning');
+                const list = document.getElementById('blockedWordsList');
+                list.innerHTML += `, ${safeText(word)}`;
+                input.value = '';
+                showNotification('Blocked word added', 'success');
+            });
+
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.addEventListener('click', () => updateLanguage(btn.dataset.lang));
+            });
+
+            document.querySelectorAll('.nav-tab-link').forEach(link => {
+                link.addEventListener('click', e => {
+                    e.preventDefault();
+                    switchTab(link.dataset.tab);
+                });
+            });
+
+            document.querySelectorAll('.footer-link').forEach(link => {
+                link.addEventListener('click', e => {
+                    e.preventDefault();
+                    switchTab(link.dataset.tab);
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                });
+            });
+
+            document.getElementById('publishReBtn')?.addEventListener('click', () => showNotification('Property ad submitted for review', 'success'));
+            document.getElementById('publishElecBtn')?.addEventListener('click', () => showNotification('Device ad submitted for review', 'success'));
+            document.getElementById('publishCarBtn')?.addEventListener('click', () => showNotification('Car ad submitted for review', 'success'));
+            document.getElementById('publishJobBtn')?.addEventListener('click', () => showNotification('Job ad submitted for review', 'success'));
+            document.getElementById('publishGeneralBtn')?.addEventListener('click', () => showNotification('General ad submitted for review', 'success'));
+
+            document.querySelectorAll('.modal').forEach(modal => {
+                modal.addEventListener('click', e => {
+                    if (e.target === modal) modal.style.display = 'none';
+                });
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
             const savedUser = getCookie('username');
-            const isAgent = getCookie('isAgent') === 'true';
+            const savedRole = getCookie('userRole');
+            const savedLang = localStorage.getItem('preferredLang') || getCookie('lang') || 'en';
+
             if (savedUser) {
                 currentUser = savedUser;
+                currentRole = savedRole || 'user';
                 document.getElementById('userName').innerText = savedUser;
                 document.getElementById('userDisplay').style.display = 'flex';
                 document.getElementById('loginModalBtn').style.display = 'none';
                 document.getElementById('logoutBtn').style.display = 'inline-block';
-                updateUserDashboard();
-                if (isAgent) showAgentPanel();
+                if (currentRole === 'agent') showAgentPanel();
             }
-            
-            const savedLang = localStorage.getItem('preferredLang') || getCookie('lang') || 'ar';
+
             updateLanguage(savedLang);
-            
             bindEvents();
-            setupPreview("reImage", "rePreview");
-            setupPreview("elecImage", "elecPreview");
-            setupPreview("carImage", "carPreview");
-            setupPreview("adImage", "adPreview");
-            
-            document.getElementById("publishReBtn")?.addEventListener("click", createPublishHandler(["reType", "reCity", "reArea", "reRooms", "rePrice", "reFinish", "reDesc"], "reMsg"));
-            document.getElementById("publishElecBtn")?.addEventListener("click", createPublishHandler(["elecType", "elecBrand", "elecPrice", "elecCondition", "elecStorage", "elecColor", "elecDesc"], "elecMsg"));
-            document.getElementById("publishCarBtn")?.addEventListener("click", createPublishHandler(["carBrand", "carModel", "carYear", "carMileage", "carPrice", "carTransmission", "carColor", "carCity", "carDesc"], "carMsg"));
-            document.getElementById("publishJobBtn")?.addEventListener("click", createPublishHandler(["jobTitle", "jobCompany", "jobSalary", "jobType", "jobExperience", "jobQualification", "jobDesc", "jobCity"], "jobMsg"));
-            document.getElementById("publishGeneralBtn")?.addEventListener("click", createPublishHandler(["adType", "adCity", "adName", "adPrice", "adDesc"], "generalMsg"));
-            
             renderAllFlights();
             renderHomePage();
-            renderFilteredRealEstate();
-            renderGallery('electronicsGallery', electronicsAds, 'electronics');
-            renderGallery('carsGallery', carsAds, 'cars');
-            renderGallery('jobsGallery', jobsAds, 'jobs');
-            renderGallery('generalGallery', generalAds, 'general');
+            renderGallery('realEstateGallery', realEstateAds);
+            renderGallery('electronicsGallery', electronicsAds);
+            renderGallery('carsGallery', carsAds);
+            renderGallery('jobsGallery', jobsAds);
+            renderGallery('generalGallery', generalAds);
             renderBlog();
             loadRatings();
             loadChat();
             updateWallet();
+            updateCartUI();
             initRatingStars();
-            
+            refreshUserDashboard();
             switchTab('home');
         });
-        
-        // ===== تعريف الدوال العامة =====
+
         window.showBlogPost = showBlogPost;
         window.closePolicyModal = closePolicyModal;
-        window.filterByCity = filterByCity;
-        window.shareOnWhatsapp = shareOnWhatsapp;
         window.toggleFaq = toggleFaq;
         window.sendContactMessage = sendContactMessage;
         window.toggleUserDashboard = toggleUserDashboard;
@@ -2077,6 +1967,10 @@
         window.checkout = checkout;
         window.performSearch = performSearch;
         window.showProductDetails = showProductDetails;
+        window.verifyAccount = verifyAccount;
+        window.submitVerification = submitVerification;
+        window.closeVerifyModal = closeVerifyModal;
+        window.switchTab = switchTab;
     </script>
 </body>
 </html>

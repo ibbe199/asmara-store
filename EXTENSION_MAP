@@ -1,0 +1,78 @@
+EXTENSION_MAP = {
+    # HTML / Templates
+    ".html": "frontend/pages",
+    ".htm": "frontend/pages",
+    ".ejs": "frontend/templates",
+    ".hbs": "frontend/templates",
+    
+    # Styles
+    ".css": "frontend/styles",
+    ".scss": "frontend/styles",
+    ".sass": "frontend/styles",
+    ".less": "frontend/styles",
+    
+    # Scripts
+    ".js": "frontend/scripts",
+    ".mjs": "frontend/scripts",
+    ".ts": "frontend/scripts",
+    ".jsx": "frontend/scripts",
+    ".tsx": "frontend/scripts",
+    
+    # Backend
+    ".py": "backend/python",
+    ".php": "backend/php",
+    ".java": "backend/java",
+    ".cpp": "backend/cpp",
+    ".go": "backend/go",
+    
+    # Data
+    ".json": "data",
+    ".xml": "data",
+    ".csv": "data",
+    ".yaml": "data",
+    ".yml": "data",
+    ".sql": "data",
+    
+    # Images
+    ".jpg": "assets/images",
+    ".jpeg": "assets/images",
+    ".png": "assets/images",
+    ".gif": "assets/images",
+    ".svg": "assets/images",
+    ".webp": "assets/images",
+    ".ico": "assets/images",
+    
+    # Videos
+    ".mp4": "assets/videos",
+    ".mkv": "assets/videos",
+    ".avi": "assets/videos",
+    ".mov": "assets/videos",
+    
+    # Audio
+    ".mp3": "assets/audio",
+    ".wav": "assets/audio",
+    ".aac": "assets/audio",
+    ".flac": "assets/audio",
+    ".ogg": "assets/audio",
+    
+    # Fonts
+    ".ttf": "assets/fonts",
+    ".otf": "assets/fonts",
+    ".woff": "assets/fonts",
+    ".woff2": "assets/fonts",
+    
+    # Documents
+    ".pdf": "docs",
+    ".doc": "docs",
+    ".docx": "docs",
+    ".txt": "docs",
+    ".md": "docs",
+    ".rtf": "docs",
+    
+    # Archives
+    ".zip": "archives",
+    ".rar": "archives",
+    ".7z": "archives",
+    ".tar": "archives",
+    ".gz": "archives",
+}

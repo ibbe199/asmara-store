@@ -1,0 +1,33 @@
+{
+    // إعدادات المحرر
+    "editor.fontSize": 16,
+    "editor.fontFamily": "'Cairo', 'Consolas', 'Courier New', monospace",
+    "editor.tabSize": 4,
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.wordWrap": "on",
+    
+    // إعدادات اللغة العربية
+    "files.autoGuessEncoding": true,
+    "files.encoding": "utf8",
+    
+    // إعدادات Live Server
+    "liveServer.settings.port": 5500,
+    "liveServer.settings.root": "/",
+    "liveServer.settings.wait": 1000,
+    
+    // إعدادات CSS
+    "css.validate": true,
+    "css.lint.unknownProperties": "ignore",
+    
+    // إعدادات JavaScript
+    "javascript.validate.enable": true,
+    "javascript.format.enable": true,
+    
+    // إعدادات المسارات
+    "path-autocomplete.extensionOnImport": true,
+    "path-autocomplete.excludedItems": {
+        "**/*.map": true,
+        "**/*.js.map": true
+    }
+}
