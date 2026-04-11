@@ -1,0 +1,16 @@
+{
+  "name": "asmara-store",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Asmara.Store prototype",
+  "scripts": {
+    "dev": "serve .",
+    "start": "serve ."
+  },
+  "devDependencies": {
+    "serve": "^14.2.4"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
