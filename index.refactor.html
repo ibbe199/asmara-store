@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Asmara.Store Refactor Entry</title>
+  <meta name="description" content="Asmara.Store modular refactor entry page" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <link rel="stylesheet" href="./assets/css/refactor.css" />
+  <link rel="stylesheet" href="./assets/css/base.css" />
+  <link rel="stylesheet" href="./assets/css/layout.css" />
+  <link rel="stylesheet" href="./assets/css/components.css" />
+  <link rel="stylesheet" href="./assets/css/forms.css" />
+  <link rel="stylesheet" href="./assets/css/responsive.css" />
+</head>
+<body class="lang-en">
+  <div class="amazon-nav">
+    <div class="nav-logo">
+      <span>Asmara.Store</span>
+    </div>
+    <div class="top-bar">
+      <div class="lang-switch">
+        <button class="lang-btn active">English</button>
+        <button class="lang-btn">عربي</button>
+        <button class="lang-btn">ትግርኛ</button>
+      </div>
+    </div>
+  </div>
+
+  <main class="container">
+    <section class="hero">
+      <h1>Asmara.Store Modular Refactor</h1>
+      <p class="tagline">A clean externalized entry page for the next implementation stage.</p>
+      <p id="homeIntro">This page proves the new CSS and JS structure can be loaded from external files in a clean, maintainable way.</p>
+    </section>
+
+    <section class="stats-grid">
+      <article class="stat-card">
+        <div class="stat-number">6</div>
+        <div>CSS Layers</div>
+      </article>
+      <article class="stat-card">
+        <div class="stat-number">10+</div>
+        <div>JS Modules</div>
+      </article>
+      <article class="stat-card">
+        <div class="stat-number">1</div>
+        <div>Manifest</div>
+      </article>
+      <article class="stat-card">
+        <div class="stat-number">Ready</div>
+        <div>Migration State</div>
+      </article>
+    </section>
+
+    <section class="grid-2">
+      <article class="card">
+        <h3>What is completed</h3>
+        <ul style="padding-left: 1.2rem; color: var(--muted);">
+          <li>External CSS layers are prepared</li>
+          <li>External JS modules are prepared</li>
+          <li>Feature scaffolds exist for cart, auth, messaging, ratings, flights, and search</li>
+          <li>Documentation and migration tracking are in place</li>
+        </ul>
+      </article>
+      <article class="card">
+        <h3>What comes next</h3>
+        <ul style="padding-left: 1.2rem; color: var(--muted);">
+          <li>Wire the legacy prototype to the external layers</li>
+          <li>Move inline CSS blocks out gradually</li>
+          <li>Move inline JS blocks out gradually</li>
+          <li>Replace mock/demo logic with production services later</li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="card">
+      <h3>Module boot status</h3>
+      <div id="bootStatus" class="chat-message">Loading module state...</div>
+    </section>
+
+    <section class="grid-2">
+      <article class="card">
+        <h3>Legacy prototype</h3>
+        <p style="color: var(--muted); margin-bottom: 1rem;">The original full prototype remains available as the current working entry.</p>
+        <a class="btn-sm" href="./index.html">Open legacy prototype</a>
+      </article>
+      <article class="card">
+        <h3>Migration docs</h3>
+        <p style="color: var(--muted); margin-bottom: 1rem;">Use the repository docs to continue extraction safely.</p>
+        <a class="btn-sm" href="./docs/MIGRATION_CHECKLIST.md">Open migration checklist</a>
+      </article>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-section">
+        <h4>Refactor Entry</h4>
+        <p>This page is the modular bridge toward the next Asmara.Store architecture.</p>
+      </div>
+      <div class="footer-section">
+        <h4>Files</h4>
+        <a href="./docs/ARCHITECTURE.md">Architecture</a>
+        <a href="./docs/REFACTOR_PLAN.md">Refactor Plan</a>
+        <a href="./docs/FILE_MAP.md">File Map</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>Asmara.Store © 2026</p>
+    </div>
+  </footer>
+
+  <script src="./assets/js/loader-manifest.js"></script>
+  <script src="./assets/js/bootstrap.js"></script>
+  <script src="./assets/js/app.js"></script>
+  <script src="./assets/js/core/state.js"></script>
+  <script src="./assets/js/core/utils.js"></script>
+  <script src="./assets/js/data/mock-content.js"></script>
+  <script src="./assets/js/ui/render.js"></script>
+  <script src="./assets/js/features/cart.js"></script>
+  <script src="./assets/js/features/auth.js"></script>
+  <script src="./assets/js/features/messaging.js"></script>
+  <script src="./assets/js/features/ratings.js"></script>
+  <script src="./assets/js/features/flights.js"></script>
+  <script src="./assets/js/features/search.js"></script>
+  <script src="./assets/js/app-entry.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const status = document.getElementById('bootStatus');
+      const boot = window.AsmaraStoreApp ? window.AsmaraStoreApp.boot() : null;
+      if (!status) return;
+      if (!boot) {
+        status.textContent = 'External modules failed to load.';
+        return;
+      }
+      status.innerHTML = '<pre style="white-space: pre-wrap; margin: 0;">' + JSON.stringify(boot, null, 2) + '</pre>';
+    });
+  </script>
+</body>
+</html>
