@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Asmara.Store Next Stage</title>
+  <meta name="description" content="Asmara.Store next-stage external architecture entry" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./assets/css/base.css" />
+  <link rel="stylesheet" href="./assets/css/layout.css" />
+  <link rel="stylesheet" href="./assets/css/components.css" />
+  <link rel="stylesheet" href="./assets/css/forms.css" />
+  <link rel="stylesheet" href="./assets/css/responsive.css" />
+</head>
+<body class="lang-en">
+  <main class="container">
+    <section class="hero">
+      <h1>Asmara.Store Next Stage</h1>
+      <p class="tagline">A future-ready external entry built on the modular architecture.</p>
+      <p id="homeIntro">This page is designed as the likely successor path before replacing the legacy entry.</p>
+    </section>
+
+    <section class="stats-grid">
+      <article class="stat-card"><div class="stat-number">Legacy</div><div>Preserved</div></article>
+      <article class="stat-card"><div class="stat-number">Modular</div><div>Prepared</div></article>
+      <article class="stat-card"><div class="stat-number">Bridge</div><div>Available</div></article>
+      <article class="stat-card"><div class="stat-number">Next</div><div>Ready</div></article>
+    </section>
+
+    <section class="grid-2">
+      <article class="card">
+        <h3>Runtime snapshot</h3>
+        <div id="runtimeSnapshot" class="chat-message">Loading…</div>
+      </article>
+      <article class="card">
+        <h3>Available entries</h3>
+        <div class="chat-message">
+          <ul style="padding-left:1.2rem; margin:0; color:var(--muted);">
+            <li><a href="./index.html">Legacy prototype</a></li>
+            <li><a href="./index.refactor.html">Refactor entry</a></li>
+            <li><a href="./index.bridge.html">Bridge test</a></li>
+            <li><a href="./index.modules.html">Modules test</a></li>
+            <li><a href="./index.next.html">Next-stage entry</a></li>
+          </ul>
+        </div>
+      </article>
+    </section>
+
+    <section class="card">
+      <h3>Repository direction</h3>
+      <p style="color: var(--muted);">The repository now supports a controlled migration from one large inline prototype toward a layered external architecture without discarding the original working entry.</p>
+    </section>
+  </main>
+
+  <script src="./assets/js/loader-manifest.js"></script>
+  <script src="./assets/js/loader-manifest-extended.js"></script>
+  <script src="./assets/js/bootstrap.js"></script>
+  <script src="./assets/js/core/state.js"></script>
+  <script src="./assets/js/runtime.js"></script>
+  <script>
+    const box = document.getElementById('runtimeSnapshot');
+    const snapshot = window.AsmaraStoreRuntime ? window.AsmaraStoreRuntime.boot() : { ready: false };
+    box.innerHTML = '<pre style="white-space:pre-wrap;margin:0;">' + JSON.stringify(snapshot, null, 2) + '</pre>';
+  </script>
+</body>
+</html>
