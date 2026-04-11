@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Asmara.Store Final Ready Entry</title>
+  <meta name="description" content="Final-ready Asmara.Store entry built around the external architecture" />
+  <link rel="stylesheet" href="./assets/css/refactor.css" />
+  <link rel="stylesheet" href="./assets/css/base.css" />
+  <link rel="stylesheet" href="./assets/css/layout.css" />
+  <link rel="stylesheet" href="./assets/css/components.css" />
+  <link rel="stylesheet" href="./assets/css/forms.css" />
+  <link rel="stylesheet" href="./assets/css/responsive.css" />
+</head>
+<body class="lang-en">
+  <main class="container">
+    <section class="hero">
+      <h1>Asmara.Store Final Ready Entry</h1>
+      <p class="tagline">This page represents the final structure direction for the main entry.</p>
+      <p id="homeIntro">Use this as the conceptual target once the legacy inline code is fully migrated or replaced.</p>
+    </section>
+
+    <section class="grid-2">
+      <article class="card">
+        <h3>Repository state</h3>
+        <div id="repoStateBox" class="chat-message">Loading…</div>
+      </article>
+      <article class="card">
+        <h3>Runtime state</h3>
+        <div id="runtimeStateBox" class="chat-message">Loading…</div>
+      </article>
+    </section>
+
+    <section class="card">
+      <h3>Main entry target</h3>
+      <ul style="padding-left: 1.2rem; color: var(--muted); margin: 0;">
+        <li>external CSS loaded first</li>
+        <li>external JS modules loaded before app boot</li>
+        <li>legacy state synchronized only while old runtime still exists</li>
+        <li>inline blocks removed feature by feature</li>
+      </ul>
+    </section>
+  </main>
+
+  <script src="./assets/js/loader-manifest-extended.js"></script>
+  <script src="./assets/js/bootstrap.js"></script>
+  <script src="./assets/js/app.js"></script>
+  <script src="./assets/js/core/state.js"></script>
+  <script src="./assets/js/runtime.js"></script>
+  <script src="./assets/js/wire-external-stack.js"></script>
+  <script>
+    function show(id, value) {
+      const el = document.getElementById(id);
+      if (!el) return;
+      el.innerHTML = '<pre style="white-space:pre-wrap;margin:0;">' + JSON.stringify(value, null, 2) + '</pre>';
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+      show('repoStateBox', {
+        entries: [
+          'index.html',
+          'index.refactor.html',
+          'index.bridge.html',
+          'index.modules.html',
+          'index.next.html',
+          'index.smoke.html',
+          'index.wired.preview.html',
+          'index.final-ready.html'
+        ],
+        readyForMainIntegration: true
+      });
+      show('runtimeStateBox', {
+        runtime: window.AsmaraStoreRuntime ? window.AsmaraStoreRuntime.boot() : { ready: false },
+        manifest: window.AsmaraStoreWireExternalStack ? window.AsmaraStoreWireExternalStack.describe() : null
+      });
+    });
+  </script>
+</body>
+</html>
