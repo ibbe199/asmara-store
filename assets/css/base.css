@@ -1,0 +1,67 @@
+/* Asmara.Store extracted base styles - phase 1 */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary: #1e3a5f;
+  --primary-2: #2c5282;
+  --gold: #c7a12b;
+  --bg: #f0f4f9;
+  --surface: #ffffff;
+  --surface-2: #eef2f8;
+  --text: #1a2a3f;
+  --muted: #4a627a;
+  --danger: #dc3545;
+  --success: #28a745;
+  --warning: #ffc107;
+  --info: #17a2b8;
+  --shadow: 0 8px 22px rgba(0,0,0,0.08);
+  --radius-xl: 28px;
+  --radius-lg: 20px;
+  --radius-md: 14px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', 'Cairo', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+  direction: ltr;
+}
+
+body.lang-ar,
+body.lang-ti {
+  direction: rtl;
+  text-align: right;
+  font-family: 'Cairo', 'Inter', sans-serif;
+}
+
+a {
+  color: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
