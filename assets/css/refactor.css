@@ -1,0 +1,17 @@
+/* Asmara.Store - gradual CSS extraction entry point */
+/*
+  This file is introduced as the first safe step in extracting inline styles
+  from index.html without breaking the current prototype.
+
+  Next steps:
+  1. Move base reset rules
+  2. Move root tokens
+  3. Move layout blocks
+  4. Move component styles incrementally
+*/
+
+:root {
+  --asmara-refactor-ready: 1;
+}
+
+/* Placeholder for extracted rules */
