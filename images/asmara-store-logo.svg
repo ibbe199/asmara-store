@@ -1,0 +1,46 @@
+<svg width="620" height="170" viewBox="0 0 620 170" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Asmara Store Logo</title>
+  <desc id="desc">Asmara Store marketplace logo with shopping bag mark and bilingual text.</desc>
+  <defs>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FFE8A3"/>
+      <stop offset="0.45" stop-color="#F8C85A"/>
+      <stop offset="1" stop-color="#B97918"/>
+    </linearGradient>
+    <linearGradient id="teal" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#0EA5A4"/>
+      <stop offset="1" stop-color="#56E0C3"/>
+    </linearGradient>
+    <linearGradient id="pink" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#F97316"/>
+      <stop offset="1" stop-color="#EC4899"/>
+    </linearGradient>
+    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="10" stdDeviation="10" flood-color="#000000" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+
+  <rect width="620" height="170" rx="28" fill="#061426"/>
+
+  <g filter="url(#softShadow)">
+    <path d="M54 118L68 42C70 31 79 23 90 23H113C124 23 133 31 135 42L149 118" stroke="url(#gold)" stroke-width="8" stroke-linecap="round"/>
+    <path d="M67 57H136C146 57 154 65 154 75V124H49V75C49 65 57 57 67 57Z" stroke="url(#gold)" stroke-width="8" stroke-linejoin="round"/>
+    <circle cx="75" cy="72" r="5" fill="url(#gold)"/>
+    <circle cx="129" cy="72" r="5" fill="url(#gold)"/>
+    <path d="M78 105C92 77 112 69 123 76C111 89 104 108 92 121C84 130 72 132 64 126C68 124 73 116 78 105Z" fill="url(#gold)"/>
+    <text x="82" y="115" font-family="Georgia, 'Times New Roman', serif" font-size="76" font-style="italic" font-weight="700" fill="url(#gold)">A</text>
+    <path d="M48 132C75 148 126 150 158 128" stroke="url(#teal)" stroke-width="6" stroke-linecap="round"/>
+    <path d="M54 145C88 157 127 156 164 136" stroke="url(#gold)" stroke-width="5" stroke-linecap="round"/>
+    <path d="M48 154C88 166 128 164 170 144" stroke="url(#pink)" stroke-width="5" stroke-linecap="round"/>
+  </g>
+
+  <line x1="205" y1="32" x2="205" y2="138" stroke="url(#gold)" stroke-width="3" opacity="0.85"/>
+
+  <text x="230" y="74" font-family="Georgia, 'Times New Roman', serif" font-size="54" font-weight="700" fill="url(#gold)">Asmara Store</text>
+  <text x="235" y="121" font-family="Tahoma, Arial, sans-serif" font-size="34" font-weight="700" fill="url(#gold)" direction="rtl" unicode-bidi="plaintext">متجر أسمرة</text>
+
+  <path d="M235 135H286" stroke="url(#teal)" stroke-width="4" stroke-linecap="round"/>
+  <path d="M235 144H296" stroke="url(#pink)" stroke-width="4" stroke-linecap="round"/>
+  <path d="M430 135H500" stroke="url(#teal)" stroke-width="4" stroke-linecap="round"/>
+  <path d="M420 144H500" stroke="url(#pink)" stroke-width="4" stroke-linecap="round"/>
+</svg>
