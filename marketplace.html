@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Asmara Store Marketplace</title>
+  <link rel="stylesheet" href="/frontend/styles/header.css" />
+  <style>
+    :root { --primary:#ea580c; --secondary:#f59e0b; --text:#292524; --muted:#78716c; --bg:#fafaf9; --surface:#fff; --border:#e7e5e4; }
+    *{box-sizing:border-box} body{margin:0;font-family:Arial,sans-serif;background:var(--bg);color:var(--text)}
+    .page{max-width:1200px;margin:0 auto;padding:24px 18px 70px}.hero{background:linear-gradient(135deg,var(--primary),var(--secondary));color:white;border-radius:28px;padding:38px;margin-bottom:20px;display:grid;gap:14px}.hero h1{font-size:40px;margin:0}.hero p{margin:0;opacity:.92}.filters{background:var(--surface);border:1px solid var(--border);border-radius:22px;padding:16px;display:grid;grid-template-columns:2fr 1fr 1fr auto;gap:12px;box-shadow:0 10px 26px rgba(41,37,36,.07);margin-bottom:22px}input,select{border:1px solid var(--border);border-radius:14px;padding:12px;background:white}.btn{border:0;border-radius:999px;padding:12px 18px;font-weight:800;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;justify-content:center}.btn-primary{background:var(--primary);color:#fff}.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:18px}.card{background:var(--surface);border:1px solid var(--border);border-radius:22px;overflow:hidden;box-shadow:0 10px 26px rgba(41,37,36,.08);cursor:pointer;transition:.2s}.card:hover{transform:translateY(-4px);box-shadow:0 16px 36px rgba(41,37,36,.12)}.card img{width:100%;height:180px;object-fit:cover;background:#eee}.body{padding:14px}.title{font-weight:900;font-size:18px;margin:0 0 8px}.price{color:var(--primary);font-size:20px;font-weight:900}.meta{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}.badge{background:#fff7ed;color:#9a3412;border-radius:999px;padding:6px 9px;font-size:12px;font-weight:700}.empty{text-align:center;padding:35px;background:white;border-radius:22px;border:1px solid var(--border)}
+    @media(max-width:760px){.filters{grid-template-columns:1fr}.hero h1{font-size:30px}}
+  </style>
+</head>
+<body>
+  <header class="site-header" dir="auto">
+    <div class="header-top">
+      <a class="brand" href="/marketplace.html"><span class="brand-mark">AS</span><span class="brand-text"><strong>Asmara Store</strong><small>Marketplace</small></span></a>
+      <form class="header-search" id="topSearch"><input type="search" name="q" placeholder="Search listings..." /><button>Search</button></form>
+      <div class="header-actions"><a class="header-icon-link" href="/messages.html">💬 Messages</a><a class="header-icon-link" href="/notifications.html">🔔 <span id="notifyCount">0</span></a><a class="post-ad-button" href="/post-ad.html">Post Ad</a></div>
+    </div>
+  </header>
+  <main class="page">
+    <section class="hero"><h1>Buy and sell across Eritrea</h1><p>Find cars, homes, electronics, jobs, services, and more.</p><a class="btn btn-primary" style="background:white;color:var(--primary);width:max-content" href="/post-ad.html">+ Post a listing</a></section>
+    <section class="filters"><input id="q" placeholder="Search anything..." /><select id="category"><option>All</option><option>Vehicles</option><option>Real Estate</option><option>Electronics</option><option>Furniture</option><option>Jobs</option><option>Services</option><option>Baby Items</option><option>Other</option></select><select id="city"><option>All</option><option>Asmara</option><option>Massawa</option><option>Keren</option><option>Mendefera</option><option>Assab</option><option>Tessenei</option><option>Nakfa</option><option>Adi Keih</option><option>Dekemhare</option></select><button class="btn btn-primary" id="searchBtn">Search</button></section>
+    <section id="listings" class="grid"></section>
+  </main>
+  <script src="/frontend/scripts/api-client.js"></script>
+  <script>
+    const grid = document.getElementById('listings');
+    const q = document.getElementById('q');
+    const category = document.getElementById('category');
+    const city = document.getElementById('city');
+    function fallbackImage(){ return 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=900&q=80'; }
+    async function loadListings(){
+      const params = new URLSearchParams();
+      if(q.value.trim()) params.set('q', q.value.trim());
+      if(category.value !== 'All') params.set('category', category.value);
+      if(city.value !== 'All') params.set('city', city.value);
+      const res = await fetch(`/api/listings?${params.toString()}`);
+      const data = await res.json();
+      if(!data.length){ grid.innerHTML = '<div class="empty">No listings found. Be the first to post an ad.</div>'; return; }
+      grid.innerHTML = data.map(item => `
+        <article class="card" onclick="location.href='/product.html?id=${item.id}'">
+          <img src="${item.image || fallbackImage()}" alt="${item.title}" />
+          <div class="body"><h2 class="title">${item.title}</h2><div class="price">$${item.price}</div><p>${item.description}</p><div class="meta"><span class="badge">${item.category}</span><span class="badge">${item.city}</span>${item.promoted ? '<span class="badge">Promoted</span>' : ''}</div></div>
+        </article>`).join('');
+    }
+    async function loadNotifyCount(){ try { const d = await window.AsmaraAPI.notifications.unreadCount(); document.getElementById('notifyCount').textContent = d.count || 0; } catch(e){} }
+    document.getElementById('searchBtn').addEventListener('click', loadListings); q.addEventListener('input', () => setTimeout(loadListings, 150));
+    document.getElementById('topSearch').addEventListener('submit', e => { e.preventDefault(); q.value = e.target.q.value; loadListings(); });
+    loadListings(); loadNotifyCount();
+  </script>
+</body>
+</html>
