@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Messages | Asmara Store</title>
+<link rel="stylesheet" href="/frontend/styles/header.css" />
+<style>
+body {margin:0;font-family:Arial;background:#fafaf9}
+.layout {display:grid;grid-template-columns:300px 1fr;height:100vh}
+.sidebar {background:white;border-right:1px solid #eee;padding:15px;overflow:auto}
+.chat {display:flex;flex-direction:column;height:100%}
+.messages {flex:1;padding:15px;overflow:auto}
+.msg {margin-bottom:10px;padding:10px;border-radius:10px;background:#f3f4f6}
+.msg.me {background:#ea580c;color:white;align-self:flex-end}
+.input {display:flex;border-top:1px solid #eee}
+.input input {flex:1;padding:10px;border:none}
+.input button {padding:10px;background:#ea580c;color:white;border:none}
+</style>
+</head>
+<body>
+<div class="layout">
+  <div class="sidebar">
+    <h3>Conversations</h3>
+    <div id="convos"></div>
+  </div>
+  <div class="chat">
+    <div class="messages" id="messages"></div>
+    <div class="input">
+      <input id="text" placeholder="Type message..." />
+      <button onclick="send()">Send</button>
+    </div>
+  </div>
+</div>
+<script src="/frontend/scripts/api-client.js"></script>
+<script>
+let current=null;
+async function load(){
+ try{
+  const data=await AsmaraAPI.messages.conversations();
+  document.getElementById('convos').innerHTML=data.map(m=>`<div onclick="openChat('${m.to}')">Chat with ${m.to}</div>`).join('');
+ }catch(e){}
+}
+function openChat(user){current=user;document.getElementById('messages').innerHTML='';}
+async function send(){
+ const text=document.getElementById('text').value;
+ if(!text)return;
+ await AsmaraAPI.messages.send({to:current,text});
+ document.getElementById('messages').innerHTML+=`<div class='msg me'>${text}</div>`;
+ document.getElementById('text').value='';
+}
+load();
+</script>
+</body>
+</html>
