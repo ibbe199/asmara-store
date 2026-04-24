@@ -37,17 +37,10 @@
   color: var(--asmara-text);
 }
 
-.brand-mark {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 42px;
-  height: 42px;
-  border-radius: 14px;
-  background: linear-gradient(135deg, var(--asmara-primary), var(--asmara-secondary));
-  color: #fff;
-  font-weight: 800;
-  letter-spacing: 0.5px;
+.brand-logo-img {
+  height: 50px;
+  width: auto;
+  object-fit: contain;
 }
 
 .brand-text {
@@ -63,6 +56,11 @@
 .brand-text small {
   color: var(--asmara-muted);
   font-size: 12px;
+}
+
+/* hide text if logo already contains text */
+.sr-brand-text {
+  display: none;
 }
 
 .header-search {
