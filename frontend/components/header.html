@@ -1,7 +1,7 @@
 <!-- Asmara Store Header Component -->
 <header class="site-header" dir="auto">
   <div class="header-top">
-    <a class="brand" href="/" aria-label="Asmara Store Home">
+    <a class="brand" href="/marketplace.html" aria-label="Asmara Store Home">
       <span class="brand-mark">AS</span>
       <span class="brand-text">
         <strong>Asmara Store</strong>
@@ -9,15 +9,17 @@
       </span>
     </a>
 
-    <form class="header-search" role="search">
-      <input type="search" name="q" placeholder="Search products, cars, homes..." aria-label="Search" />
+    <form class="header-search" action="/marketplace.html" role="search">
+      <input type="search" name="q" placeholder="Search listings..." aria-label="Search listings" />
       <button type="submit">Search</button>
     </form>
 
     <div class="header-actions">
-      <button class="language-toggle" type="button" aria-label="Switch language">AR</button>
-      <a class="login-link" href="/login.html">Login</a>
-      <a class="post-ad-button" href="/post-ad.html">Post Ad</a>
+      <a class="header-icon-link" href="/messages.html">💬 Messages</a>
+      <a class="header-icon-link" href="/ratings.html">⭐ Rating</a>
+      <a class="header-icon-link" href="/faq.html">❓ FAQ</a>
+      <a class="header-icon-link" href="/payment.html">💳 Payment</a>
+      <a class="post-ad-button" href="/post-ad.html">+ Post Ad</a>
       <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false">
         <span></span>
         <span></span>
@@ -27,12 +29,11 @@
   </div>
 
   <nav class="main-nav" aria-label="Main navigation">
-    <a href="/">Home</a>
-    <a href="/frontend/pages/realestate/">Real Estate</a>
-    <a href="/frontend/pages/cars/">Cars</a>
-    <a href="/frontend/pages/electronics/">Electronics</a>
-    <a href="/frontend/pages/jobs/">Jobs</a>
-    <a href="/frontend/pages/services/">Services</a>
-    <a href="/contact.html">Contact</a>
+    <a href="/marketplace.html">Marketplace</a>
+    <a href="/product.html">Product Details</a>
+    <a href="/messages.html">Messages</a>
+    <a href="/ratings.html">Rating</a>
+    <a href="/faq.html">FAQ</a>
+    <a href="/payment.html">Payment</a>
   </nav>
 </header>
