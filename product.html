@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Listing Details | Asmara Store</title>
+  <link rel="stylesheet" href="/frontend/styles/header.css" />
+  <style>
+    body { margin:0; font-family:Arial,sans-serif; background:#fafaf9; color:#292524; }
+    .page { max-width:1100px; margin:auto; padding:26px 18px 70px; }
+    .layout { display:grid; grid-template-columns:1.2fr .8fr; gap:22px; }
+    .card { background:#fff; border:1px solid #e7e5e4; border-radius:24px; padding:20px; box-shadow:0 12px 32px rgba(41,37,36,.08); }
+    .image { width:100%; height:420px; object-fit:cover; border-radius:20px; background:#eee; }
+    h1 { margin:16px 0 8px; font-size:32px; }
+    .price { color:#ea580c; font-size:28px; font-weight:900; }
+    .meta { display:flex; gap:10px; flex-wrap:wrap; margin:12px 0; }
+    .badge { background:#fff7ed; color:#9a3412; padding:7px 11px; border-radius:999px; font-size:13px; font-weight:700; }
+    .btn { border:0; border-radius:999px; padding:12px 18px; font-weight:800; cursor:pointer; text-decoration:none; display:inline-flex; justify-content:center; align-items:center; }
+    .btn-primary { background:#ea580c; color:white; }
+    .btn-soft { background:#fff7ed; color:#ea580c; border:1px solid #fed7aa; }
+    textarea { width:100%; min-height:110px; border:1px solid #e7e5e4; border-radius:16px; padding:12px; resize:vertical; }
+    .stack { display:flex; flex-direction:column; gap:12px; }
+    .status { display:none; padding:12px; border-radius:14px; margin-top:10px; }
+    .status.success { display:block; background:#dcfce7; color:#166534; }
+    .status.error { display:block; background:#fee2e2; color:#991b1b; }
+    @media (max-width:800px){ .layout{grid-template-columns:1fr;} .image{height:280px;} }
+  </style>
+</head>
+<body>
+  <header class="site-header" dir="auto">
+    <div class="header-top">
+      <a class="brand" href="/"><span class="brand-mark">AS</span><span class="brand-text"><strong>Asmara Store</strong><small>Marketplace</small></span></a>
+      <form class="header-search" action="/"><input type="search" name="q" placeholder="Search listings..." /><button>Search</button></form>
+      <div class="header-actions"><a class="header-icon-link" href="/index.html">Home</a><a class="header-icon-link" href="/messages.html">Messages</a><a class="post-ad-button" href="/post-ad.html">Post Ad</a></div>
+    </div>
+  </header>
+
+  <main class="page">
+    <div class="layout">
+      <section class="card" id="listingBox">Loading listing...</section>
+      <aside class="card stack">
+        <h2>Contact seller</h2>
+        <p id="sellerInfo">Seller details will appear here.</p>
+        <textarea id="messageText" placeholder="Write your message to the seller..."></textarea>
+        <button class="btn btn-primary" id="sendMessageBtn">Send Message</button>
+        <button class="btn btn-soft" id="promoteBtn">Promote this listing</button>
+        <div id="status" class="status"></div>
+      </aside>
+    </div>
+  </main>
+
+  <script src="/frontend/scripts/api-client.js"></script>
+  <script>
+    const params = new URLSearchParams(location.search);
+    const id = params.get('id');
+    const box = document.getElementById('listingBox');
+    const sellerInfo = document.getElementById('sellerInfo');
+    const statusBox = document.getElementById('status');
+    let listing = null;
+
+    function status(type, text){ statusBox.className = `status ${type}`; statusBox.textContent = text; }
+
+    async function loadListing(){
+      if(!id){ box.textContent = 'Missing listing id.'; return; }
+      const res = await fetch(`/api/listings/${id}`);
+      const data = await res.json();
+      if(!res.ok){ box.textContent = data.message || 'Listing not found.'; return; }
+      listing = data;
+      box.innerHTML = `
+        <img class="image" src="${data.image || 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80'}" alt="${data.title}" />
+        <h1>${data.title}</h1>
+        <div class="price">$${data.price}</div>
+        <div class="meta"><span class="badge">${data.category}</span><span class="badge">${data.city}</span>${data.promoted ? '<span class="badge">Promoted</span>' : ''}</div>
+        <p>${data.description}</p>
+      `;
+      sellerInfo.textContent = `${data.sellerName || 'Seller'} · ${data.city}`;
+    }
+
+    document.getElementById('sendMessageBtn').addEventListener('click', async () => {
+      try {
+        if(!listing) throw new Error('Listing not loaded yet.');
+        const text = document.getElementById('messageText').value.trim();
+        if(!text) throw new Error('Please write a message.');
+        const response = await fetch('/api/messages/send', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${localStorage.getItem('asmara_auth_token') || ''}` },
+          body: JSON.stringify({ to: listing.sellerId, listingId: listing.id, text })
+        });
+        const data = await response.json();
+        if(!response.ok) throw new Error(data.message || 'Could not send message');
+        document.getElementById('messageText').value = '';
+        status('success', 'Message sent successfully.');
+      } catch(e){ status('error', e.message); }
+    });
+
+    document.getElementById('promoteBtn').addEventListener('click', async () => {
+      try {
+        if(!listing) throw new Error('Listing not loaded yet.');
+        const data = await window.AsmaraAPI.payments.createStripeCheckout({ listingId: listing.id });
+        status('success', data.message || 'Payment endpoint ready.');
+      } catch(e){ status('error', e.message); }
+    });
+
+    loadListing();
+  </script>
+</body>
+</html>
