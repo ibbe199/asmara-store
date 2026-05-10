@@ -1,20 +1,77 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# Asmara Store
 
-# Run and deploy your AI Studio app
+Asmara Store is a modern web application for an online store interface. The project is built as a React / TypeScript application and runs through the main `index.html` entry point.
 
-This contains everything you need to run your app locally.
+## Overview
 
-View your app in AI Studio: https://ai.studio/apps/2f34ba83-3177-4648-9e08-53ef6f65d0e6
+This project replaces the default Google AI Studio title with the project name:
 
-## Run Locally
+```html
+<title>Asmara Store</title>
+```
 
-**Prerequisites:**  Node.js
+The application is designed to be the foundation for a clean, responsive store experience that can later include products, categories, search, user actions, and other marketplace features.
 
+## Features
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+- Modern web app structure
+- React and TypeScript entry point
+- Responsive layout support
+- Easy local development
+- Ready for future store and marketplace features
+
+## Project Structure
+
+```txt
+Asmara2-/
+├── index.html
+├── src/
+│   └── main.tsx
+├── package.json
+└── README.md
+```
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js
+- npm
+
+### Install dependencies
+
+```bash
+npm install
+```
+
+### Run locally
+
+```bash
+npm run dev
+```
+
+### Build for production
+
+```bash
+npm run build
+```
+
+## Environment Variables
+
+If the app uses Gemini or Google AI services, create a `.env.local` file and add your API key:
+
+```env
+GEMINI_API_KEY=your_api_key_here
+```
+
+## App Title
+
+Update the title in `index.html` to:
+
+```html
+<title>Asmara Store</title>
+```
+
+## License
+
+This project is for development and learning purposes.
