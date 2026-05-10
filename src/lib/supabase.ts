@@ -4,23 +4,29 @@ const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
 const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
 
 if (!supabaseUrl || !supabaseAnonKey) {
-  console.warn('Supabase credentials are missing. Please check your .env file.');
+  throw new Error('Supabase credentials are missing. Add VITE_SUPABASE_URL and VITE_SUPABASE_ANON_KEY to your .env.local file.');
 }
 
-export const supabase = createClient(
-  supabaseUrl || 'https://placeholder.supabase.co',
-  supabaseAnonKey || 'placeholder-key'
-);
+export const supabase = createClient(supabaseUrl, supabaseAnonKey);
 
-export const uploadImage = async (file: File) => {
-  const fileExt = file.name.split('.').pop();
-  const fileName = `${Math.random()}.${fileExt}`;
-  const { error, data } = await supabase.storage.from('ad-images').upload(fileName, file);
-  
+export const uploadImage = async (file: File, userId?: string) => {
+  const fileExt = file.name.split('.').pop()?.toLowerCase() || 'jpg';
+  const safeUserId = userId || 'anonymous';
+  const fileName = `${safeUserId}/${Date.now()}-${crypto.randomUUID()}.${fileExt}`;
+
+  const { error } = await supabase.storage
+    .from('ad-images')
+    .upload(fileName, file, {
+      cacheControl: '3600',
+      upsert: false,
+      contentType: file.type || `image/${fileExt}`,
+    });
+
   if (error) throw error;
-  
-  // Get public URL
-  const { data: { publicUrl } } = supabase.storage.from('ad-images').getPublicUrl(fileName);
-  
+
+  const { data: { publicUrl } } = supabase.storage
+    .from('ad-images')
+    .getPublicUrl(fileName);
+
   return { fileName, publicUrl };
 };
