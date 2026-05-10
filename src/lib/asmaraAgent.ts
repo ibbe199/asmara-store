@@ -6,14 +6,14 @@ const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY || '' });
 export const AsmaraAgent = {
   name: "Asmara Store Agent",
 
-  async checkContentWithAI(text: string): Promise<{ allowed: boolean; reason?: string }> {
+  async checkContentWithAI(text: string): Promise<{ allowed: boolean; reason?: string; reviewRequired?: boolean }> {
     try {
       const response = await ai.models.generateContent({
         model: "gemini-3-flash-preview",
-        contents: `فحص المحتوى التالي للتأكد من أنه مناسب للنشر في سوق إلكتروني (أسمرة ستور). 
+        contents: `فحص المحتوى التالي للتأكد من أنه مناسب للنشر في سوق إلكتروني (أسمرة ستور).
         يجب أن يكون المحتوى خالياً من العنف، الكراهية، الاحتيال، أو أي محتوى غير قانوني.
         المحتوى: "${text}"
-        
+
         رد بصيغة JSON فقط:
         {
           "allowed": boolean,
@@ -32,12 +32,16 @@ export const AsmaraAgent = {
         }
       });
 
-      const textResponse = response.text || '{"allowed": true}';
+      const textResponse = response.text || '{"allowed": false, "reason": "تعذر قراءة نتيجة الفحص"}';
       const result = JSON.parse(textResponse);
       return result;
     } catch (error) {
       console.error("AI Moderation Error:", error);
-      return { allowed: true }; // Default to allow if AI fails to avoid blocking users
+      return {
+        allowed: false,
+        reviewRequired: true,
+        reason: "تعذر إكمال الفحص الآلي. سيتم إرسال الإعلان للمراجعة اليدوية. | ናይ AI ፍተሻ ኣይተዛዘመን። መላለዪ ንሰብ ፍተሻ ይለኣኽ።"
+      };
     }
   },
 
@@ -48,10 +52,10 @@ export const AsmaraAgent = {
         contents: {
           parts: [
             {
-              text: `Generate a high-quality, realistic, and commercially appealing image for an advertisement. 
-              The item is related to these keywords: ${keywords}. 
-              The context is the Asmara Store in Eritrea. 
-              The image should be centered, well-lit, and professional. 
+              text: `Generate a high-quality, realistic, and commercially appealing image for an advertisement.
+              The item is related to these keywords: ${keywords}.
+              The context is the Asmara Store in Eritrea.
+              The image should be centered, well-lit, and professional.
               Do not include any text or watermarks in the image.`,
             },
           ],
@@ -87,17 +91,34 @@ export const AsmaraAgent = {
 
   async processNewAd(adData: any) {
     console.log("العميل الذكي يقوم بفحص الإعلان...");
-    
+
     const moderation = await this.checkContentWithAI(`${adData.title} ${adData.description}`);
-    
-    if (!moderation.allowed) {
-      return { 
-        status: "rejected", 
-        reason: moderation.reason || "المحتوى يخالف قوانين المجتمع | ትሕዝቶ ምስ ሕጊ ኣይሰማማዕን" 
+
+    if (moderation.reviewRequired) {
+      const savedAd = await this.saveToDatabase({
+        ...adData,
+        status: "pending_review",
+        moderation_reason: moderation.reason
+      });
+
+      return {
+        status: "pending_review",
+        reason: moderation.reason,
+        data: savedAd
       };
     }
 
-    const savedAd = await this.saveToDatabase(adData);
+    if (!moderation.allowed) {
+      return {
+        status: "rejected",
+        reason: moderation.reason || "المحتوى يخالف قوانين المجتمع | ትሕዝቶ ምስ ሕጊ ኣይሰማማዕን"
+      };
+    }
+
+    const savedAd = await this.saveToDatabase({
+      ...adData,
+      status: "approved"
+    });
 
     if (savedAd) {
       this.autoShare(savedAd);
@@ -122,7 +143,7 @@ export const AsmaraAgent = {
 
   checkSubscriptionStatus(user: any) {
     if (!user || !user.created_at) return { status: "IDLE", daysLeft: 0 };
-    
+
     const joinDate = new Date(user.created_at);
     const today = new Date();
     const diffTime = Math.abs(today.getTime() - joinDate.getTime());
