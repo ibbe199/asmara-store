@@ -94,6 +94,8 @@ export default function Home({
     ...content[lang]
   };
 
+  const navTargets = ['hero', 'real-estate', 'library', 'press'];
+
   const filteredAds = useMemo(() => {
     return ads.filter(ad => {
       const matchesSearch = ad.title.toLowerCase().includes(searchTerm.toLowerCase()) || 
@@ -245,7 +247,7 @@ export default function Home({
       </AnimatePresence>
 
       {/* 1. Header (Streamlined Amazon Style Header) */}
-      <header className="bg-[#131921] text-white p-3 flex items-center gap-4 sticky top-0 z-50 shadow-2xl">
+      <header id="search" className="bg-[#131921] text-white p-3 flex items-center gap-4 sticky top-0 z-50 shadow-2xl">
         
         {/* 1. Logo */}
         <div 
@@ -362,7 +364,7 @@ export default function Home({
           <Menu size={18} /> {t.all}
         </div>
         {t.nav.map((item, i) => (
-          <a key={i} href="#" className="hover:border-b-2 border-white p-1 transition-all">{item}</a>
+          <a key={i} href={`#${navTargets[i] || 'hero'}`} className="hover:border-b-2 border-white p-1 transition-all">{item}</a>
         ))}
       </nav>
 
@@ -372,7 +374,7 @@ export default function Home({
       </div>
 
       {/* 4. Hero Banner */}
-      <div className="relative w-full h-[300px] md:h-[450px]">
+      <div id="hero" className="relative w-full h-[300px] md:h-[450px]">
         <img 
           src="https://images.unsplash.com/photo-1543968332-f99478b1ebdc?q=80&w=2000" 
           className="w-full h-full object-cover object-center" 
@@ -399,7 +401,7 @@ export default function Home({
             title={lang === 'en' ? "Real Estate & Investment" : "العقارات والاستثمار"} 
             img="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=500" 
             link={lang === 'en' ? "Explore properties" : "استكشف عقارات أسمرة"}
-            onClick={() => setActiveCategory('real-estate')}
+            onClick={() => setActiveCategory('property')}
           />
 
           <AmazonCard 
@@ -436,7 +438,9 @@ export default function Home({
         </div>
 
         {/* Direct Real Estate Section */}
-        <DirectRealEstate lang={lang} />
+        <div id="real-estate">
+          <DirectRealEstate lang={lang} />
+        </div>
 
         {/* Direct Press and Gov Section */}
         <DirectPressAndGov lang={lang} />
